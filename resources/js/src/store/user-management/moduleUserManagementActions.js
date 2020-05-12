@@ -26,7 +26,6 @@ export default {
         .then((response) => {
           commit('SET_USERS', response.data)
           resolve(response)
-            console.log('testsss', response.data)
         })
         .catch((error) => { reject(error) })
     })
