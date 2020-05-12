@@ -650,11 +650,6 @@ const data = {
   ]
 }
 
-
-mock.onGet('/api/user-management/users').reply(() => {
-  return [200, JSON.parse(JSON.stringify(data.users)).reverse()]
-})
-
 // GET: Fetch Single User Details
 mock.onGet(/\/api\/user-management\/users\/\d+/).reply((request) => {
 
