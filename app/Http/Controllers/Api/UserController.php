@@ -4,9 +4,27 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Repositories\UserRepository;
 
 class UserController extends Controller
 {
+	/**
+	 * @var UserRepository
+	 */
+	protected $userRepository;
+
+	/**
+	 * UserController constructor.
+	 *
+	 * @param UserRepository $userRepository
+	 */
+	public function __construct(
+		UserRepository $userRepository
+	)
+	{
+		$this->userRepository      = $userRepository;
+	}
+		
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +38,6 @@ class UserController extends Controller
 			'avatar' => '/images/portrait/small/avatar-s-12.jpg',
 			'email' => 'ardith@duffett.com',
 			'name' => 'Ardith Duffett',
-			'country' => 'Estonia',
 			'role' => 'user',
 			'status' => 'active',
 			'is_verified' => false,

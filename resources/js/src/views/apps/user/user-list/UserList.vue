@@ -17,14 +17,14 @@
           <label class="text-sm opacity-75">Role</label>
           <v-select :options="roleOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="roleFilter" class="mb-4 md:mb-0" />
         </div>
-        <div class="vx-col md:w-1/4 sm:w-1/2 w-full">
+        <!--<div class="vx-col md:w-1/4 sm:w-1/2 w-full">
           <label class="text-sm opacity-75">Status</label>
           <v-select :options="statusOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="statusFilter" class="mb-4 md:mb-0" />
         </div>
         <div class="vx-col md:w-1/4 sm:w-1/2 w-full">
           <label class="text-sm opacity-75">Verified</label>
           <v-select :options="isVerifiedOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="isVerifiedFilter" class="mb-4 sm:mb-0" />
-        </div>
+        </div>-->
         <div class="vx-col md:w-1/4 sm:w-1/2 w-full">
           <label class="text-sm opacity-75">Department</label>
           <v-select :options="departmentOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="departmentFilter" />
@@ -230,19 +230,13 @@ export default {
           headerName: 'Email',
           field: 'email',
           filter: true,
-          width: 225
+          width: 255
         },
         {
           headerName: 'Name',
           field: 'name',
           filter: true,
-          width: 200
-        },
-        {
-          headerName: 'Country',
-          field: 'country',
-          filter: true,
-          width: 150
+          width: 250
         },
         {
           headerName: 'Role',
@@ -250,21 +244,21 @@ export default {
           filter: true,
           width: 150
         },
-        {
+        /*{
           headerName: 'Status',
           field: 'status',
           filter: true,
           width: 150,
           cellRendererFramework: 'CellRendererStatus'
-        },
-        {
+        },*/
+        /*{
           headerName: 'Verified',
           field: 'is_verified',
           filter: true,
           width: 125,
           cellRendererFramework: 'CellRendererVerified',
           cellClass: 'text-center'
-        },
+        },*/
         {
           headerName: 'Department',
           field: 'department',
@@ -282,8 +276,8 @@ export default {
       // Cell Renderer Components
       components: {
         CellRendererLink,
-        CellRendererStatus,
-        CellRendererVerified,
+        //CellRendererStatus,
+        //CellRendererVerified,
         CellRendererActions
       }
     }
@@ -292,13 +286,13 @@ export default {
     roleFilter (obj) {
       this.setColumnFilter('role', obj.value)
     },
-    statusFilter (obj) {
+    /*statusFilter (obj) {
       this.setColumnFilter('status', obj.value)
     },
     isVerifiedFilter (obj) {
       const val = obj.value === 'all' ? 'all' : obj.value === 'yes' ? 'true' : 'false'
       this.setColumnFilter('is_verified', val)
-    },
+    },*/
     departmentFilter (obj) {
       this.setColumnFilter('department', obj.value)
     }
