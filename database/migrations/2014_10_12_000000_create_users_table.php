@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->integer('campaign_id')->foreign('campaign_id')->references('id')->on('campaigns')->nullable()->onDelete('cascade');
+            $table->integer('position_id')->foreign('position_id')->references('id')->on('positions')->nullable()->unsigned();
+            $table->integer('department_id')->foreign('department_id')->references('id')->on('departments')->nullable()->unsigned();
             $table->integer('mentor_id')->nullable()->unsigned();
             $table->integer('hr_id')->nullable()->unsigned();
             $table->string('avatar')->nullable();

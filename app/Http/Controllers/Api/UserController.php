@@ -22,16 +22,16 @@ class UserController extends Controller
 		UserRepository $userRepository
 	)
 	{
-		$this->userRepository      = $userRepository;
+		$this->userRepository = $userRepository;
 	}
-		
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+	/**
+	 * @return \Illuminate\Http\JsonResponse
+	 * @throws \Exception
+	 */
 	public function index()
 	{
+		$data = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
 		$test = [
 			'id' => 271,
 			'username' => 'bumbo426',
@@ -39,8 +39,6 @@ class UserController extends Controller
 			'email' => 'ardith@duffett.com',
 			'name' => 'Ardith Duffett',
 			'role' => 'user',
-			'status' => 'active',
-			'is_verified' => false,
 			'department' => 'sales'
 		];
 

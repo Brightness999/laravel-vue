@@ -266,6 +266,18 @@ export default {
           width: 150
         },
         {
+          headerName: 'Position',
+          field: 'position',
+          filter: false,
+          width: 150
+        },
+        {
+          headerName: 'Last ppr date',
+          field: 'last_ppr_date',
+          filter: false,
+          width: 150
+        },
+        {
           headerName: 'Actions',
           field: 'transactions',
           width: 150,

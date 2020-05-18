@@ -17,6 +17,8 @@ class UsersSeeder extends Seeder
 		$user->email = 'user@gmail.com';
 		$user->password = bcrypt('123123123');
 		$user->campaign_id = 1;
+		$user->department_id = 1;
+		$user->position_id = 1;
 		$user->save();
 
 		$user = new \App\User();
@@ -24,6 +26,8 @@ class UsersSeeder extends Seeder
 		$user->email = 'user2@gmail.com';
 		$user->password = bcrypt('123123123');
 		$user->campaign_id = 1;
+		$user->department_id = 2;
+		$user->position_id = 2;
 		$user->save();
 
 		$user = new \App\User();
@@ -48,6 +52,8 @@ class UsersSeeder extends Seeder
 		$user->password = bcrypt('123123123');
 		$user->campaign_id = 1;
 		$user->assignRole(\App\Role::MENTOR_ROLE);
+		$user->department_id = 3;
+		$user->position_id = 3;
 		$user->save();
 
 		$user = new \App\User();
