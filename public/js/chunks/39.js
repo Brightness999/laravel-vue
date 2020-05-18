@@ -275,39 +275,48 @@ __webpack_require__.r(__webpack_exports__);
         headerName: 'Email',
         field: 'email',
         filter: true,
-        width: 225
+        width: 255
       }, {
         headerName: 'Name',
         field: 'name',
         filter: true,
-        width: 200
-      }, {
-        headerName: 'Country',
-        field: 'country',
-        filter: true,
-        width: 150
+        width: 250
       }, {
         headerName: 'Role',
         field: 'role',
         filter: true,
         width: 150
-      }, {
+      },
+      /*{
         headerName: 'Status',
         field: 'status',
         filter: true,
         width: 150,
         cellRendererFramework: 'CellRendererStatus'
-      }, {
+      },*/
+
+      /*{
         headerName: 'Verified',
         field: 'is_verified',
         filter: true,
         width: 125,
         cellRendererFramework: 'CellRendererVerified',
         cellClass: 'text-center'
-      }, {
+      },*/
+      {
         headerName: 'Department',
         field: 'department',
         filter: true,
+        width: 150
+      }, {
+        headerName: 'Position',
+        field: 'position',
+        filter: false,
+        width: 150
+      }, {
+        headerName: 'Last ppr date',
+        field: 'last_ppr_date',
+        filter: false,
         width: 150
       }, {
         headerName: 'Actions',
@@ -318,8 +327,8 @@ __webpack_require__.r(__webpack_exports__);
       // Cell Renderer Components
       components: {
         CellRendererLink: _cell_renderer_CellRendererLink_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-        CellRendererStatus: _cell_renderer_CellRendererStatus_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-        CellRendererVerified: _cell_renderer_CellRendererVerified_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+        //CellRendererStatus,
+        //CellRendererVerified,
         CellRendererActions: _cell_renderer_CellRendererActions_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
       }
     };
@@ -328,13 +337,14 @@ __webpack_require__.r(__webpack_exports__);
     roleFilter: function roleFilter(obj) {
       this.setColumnFilter('role', obj.value);
     },
-    statusFilter: function statusFilter(obj) {
-      this.setColumnFilter('status', obj.value);
+
+    /*statusFilter (obj) {
+      this.setColumnFilter('status', obj.value)
     },
-    isVerifiedFilter: function isVerifiedFilter(obj) {
-      var val = obj.value === 'all' ? 'all' : obj.value === 'yes' ? 'true' : 'false';
-      this.setColumnFilter('is_verified', val);
-    },
+    isVerifiedFilter (obj) {
+      const val = obj.value === 'all' ? 'all' : obj.value === 'yes' ? 'true' : 'false'
+      this.setColumnFilter('is_verified', val)
+    },*/
     departmentFilter: function departmentFilter(obj) {
       this.setColumnFilter('department', obj.value);
     }
@@ -701,60 +711,6 @@ var render = function() {
                       _vm.roleFilter = $$v
                     },
                     expression: "roleFilter"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "vx-col md:w-1/4 sm:w-1/2 w-full" },
-              [
-                _c("label", { staticClass: "text-sm opacity-75" }, [
-                  _vm._v("Status")
-                ]),
-                _vm._v(" "),
-                _c("v-select", {
-                  staticClass: "mb-4 md:mb-0",
-                  attrs: {
-                    options: _vm.statusOptions,
-                    clearable: false,
-                    dir: _vm.$vs.rtl ? "rtl" : "ltr"
-                  },
-                  model: {
-                    value: _vm.statusFilter,
-                    callback: function($$v) {
-                      _vm.statusFilter = $$v
-                    },
-                    expression: "statusFilter"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "vx-col md:w-1/4 sm:w-1/2 w-full" },
-              [
-                _c("label", { staticClass: "text-sm opacity-75" }, [
-                  _vm._v("Verified")
-                ]),
-                _vm._v(" "),
-                _c("v-select", {
-                  staticClass: "mb-4 sm:mb-0",
-                  attrs: {
-                    options: _vm.isVerifiedOptions,
-                    clearable: false,
-                    dir: _vm.$vs.rtl ? "rtl" : "ltr"
-                  },
-                  model: {
-                    value: _vm.isVerifiedFilter,
-                    callback: function($$v) {
-                      _vm.isVerifiedFilter = $$v
-                    },
-                    expression: "isVerifiedFilter"
                   }
                 })
               ],
