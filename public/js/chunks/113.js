@@ -1,14 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[113],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/FormLayouts.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/FormLayouts.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-star-rating */ "./node_modules/vue-star-rating/dist/star-rating.min.js");
+/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_star_rating__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -336,304 +338,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    setRating: function setRating(rating) {
+      this.rating = "You have Selected: ".concat(rating, " stars");
+    },
+    showCurrentRating: function showCurrentRating(rating) {
+      this.currentRating = rating === 0 ? this.currentSelectedRating : "Click to select ".concat(rating, " stars");
+    },
+    setCurrentSelectedRating: function setCurrentSelectedRating(rating) {
+      this.currentSelectedRating = "You have Selected: ".concat(rating, " stars");
+    }
+  },
   data: function data() {
     return {
-      check1: '',
-      check2: '',
-      check3: '',
-      check4: '',
-      check5: '',
-      check6: '',
-      check7: '',
-      input1: '',
-      input2: '',
-      input3: '',
-      input4: '',
-      input5: '',
-      input6: '',
-      input7: '',
-      input8: '',
-      input9: '',
-      input10: '',
-      input11: '',
-      input12: '',
-      input13: '',
-      input14: '',
-      input15: '',
-      input16: '',
-      input17: '',
-      input18: '',
-      input19: '',
-      input20: '',
-      input21: '',
-      input22: '',
-      input23: '',
-      input24: '',
-      input25: '',
-      input26: '',
-      input27: '',
-      input28: '',
-      input29: '',
-      input30: ''
+      rating: 'No Rating Selected',
+      currentRating: 'No Rating',
+      currentSelectedRating: 'No Current Rating',
+      boundRating: 3
     };
+  },
+  components: {
+    StarRating: vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default.a
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/FormLayouts.vue?vue&type=template&id=0e9d2f0b&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/FormLayouts.vue?vue&type=template&id=0e9d2f0b& ***!
-  \*******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=template&id=0614a406&":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=template&id=0614a406& ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -645,1239 +381,383 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "vx-row" }, [
-    _c(
-      "div",
-      { staticClass: "vx-col md:w-1/2 w-full mb-base" },
-      [
-        _c(
-          "vx-card",
-          { attrs: { title: "Horizontal Form", "code-toggler": "" } },
-          [
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("First Name")])
-              ]),
+  return _c("div", { attrs: { id: "page-star-ratings-demo" } }, [
+    _c("div", { staticClass: "vx-row" }, [
+      _c(
+        "div",
+        { staticClass: "vx-col w-full lg:w-1/2 mb-base" },
+        [
+          _c(
+            "vx-card",
+            {
+              staticClass: "overflow-auto",
+              attrs: { title: "Basic", "code-toggler": "" }
+            },
+            [
+              _c("h6", [_vm._v("Default")]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    model: {
-                      value: _vm.input1,
-                      callback: function($$v) {
-                        _vm.input1 = $$v
-                      },
-                      expression: "input1"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("Email")])
-              ]),
+              _c("star-rating", { attrs: { rtl: _vm.$vs.rtl } }),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { type: "email" },
-                    model: {
-                      value: _vm.input2,
-                      callback: function($$v) {
-                        _vm.input2 = $$v
-                      },
-                      expression: "input2"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("Mobile")])
-              ]),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Half Stars")]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    model: {
-                      value: _vm.input3,
-                      callback: function($$v) {
-                        _vm.input3 = $$v
-                      },
-                      expression: "input3"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("Password")])
-              ]),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, increment: 0.5 }
+              }),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { type: "password" },
-                    model: {
-                      value: _vm.input4,
-                      callback: function($$v) {
-                        _vm.input4 = $$v
-                      },
-                      expression: "input4"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full ml-auto" },
-                [
-                  _c(
-                    "vs-checkbox",
-                    {
-                      staticClass: "inline-flex",
-                      model: {
-                        value: _vm.check1,
-                        callback: function($$v) {
-                          _vm.check1 = $$v
-                        },
-                        expression: "check1"
-                      }
-                    },
-                    [_vm._v("Remember Me")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full ml-auto" },
-                [
-                  _c("vs-button", { staticClass: "mr-3 mb-2" }, [
-                    _vm._v("Submit")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "mb-2",
-                      attrs: { color: "warning", type: "border" },
-                      on: {
-                        click: function($event) {
-                          _vm.input1 = _vm.input2 = _vm.input3 = _vm.input4 = _vm.input4 =
-                            ""
-                          _vm.check1 = false
-                        }
-                      }
-                    },
-                    [_vm._v("Reset")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("template", { slot: "codeContainer" }, [
-              _vm._v(
-                '\n<template>\n    <div class="vx-row mb-6">\n      <div class="vx-col sm:w-1/3 w-full">\n        <span>First Name</span>\n      </div>\n      <div class="vx-col sm:w-2/3 w-full">\n        <vs-input class="w-full" v-model="input1" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col sm:w-1/3 w-full">\n        <span>Email</span>\n      </div>\n      <div class="vx-col sm:w-2/3 w-full">\n        <vs-input class="w-full" type="email" v-model="input2" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col sm:w-1/3 w-full">\n        <span>Mobile</span>\n      </div>\n      <div class="vx-col sm:w-2/3 w-full">\n        <vs-input class="w-full" v-model="input3" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col sm:w-1/3 w-full">\n        <span>Password</span>\n      </div>\n      <div class="vx-col sm:w-2/3 w-full">\n        <vs-input class="w-full" type="password" v-model="input4" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col sm:w-2/3 w-full ml-auto">\n        <vs-checkbox class="inline-flex" v-model="check1">Remember Me</vs-checkbox>\n      </div>\n    </div>\n    <div class="vx-row">\n      <div class="vx-col sm:w-2/3 w-full ml-auto">\n        <vs-button class="mr-3 mb-2">Submit</vs-button>\n        <vs-button color="warning" type="border" class="mb-2" @click="input1 = input2 = input3 = input4 = input4 = \'\'; check1 = false;">Reset</vs-button>\n      </div>\n    </div>\n</template>\n        '
-              )
-            ])
-          ],
-          2
-        )
-      ],
-      1
-    ),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Preset Stars")]),
+              _vm._v(" "),
+              _c("star-rating", { attrs: { rtl: _vm.$vs.rtl, rating: 4 } }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Fluid Stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, increment: 0.01, "fixed-points": 2 }
+              }),
+              _vm._v(" "),
+              _c("template", { slot: "codeContainer" }, [
+                _vm._v(
+                  '\n<template>\n  <!-- DEFAULT -->\n  <h6>Default</h6>\n  <star-rating :rtl="$vs.rtl" />\n\n  <!-- HALF STAR -->\n  <h6 class="mt-5">Half Stars</h6>\n  <star-rating :rtl="$vs.rtl" :increment="0.5"></star-rating>\n\n  <!-- PRESET STAR -->\n  <h6 class="mt-5">Preset Stars</h6>\n  <star-rating :rtl="$vs.rtl" :rating="4"></star-rating>\n\n  <!-- FLUID STAR  -->\n  <h6 class="mt-5">Fluid Stars</h6>\n  <star-rating :rtl="$vs.rtl" :increment="0.01" :fixed-points="2"></star-rating>\n</template>\n\n<script>\nimport StarRating from \'vue-star-rating\'\n\nexport default {\n  components: {\n    StarRating\n  }\n}\n</script>\n            '
+                )
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "vx-col w-full lg:w-1/2 mb-base" },
+        [
+          _c(
+            "vx-card",
+            {
+              staticClass: "overflow-auto",
+              attrs: { title: "Customizing", "code-toggler": "" }
+            },
+            [
+              _c("h6", [_vm._v("Bordered Stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, "border-width": 3 }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Style Rating")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: {
+                  rtl: _vm.$vs.rtl,
+                  "text-class": "text-warning font-medium"
+                }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-4" }, [_vm._v("Custom Star Shape")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: {
+                  rtl: _vm.$vs.rtl,
+                  "border-width": 4,
+                  "border-color": "#d8d8d8",
+                  "rounded-corners": true,
+                  "star-points": [
+                    23,
+                    2,
+                    14,
+                    17,
+                    0,
+                    19,
+                    10,
+                    34,
+                    7,
+                    50,
+                    23,
+                    43,
+                    38,
+                    50,
+                    36,
+                    34,
+                    46,
+                    19,
+                    31,
+                    17
+                  ]
+                }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Glowing Stars")]),
+              _vm._v(" "),
+              _c("star-rating", { attrs: { rtl: _vm.$vs.rtl, glow: 10 } }),
+              _vm._v(" "),
+              _c("template", { slot: "codeContainer" }, [
+                _vm._v(
+                  '\n<template>\n  <!-- BORDERED -->\n  <h6>Bordered Stars</h6>\n  <star-rating :rtl="$vs.rtl" :border-width="3"></star-rating>\n\n  <!-- STYLE RATING -->\n  <h6 class="mt-5">Style Rating</h6>\n  <star-rating :rtl="$vs.rtl" text-class="text-warning font-medium"></star-rating>\n\n  <!-- CUSTOM SHAPE -->\n  <h6 class="mt-4">Custom Star Shape</h6>\n  <star-rating :rtl="$vs.rtl" :border-width="4" border-color="#d8d8d8" :rounded-corners="true" :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]"></star-rating>\n\n  <h6 class="mt-5">Glowing Stars</h6>\n  <star-rating :rtl="$vs.rtl" :glow="10"></star-rating>\n</template>\n\n<script>\nimport StarRating from \'vue-star-rating\'\n\nexport default {\n  components: {\n    StarRating\n  }\n}\n</script>\n            '
+                )
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      )
+    ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vx-col md:w-1/2 w-full mb-base" },
-      [
-        _c(
-          "vx-card",
-          { attrs: { title: "Horizontal Form", "code-toggler": "" } },
-          [
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("First Name")])
+    _c("div", { staticClass: "vx-row" }, [
+      _c(
+        "div",
+        { staticClass: "vx-col w-full lg:w-1/2 mb-base" },
+        [
+          _c(
+            "vx-card",
+            {
+              staticClass: "overflow-auto",
+              attrs: { title: "Sizing", "code-toggler": "" }
+            },
+            [
+              _c("h6", [_vm._v("Small Stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, "star-size": 20 }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Big Stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, "star-size": 80 }
+              }),
+              _vm._v(" "),
+              _c("template", { slot: "codeContainer" }, [
+                _vm._v(
+                  '\n<template>\n  <!-- SMALL STARS -->\n  <h6>Small Stars</h6>\n  <star-rating :rtl="$vs.rtl" :star-size="20"></star-rating>\n\n  <!-- LARGE STARS -->\n  <h6 class="mt-5">Big Stars</h6>\n  <star-rating :rtl="$vs.rtl" :star-size="80"></star-rating>\n</template>\n\n<script>\nimport StarRating from \'vue-star-rating\'\nexport default {\n  components: {\n    StarRating\n  }\n}\n</script>\n            '
+                )
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "vx-col w-full lg:w-1/2 mb-base" },
+        [
+          _c(
+            "vx-card",
+            {
+              staticClass: "overflow-auto",
+              attrs: { title: "Changing color", "code-toggler": "" }
+            },
+            [
+              _c("h6", [_vm._v("Red Stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, "active-color": "#EA5455" }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-4" }, [_vm._v("Vibrant Stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: {
+                  rtl: _vm.$vs.rtl,
+                  "inactive-color": "#b9b4f9",
+                  "active-color": "#7367f0"
+                }
+              }),
+              _vm._v(" "),
+              _c("template", { slot: "codeContainer" }, [
+                _vm._v(
+                  '\n<template>\n  <!-- RED STAR -->\n  <h6>Red Stars</h6>\n  <star-rating :rtl="$vs.rtl" active-color="#EA5455"></star-rating>\n\n  <!-- VIBRANT STAR -->\n  <h6 class="mt-4">Vibrant Stars</h6>\n  <star-rating :rtl="$vs.rtl" inactive-color="#b9b4f9" active-color="#7367f0"></star-rating>\n</template>\n\n<script>\nimport StarRating from \'vue-star-rating\'\n\nexport default {\n  components: {\n    StarRating\n  }\n}\n</script>\n            '
+                )
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "vx-row" }, [
+      _c(
+        "div",
+        { staticClass: "vx-col w-full lg:w-1/2 mb-base" },
+        [
+          _c(
+            "vx-card",
+            {
+              staticClass: "overflow-auto",
+              attrs: {
+                title: "Capture, Reset or Hide Rating",
+                "code-toggler": ""
+              }
+            },
+            [
+              _c("h6", [_vm._v("Capture Rating")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, "show-rating": false },
+                on: { "rating-selected": _vm.setRating }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "font-semibold" }, [
+                _vm._v(_vm._s(_vm.rating))
+              ]),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [
+                _vm._v("Capture Mouse Over Rating")
               ]),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
+                {
+                  staticStyle: { display: "inline-block" },
+                  on: {
+                    mouseleave: function($event) {
+                      return _vm.showCurrentRating(0)
+                    }
+                  }
+                },
                 [
-                  _c("vs-input", {
-                    staticClass: "w-full",
+                  _c("star-rating", {
                     attrs: {
-                      "icon-pack": "feather",
-                      icon: "icon-user",
-                      "icon-no-border": ""
+                      rtl: _vm.$vs.rtl,
+                      "show-rating": false,
+                      increment: 0.5
                     },
-                    model: {
-                      value: _vm.input5,
-                      callback: function($$v) {
-                        _vm.input5 = $$v
-                      },
-                      expression: "input5"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("Email")])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      type: "email",
-                      "icon-pack": "feather",
-                      icon: "icon-mail",
-                      "icon-no-border": ""
-                    },
-                    model: {
-                      value: _vm.input6,
-                      callback: function($$v) {
-                        _vm.input6 = $$v
-                      },
-                      expression: "input6"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("Mobile")])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      "icon-pack": "feather",
-                      icon: "icon-smartphone",
-                      "icon-no-border": ""
-                    },
-                    model: {
-                      value: _vm.input7,
-                      callback: function($$v) {
-                        _vm.input7 = $$v
-                      },
-                      expression: "input7"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                _c("span", [_vm._v("Password")])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      type: "password",
-                      "icon-pack": "feather",
-                      icon: "icon-lock",
-                      "icon-no-border": ""
-                    },
-                    model: {
-                      value: _vm.input8,
-                      callback: function($$v) {
-                        _vm.input8 = $$v
-                      },
-                      expression: "input8"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full ml-auto" },
-                [
-                  _c(
-                    "vs-checkbox",
-                    {
-                      staticClass: "inline-flex",
-                      model: {
-                        value: _vm.check2,
-                        callback: function($$v) {
-                          _vm.check2 = $$v
-                        },
-                        expression: "check2"
-                      }
-                    },
-                    [_vm._v("Remember Me")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-2/3 w-full ml-auto" },
-                [
-                  _c("vs-button", { staticClass: "mr-3 mb-2" }, [
-                    _vm._v("Submit")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "mb-2",
-                      attrs: { color: "warning", type: "border" },
-                      on: {
-                        click: function($event) {
-                          _vm.input5 = _vm.input6 = _vm.input7 = _vm.input8 = ""
-                          _vm.check2 = false
-                        }
-                      }
-                    },
-                    [_vm._v("Reset")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("template", { slot: "codeContainer" }, [
-              _vm._v(
-                '\n<template>\n  <div class="vx-row mb-6">\n    <div class="vx-col sm:w-1/3 w-full">\n      <span>First Name</span>\n    </div>\n    <div class="vx-col sm:w-2/3 w-full">\n      <vs-input class="w-full" icon-pack="feather" icon="icon-user" icon-no-border v-model="input5" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col sm:w-1/3 w-full">\n      <span>Email</span>\n    </div>\n    <div class="vx-col sm:w-2/3 w-full">\n      <vs-input type="email" class="w-full" icon-pack="feather" icon="icon-mail" icon-no-border v-model="input6" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col sm:w-1/3 w-full">\n      <span>Mobile</span>\n    </div>\n    <div class="vx-col sm:w-2/3 w-full">\n      <vs-input class="w-full" icon-pack="feather" icon="icon-smartphone" icon-no-border v-model="input7" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col sm:w-1/3 w-full">\n      <span>Password</span>\n    </div>\n    <div class="vx-col sm:w-2/3 w-full">\n      <vs-input type="password" class="w-full" icon-pack="feather" icon="icon-lock" icon-no-border v-model="input8" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col sm:w-2/3 w-full ml-auto">\n      <vs-checkbox class="inline-flex" v-model="check2">Remember Me</vs-checkbox>\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col sm:w-2/3 w-full ml-auto">\n      <vs-button class="mr-3 mb-2">Submit</vs-button>\n      <vs-button color="warning" type="border" class="mb-2" @click="input5 = input6 = input7 = input8 = \'\'; check2 = false;">Reset</vs-button>\n    </div>\n  </div>\n</template>\n        '
-              )
-            ])
-          ],
-          2
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vx-col md:w-1/2 w-full mb-base" },
-      [
-        _c(
-          "vx-card",
-          { attrs: { title: "Vertical Form", "code-toggler": "" } },
-          [
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { label: "First Name" },
-                    model: {
-                      value: _vm.input9,
-                      callback: function($$v) {
-                        _vm.input9 = $$v
-                      },
-                      expression: "input9"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { type: "email", label: "Email" },
-                    model: {
-                      value: _vm.input10,
-                      callback: function($$v) {
-                        _vm.input10 = $$v
-                      },
-                      expression: "input10"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { label: "Mobile" },
-                    model: {
-                      value: _vm.input11,
-                      callback: function($$v) {
-                        _vm.input11 = $$v
-                      },
-                      expression: "input11"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { type: "password", label: "Password" },
-                    model: {
-                      value: _vm.input12,
-                      callback: function($$v) {
-                        _vm.input12 = $$v
-                      },
-                      expression: "input12"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c(
-                    "vs-checkbox",
-                    {
-                      staticClass: "inline-flex",
-                      model: {
-                        value: _vm.check3,
-                        callback: function($$v) {
-                          _vm.check3 = $$v
-                        },
-                        expression: "check3"
-                      }
-                    },
-                    [_vm._v("Remember Me")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-button", { staticClass: "mr-3 mb-2" }, [
-                    _vm._v("Submit")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "mb-2",
-                      attrs: { color: "warning", type: "border" },
-                      on: {
-                        click: function($event) {
-                          _vm.input9 = _vm.input10 = _vm.input11 = _vm.input12 =
-                            ""
-                          _vm.check3 = false
-                        }
-                      }
-                    },
-                    [_vm._v("Reset")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("template", { slot: "codeContainer" }, [
-              _vm._v(
-                '\n<template>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" label="First Name" v-model="input9" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" type="email" label="Email" v-model="input10" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" label="Mobile" v-model="input11" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" type="password" label="Password" v-model="input12" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-checkbox class="inline-flex" v-model="check3">Remember Me</vs-checkbox>\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col w-full">\n      <vs-button class="mr-3 mb-2">Submit</vs-button>\n      <vs-button color="warning" type="border" class="mb-2" @click="input9 = input10 = input11 = input12 = \'\'; check3 = false;">Reset</vs-button>\n    </div>\n  </div>\n</template>\n        '
-              )
-            ])
-          ],
-          2
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vx-col md:w-1/2 w-full mb-base" },
-      [
-        _c(
-          "vx-card",
-          { attrs: { title: "Vertical Form", "code-toggler": "" } },
-          [
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      "icon-pack": "feather",
-                      icon: "icon-user",
-                      "icon-no-border": "",
-                      label: "First Name"
-                    },
-                    model: {
-                      value: _vm.input13,
-                      callback: function($$v) {
-                        _vm.input13 = $$v
-                      },
-                      expression: "input13"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      type: "email",
-                      "icon-pack": "feather",
-                      icon: "icon-mail",
-                      "icon-no-border": "",
-                      label: "Email"
-                    },
-                    model: {
-                      value: _vm.input14,
-                      callback: function($$v) {
-                        _vm.input14 = $$v
-                      },
-                      expression: "input14"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      "icon-pack": "feather",
-                      icon: "icon-smartphone",
-                      "icon-no-border": "",
-                      label: "Mobile"
-                    },
-                    model: {
-                      value: _vm.input15,
-                      callback: function($$v) {
-                        _vm.input15 = $$v
-                      },
-                      expression: "input15"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      type: "password",
-                      "icon-pack": "feather",
-                      icon: "icon-lock",
-                      "icon-no-border": "",
-                      label: "Password"
-                    },
-                    model: {
-                      value: _vm.input16,
-                      callback: function($$v) {
-                        _vm.input16 = $$v
-                      },
-                      expression: "input16"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c(
-                    "vs-checkbox",
-                    {
-                      staticClass: "inline-flex",
-                      model: {
-                        value: _vm.check4,
-                        callback: function($$v) {
-                          _vm.check4 = $$v
-                        },
-                        expression: "check4"
-                      }
-                    },
-                    [_vm._v("Remember Me")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-button", { staticClass: "mr-3 mb-2" }, [
-                    _vm._v("Submit")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "mb-2",
-                      attrs: { color: "warning", type: "border" },
-                      on: {
-                        click: function($event) {
-                          _vm.input13 = _vm.input14 = _vm.input15 = _vm.input16 =
-                            ""
-                          _vm.check4 = false
-                        }
-                      }
-                    },
-                    [_vm._v("Cancle")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("template", { slot: "codeContainer" }, [
-              _vm._v(
-                '\n<template>\n    <div class="vx-row mb-6">\n      <div class="vx-col w-full">\n        <vs-input class="w-full" icon-pack="feather" icon="icon-user" icon-no-border label="First Name" v-model="input13" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col w-full">\n        <vs-input type="email" class="w-full" icon-pack="feather" icon="icon-mail" icon-no-border label="Email" v-model="input14" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col w-full">\n        <vs-input class="w-full" icon-pack="feather" icon="icon-smartphone" icon-no-border label="Mobile" v-model="input15" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col w-full">\n        <vs-input type="password" class="w-full" icon-pack="feather" icon="icon-lock" icon-no-border label="Password" v-model="input16" />\n      </div>\n    </div>\n    <div class="vx-row mb-6">\n      <div class="vx-col w-full">\n        <vs-checkbox class="inline-flex" v-model="check4">Remember Me</vs-checkbox>\n      </div>\n    </div>\n    <div class="vx-row">\n      <div class="vx-col w-full">\n        <vs-button class="mr-3 mb-2">Submit</vs-button>\n        <vs-button color="warning" type="border" class="mb-2" @click="input13 = input14 = input15 = input16 = \'\'; check4 = false;">Cancle</vs-button>\n      </div>\n    </div>\n</template>\n        '
-              )
-            ])
-          ],
-          2
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vx-col md:w-1/2 w-full mb-base" },
-      [
-        _c(
-          "vx-card",
-          {
-            attrs: { title: "Form With Label Placeholder", "code-toggler": "" }
-          },
-          [
-            _c("div", { staticClass: "vx-row mb-2" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { "label-placeholder": "First Name" },
-                    model: {
-                      value: _vm.input17,
-                      callback: function($$v) {
-                        _vm.input17 = $$v
-                      },
-                      expression: "input17"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-2" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { type: "email", "label-placeholder": "Email" },
-                    model: {
-                      value: _vm.input18,
-                      callback: function($$v) {
-                        _vm.input18 = $$v
-                      },
-                      expression: "input18"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-2" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { "label-placeholder": "Mobile" },
-                    model: {
-                      value: _vm.input19,
-                      callback: function($$v) {
-                        _vm.input19 = $$v
-                      },
-                      expression: "input19"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      type: "password",
-                      "label-placeholder": "Password"
-                    },
-                    model: {
-                      value: _vm.input20,
-                      callback: function($$v) {
-                        _vm.input20 = $$v
-                      },
-                      expression: "input20"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c(
-                    "vs-checkbox",
-                    {
-                      staticClass: "inline-flex",
-                      model: {
-                        value: _vm.check5,
-                        callback: function($$v) {
-                          _vm.check5 = $$v
-                        },
-                        expression: "check5"
-                      }
-                    },
-                    [_vm._v("Remember Me")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-button", { staticClass: "mr-3 mb-2" }, [
-                    _vm._v("Submit")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "mb-2",
-                      attrs: { color: "warning", type: "border" },
-                      on: {
-                        click: function($event) {
-                          _vm.input17 = _vm.input18 = _vm.input19 = _vm.input20 =
-                            ""
-                          _vm.check5 = false
-                        }
-                      }
-                    },
-                    [_vm._v("Cancle")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("template", { slot: "codeContainer" }, [
-              _vm._v(
-                '\n<template>\n  <div class="vx-row mb-2">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" label-placeholder="First Name" v-model="input17" />\n    </div>\n  </div>\n  <div class="vx-row mb-2">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" type="email" label-placeholder="Email" v-model="input18" />\n    </div>\n  </div>\n  <div class="vx-row mb-2">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" label-placeholder="Mobile" v-model="input19" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" type="password" label-placeholder="Password" v-model="input20" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-checkbox class="inline-flex" v-model="check5">Remember Me</vs-checkbox>\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col w-full">\n      <vs-button class="mr-3 mb-2">Submit</vs-button>\n      <vs-button color="warning" type="border" class="mb-2" @click="input17 = input18 = input19 = input20 = \'\'; check5 = false;">Cancle</vs-button>\n    </div>\n  </div>\n</template>\n        '
-              )
-            ])
-          ],
-          2
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vx-col md:w-1/2 w-full mb-base" },
-      [
-        _c(
-          "vx-card",
-          {
-            attrs: { title: "Form With Label Placeholder", "code-toggler": "" }
-          },
-          [
-            _c("div", { staticClass: "vx-row mb-2" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      "icon-pack": "feather",
-                      icon: "icon-user",
-                      "icon-no-border": "",
-                      "label-placeholder": "First Name"
-                    },
-                    model: {
-                      value: _vm.input21,
-                      callback: function($$v) {
-                        _vm.input21 = $$v
-                      },
-                      expression: "input21"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-2" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      type: "email",
-                      "icon-pack": "feather",
-                      icon: "icon-mail",
-                      "icon-no-border": "",
-                      "label-placeholder": "Email"
-                    },
-                    model: {
-                      value: _vm.input22,
-                      callback: function($$v) {
-                        _vm.input22 = $$v
-                      },
-                      expression: "input22"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-2" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      "icon-pack": "feather",
-                      icon: "icon-smartphone",
-                      "icon-no-border": "",
-                      "label-placeholder": "Mobile"
-                    },
-                    model: {
-                      value: _vm.input23,
-                      callback: function($$v) {
-                        _vm.input23 = $$v
-                      },
-                      expression: "input23"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: {
-                      type: "password",
-                      "icon-pack": "feather",
-                      icon: "icon-lock",
-                      "icon-no-border": "",
-                      "label-placeholder": "Password"
-                    },
-                    model: {
-                      value: _vm.input24,
-                      callback: function($$v) {
-                        _vm.input24 = $$v
-                      },
-                      expression: "input24"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row mb-6" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c(
-                    "vs-checkbox",
-                    {
-                      staticClass: "inline-flex",
-                      model: {
-                        value: _vm.check6,
-                        callback: function($$v) {
-                          _vm.check6 = $$v
-                        },
-                        expression: "check6"
-                      }
-                    },
-                    [_vm._v("Remember Me")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-button", { staticClass: "mr-3 mb-2" }, [
-                    _vm._v("Submit")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "mb-2",
-                      attrs: { color: "warning", type: "border" },
-                      on: {
-                        click: function($event) {
-                          _vm.input21 = _vm.input22 = _vm.input23 = _vm.input24 =
-                            ""
-                          _vm.check6 = false
-                        }
-                      }
-                    },
-                    [_vm._v("Reset")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("template", { slot: "codeContainer" }, [
-              _vm._v(
-                '\n<template>\n  <div class="vx-row mb-2">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" icon-pack="feather" icon="icon-user" icon-no-border label-placeholder="First Name" v-model="input21" />\n    </div>\n  </div>\n  <div class="vx-row mb-2">\n    <div class="vx-col w-full">\n      <vs-input type="email" class="w-full" icon-pack="feather" icon="icon-mail" icon-no-border label-placeholder="Email" v-model="input22" />\n    </div>\n  </div>\n  <div class="vx-row mb-2">\n    <div class="vx-col w-full">\n      <vs-input class="w-full" icon-pack="feather" icon="icon-smartphone" icon-no-border label-placeholder="Mobile" v-model="input23" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-input type="password" class="w-full" icon-pack="feather" icon="icon-lock" icon-no-border label-placeholder="Password" v-model="input24" />\n    </div>\n  </div>\n  <div class="vx-row mb-6">\n    <div class="vx-col w-full">\n      <vs-checkbox class="inline-flex" v-model="check6">Remember Me</vs-checkbox>\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col w-full">\n      <vs-button class="mr-3 mb-2">Submit</vs-button>\n      <vs-button color="warning" type="border" class="mb-2" @click="input21 = input22 = input23 = input24 = \'\'; check6 = false;">Reset</vs-button>\n    </div>\n  </div>\n</template>\n        '
-              )
-            ])
-          ],
-          2
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vx-col w-full mb-base" },
-      [
-        _c(
-          "vx-card",
-          { attrs: { title: "Multiple Columns", "code-toggler": "" } },
-          [
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-1/2 w-full mb-2" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { "label-placeholder": "First Name" },
-                    model: {
-                      value: _vm.input25,
-                      callback: function($$v) {
-                        _vm.input25 = $$v
-                      },
-                      expression: "input25"
+                    on: {
+                      "current-rating": _vm.showCurrentRating,
+                      "rating-selected": _vm.setCurrentSelectedRating
                     }
                   })
                 ],
                 1
               ),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-1/2 w-full mb-2" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { "label-placeholder": "Last Name" },
-                    model: {
-                      value: _vm.input26,
-                      callback: function($$v) {
-                        _vm.input26 = $$v
-                      },
-                      expression: "input26"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-1/2 w-full mb-2" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { "label-placeholder": "City" },
-                    model: {
-                      value: _vm.input27,
-                      callback: function($$v) {
-                        _vm.input27 = $$v
-                      },
-                      expression: "input27"
-                    }
-                  })
-                ],
-                1
-              ),
+              _c("div", { staticClass: "font-semibold" }, [
+                _vm._v(_vm._s(_vm.currentRating))
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-1/2 w-full mb-2" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { "label-placeholder": "Country" },
-                    model: {
-                      value: _vm.input28,
-                      callback: function($$v) {
-                        _vm.input28 = $$v
-                      },
-                      expression: "input28"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-1/2 w-full mb-2" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { "label-placeholder": "Company" },
-                    model: {
-                      value: _vm.input29,
-                      callback: function($$v) {
-                        _vm.input29 = $$v
-                      },
-                      expression: "input29"
-                    }
-                  })
-                ],
-                1
-              ),
+              _c("h6", { staticClass: "mt-5" }, [
+                _vm._v("Resetable stars with v-model (Vue 2.2+)")
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-col sm:w-1/2 w-full mb-6" },
-                [
-                  _c("vs-input", {
-                    staticClass: "w-full",
-                    attrs: { type: "email", "label-placeholder": "Email" },
-                    model: {
-                      value: _vm.input30,
-                      callback: function($$v) {
-                        _vm.input30 = $$v
-                      },
-                      expression: "input30"
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl },
+                model: {
+                  value: _vm.boundRating,
+                  callback: function($$v) {
+                    _vm.boundRating = $$v
+                  },
+                  expression: "boundRating"
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "font-semibold" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "cursor-pointer",
+                    on: {
+                      click: function($event) {
+                        _vm.boundRating = 0
+                      }
                     }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full mb-6" },
-                [
-                  _c(
-                    "vs-checkbox",
-                    {
-                      staticClass: "inline-flex",
-                      model: {
-                        value: _vm.check7,
-                        callback: function($$v) {
-                          _vm.check7 = $$v
-                        },
-                        expression: "check7"
-                      }
-                    },
-                    [_vm._v("Remember Me")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vx-row" }, [
-              _c(
-                "div",
-                { staticClass: "vx-col w-full" },
-                [
-                  _c("vs-button", { staticClass: "mr-3 mb-2" }, [
-                    _vm._v("Submit")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "mb-2",
-                      attrs: { color: "warning", type: "border" },
-                      on: {
-                        click: function($event) {
-                          _vm.input25 = _vm.input26 = _vm.input27 = _vm.input28 = _vm.input29 = _vm.input30 =
-                            ""
-                          _vm.check7 = false
-                        }
-                      }
-                    },
-                    [_vm._v("Reset")]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("template", { slot: "codeContainer" }, [
-              _vm._v(
-                '\n<template>\n  <div class="vx-row">\n    <div class="vx-col sm:w-1/2 w-full mb-2">\n      <vs-input class="w-full" label-placeholder="First Name" v-model="input25" />\n    </div>\n    <div class="vx-col sm:w-1/2 w-full mb-2">\n      <vs-input class="w-full" label-placeholder="Last Name" v-model="input26" />\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col sm:w-1/2 w-full mb-2">\n      <vs-input class="w-full" label-placeholder="City" v-model="input27" />\n    </div>\n    <div class="vx-col sm:w-1/2 w-full mb-2">\n      <vs-input class="w-full" label-placeholder="Country" v-model="input28" />\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col sm:w-1/2 w-full mb-2">\n      <vs-input class="w-full" label-placeholder="Company" v-model="input29" />\n    </div>\n    <div class="vx-col sm:w-1/2 w-full mb-6">\n      <vs-input type="email" class="w-full" label-placeholder="Email" v-model="input30" />\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col w-full mb-6">\n      <vs-checkbox class="inline-flex" v-model="check7">Remember Me</vs-checkbox>\n    </div>\n  </div>\n  <div class="vx-row">\n    <div class="vx-col w-full">\n      <vs-button class="mr-3 mb-2">Submit</vs-button>\n      <vs-button color="warning" type="border" class="mb-2" @click="input25 = input26 = input27 = input28 = input29 = input30 = \'\'; check7 = false;">Reset</vs-button>\n    </div>\n  </div>\n</template>\n        '
-              )
-            ])
-          ],
-          2
-        )
-      ],
-      1
-    )
+                  },
+                  [_vm._v("Reset Rating")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Hide Rating")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, "show-rating": false }
+              }),
+              _vm._v(" "),
+              _c("template", { slot: "codeContainer" }, [
+                _vm._v(
+                  '\n<template>\n  <!-- CAPTURE RATING -->\n  <h6>Capture Rating</h6>\n  <star-rating :rtl="$vs.rtl" :show-rating="false" @rating-selected="setRating"></star-rating>\n  <div class="font-semibold">' +
+                    _vm._s(_vm.rating) +
+                    '</div>\n\n  <!-- CAPTURE ON HOVER -->\n  <h6 class="mt-5">Capture Mouse Over Rating</h6>\n  <div @mouseleave="showCurrentRating(0)" style="display:inline-block;">\n    <star-rating :rtl="$vs.rtl" :show-rating="false" @current-rating="showCurrentRating" @rating-selected="setCurrentSelectedRating" :increment="0.5"></star-rating>\n  </div>\n  <div class="font-semibold">' +
+                    _vm._s(_vm.currentRating) +
+                    '</div>\n\n  <!-- RESET WTIH V-MODEL -->\n  <h6 class="mt-5">Resetable stars with v-model (Vue 2.2+)</h6>\n  <star-rating :rtl="$vs.rtl" v-model="boundRating"></star-rating>\n  <div class="font-semibold"><a @click="boundRating = 0;" class="cursor-pointer">Reset Rating</a></div>\n\n  <!-- HIDE RATIG -->\n  <h6 class="mt-5">Hide Rating</h6>\n  <star-rating :rtl="$vs.rtl" :show-rating="false"></star-rating>\n</template>\n\n<script>\nimport StarRating from \'vue-star-rating\'\n\nexport default {\n  methods: {\n    setRating: function(rating) {\n      this.rating = "You have Selected: " + rating + " stars";\n    },\n    showCurrentRating: function(rating) {\n      this.currentRating = (rating === 0) ? this.currentSelectedRating : "Click to select " + rating + " stars"\n    },\n    setCurrentSelectedRating: function(rating) {\n      this.currentSelectedRating = "You have Selected: " + rating + " stars";\n    }\n  },\n  data(){\n    return {\n      rating: "No Rating Selected",\n      currentRating: "No Rating",\n      currentSelectedRating: "No Current Rating",\n      boundRating: 3,\n    }\n  },\n  components: {\n    StarRating\n  }\n}\n</script>\n            '
+                )
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "vx-col w-full lg:w-1/2 mb-base" },
+        [
+          _c(
+            "vx-card",
+            {
+              staticClass: "overflow-auto",
+              attrs: { title: "Other useful options", "code-toggler": "" }
+            },
+            [
+              _c("h6", [_vm._v("Non rounded start rating")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: {
+                  rtl: _vm.$vs.rtl,
+                  rating: 4.67,
+                  "round-start-rating": false
+                }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Read Only Stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: {
+                  rtl: _vm.$vs.rtl,
+                  rating: 3.8,
+                  "read-only": true,
+                  increment: 0.01
+                }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Lots of stars")]),
+              _vm._v(" "),
+              _c("star-rating", {
+                attrs: { rtl: _vm.$vs.rtl, "max-rating": 10, "star-size": 20 }
+              }),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("Inline Stars")]),
+              _vm._v(" Rated\n            "),
+              _c("star-rating", {
+                attrs: {
+                  rtl: _vm.$vs.rtl,
+                  inline: true,
+                  "star-size": 20,
+                  "read-only": true,
+                  "show-rating": false,
+                  rating: 5
+                }
+              }),
+              _vm._v(" by our customers.\n\n            "),
+              _vm._v(" "),
+              _c("h6", { staticClass: "mt-5" }, [_vm._v("RTL Stars")]),
+              _vm._v(" "),
+              _c("star-rating", { attrs: { rtl: true, increment: 0.5 } }),
+              _vm._v(" "),
+              _c("template", { slot: "codeContainer" }, [
+                _vm._v(
+                  '\n<template>\n  <!-- NON ROUNDED -->\n  <h6>Non rounded start rating</h6>\n  <star-rating :rtl="$vs.rtl" :rating="4.67" :round-start-rating="false"></star-rating>\n\n  <!-- READ ONLY -->\n  <h6 class="mt-5">Read Only Stars</h6>\n  <star-rating :rtl="$vs.rtl" :rating="3.8" :read-only="true" :increment="0.01"></star-rating>\n\n  <!-- LOTS OF STARS -->\n  <h6 class="mt-5">Lots of stars</h6>\n  <star-rating :rtl="$vs.rtl" :max-rating="10" :star-size="20"></star-rating>\n\n  <!-- INLINE -->\n  <h6 class="mt-5">Inline Stars</h6> Rated\n  <star-rating :rtl="$vs.rtl" :inline="true" :star-size="20" :read-only="true" :show-rating="false" :rating="5"></star-rating> by our customers.\n\n  <!-- RTL -->\n  <h6 class="mt-5">RTL Stars</h6>\n  <star-rating :rtl="true" :increment="0.5"></star-rating>\n</template>\n\n<script>\nimport StarRating from \'vue-star-rating\'\n\nexport default {\n  components: {\n    StarRating\n  }\n}\n</script>\n            '
+                )
+              ])
+            ],
+            2
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -1887,18 +767,18 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/FormLayouts.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/src/views/forms/FormLayouts.vue ***!
-  \******************************************************/
+/***/ "./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue ***!
+  \*****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormLayouts_vue_vue_type_template_id_0e9d2f0b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormLayouts.vue?vue&type=template&id=0e9d2f0b& */ "./resources/js/src/views/forms/FormLayouts.vue?vue&type=template&id=0e9d2f0b&");
-/* harmony import */ var _FormLayouts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormLayouts.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/FormLayouts.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _StarRatings_vue_vue_type_template_id_0614a406___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StarRatings.vue?vue&type=template&id=0614a406& */ "./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=template&id=0614a406&");
+/* harmony import */ var _StarRatings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StarRatings.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -1907,9 +787,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormLayouts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormLayouts_vue_vue_type_template_id_0e9d2f0b___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormLayouts_vue_vue_type_template_id_0e9d2f0b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _StarRatings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _StarRatings_vue_vue_type_template_id_0614a406___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _StarRatings_vue_vue_type_template_id_0614a406___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1919,38 +799,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/forms/FormLayouts.vue"
+component.options.__file = "resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/FormLayouts.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/src/views/forms/FormLayouts.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
+/***/ "./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormLayouts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormLayouts.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/FormLayouts.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormLayouts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRatings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StarRatings.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRatings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/FormLayouts.vue?vue&type=template&id=0e9d2f0b&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/FormLayouts.vue?vue&type=template&id=0e9d2f0b& ***!
-  \*************************************************************************************/
+/***/ "./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=template&id=0614a406&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=template&id=0614a406& ***!
+  \************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormLayouts_vue_vue_type_template_id_0e9d2f0b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormLayouts.vue?vue&type=template&id=0e9d2f0b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/FormLayouts.vue?vue&type=template&id=0e9d2f0b&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormLayouts_vue_vue_type_template_id_0e9d2f0b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRatings_vue_vue_type_template_id_0614a406___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StarRatings.vue?vue&type=template&id=0614a406& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/star-ratings/StarRatings.vue?vue&type=template&id=0614a406&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRatings_vue_vue_type_template_id_0614a406___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormLayouts_vue_vue_type_template_id_0e9d2f0b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRatings_vue_vue_type_template_id_0614a406___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

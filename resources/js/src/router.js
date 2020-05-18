@@ -107,6 +107,20 @@ const router = new Router({
           }
         },
         {
+          path: '/apps/goals',
+          redirect: '/apps/goals/all',
+          name: 'goals'
+        },
+        {
+          path: '/apps/goals/:filter',
+          component: () => import('./views/apps/goals/Goal.vue'),
+          meta: {
+            rule: 'editor',
+            parent: 'goals',
+            no_scroll: true
+          }
+        },
+        {
           path: '/apps/calendar/vue-simple-calendar',
           name: 'calendar-simple-calendar',
           component: () => import('./views/apps/calendar/SimpleCalendar.vue'),

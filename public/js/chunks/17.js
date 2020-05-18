@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Sortable", function() { return Sortable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Swap", function() { return SwapPlugin; });
 /**!
- * Sortable 1.10.0
+ * Sortable 1.10.2
  * @author	RubaXa   <trash@rubaxa.org>
  * @author	owenm    <owen23355@gmail.com>
  * @license MIT
@@ -140,12 +140,14 @@ function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 
-var version = "1.10.0";
+var version = "1.10.2";
 
 function userAgent(pattern) {
-  return !!
-  /*@__PURE__*/
-  navigator.userAgent.match(pattern);
+  if (typeof window !== 'undefined' && window.navigator) {
+    return !!
+    /*@__PURE__*/
+    navigator.userAgent.match(pattern);
+  }
 }
 
 var IE11OrLess = userAgent(/(?:Trident.*rv[ :]?11\.|msie|iemobile|Windows Phone)/i);
@@ -272,7 +274,7 @@ function matrix(el, selfOnly) {
     } while (!selfOnly && (el = el.parentNode));
   }
 
-  var matrixFn = window.DOMMatrix || window.WebKitCSSMatrix || window.CSSMatrix;
+  var matrixFn = window.DOMMatrix || window.WebKitCSSMatrix || window.CSSMatrix || window.MSCSSMatrix;
   /*jshint -W056 */
 
   return matrixFn && new matrixFn(appliedTransforms);
@@ -297,10 +299,12 @@ function find(ctx, tagName, iterator) {
 }
 
 function getWindowScrollingElement() {
-  if (IE11OrLess) {
-    return document.documentElement;
+  var scrollingElement = document.scrollingElement;
+
+  if (scrollingElement) {
+    return scrollingElement;
   } else {
-    return document.scrollingElement;
+    return document.documentElement;
   }
 }
 /**
@@ -980,10 +984,6 @@ function _dispatchEvent(info) {
   }, info));
 }
 
-if (typeof window === "undefined" || !window.document) {
-  throw new Error("Sortable.js requires a window with a document");
-}
-
 var dragEl,
     parentEl,
     ghostEl,
@@ -1021,12 +1021,14 @@ _silent = false,
     savedInputChecked = [];
 /** @const */
 
-var PositionGhostAbsolutely = IOS,
+var documentExists = typeof document !== 'undefined',
+    PositionGhostAbsolutely = IOS,
     CSSFloatProperty = Edge || IE11OrLess ? 'cssFloat' : 'float',
     // This will not pass for IE9, because IE9 DnD only works on anchors
-supportDraggable = !ChromeForAndroid && !IOS && 'draggable' in document.createElement('div'),
+supportDraggable = documentExists && !ChromeForAndroid && !IOS && 'draggable' in document.createElement('div'),
     supportCssPointerEvents = function () {
-  // false when <= IE11
+  if (!documentExists) return; // false when <= IE11
+
   if (IE11OrLess) {
     return false;
   }
@@ -1140,15 +1142,17 @@ _detectNearestEmptySortable = function _detectNearestEmptySortable(x, y) {
 }; // #1184 fix - Prevent click event on fallback if dragged but item not changed position
 
 
-document.addEventListener('click', function (evt) {
-  if (ignoreNextClick) {
-    evt.preventDefault();
-    evt.stopPropagation && evt.stopPropagation();
-    evt.stopImmediatePropagation && evt.stopImmediatePropagation();
-    ignoreNextClick = false;
-    return false;
-  }
-}, true);
+if (documentExists) {
+  document.addEventListener('click', function (evt) {
+    if (ignoreNextClick) {
+      evt.preventDefault();
+      evt.stopPropagation && evt.stopPropagation();
+      evt.stopImmediatePropagation && evt.stopImmediatePropagation();
+      ignoreNextClick = false;
+      return false;
+    }
+  }, true);
+}
 
 var nearestEmptyInsertDetectEvent = function nearestEmptyInsertDetectEvent(evt) {
   if (dragEl) {
@@ -1637,7 +1641,7 @@ Sortable.prototype =
           fallbackTolerance = options.fallbackTolerance,
           fallbackOffset = options.fallbackOffset,
           touch = evt.touches ? evt.touches[0] : evt,
-          ghostMatrix = ghostEl && matrix(ghostEl),
+          ghostMatrix = ghostEl && matrix(ghostEl, true),
           scaleX = ghostEl && ghostMatrix && ghostMatrix.a,
           scaleY = ghostEl && ghostMatrix && ghostMatrix.d,
           relativeScrollOffset = PositionGhostAbsolutely && ghostRelativeParent && getRelativeScrollOffset(ghostRelativeParent),
@@ -2142,6 +2146,8 @@ Sortable.prototype =
       css(document.body, 'user-select', '');
     }
 
+    css(dragEl, 'transform', '');
+
     if (evt) {
       if (moved) {
         evt.cancelable && evt.preventDefault();
@@ -2406,6 +2412,8 @@ Sortable.prototype =
 
     this._onDrop();
 
+    this._disableDelayedDragEvents();
+
     sortables.splice(sortables.indexOf(this.el), 1);
     this.el = el = null;
   },
@@ -2608,11 +2616,14 @@ function _cancelNextTick(id) {
 } // Fixed #973:
 
 
-on(document, 'touchmove', function (evt) {
-  if ((Sortable.active || awaitingDragStarted) && evt.cancelable) {
-    evt.preventDefault();
-  }
-}); // Export utils
+if (documentExists) {
+  on(document, 'touchmove', function (evt) {
+    if ((Sortable.active || awaitingDragStarted) && evt.cancelable) {
+      evt.preventDefault();
+    }
+  });
+} // Export utils
+
 
 Sortable.utils = {
   on: on,
@@ -2914,6 +2925,7 @@ var drop = function drop(_ref) {
       dispatchSortableEvent = _ref.dispatchSortableEvent,
       hideGhostForTarget = _ref.hideGhostForTarget,
       unhideGhostForTarget = _ref.unhideGhostForTarget;
+  if (!originalEvent) return;
   var toSortable = putSortable || activeSortable;
   hideGhostForTarget();
   var touch = originalEvent.changedTouches && originalEvent.changedTouches.length ? originalEvent.changedTouches[0] : originalEvent;
@@ -3542,7 +3554,7 @@ function MultiDragPlugin() {
       off(document, 'keyup', this._checkKeyUp);
     },
     _deselectMultiDrag: function _deselectMultiDrag(evt) {
-      if (dragStarted) return; // Only deselect if selection is in this sortable
+      if (typeof dragStarted !== "undefined" && dragStarted) return; // Only deselect if selection is in this sortable
 
       if (multiDragSortable !== this.sortable) return; // Only deselect if target is not item in this sortable
 
@@ -6420,10 +6432,15 @@ function _nonIterableSpread() {
 function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
 }
+// EXTERNAL MODULE: external {"commonjs":"sortablejs","commonjs2":"sortablejs","amd":"sortablejs","root":"Sortable"}
+var external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_ = __webpack_require__("a352");
+var external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_);
+
 // EXTERNAL MODULE: ./src/util/helper.js
 var helper = __webpack_require__("c649");
 
 // CONCATENATED MODULE: ./src/vuedraggable.js
+
 
 
 
@@ -6678,10 +6695,7 @@ var draggableComponent = {
     });
 
     !("draggable" in options) && (options.draggable = ">*");
-
-    var Sortable = __webpack_require__("a352").default;
-
-    this._sortable = new Sortable(this.rootContainer, options);
+    this._sortable = new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_default.a(this.rootContainer, options);
     this.computeIndexes();
   },
   beforeDestroy: function beforeDestroy() {

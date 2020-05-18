@@ -1,19 +1,29 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[48],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormInputGroupBasic_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormInputGroupBasic.vue */ "./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue");
-/* harmony import */ var _FormInputGroupSizing_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormInputGroupSizing.vue */ "./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue");
-/* harmony import */ var _FormInputGroupFormElements_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormInputGroupFormElements.vue */ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue");
-/* harmony import */ var _FormInputGroupMultipleAddons_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormInputGroupMultipleAddons.vue */ "./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue");
-/* harmony import */ var _FormInputGroupButtonAddons_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormInputGroupButtonAddons.vue */ "./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue");
+/* harmony import */ var _SwitchState_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SwitchState.vue */ "./resources/js/src/views/forms/form-elements/switch/SwitchState.vue");
+/* harmony import */ var _SwitchColor_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SwitchColor.vue */ "./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue");
+/* harmony import */ var _SwitchText_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SwitchText.vue */ "./resources/js/src/views/forms/form-elements/switch/SwitchText.vue");
+/* harmony import */ var _SwitchIcons_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SwitchIcons.vue */ "./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue");
+/* harmony import */ var _SwitchArrayValue_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SwitchArrayValue.vue */ "./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -31,606 +41,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    FormInputGroupBasic: _FormInputGroupBasic_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    FormInputGroupSizing: _FormInputGroupSizing_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    FormInputGroupFormElements: _FormInputGroupFormElements_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    FormInputGroupButtonAddons: _FormInputGroupButtonAddons_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    FormInputGroupMultipleAddons: _FormInputGroupMultipleAddons_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    SwitchState: _SwitchState_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SwitchColor: _SwitchColor_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    SwitchText: _SwitchText_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    SwitchIcons: _SwitchIcons_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    SwitchArrayValue: _SwitchArrayValue_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      title: '',
-      username: '',
-      siteUsername: '',
-      amount: '',
-      textarea: ''
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      input1: '',
-      input2: '',
-      input3: '',
-      input4: ''
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      checkbox1: false,
-      radios1: null,
-      switch1: false,
-      input1: '',
-      input2: '',
-      input3: ''
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      title1: '',
-      title2: ''
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -722,6 +145,110 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      switchArray: ['luis']
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -738,43 +265,374 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      input1: '',
-      input2: '',
-      input3: ''
+      color: '#5a3cc4',
+      switch1: true,
+      switch2: true,
+      switch3: true,
+      switch4: true,
+      switch5: true,
+      switch6: true
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      switch1: false,
+      switch2: false,
+      switch3: false,
+      switch4: false,
+      switch5: false,
+      switch6: false
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      switch1: true,
+      switch2: false,
+      switch3: true,
+      switch4: false
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      switch1: true,
+      switch2: true,
+      switch3: true,
+      switch4: true,
+      switch5: true
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "[dir] .vx-input-group.form-element-demo .vx-input-group-prepend.form-element-border {\n  border-color: rgba(0, 0, 0, 0.25);\n}\n[dir] .theme-dark .vx-input-group.form-element-demo .vx-input-group-prepend.form-element-border {\n  border-color: rgba(255, 255, 255, 0.25);\n}\n[dir] .theme-dark .vx-input-group.form-element-demo .vs-inputx {\n  border-color: rgba(255, 255, 255, 0.25) !important;\n}", ""]);
+exports.push([module.i, "/*=========================================================================================\n    File Name: switch.scss\n    Description: Switch page styles\n    ----------------------------------------------------------------------------------------\n    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template\n      Author: Pixinvent\n    Author URL: http://www.themeforest.net/user/pixinvent\n==========================================================================================*/\n[dir=ltr] .demo-alignment li {\n  margin-right: 2rem;\n}\n[dir=rtl] .demo-alignment li {\n  margin-left: 2rem;\n}\n[dir] .demo-alignment .vs-switch {\n  margin-top: 0.5rem;\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Switch.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -788,7 +646,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -796,10 +654,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=template&id=4f6a7b8a&":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=template&id=4f6a7b8a& ***!
-  \***************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=template&id=484aef26&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=template&id=484aef26& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -813,17 +671,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "input-group-demo" } },
+    { attrs: { id: "form-element-switch-demo" } },
     [
-      _c("form-input-group-basic"),
+      _c("switch-state"),
       _vm._v(" "),
-      _c("form-input-group-sizing"),
+      _c("switch-color"),
       _vm._v(" "),
-      _c("form-input-group-form-elements"),
+      _c("switch-text"),
       _vm._v(" "),
-      _c("form-input-group-multiple-addons"),
+      _c("switch-icons"),
       _vm._v(" "),
-      _c("form-input-group-button-addons")
+      _c("switch-array-value")
     ],
     1
   )
@@ -835,617 +693,9 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=template&id=2d85c43a&":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=template&id=2d85c43a& ***!
-  \********************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Basic", "code-toggler": "" } },
-    [
-      _c("div", { staticClass: "mb-base" }, [
-        _c("p", [
-          _c("code", [_vm._v("vx-input-group")]),
-          _vm._v(
-            " component provides various options to create desired form input group."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("@")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            attrs: { placeholder: "Email" },
-            model: {
-              value: _vm.title,
-              callback: function($$v) {
-                _vm.title = $$v
-              },
-              expression: "title"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("vs-input", {
-            attrs: { placeholder: "Username" },
-            model: {
-              value: _vm.username,
-              callback: function($$v) {
-                _vm.username = $$v
-              },
-              expression: "username"
-            }
-          }),
-          _vm._v(" "),
-          _c("template", { slot: "append" }, [
-            _c("div", { staticClass: "append-text bg-primary" }, [
-              _c("span", [_vm._v("@url.com")])
-            ])
-          ])
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("https://pixinvent.com/users/")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.siteUsername,
-              callback: function($$v) {
-                _vm.siteUsername = $$v
-              },
-              expression: "siteUsername"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("$")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.amount,
-              callback: function($$v) {
-                _vm.amount = $$v
-              },
-              expression: "amount"
-            }
-          }),
-          _vm._v(" "),
-          _c("template", { slot: "append" }, [
-            _c("div", { staticClass: "append-text bg-primary" }, [
-              _c("span", [_vm._v(".00")])
-            ])
-          ])
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("Description")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-textarea", {
-            model: {
-              value: _vm.textarea,
-              callback: function($$v) {
-                _vm.textarea = $$v
-              },
-              expression: "textarea"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<tempalte>\n  <!-- TITLE -->\n  <vx-input-group class="mb-base">\n    <template slot="prepend">\n      <div class="prepend-text bg-primary">\n        <span>@</span>\n      </div>\n    </template>\n\n    <vs-input v-model="title" placeholder="Email" />\n  </vx-input-group>\n  <!-- /TITLE -->\n\n  <!-- URL -->\n  <vx-input-group class="mb-base">\n    <vs-input v-model="username" placeholder="Username" />\n\n    <template slot="append">\n      <div class="append-text bg-primary">\n        <span>@url.com</span>\n      </div>\n    </template>\n  </vx-input-group>\n  <!-- /URL -->\n\n  <!-- USERNAME -->\n  <vx-input-group class="mb-base">\n    <template slot="prepend">\n      <div class="prepend-text bg-primary">\n        <span>https://pixinvent.com/users/</span>\n      </div>\n    </template>\n\n    <vs-input v-model="siteUsername" />\n  </vx-input-group>\n  <!-- /USERNAME -->\n\n  <!-- currency -->\n  <vx-input-group class="mb-base">\n    <template slot="prepend">\n      <div class="prepend-text bg-primary">\n        <span>$</span>\n      </div>\n    </template>\n\n    <vs-input v-model="amount" />\n\n    <template slot="append">\n      <div class="append-text bg-primary">\n        <span>.00</span>\n      </div>\n    </template>\n  </vx-input-group>\n  <!-- /currency -->\n\n  <!-- Textarea -->\n  <vx-input-group>\n    <template slot="prepend">\n      <div class="prepend-text bg-primary">\n        <span>Description</span>\n      </div>\n    </template>\n\n    <vs-textarea v-model="textarea" />\n  </vx-input-group>\n  <!-- /Textarea -->\n</tempalte>\n\n<script>\nexport default {\n  data() {\n    return {\n      title: \'\',\n      username: \'\',\n      siteUsername: \'\',\n      amount: \'\',\n      textarea: \'\',\n    }\n  }\n}\n</script>\n    '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940&":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940& ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Button addons", "code-toggler": "" } },
-    [
-      _c("div", { staticClass: "mb-base" }, [
-        _c("span", [_vm._v("You can also use button as addons to your input")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c(
-              "div",
-              { staticClass: "prepend-text btn-addon" },
-              [
-                _c("vs-button", { attrs: { color: "primary" } }, [
-                  _vm._v("Button")
-                ])
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.input1,
-              callback: function($$v) {
-                _vm.input1 = $$v
-              },
-              expression: "input1"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("vs-input", {
-            model: {
-              value: _vm.input2,
-              callback: function($$v) {
-                _vm.input2 = $$v
-              },
-              expression: "input2"
-            }
-          }),
-          _vm._v(" "),
-          _c("template", { slot: "append" }, [
-            _c(
-              "div",
-              { staticClass: "append-text btn-addon" },
-              [
-                _c("vs-button", { attrs: { color: "primary" } }, [
-                  _vm._v("Button")
-                ])
-              ],
-              1
-            )
-          ])
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c(
-              "div",
-              { staticClass: "prepend-text btn-addon" },
-              [
-                _c(
-                  "vs-button",
-                  { attrs: { color: "primary", type: "border" } },
-                  [_vm._v("Button1")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "vs-button",
-                  { attrs: { color: "primary", type: "border" } },
-                  [_vm._v("Button2")]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.input3,
-              callback: function($$v) {
-                _vm.input3 = $$v
-              },
-              expression: "input3"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("vs-input", {
-            model: {
-              value: _vm.input4,
-              callback: function($$v) {
-                _vm.input4 = $$v
-              },
-              expression: "input4"
-            }
-          }),
-          _vm._v(" "),
-          _c("template", { slot: "append" }, [
-            _c(
-              "div",
-              { staticClass: "append-text btn-addon" },
-              [
-                _c(
-                  "vs-button",
-                  { attrs: { color: "primary", type: "border" } },
-                  [_vm._v("Button1")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "vs-button",
-                  { attrs: { color: "primary", type: "border" } },
-                  [_vm._v("Button2")]
-                )
-              ],
-              1
-            )
-          ])
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <div>\n    <!-- Basic -->\n    <vx-input-group class="mb-base">\n      <template slot="prepend">\n        <div class="prepend-text btn-addon">\n          <vs-button color="primary">Button</vs-button>\n        </div>\n      </template>\n\n      <vs-input v-model="input1" />\n    </vx-input-group>\n    <!-- /Basic -->\n\n    <!-- Append Button -->\n    <vx-input-group class="mb-base">\n      <vs-input v-model="input2" />\n\n      <template slot="append">\n        <div class="append-text btn-addon">\n          <vs-button color="primary">Button</vs-button>\n        </div>\n      </template>\n    </vx-input-group>\n    <!-- /Append Button -->\n\n    <!-- Prepend Two Buttons -->\n    <vx-input-group class="mb-base">\n      <template slot="prepend">\n        <div class="prepend-text btn-addon">\n          <vs-button color="primary" type="border">Button1</vs-button>\n          <vs-button color="primary" type="border">Button2</vs-button>\n        </div>\n      </template>\n\n      <vs-input v-model="input3" />\n    </vx-input-group>\n    <!-- /Prepend Two Buttons -->\n\n    <!-- Append Two Buttons -->\n    <vx-input-group class="mb-base">\n      <vs-input v-model="input4" />\n\n      <template slot="append">\n        <div class="append-text btn-addon">\n          <vs-button color="primary" type="border">Button1</vs-button>\n          <vs-button color="primary" type="border">Button2</vs-button>\n        </div>\n      </template>\n    </vx-input-group>\n    <!-- /Append Two Buttons -->\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      input1: \'\',\n      input2: \'\',\n      input3: \'\',\n      input4: \'\'\n    }\n  }\n}\n</script>\n    '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=template&id=64317236&":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=template&id=64317236& ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Form Elements", "code-toggler": "" } },
-    [
-      _c("div", { staticClass: "mb-base" }, [
-        _c("p", [
-          _vm._v(
-            "You can also add form elements to prepend/append slot. Using "
-          ),
-          _c("strong", [_vm._v("tailwind css")]),
-          _vm._v(", you can tune appearance as you like.")
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        {
-          staticClass: "mb-base form-element-demo",
-          attrs: {
-            prependClasses: "border border-solid form-element-border border-r-0"
-          }
-        },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c(
-              "div",
-              { staticClass: "prepend-text" },
-              [
-                _c("vs-checkbox", {
-                  model: {
-                    value: _vm.checkbox1,
-                    callback: function($$v) {
-                      _vm.checkbox1 = $$v
-                    },
-                    expression: "checkbox1"
-                  }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.input1,
-              callback: function($$v) {
-                _vm.input1 = $$v
-              },
-              expression: "input1"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        {
-          staticClass: "mb-base form-element-demo",
-          attrs: {
-            prependClasses: "border border-solid form-element-border border-r-0"
-          }
-        },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c(
-              "div",
-              { staticClass: "prepend-text" },
-              [
-                _c("vs-radio", {
-                  attrs: { "vs-value": "radio1" },
-                  model: {
-                    value: _vm.radios1,
-                    callback: function($$v) {
-                      _vm.radios1 = $$v
-                    },
-                    expression: "radios1"
-                  }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.input2,
-              callback: function($$v) {
-                _vm.input2 = $$v
-              },
-              expression: "input2"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        {
-          staticClass: "mb-base form-element-demo",
-          attrs: {
-            prependClasses: "border border-solid form-element-border border-r-0"
-          }
-        },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c(
-              "div",
-              { staticClass: "prepend-text" },
-              [
-                _c("vs-switch", {
-                  model: {
-                    value: _vm.switch1,
-                    callback: function($$v) {
-                      _vm.switch1 = $$v
-                    },
-                    expression: "switch1"
-                  }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.input3,
-              callback: function($$v) {
-                _vm.input3 = $$v
-              },
-              expression: "input3"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <!-- CHECKBOX -->\n  <vx-input-group class="mb-base" prependClasses="border border-solid border-grey border-r-0">\n    <template slot="prepend">\n      <div class="prepend-text">\n        <vs-checkbox v-model="checkbox1"></vs-checkbox>\n      </div>\n    </template>\n\n    <vs-input v-model="input1" />\n  </vx-input-group>\n  <!-- /CHECKBOX -->\n\n  <!-- RADIO -->\n  <vx-input-group class="mb-base" prependClasses="border border-solid border-grey border-r-0">\n    <template slot="prepend">\n      <div class="prepend-text">\n        <vs-radio v-model="radios1" vs-value="radio1"></vs-radio>\n      </div>\n    </template>\n\n    <vs-input v-model="input2" />\n  </vx-input-group>\n  <!-- /RADIO -->\n\n  <!-- SWITCH -->\n  <vx-input-group class="mb-base" prependClasses="border border-solid border-grey border-r-0">\n    <template slot="prepend">\n      <div class="prepend-text">\n        <vs-switch v-model="switch1" />\n      </div>\n    </template>\n\n    <vs-input v-model="input3" />\n  </vx-input-group>\n  <!-- /SWITCH -->\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      checkbox1: false,\n      radios1: null,\n      switch1: false,\n      input1: \'\',\n      input2: \'\',\n      input3: \'\'\n    }\n  }\n}\n</script>\n\n<style lang="scss">\n.vx-input-group {\n  .vx-input-group-prepend.form-element-border {\n    border-color: rgba(0,0,0,0.25);\n  }\n\n}\n\n.theme-dark {\n  .vx-input-group {\n    .vx-input-group-prepend.form-element-border {\n      border-color: rgba(255,255,255,0.25);\n    }\n\n    .vs-inputx {\n      border-color: rgba(255,255,255,0.25) !important;\n    }\n  }\n}\n</style>\n    '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004&":
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Multiple Addons", "code-toggler": "" } },
-    [
-      _c("div", { staticClass: "mb-base" }, [
-        _c("p", [
-          _c("code", [_vm._v("vx-input-group")]),
-          _vm._v(
-            " component provides various options to create desired form input group."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("$")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("0.00")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.title1,
-              callback: function($$v) {
-                _vm.title1 = $$v
-              },
-              expression: "title1"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "append" }, [
-            _c("div", { staticClass: "append-text bg-primary" }, [
-              _c("span", [_vm._v("$")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "append-text bg-primary" }, [
-              _c("span", [_vm._v("0.00")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.title2,
-              callback: function($$v) {
-                _vm.title2 = $$v
-              },
-              expression: "title2"
-            }
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <div>\n    <!-- ADDONS PREPEND -->\n    <vx-input-group class="mb-base">\n      <template slot="prepend">\n        <div class="prepend-text bg-primary">\n          <span>$</span>\n        </div>\n        <div class="prepend-text bg-primary">\n          <span>0.00</span>\n        </div>\n      </template>\n\n      <vs-input v-model="title1" />\n    </vx-input-group>\n    <!-- /ADDONS PREPEND -->\n\n    <!-- ADDONS APPEND -->\n    <vx-input-group class="mb-base">\n      <template slot="append">\n        <div class="append-text bg-primary">\n          <span>$</span>\n        </div>\n        <div class="append-text bg-primary">\n          <span>0.00</span>\n        </div>\n      </template>\n\n      <vs-input v-model="title2" />\n    </vx-input-group>\n    <!-- /ADDONS APPEND -->\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      title1: \'\',\n      title2: \'\',\n    }\n  }\n}\n</script>\n    '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=template&id=065aa999&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=template&id=2056d744&":
 /*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=template&id=065aa999& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=template&id=2056d744& ***!
   \*********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1460,92 +710,158 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Sizing", "code-toggler": "" } },
+    { attrs: { title: "Array Value", "code-toggler": "" } },
     [
-      _c("div", { staticClass: "mb-base" }, [
-        _c("span", [
-          _vm._v("You can use "),
-          _c("code", [_vm._v("size")]),
-          _vm._v(" prop of "),
-          _c("code", [_vm._v("vs-input")]),
-          _vm._v(" component to change size of input group.")
-        ])
+      _c("span", [
+        _vm._v(
+          "For saving the values in an array, you could simply pass it as a value."
+        )
       ]),
       _vm._v(" "),
       _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
+        "vs-alert",
+        {
+          staticClass: "mt-5",
+          attrs: { icon: "warning", active: "true", color: "warning" }
+        },
         [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("Small")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            attrs: { size: "small" },
-            model: {
-              value: _vm.input1,
-              callback: function($$v) {
-                _vm.input1 = $$v
-              },
-              expression: "input1"
-            }
-          })
-        ],
-        2
+          _c("span", [
+            _vm._v("For using an array as a value, we need to use the "),
+            _c("code", [_vm._v("vs-value")]),
+            _vm._v(
+              " property inside the switch component. That is the value that will be added to the array."
+            )
+          ])
+        ]
       ),
       _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("Default")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            model: {
-              value: _vm.input2,
-              callback: function($$v) {
-                _vm.input2 = $$v
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: {
+                  "vs-icon-on": "check",
+                  color: "success",
+                  "vs-value": "luis"
+                },
+                model: {
+                  value: _vm.switchArray,
+                  callback: function($$v) {
+                    _vm.switchArray = $$v
+                  },
+                  expression: "switchArray"
+                }
               },
-              expression: "input2"
-            }
-          })
-        ],
-        2
-      ),
+              [
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("Luis")
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: {
+                  "vs-icon-on": "check",
+                  color: "success",
+                  "vs-value": "carols"
+                },
+                model: {
+                  value: _vm.switchArray,
+                  callback: function($$v) {
+                    _vm.switchArray = $$v
+                  },
+                  expression: "switchArray"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("Carols")
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: {
+                  "vs-icon-on": "check",
+                  color: "success",
+                  "vs-value": "summer"
+                },
+                model: {
+                  value: _vm.switchArray,
+                  callback: function($$v) {
+                    _vm.switchArray = $$v
+                  },
+                  expression: "switchArray"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("Summer")
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: {
+                  "vs-icon-on": "check",
+                  color: "success",
+                  "vs-value": "lyon"
+                },
+                model: {
+                  value: _vm.switchArray,
+                  callback: function($$v) {
+                    _vm.switchArray = $$v
+                  },
+                  expression: "switchArray"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("Lyon")
+                ])
+              ]
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "vx-input-group",
-        { staticClass: "mb-base" },
-        [
-          _c("template", { slot: "prepend" }, [
-            _c("div", { staticClass: "prepend-text bg-primary" }, [
-              _c("span", [_vm._v("Large")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("vs-input", {
-            attrs: { size: "large" },
-            model: {
-              value: _vm.input3,
-              callback: function($$v) {
-                _vm.input3 = $$v
-              },
-              expression: "input3"
-            }
-          })
-        ],
-        2
-      ),
+      _c("p", { staticClass: "op-block mt-5" }, [
+        _vm._v(_vm._s(_vm.switchArray))
+      ]),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <!-- SMALL -->\n  <vx-input-group class="mb-base">\n    <template slot="prepend">\n      <div class="prepend-text bg-primary">\n        <span>Small</span>\n      </div>\n    </template>\n\n    <vs-input v-model="input1" size="small" />\n  </vx-input-group>\n  <!-- /SMALL -->\n\n  <!-- DEFAULT -->\n  <vx-input-group class="mb-base">\n    <template slot="prepend">\n      <div class="prepend-text bg-primary">\n        <span>Default</span>\n      </div>\n    </template>\n\n    <vs-input v-model="input2" />\n  </vx-input-group>\n  <!-- /DEFAULT -->\n\n  <!-- LARGE -->\n  <vx-input-group class="mb-base">\n    <template slot="prepend">\n      <div class="prepend-text bg-primary">\n        <span>Large</span>\n      </div>\n    </template>\n\n    <vs-input v-model="input3" size="large" />\n  </vx-input-group>\n  <!-- /LARGE -->\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      input1: \'\',\n      input2: \'\',\n      input3: \'\'\n    }\n  }\n}\n</script>\n    '
+          '\n<template>\n  <ul class="con-s">\n    <li class="modelx">\n      ' +
+            _vm._s("{{ switchArray }}") +
+            '\n    </li>\n    <li>\n      <vs-switch vs-icon-on="check" color="success" v-model="switchArray" vs-value="luis">\n        <span slot="off">Luis</span>\n      </vs-switch>\n    </li>\n    <li>\n      <vs-switch vs-icon-on="check" color="success" v-model="switchArray" vs-value="carols">\n        <span slot="off">Carols</span>\n      </vs-switch>\n    </li>\n    <li>\n      <vs-switch vs-icon-on="check" color="success" v-model="switchArray" vs-value="summer">\n        <span slot="off">Summer</span>\n      </vs-switch>\n    </li>\n    <li>\n      <vs-switch vs-icon-on="check" color="success" v-model="switchArray" vs-value="lyon">\n        <span slot="off">Lyon</span>\n      </vs-switch>\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      switchArray:[\'luis\'],\n    }\n  }\n}\n</script>\n        '
         )
       ])
     ],
@@ -1559,226 +875,745 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroup.vue":
-/*!**************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroup.vue ***!
-  \**************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormInputGroup_vue_vue_type_template_id_4f6a7b8a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormInputGroup.vue?vue&type=template&id=4f6a7b8a& */ "./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=template&id=4f6a7b8a&");
-/* harmony import */ var _FormInputGroup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormInputGroup.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormInputGroup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormInputGroup_vue_vue_type_template_id_4f6a7b8a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormInputGroup_vue_vue_type_template_id_4f6a7b8a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/views/forms/form-input-group/FormInputGroup.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroup.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=template&id=4f6a7b8a&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=template&id=4f6a7b8a& ***!
-  \*********************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=template&id=0a55f6e6&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=template&id=0a55f6e6& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroup_vue_vue_type_template_id_4f6a7b8a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroup.vue?vue&type=template&id=4f6a7b8a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroup.vue?vue&type=template&id=4f6a7b8a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroup_vue_vue_type_template_id_4f6a7b8a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroup_vue_vue_type_template_id_4f6a7b8a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Color", "code-toggler": "" } },
+    [
+      _c("span", [
+        _vm._v("You can choose the default "),
+        _c("strong", [_vm._v("Switch")]),
+        _vm._v(". You are able to use the Main Colors or "),
+        _c("strong", [_vm._v("RGB")]),
+        _vm._v(" and "),
+        _c("strong", [_vm._v("HEX")]),
+        _vm._v(" colors.")
+      ]),
+      _vm._v(" "),
+      _c(
+        "vs-alert",
+        {
+          staticClass: "mt-5",
+          attrs: { icon: "warning", active: "true", color: "warning" }
+        },
+        [
+          _c("span", [
+            _vm._v("Only "),
+            _c("strong", [_vm._v("RGB")]),
+            _vm._v(" and "),
+            _c("strong", [_vm._v("HEX")]),
+            _vm._v(" colors are supported.")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Primary")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              model: {
+                value: _vm.switch1,
+                callback: function($$v) {
+                  _vm.switch1 = $$v
+                },
+                expression: "switch1"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Success")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: { color: "success" },
+              model: {
+                value: _vm.switch2,
+                callback: function($$v) {
+                  _vm.switch2 = $$v
+                },
+                expression: "switch2"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Danger")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: { color: "danger" },
+              model: {
+                value: _vm.switch3,
+                callback: function($$v) {
+                  _vm.switch3 = $$v
+                },
+                expression: "switch3"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Warning")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: { color: "warning" },
+              model: {
+                value: _vm.switch4,
+                callback: function($$v) {
+                  _vm.switch4 = $$v
+                },
+                expression: "switch4"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Dark")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: { color: "dark" },
+              model: {
+                value: _vm.switch5,
+                callback: function($$v) {
+                  _vm.switch5 = $$v
+                },
+                expression: "switch5"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          { staticClass: "con-input-color" },
+          [
+            _c("label", [
+              _vm._v("Color: "),
+              _c("span", [_vm._v(_vm._s(_vm.color))])
+            ]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: { color: _vm.color },
+              model: {
+                value: _vm.switch6,
+                callback: function($$v) {
+                  _vm.switch6 = $$v
+                },
+                expression: "switch6"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("li", { staticStyle: { "align-self": "flex-end" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.color,
+                expression: "color"
+              }
+            ],
+            attrs: { type: "color" },
+            domProps: { value: _vm.color },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.color = $event.target.value
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template lang="html">\n  <ul class="con-s">\n    <li>\n      <label>Primary</label>\n      <vs-switch v-model="switch1" />\n    </li>\n    <li>\n      <label>Success</label>\n      <vs-switch color="success" v-model="switch2" />\n    </li>\n    <li>\n      <label>Danger</label>\n      <vs-switch color="danger" v-model="switch3" />\n    </li>\n    <li>\n      <label>Warning</label>\n      <vs-switch color="warning" v-model="switch4" />\n    </li>\n    <li>\n      <label>Dark</label>\n      <vs-switch color="dark" v-model="switch5" />\n    </li>\n    <li class="con-input-color">\n      <label>Color: <span>' +
+            _vm._s(_vm.color) +
+            '</span></label>\n      <input v-model="color" type="color">\n      <vs-switch :color="color" v-model="switch6" />\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      color:\'#5a3cc4\',\n      switch1:true,\n      switch2:true,\n      switch3:true,\n      switch4:true,\n      switch5:true,\n      switch6:true,\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormInputGroupBasic_vue_vue_type_template_id_2d85c43a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormInputGroupBasic.vue?vue&type=template&id=2d85c43a& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=template&id=2d85c43a&");
-/* harmony import */ var _FormInputGroupBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormInputGroupBasic.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormInputGroupBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormInputGroupBasic_vue_vue_type_template_id_2d85c43a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormInputGroupBasic_vue_vue_type_template_id_2d85c43a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupBasic.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=template&id=2d85c43a&":
-/*!**************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=template&id=2d85c43a& ***!
-  \**************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=template&id=32ed74c4&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=template&id=32ed74c4& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupBasic_vue_vue_type_template_id_2d85c43a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupBasic.vue?vue&type=template&id=2d85c43a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupBasic.vue?vue&type=template&id=2d85c43a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupBasic_vue_vue_type_template_id_2d85c43a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupBasic_vue_vue_type_template_id_2d85c43a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Icons", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v(
+          "We can add a representative icon inside our switch with the property "
+        ),
+        _c("code", [_vm._v("vs-icon")]),
+        _vm._v(".")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "If you only need to add the icon in one of the states you can do it with the property "
+        ),
+        _c("code", [_vm._v("vs-icon-on")]),
+        _vm._v(" or "),
+        _c("code", [_vm._v("vs-icon-off")])
+      ]),
+      _vm._v(" "),
+      _c(
+        "vs-alert",
+        {
+          staticClass: "mt-5",
+          attrs: { color: "primary", icon: "new_releases", active: "true" }
+        },
+        [
+          _c("span", [
+            _vm._v("Vuesax uses the "),
+            _c("strong", [_vm._v("Google Material Icons")]),
+            _vm._v(
+              " font library. For a list of all available icons, visit the official "
+            ),
+            _c(
+              "a",
+              {
+                attrs: { href: "https://material.io/icons/", target: "_blank" }
+              },
+              [_vm._v("Material Icons page.")]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Primary")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: {
+                "icon-pack": "feather",
+                "vs-icon-off": "icon-bell",
+                "vs-icon-on": "icon-check"
+              },
+              model: {
+                value: _vm.switch1,
+                callback: function($$v) {
+                  _vm.switch1 = $$v
+                },
+                expression: "switch1"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Success")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: {
+                color: "success",
+                "icon-pack": "feather",
+                "vs-icon": "icon-check"
+              },
+              model: {
+                value: _vm.switch2,
+                callback: function($$v) {
+                  _vm.switch2 = $$v
+                },
+                expression: "switch2"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Danger")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: {
+                color: "danger",
+                "icon-pack": "feather",
+                "vs-icon": "icon-x"
+              },
+              model: {
+                value: _vm.switch3,
+                callback: function($$v) {
+                  _vm.switch3 = $$v
+                },
+                expression: "switch3"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Warning")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: {
+                color: "warning",
+                "icon-pack": "feather",
+                "vs-icon": "icon-alert-circle"
+              },
+              model: {
+                value: _vm.switch4,
+                callback: function($$v) {
+                  _vm.switch4 = $$v
+                },
+                expression: "switch4"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("Dark")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: {
+                color: "dark",
+                "icon-pack": "feather",
+                "vs-icon": "icon-volume-x"
+              },
+              model: {
+                value: _vm.switch5,
+                callback: function($$v) {
+                  _vm.switch5 = $$v
+                },
+                expression: "switch5"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("rgb(color) / #color")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: {
+                color: "rgb(51, 53, 83)",
+                "icon-pack": "feather",
+                "vs-icon": "icon-camera"
+              },
+              model: {
+                value: _vm.switch6,
+                callback: function($$v) {
+                  _vm.switch6 = $$v
+                },
+                expression: "switch6"
+              }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <ul class="demo-alignment">\n        <li>\n            <label>Primary</label>\n            <vs-switch v-model="switch1" icon-pack="feather" vs-icon-off="icon-bell" vs-icon-on="icon-check" />\n        </li>\n        <li>\n            <label>Success</label>\n            <vs-switch color="success" v-model="switch2" icon-pack="feather" vs-icon="icon-check" />\n        </li>\n        <li>\n            <label>Danger</label>\n            <vs-switch color="danger" v-model="switch3" icon-pack="feather" vs-icon="icon-x" />\n        </li>\n        <li>\n            <label>Warning</label>\n            <vs-switch color="warning" v-model="switch4" icon-pack="feather" vs-icon="icon-alert-circle" />\n        </li>\n        <li>\n            <label>Dark</label>\n            <vs-switch color="dark" v-model="switch5" icon-pack="feather" vs-icon="icon-volume-x" />\n        </li>\n        <li>\n            <label>rgb(color) / #color</label>\n            <vs-switch color="rgb(51, 53, 83)" v-model="switch6" icon-pack="feather" vs-icon="icon-camera" />\n        </li>\n    </ul>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      switch1:false,\n      switch2:false,\n      switch3:false,\n      switch4:false,\n      switch5:false,\n      switch6:false\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormInputGroupButtonAddons_vue_vue_type_template_id_3d4c2940___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940&");
-/* harmony import */ var _FormInputGroupButtonAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormInputGroupButtonAddons.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormInputGroupButtonAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormInputGroupButtonAddons_vue_vue_type_template_id_3d4c2940___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormInputGroupButtonAddons_vue_vue_type_template_id_3d4c2940___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupButtonAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupButtonAddons.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupButtonAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940&":
-/*!*********************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940& ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=template&id=086e52bb&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=template&id=086e52bb& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupButtonAddons_vue_vue_type_template_id_3d4c2940___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupButtonAddons.vue?vue&type=template&id=3d4c2940&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupButtonAddons_vue_vue_type_template_id_3d4c2940___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupButtonAddons_vue_vue_type_template_id_3d4c2940___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "State", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v(
+          "To implement a switch element in the application, we add the component "
+        ),
+        _c("code", [_vm._v("vs-switch")])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("true / active")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              model: {
+                value: _vm.switch1,
+                callback: function($$v) {
+                  _vm.switch1 = $$v
+                },
+                expression: "switch1"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("false / inactive")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              model: {
+                value: _vm.switch2,
+                callback: function($$v) {
+                  _vm.switch2 = $$v
+                },
+                expression: "switch2"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("disabled / active")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: { disabled: "true" },
+              model: {
+                value: _vm.switch3,
+                callback: function($$v) {
+                  _vm.switch3 = $$v
+                },
+                expression: "switch3"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("label", [_vm._v("disabled / inactive")]),
+            _vm._v(" "),
+            _c("vs-switch", {
+              attrs: { disabled: "true" },
+              model: {
+                value: _vm.switch4,
+                callback: function($$v) {
+                  _vm.switch4 = $$v
+                },
+                expression: "switch4"
+              }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template lang="html">\n  <ul class="switch-container">\n    <li>\n      <label>true / active</label>\n      <vs-switch v-model="switch1" />\n    </li>\n    <li>\n      <label>false / inactive</label>\n      <vs-switch v-model="switch2" />\n    </li>\n    <li>\n      <label>disabled / active</label>\n      <vs-switch disabled="true" v-model="switch3" />\n    </li>\n    <li>\n      <label>disabled / inactive</label>\n      <vs-switch disabled="true" v-model="switch4" />\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      switch1:true,\n      switch2:false,\n      switch3:true,\n      switch4:false,\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue ***!
-  \**************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=template&id=2b7e42f3&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=template&id=2b7e42f3& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Text", "code-toggler": "" } },
+    [
+      _c("span", [
+        _vm._v("You can add a descriptive text with the slot "),
+        _c("code", [_vm._v("on")]),
+        _vm._v(" or "),
+        _c("code", [_vm._v("off")]),
+        _vm._v(". You can also join the text with the icons.")
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                model: {
+                  value: _vm.switch1,
+                  callback: function($$v) {
+                    _vm.switch1 = $$v
+                  },
+                  expression: "switch1"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                  _vm._v("On")
+                ]),
+                _vm._v(" "),
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("Off")
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: { color: "success" },
+                model: {
+                  value: _vm.switch2,
+                  callback: function($$v) {
+                    _vm.switch2 = $$v
+                  },
+                  expression: "switch2"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                  _vm._v("Accept")
+                ]),
+                _vm._v(" "),
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("Cancel")
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: { color: "danger", "vs-icon-off": "close" },
+                model: {
+                  value: _vm.switch3,
+                  callback: function($$v) {
+                    _vm.switch3 = $$v
+                  },
+                  expression: "switch3"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                  _vm._v("Remove")
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: { color: "warning", "vs-icon-on": "error_outline" },
+                model: {
+                  value: _vm.switch4,
+                  callback: function($$v) {
+                    _vm.switch4 = $$v
+                  },
+                  expression: "switch4"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("Prevent")
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-switch",
+              {
+                attrs: {
+                  color: "dark",
+                  "icon-pack": "feather",
+                  "vs-icon-on": "icon-check-circle",
+                  "vs-icon-off": "icon-slash"
+                },
+                model: {
+                  value: _vm.switch5,
+                  callback: function($$v) {
+                    _vm.switch5 = $$v
+                  },
+                  expression: "switch5"
+                }
+              },
+              [
+                _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                  _vm._v("YES")
+                ]),
+                _vm._v(" "),
+                _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                  _vm._v("NO")
+                ])
+              ]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <ul class="con-s">\n    <li>\n      <vs-switch v-model="switch1">\n        <span slot="on">On</span>\n        <span slot="off">Off</span>\n      </vs-switch>\n    </li>\n    <li>\n      <vs-switch color="success" v-model="switch2">\n        <span slot="on">Accept</span>\n        <span slot="off">Cancel</span>\n      </vs-switch>\n    </li>\n    <li>\n      <vs-switch color="danger" vs-icon-off="close" v-model="switch3">\n        <span slot="on">Remove</span>\n      </vs-switch>\n    </li>\n    <li>\n      <vs-switch color="warning" vs-icon-on="error_outline" v-model="switch4">\n        <span slot="off">Prevent</span>\n      </vs-switch>\n    </li>\n    <li>\n      <vs-switch color="dark" icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash" v-model="switch5">\n        <span slot="on">YES</span>\n        <span slot="off">NO</span>\n      </vs-switch>\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      switch1:true,\n      switch2:true,\n      switch3:true,\n      switch4:true,\n      switch5:true,\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/Switch.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/Switch.vue ***!
+  \**********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormInputGroupFormElements_vue_vue_type_template_id_64317236___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormInputGroupFormElements.vue?vue&type=template&id=64317236& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=template&id=64317236&");
-/* harmony import */ var _FormInputGroupFormElements_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormInputGroupFormElements.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _FormInputGroupFormElements_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Switch_vue_vue_type_template_id_484aef26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Switch.vue?vue&type=template&id=484aef26& */ "./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=template&id=484aef26&");
+/* harmony import */ var _Switch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Switch.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Switch_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Switch.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -1788,9 +1623,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _FormInputGroupFormElements_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormInputGroupFormElements_vue_vue_type_template_id_64317236___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormInputGroupFormElements_vue_vue_type_template_id_64317236___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Switch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Switch_vue_vue_type_template_id_484aef26___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Switch_vue_vue_type_template_id_484aef26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1800,140 +1635,71 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue"
+component.options.__file = "resources/js/src/views/forms/form-elements/switch/Switch.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************/
+/***/ "./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupFormElements.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Switch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss&":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss& ***!
-  \************************************************************************************************************************/
+/***/ "./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss& ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Switch.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=template&id=64317236&":
-/*!*********************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=template&id=64317236& ***!
-  \*********************************************************************************************************************/
+/***/ "./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=template&id=484aef26&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=template&id=484aef26& ***!
+  \*****************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_template_id_64317236___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupFormElements.vue?vue&type=template&id=64317236& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupFormElements.vue?vue&type=template&id=64317236&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_template_id_64317236___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_template_id_484aef26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Switch.vue?vue&type=template&id=484aef26& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/Switch.vue?vue&type=template&id=484aef26&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_template_id_484aef26___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupFormElements_vue_vue_type_template_id_64317236___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormInputGroupMultipleAddons_vue_vue_type_template_id_e145b004___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004&");
-/* harmony import */ var _FormInputGroupMultipleAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormInputGroupMultipleAddons.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormInputGroupMultipleAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormInputGroupMultipleAddons_vue_vue_type_template_id_e145b004___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormInputGroupMultipleAddons_vue_vue_type_template_id_e145b004___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupMultipleAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupMultipleAddons.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupMultipleAddons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004& ***!
-  \***********************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupMultipleAddons_vue_vue_type_template_id_e145b004___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupMultipleAddons.vue?vue&type=template&id=e145b004&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupMultipleAddons_vue_vue_type_template_id_e145b004___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupMultipleAddons_vue_vue_type_template_id_e145b004___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Switch_vue_vue_type_template_id_484aef26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue":
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue":
 /*!********************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue ***!
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue ***!
   \********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormInputGroupSizing_vue_vue_type_template_id_065aa999___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormInputGroupSizing.vue?vue&type=template&id=065aa999& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=template&id=065aa999&");
-/* harmony import */ var _FormInputGroupSizing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormInputGroupSizing.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _SwitchArrayValue_vue_vue_type_template_id_2056d744___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SwitchArrayValue.vue?vue&type=template&id=2056d744& */ "./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=template&id=2056d744&");
+/* harmony import */ var _SwitchArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SwitchArrayValue.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -1942,9 +1708,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormInputGroupSizing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormInputGroupSizing_vue_vue_type_template_id_065aa999___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormInputGroupSizing_vue_vue_type_template_id_065aa999___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _SwitchArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SwitchArrayValue_vue_vue_type_template_id_2056d744___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SwitchArrayValue_vue_vue_type_template_id_2056d744___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1954,38 +1720,314 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue"
+component.options.__file = "resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupSizing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupSizing.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupSizing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchArrayValue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=template&id=065aa999&":
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=template&id=2056d744&":
 /*!***************************************************************************************************************!*\
-  !*** ./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=template&id=065aa999& ***!
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=template&id=2056d744& ***!
   \***************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupSizing_vue_vue_type_template_id_065aa999___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormInputGroupSizing.vue?vue&type=template&id=065aa999& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-input-group/FormInputGroupSizing.vue?vue&type=template&id=065aa999&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupSizing_vue_vue_type_template_id_065aa999___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchArrayValue_vue_vue_type_template_id_2056d744___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchArrayValue.vue?vue&type=template&id=2056d744& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchArrayValue.vue?vue&type=template&id=2056d744&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchArrayValue_vue_vue_type_template_id_2056d744___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormInputGroupSizing_vue_vue_type_template_id_065aa999___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchArrayValue_vue_vue_type_template_id_2056d744___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue":
+/*!***************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SwitchColor_vue_vue_type_template_id_0a55f6e6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SwitchColor.vue?vue&type=template&id=0a55f6e6& */ "./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=template&id=0a55f6e6&");
+/* harmony import */ var _SwitchColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SwitchColor.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SwitchColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SwitchColor_vue_vue_type_template_id_0a55f6e6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SwitchColor_vue_vue_type_template_id_0a55f6e6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/forms/form-elements/switch/SwitchColor.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchColor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=template&id=0a55f6e6&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=template&id=0a55f6e6& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchColor_vue_vue_type_template_id_0a55f6e6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchColor.vue?vue&type=template&id=0a55f6e6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchColor.vue?vue&type=template&id=0a55f6e6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchColor_vue_vue_type_template_id_0a55f6e6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchColor_vue_vue_type_template_id_0a55f6e6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue":
+/*!***************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SwitchIcons_vue_vue_type_template_id_32ed74c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SwitchIcons.vue?vue&type=template&id=32ed74c4& */ "./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=template&id=32ed74c4&");
+/* harmony import */ var _SwitchIcons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SwitchIcons.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SwitchIcons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SwitchIcons_vue_vue_type_template_id_32ed74c4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SwitchIcons_vue_vue_type_template_id_32ed74c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchIcons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchIcons.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchIcons_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=template&id=32ed74c4&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=template&id=32ed74c4& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchIcons_vue_vue_type_template_id_32ed74c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchIcons.vue?vue&type=template&id=32ed74c4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchIcons.vue?vue&type=template&id=32ed74c4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchIcons_vue_vue_type_template_id_32ed74c4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchIcons_vue_vue_type_template_id_32ed74c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchState.vue":
+/*!***************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchState.vue ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SwitchState_vue_vue_type_template_id_086e52bb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SwitchState.vue?vue&type=template&id=086e52bb& */ "./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=template&id=086e52bb&");
+/* harmony import */ var _SwitchState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SwitchState.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SwitchState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SwitchState_vue_vue_type_template_id_086e52bb___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SwitchState_vue_vue_type_template_id_086e52bb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/forms/form-elements/switch/SwitchState.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchState.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=template&id=086e52bb&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=template&id=086e52bb& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchState_vue_vue_type_template_id_086e52bb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchState.vue?vue&type=template&id=086e52bb& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchState.vue?vue&type=template&id=086e52bb&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchState_vue_vue_type_template_id_086e52bb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchState_vue_vue_type_template_id_086e52bb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchText.vue":
+/*!**************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchText.vue ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SwitchText_vue_vue_type_template_id_2b7e42f3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SwitchText.vue?vue&type=template&id=2b7e42f3& */ "./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=template&id=2b7e42f3&");
+/* harmony import */ var _SwitchText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SwitchText.vue?vue&type=script&lang=js& */ "./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SwitchText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SwitchText_vue_vue_type_template_id_2b7e42f3___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SwitchText_vue_vue_type_template_id_2b7e42f3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/forms/form-elements/switch/SwitchText.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchText.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=template&id=2b7e42f3&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=template&id=2b7e42f3& ***!
+  \*********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchText_vue_vue_type_template_id_2b7e42f3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SwitchText.vue?vue&type=template&id=2b7e42f3& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/forms/form-elements/switch/SwitchText.vue?vue&type=template&id=2b7e42f3&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchText_vue_vue_type_template_id_2b7e42f3___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwitchText_vue_vue_type_template_id_2b7e42f3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

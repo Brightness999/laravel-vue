@@ -1,17 +1,20 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[69],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorThemeSnow_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue");
-/* harmony import */ var _QuillEditorThemeBubble_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue");
-/* harmony import */ var _QuillEditorCustomToolbar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue");
+/* harmony import */ var _GoogleMapBasic_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleMapBasic.vue */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue");
+/* harmony import */ var _GoogleMapInfoWindow_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GoogleMapInfoWindow.vue */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue");
+/* harmony import */ var _GoogleMapStreetView_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GoogleMapStreetView.vue */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue");
+//
+//
+//
 //
 //
 //
@@ -37,33 +40,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    QuillEditorThemeSnow: _QuillEditorThemeSnow_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    QuillEditorThemeBubble: _QuillEditorThemeBubble_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    QuillEditorCustomToolbar: _QuillEditorCustomToolbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    GoogleMapBasic: _GoogleMapBasic_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    GoogleMapInfoWindow: _GoogleMapInfoWindow_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    GoogleMapStreetView: _GoogleMapStreetView_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -133,108 +126,181 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// require styles
-
-
-
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      editorOption: {
-        modules: {
-          toolbar: '#toolbar'
+      center: {
+        lat: 10.0,
+        lng: 10.0
+      },
+      markers: [{
+        position: {
+          lat: 10.0,
+          lng: 10.0
+        }
+      }, {
+        position: {
+          lat: 11.0,
+          lng: 11.0
+        }
+      }]
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      center: {
+        lat: 47.376332,
+        lng: 8.547511
+      },
+      infoContent: '',
+      infoWindowPos: null,
+      infoWinOpen: false,
+      currentMidx: null,
+      //optional: offset infowindow so it visually sits nicely on top of our marker
+      infoOptions: {
+        pixelOffset: {
+          width: 0,
+          height: -35
         }
       },
-      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
+      markers: [{
+        position: {
+          lat: 47.376332,
+          lng: 8.547511
+        },
+        infoText: 'Marker 1'
+      }, {
+        position: {
+          lat: 47.374592,
+          lng: 8.548867
+        },
+        infoText: 'Marker 2'
+      }, {
+        position: {
+          lat: 47.379592,
+          lng: 8.549867
+        },
+        infoText: 'Marker 3'
+      }]
     };
   },
-  components: {
-    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
-    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
-  },
   methods: {
-    customButtonClick: function customButtonClick() {
-      alert('Button clicked!');
+    toggleInfoWindow: function toggleInfoWindow(marker, idx) {
+      this.infoWindowPos = marker.position;
+      this.infoContent = marker.infoText;
+
+      if (this.currentMidx === idx) {
+        //check if its the same marker that was selected if yes toggle
+        this.infoWinOpen = !this.infoWinOpen;
+      } else {
+        //if different marker set infowindow to open and reset current marker index
+        this.infoWinOpen = true;
+        this.currentMidx = idx;
+      }
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -284,118 +350,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// require styles
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      editorOption: {
-        theme: 'bubble'
-      },
-      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
+      pov: null,
+      pano: null
     };
   },
-  components: {
-    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
-    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
+  methods: {
+    updatePov: function updatePov(pov) {
+      this.pov = pov;
+    },
+    updatePano: function updatePano(pano) {
+      this.pano = pano;
+    }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// require styles
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
-    };
-  },
-  components: {
-    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
-    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=27ba9745&":
-/*!******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=27ba9745& ***!
-  \******************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=template&id=22099f60&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=template&id=22099f60& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -409,15 +415,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "extra-component-quill-editor-demo" } },
+    { attrs: { id: "extra-component-google-map-demo" } },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("quill-editor-theme-snow"),
+      _c("google-map-basic"),
       _vm._v(" "),
-      _c("quill-editor-theme-bubble"),
+      _c("google-map-info-window"),
       _vm._v(" "),
-      _c("quill-editor-custom-toolbar")
+      _c("google-map-street-view"),
+      _vm._v(" "),
+      _c("div", { staticClass: "content-area__content" })
     ],
     1
   )
@@ -432,27 +440,14 @@ var staticRenderFns = [
         "a",
         {
           attrs: {
-            href: "https://surmon-china.github.io/vue-quill-editor/",
+            href: "https://xkjyeah.github.io/vue-google-maps/",
             target: "_blank",
             rel: "nofollow"
           }
         },
-        [_vm._v("Vue-Quill-Editor")]
+        [_vm._v("Google maps")]
       ),
-      _vm._v(
-        " editor component for Vue, support SPA and SSR. Read full documnetation "
-      ),
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "https://quilljs.com/docs/quickstart/",
-            target: "_blank",
-            rel: "nofollow"
-          }
-        },
-        [_vm._v("here")]
-      )
+      _vm._v(" component for vue with 2-way data binding")
     ])
   }
 ]
@@ -462,10 +457,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5&":
-/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=template&id=597734ee&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=template&id=597734ee& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -479,102 +474,266 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Custom Toolbar", "code-toggler": "" } },
+    { attrs: { title: "Basic", "code-toggler": "" } },
     [
-      _c("p", { staticClass: "mb-5" }, [
-        _vm._v("You have freedom to create your own custom toolbar")
-      ]),
+      _c("p", [_vm._v("Creating basic google map")]),
       _vm._v(" "),
-      _c("div", { staticClass: "vx-row" }, [
-        _c(
-          "div",
-          { staticClass: "vx-col w-full md:w-1/2" },
-          [
-            _c(
-              "quill-editor",
-              {
-                attrs: { options: _vm.editorOption },
-                model: {
-                  value: _vm.content,
-                  callback: function($$v) {
-                    _vm.content = $$v
-                  },
-                  expression: "content"
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c(
+            "GmapMap",
+            {
+              staticStyle: { width: "100%", height: "400px" },
+              attrs: { center: _vm.center, zoom: 7, "map-type-id": "terrain" }
+            },
+            _vm._l(_vm.markers, function(m, index) {
+              return _c("GmapMarker", {
+                key: index,
+                attrs: {
+                  position: m.position,
+                  clickable: true,
+                  draggable: true
+                },
+                on: {
+                  click: function($event) {
+                    _vm.center = m.position
+                  }
                 }
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    attrs: { slot: "toolbar", id: "toolbar" },
-                    slot: "toolbar"
+              })
+            }),
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <GmapMap\n    :center="center"\n    :zoom="7"\n    map-type-id="terrain"\n    style="width: 100%; height: 400px"\n    @click="mapClicked"\n  >\n    <GmapMarker\n      :key="index"\n      v-for="(m, index) in markers"\n      :position="m.position"\n      :clickable="true"\n      :draggable="true"\n      @click="center=m.position"\n    />\n  </GmapMap>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      center: { lat: 10.0, lng: 10.0 },\n      markers: [\n        { position: { lat: 10.0, lng: 10.0 } },\n        { position: { lat: 11.0, lng: 11.0 } },\n      ]\n    }\n  },\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Info Window", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v("A basic example of using a single infowindow for 3 markers")
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c(
+            "gmap-map",
+            {
+              staticStyle: { width: "100%", height: "500px" },
+              attrs: { center: _vm.center, zoom: 15 }
+            },
+            [
+              _c(
+                "gmap-info-window",
+                {
+                  attrs: {
+                    options: _vm.infoOptions,
+                    position: _vm.infoWindowPos,
+                    opened: _vm.infoWinOpen
                   },
-                  [
-                    _c("button", { staticClass: "ql-bold" }, [_vm._v("Bold")]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "ql-italic" }, [
-                      _vm._v("Italic")
-                    ]),
-                    _vm._v(" "),
-                    _c("select", { staticClass: "ql-size" }, [
-                      _c("option", { attrs: { value: "small" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { selected: "" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "large" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "huge" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("select", { staticClass: "ql-font" }, [
-                      _c("option", { attrs: { selected: "selected" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "serif" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "monospace" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("button", {
-                      staticClass: "ql-script",
-                      attrs: { value: "sub" }
-                    }),
-                    _vm._v(" "),
-                    _c("button", {
-                      staticClass: "ql-script",
-                      attrs: { value: "super" }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticStyle: { width: "auto" },
-                        on: { click: _vm.customButtonClick }
-                      },
-                      [_vm._v("Click here")]
-                    )
-                  ]
-                )
-              ]
+                  on: {
+                    closeclick: function($event) {
+                      _vm.infoWinOpen = false
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.infoContent) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.markers, function(m, i) {
+                return _c("gmap-marker", {
+                  key: i,
+                  attrs: { position: m.position, clickable: true },
+                  on: {
+                    click: function($event) {
+                      return _vm.toggleInfoWindow(m, i)
+                    }
+                  }
+                })
+              })
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <gmap-map :center="center" :zoom="15" style="width: 100%; height: 500px">\n    <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">\n      ' +
+            _vm._s(_vm.infoContent) +
+            '\n    </gmap-info-window>\n    <gmap-marker :key="i" v-for="(m,i) in markers" :position="m.position" :clickable="true" @click="toggleInfoWindow(m,i)"></gmap-marker>\n  </gmap-map>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      center: { lat: 47.376332, lng: 8.547511 },\n      infoContent: \'\',\n      infoWindowPos: null,\n      infoWinOpen: false,\n      currentMidx: null,\n      //optional: offset infowindow so it visually sits nicely on top of our marker\n      infoOptions: {\n      pixelOffset: { width: 0, height: -35 }\n      },\n      markers: [\n        { position: { lat: 47.376332, lng: 8.547511 }, infoText: \'Marker 1\' },\n        { position: { lat: 47.374592, lng: 8.548867 }, infoText: \'Marker 2\' },\n        { position: { lat: 47.379592, lng: 8.549867 }, infoText: \'Marker 3\' }\n      ]\n    }\n  },\n  methods: {\n    toggleInfoWindow: function(marker, idx) {\n      this.infoWindowPos = marker.position;\n      this.infoContent = marker.infoText;\n      //check if its the same marker that was selected if yes toggle\n      if (this.currentMidx == idx) {\n        this.infoWinOpen = !this.infoWinOpen;\n      }\n      //if different marker set infowindow to open and reset current marker index\n      else {\n        this.infoWinOpen = true;\n        this.currentMidx = idx;\n      }\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=template&id=b392d090&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=template&id=b392d090& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Street View", "code-toggler": "" } },
+    [
+      _c("p", [_vm._v("Example of creating google map - street view")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c("h6", [
+            _vm._v(
+              "Panorama at Pembroke College, Cambridge, facing North, looking slightly upwards (10 degrees)"
             )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "vx-col w-full md:w-1/2 flex" },
-          [
-            _c("prism", { staticClass: "rounded-lg" }, [
-              _vm._v(" " + _vm._s(_vm.content) + " ")
-            ])
-          ],
-          1
-        )
-      ]),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "mt-3 mb-5" }, [
+            _vm._v("Point-of-view updates when you pan around")
+          ]),
+          _vm._v(" "),
+          _c("gmap-street-view-panorama", {
+            staticClass: "pano",
+            staticStyle: { height: "400px", width: "100%" },
+            attrs: {
+              position: { lat: 52.201272, lng: 0.11872 },
+              pov: _vm.pov,
+              zoom: 1
+            },
+            on: { pano_changed: _vm.updatePano, pov_changed: _vm.updatePov }
+          }),
+          _vm._v(" "),
+          _c(
+            "vs-list",
+            { staticClass: "mt-5" },
+            [
+              _c("vs-list-item", {
+                attrs: { title: " Heading: " + (_vm.pov && _vm.pov.heading) }
+              }),
+              _vm._v(" "),
+              _c("vs-list-item", {
+                attrs: { title: " Pitch: " + (_vm.pov && _vm.pov.pitch) }
+              }),
+              _vm._v(" "),
+              _c("vs-list-item", { attrs: { title: " Pano ID: " + _vm.pano } })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "demo-alignment" },
+            [
+              _c(
+                "vs-button",
+                {
+                  attrs: { type: "filled" },
+                  on: {
+                    click: function($event) {
+                      _vm.pov.heading = Math.random() * 360
+                    }
+                  }
+                },
+                [_vm._v("Change Heading")]
+              ),
+              _vm._v(" "),
+              _c(
+                "vs-button",
+                {
+                  attrs: { type: "filled" },
+                  on: {
+                    click: function($event) {
+                      _vm.pov.pitch = Math.random() * 180 - 90
+                    }
+                  }
+                },
+                [_vm._v("Change Pitch")]
+              ),
+              _vm._v(" "),
+              _c(
+                "vs-button",
+                {
+                  attrs: { type: "filled" },
+                  on: {
+                    click: function($event) {
+                      ;(_vm.pov.pitch = Math.random() * 180 - 90),
+                        (_vm.pov.heading = Math.random() * 360)
+                    }
+                  }
+                },
+                [_vm._v("Change Both")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <quill-editor v-model="content" :options="editorOption">\n\n    <div id="toolbar" slot="toolbar">\n\n      <!-- Add a bold button -->\n      <button class="ql-bold">Bold</button>\n      <button class="ql-italic">Italic</button>\n\n      <!-- Add font size dropdown -->\n      <select class="ql-size">\n        <option value="small"></option>\n        <!-- Note a missing, thus falsy value, is used to reset to default -->\n        <option selected></option>\n        <option value="large"></option>\n        <option value="huge"></option>\n      </select>\n\n      <select class="ql-font">\n        <option selected="selected"></option>\n        <option value="serif"></option>\n        <option value="monospace"></option>\n      </select>\n\n      <!-- Add subscript and superscript buttons -->\n      <button class="ql-script" value="sub"></button>\n      <button class="ql-script" value="super"></button>\n\n      <!-- You can also add your own -->\n      <button style="width:auto" @click="customButtonClick">Click here</button>\n    </div>\n  </quill-editor>\n</template>\n\n<script>\n// require styles\nimport \'quill/dist/quill.core.css\'\nimport \'quill/dist/quill.snow.css\'\nimport \'quill/dist/quill.bubble.css\'\n\nimport { quillEditor } from \'vue-quill-editor\'\n\nexport default {\n  data() {\n    return {\n      editorOption: {\n        modules: {\n          toolbar: \'#toolbar\'\n        }\n      },\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  },\n  methods: {\n    customButtonClick() {\n      alert("Button clicked!");\n    }\n  }\n}\n</script>\n        '
+          '\n<template>\n  <h6>Panorama at Pembroke College, Cambridge, facing North, looking slightly upwards (10 degrees)</h6>\n  <p class="mt-3 mb-5">Point-of-view updates when you pan around</p>\n\n  <gmap-street-view-panorama class="pano" :position="{lat: 52.201272, lng: 0.118720}"\n    :pov="pov" :zoom="1" @pano_changed="updatePano" @pov_changed="updatePov" style="height: 400px; width: 100%">\n  </gmap-street-view-panorama>\n\n  <vs-list class="mt-5">\n    <vs-list-item :title="` Heading: ${ pov && pov.heading }`"></vs-list-item>\n    <vs-list-item :title="` Pitch: ${ pov && pov.pitch }`"></vs-list-item>\n    <vs-list-item :title="` Pano ID: ${ pano }`"></vs-list-item>\n  </vs-list>\n\n  <div class="demo-alignment">\n    <vs-button type="filled" @click="pov.heading = Math.random() * 360">Change Heading</vs-button>\n    <vs-button type="filled" @click="pov.pitch = Math.random() * 180 - 90">Change Pitch</vs-button>\n    <vs-button type="filled" @click="pov.pitch = Math.random() * 180 - 90, pov.heading = Math.random() * 360">Change Both</vs-button>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      pov: null,\n      pano: null,\n    }\n  },\n  methods: {\n    updatePov(pov) {\n      this.pov = pov;\n    },\n    updatePano(pano) {\n      this.pano = pano;\n    }\n  }\n}\n</script>\n        '
         )
       ])
     ],
@@ -588,124 +747,17 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Theme Bubble", "code-toggler": "" } },
-    [
-      _c("p", { staticClass: "mb-5" }, [
-        _vm._v("Bubble is a simple tooltip based theme")
-      ]),
-      _vm._v(" "),
-      _c("quill-editor", {
-        attrs: { options: _vm.editorOption },
-        model: {
-          value: _vm.content,
-          callback: function($$v) {
-            _vm.content = $$v
-          },
-          expression: "content"
-        }
-      }),
-      _vm._v(" "),
-      _c("prism", { staticClass: "rounded-lg" }, [
-        _vm._v(" " + _vm._s(_vm.content) + " ")
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <quill-editor v-model=\"content\" :options=\"editorOption\"></quill-editor>\n</template>\n\n<script>\n// require styles\nimport 'quill/dist/quill.core.css'\nimport 'quill/dist/quill.snow.css'\nimport 'quill/dist/quill.bubble.css'\n\nimport { quillEditor } from 'vue-quill-editor'\n\nexport default {\n  data() {\n    return {\n      editorOption: {\n        theme: 'bubble',\n      },\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957&":
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Theme Snow", "code-toggler": "" } },
-    [
-      _c("p", { staticClass: "mb-5" }, [
-        _vm._v("Snow is a clean, flat toolbar theme")
-      ]),
-      _vm._v(" "),
-      _c("quill-editor", {
-        model: {
-          value: _vm.content,
-          callback: function($$v) {
-            _vm.content = $$v
-          },
-          expression: "content"
-        }
-      }),
-      _vm._v(" "),
-      _c("prism", { staticClass: "rounded-lg" }, [
-        _vm._v(" " + _vm._s(_vm.content) + " ")
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <quill-editor v-model=\"content\"></quill-editor>\n</template>\n\n<script>\n// require styles\nimport 'quill/dist/quill.core.css'\nimport 'quill/dist/quill.snow.css'\nimport 'quill/dist/quill.bubble.css'\n\nimport { quillEditor } from 'vue-quill-editor'\n\nexport default {\n  data() {\n    return {\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue ***!
-  \*****************************************************************************************/
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue":
+/*!******************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue ***!
+  \******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditor_vue_vue_type_template_id_27ba9745___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditor.vue?vue&type=template&id=27ba9745& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=27ba9745&");
-/* harmony import */ var _QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditor.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&");
+/* harmony import */ var _GoogleMap_vue_vue_type_template_id_22099f60___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleMap.vue?vue&type=template&id=22099f60& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=template&id=22099f60&");
+/* harmony import */ var _GoogleMap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GoogleMap.vue?vue&type=script&lang=js& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -715,9 +767,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditor_vue_vue_type_template_id_27ba9745___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditor_vue_vue_type_template_id_27ba9745___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _GoogleMap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GoogleMap_vue_vue_type_template_id_22099f60___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GoogleMap_vue_vue_type_template_id_22099f60___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -727,54 +779,123 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue"
+component.options.__file = "resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMap.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=template&id=22099f60&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=template&id=22099f60& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMap_vue_vue_type_template_id_22099f60___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMap.vue?vue&type=template&id=22099f60& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMap.vue?vue&type=template&id=22099f60&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMap_vue_vue_type_template_id_22099f60___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMap_vue_vue_type_template_id_22099f60___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GoogleMapBasic_vue_vue_type_template_id_597734ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleMapBasic.vue?vue&type=template&id=597734ee& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=template&id=597734ee&");
+/* harmony import */ var _GoogleMapBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GoogleMapBasic.vue?vue&type=script&lang=js& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GoogleMapBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GoogleMapBasic_vue_vue_type_template_id_597734ee___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GoogleMapBasic_vue_vue_type_template_id_597734ee___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMapBasic.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapBasic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=template&id=597734ee&":
 /*!******************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=template&id=597734ee& ***!
   \******************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=27ba9745&":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=27ba9745& ***!
-  \************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_27ba9745___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditor.vue?vue&type=template&id=27ba9745& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=27ba9745&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_27ba9745___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapBasic_vue_vue_type_template_id_597734ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMapBasic.vue?vue&type=template&id=597734ee& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapBasic.vue?vue&type=template&id=597734ee&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapBasic_vue_vue_type_template_id_597734ee___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_27ba9745___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapBasic_vue_vue_type_template_id_597734ee___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue":
-/*!******************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue ***!
-  \******************************************************************************************************/
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue ***!
+  \****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorCustomToolbar_vue_vue_type_template_id_2ee660b5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5&");
-/* harmony import */ var _QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&");
+/* harmony import */ var _GoogleMapInfoWindow_vue_vue_type_template_id_88634ca4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4&");
+/* harmony import */ var _GoogleMapInfoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GoogleMapInfoWindow.vue?vue&type=script&lang=js& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -784,9 +905,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditorCustomToolbar_vue_vue_type_template_id_2ee660b5___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditorCustomToolbar_vue_vue_type_template_id_2ee660b5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _GoogleMapInfoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GoogleMapInfoWindow_vue_vue_type_template_id_88634ca4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GoogleMapInfoWindow_vue_vue_type_template_id_88634ca4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -796,54 +917,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue"
+component.options.__file = "resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************/
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorCustomToolbar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapInfoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMapInfoWindow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapInfoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5&":
-/*!*************************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5& ***!
-  \*************************************************************************************************************************************/
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4& ***!
+  \***********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_2ee660b5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=2ee660b5&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_2ee660b5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapInfoWindow_vue_vue_type_template_id_88634ca4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapInfoWindow.vue?vue&type=template&id=88634ca4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapInfoWindow_vue_vue_type_template_id_88634ca4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_2ee660b5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapInfoWindow_vue_vue_type_template_id_88634ca4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue":
-/*!****************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue ***!
-  \****************************************************************************************************/
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue ***!
+  \****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorThemeBubble_vue_vue_type_template_id_0bf7c0e0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0&");
-/* harmony import */ var _QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&");
+/* harmony import */ var _GoogleMapStreetView_vue_vue_type_template_id_b392d090___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleMapStreetView.vue?vue&type=template&id=b392d090& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=template&id=b392d090&");
+/* harmony import */ var _GoogleMapStreetView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GoogleMapStreetView.vue?vue&type=script&lang=js& */ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -853,9 +974,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditorThemeBubble_vue_vue_type_template_id_0bf7c0e0___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditorThemeBubble_vue_vue_type_template_id_0bf7c0e0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _GoogleMapStreetView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GoogleMapStreetView_vue_vue_type_template_id_b392d090___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GoogleMapStreetView_vue_vue_type_template_id_b392d090___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -865,107 +986,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue"
+component.options.__file = "resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************/
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeBubble.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapStreetView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMapStreetView.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapStreetView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0&":
-/*!***********************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0& ***!
-  \***********************************************************************************************************************************/
+/***/ "./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=template&id=b392d090&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=template&id=b392d090& ***!
+  \***********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_0bf7c0e0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=0bf7c0e0&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_0bf7c0e0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapStreetView_vue_vue_type_template_id_b392d090___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleMapStreetView.vue?vue&type=template&id=b392d090& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/charts-and-maps/maps/google-map/GoogleMapStreetView.vue?vue&type=template&id=b392d090&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapStreetView_vue_vue_type_template_id_b392d090___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_0bf7c0e0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue":
-/*!**************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue ***!
-  \**************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorThemeSnow_vue_vue_type_template_id_0ec36957___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957&");
-/* harmony import */ var _QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditorThemeSnow_vue_vue_type_template_id_0ec36957___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditorThemeSnow_vue_vue_type_template_id_0ec36957___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeSnow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957&":
-/*!*********************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957& ***!
-  \*********************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_0ec36957___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=0ec36957&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_0ec36957___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_0ec36957___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMapStreetView_vue_vue_type_template_id_b392d090___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

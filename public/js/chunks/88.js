@@ -1,17 +1,61 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[88],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-instantsearch */ "./node_modules/vue-instantsearch/dist/vue-instantsearch.esm.js");
-/* harmony import */ var algoliasearch_lite__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! algoliasearch/lite */ "./node_modules/algoliasearch/src/browser/builds/algoliasearchLite.js");
-/* harmony import */ var algoliasearch_lite__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(algoliasearch_lite__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_form_wizard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-form-wizard */ "./node_modules/vue-form-wizard/dist/vue-form-wizard.js");
+/* harmony import */ var vue_form_wizard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_form_wizard__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_form_wizard_dist_vue_form_wizard_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-form-wizard/dist/vue-form-wizard.min.css */ "./node_modules/vue-form-wizard/dist/vue-form-wizard.min.css");
+/* harmony import */ var vue_form_wizard_dist_vue_form_wizard_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_form_wizard_dist_vue_form_wizard_min_css__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -320,120 +364,133 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
+var ItemListView = function ItemListView() {
+  return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./components/ItemListView.vue */ "./resources/js/src/views/apps/eCommerce/components/ItemListView.vue"));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    ItemGridView: function ItemGridView() {
-      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./components/ItemGridView.vue */ "./resources/js/src/views/apps/eCommerce/components/ItemGridView.vue"));
-    },
-    ItemListView: function ItemListView() {
-      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./components/ItemListView.vue */ "./resources/js/src/views/apps/eCommerce/components/ItemListView.vue"));
-    },
-    AisClearRefinements: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisClearRefinements"],
-    AisConfigure: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisConfigure"],
-    AisHierarchicalMenu: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisHierarchicalMenu"],
-    AisHits: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisHits"],
-    AisInstantSearch: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisInstantSearch"],
-    AisNumericMenu: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisNumericMenu"],
-    AisPagination: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisPagination"],
-    AisRangeInput: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisRangeInput"],
-    AisRatingMenu: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisRatingMenu"],
-    AisRefinementList: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisRefinementList"],
-    AisSearchBox: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisSearchBox"],
-    AisSortBy: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisSortBy"],
-    AisStats: vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__["AisStats"]
-  },
   data: function data() {
     return {
-      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_1___default()('latency', '6be0576ff61c053d5f9a3225e2a90f76'),
-      // Filter Sidebar
-      isFilterSidebarActive: true,
-      clickNotClose: true,
-      currentItemView: 'item-grid-view',
-      numericItems: [{
-        label: 'All'
+      // TAB 2
+      fullName: '',
+      mobileNum: '',
+      pincode: '',
+      houseNum: '',
+      area: '',
+      landmark: '',
+      city: '',
+      state: '',
+      addressType: 1,
+      addressTypeOptions: [{
+        text: 'Home',
+        value: 1
       }, {
-        label: '<= $10',
-        end: 10
-      }, {
-        label: '$10 - $100',
-        start: 10,
-        end: 100
-      }, {
-        label: '$100 - $500',
-        start: 100,
-        end: 500
-      }, {
-        label: '>= $500',
-        start: 500
+        text: 'Office',
+        value: 2
       }],
-      algoliaCategories: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2', 'hierarchicalCategories.lvl3']
+      // TAB 3
+      paymentMethod: 'debit-card',
+      cvv: ''
     };
   },
   computed: {
-    toValue: function toValue() {
-      return function (value, range) {
-        return [value.min !== null ? value.min : range.min, value.max !== null ? value.max : range.max];
-      };
+    cartItems: function cartItems() {
+      return this.$store.state.eCommerce.cartItems.slice().reverse();
     },
-    // GRID VIEW
-    isInCart: function isInCart() {
+    isInWishList: function isInWishList() {
       var _this = this;
 
       return function (itemId) {
-        return _this.$store.getters['eCommerce/isInCart'](itemId);
+        return _this.$store.getters['eCommerce/isInWishList'](itemId);
       };
-    },
-    isInWishList: function isInWishList() {
-      var _this2 = this;
-
-      return function (itemId) {
-        return _this2.$store.getters['eCommerce/isInWishList'](itemId);
-      };
-    },
-    windowWidth: function windowWidth() {
-      return this.$store.state.windowWidth;
-    }
-  },
-  watch: {
-    windowWidth: function windowWidth() {
-      this.setSidebarWidth();
     }
   },
   methods: {
-    setSidebarWidth: function setSidebarWidth() {
-      if (this.windowWidth < 992) {
-        this.isFilterSidebarActive = this.clickNotClose = false;
-      } else {
-        this.isFilterSidebarActive = this.clickNotClose = true;
-      }
+    // TAB 1
+    removeItemFromCart: function removeItemFromCart(item) {
+      this.$store.dispatch('eCommerce/toggleItemInCart', item);
     },
-    // GRID VIEW - ACTIONS
-    toggleFilterSidebar: function toggleFilterSidebar() {
-      if (this.clickNotClose) return;
-      this.isFilterSidebarActive = !this.isFilterSidebarActive;
+    wishListButtonClicked: function wishListButtonClicked(item) {
+      // Toggle in Wish List
+      if (this.isInWishList(item.objectID)) this.$router.push('/apps/eCommerce/wish-list').catch(function () {});else {
+        this.toggleItemInWishList(item);
+        this.removeItemFromCart(item);
+      }
     },
     toggleItemInWishList: function toggleItemInWishList(item) {
       this.$store.dispatch('eCommerce/toggleItemInWishList', item);
     },
-    additemInCart: function additemInCart(item) {
-      this.$store.dispatch('eCommerce/additemInCart', item);
+    updateItemQuantity: function updateItemQuantity(event, index) {
+      var itemIndex = Math.abs(index + 1 - this.cartItems.length);
+      this.$store.dispatch('eCommerce/updateItemQuantity', {
+        quantity: event,
+        index: itemIndex
+      });
     },
-    cartButtonClicked: function cartButtonClicked(item) {
-      this.isInCart(item.objectID) ? this.$router.push('/apps/eCommerce/checkout').catch(function () {}) : this.additemInCart(item);
+    // TAB 2
+    submitNewAddressForm: function submitNewAddressForm() {
+      var _this2 = this;
+
+      return new Promise(function () {
+        _this2.$validator.validateAll('add-new-address').then(function (result) {
+          if (result) {
+            // if form have no errors
+            _this2.$refs.checkoutWizard.nextTab();
+          } else {
+            _this2.$vs.notify({
+              title: 'Error',
+              text: 'Please enter valid details',
+              color: 'warning',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            });
+          }
+        });
+      });
+    },
+    // TAB 3
+    makePayment: function makePayment() {
+      var _this3 = this;
+
+      return new Promise(function () {
+        _this3.$validator.validateAll('cvv-form').then(function (result) {
+          if (result) {
+            // if form have no errors
+            _this3.$vs.notify({
+              title: 'Success',
+              text: 'Payment received successfully',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-check'
+            });
+          } else {
+            _this3.$vs.notify({
+              title: 'Error',
+              text: 'Please enter valid details',
+              color: 'warning',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            });
+          }
+        });
+      });
     }
   },
-  created: function created() {
-    this.setSidebarWidth();
+  components: {
+    ItemListView: ItemListView,
+    FormWizard: vue_form_wizard__WEBPACK_IMPORTED_MODULE_0__["FormWizard"],
+    TabContent: vue_form_wizard__WEBPACK_IMPORTED_MODULE_0__["TabContent"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -442,22 +499,22 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "#algolia-instant-search-demo .algolia-header .algolia-filters-label {\n  width: calc(260px + 2.4rem);\n}\n#algolia-instant-search-demo #algolia-content-container .vs-sidebar {\n  position: relative;\n}\n[dir=ltr] #algolia-instant-search-demo #algolia-content-container .vs-sidebar {\n  float: left;\n}\n[dir=rtl] #algolia-instant-search-demo #algolia-content-container .vs-sidebar {\n  float: right;\n}\n[dir] #algolia-instant-search-demo .algolia-search-input-right-aligned-icon {\n  padding: 1rem 1.5rem;\n}\n#algolia-instant-search-demo .algolia-price-slider {\n  min-width: unset;\n}\n#algolia-instant-search-demo .item-view-primary-action-btn {\n  color: #2c2c2c !important;\n  min-width: 50%;\n}\n[dir] #algolia-instant-search-demo .item-view-primary-action-btn {\n  background-color: #f6f6f6;\n}\n#algolia-instant-search-demo .item-view-secondary-action-btn {\n  min-width: 50%;\n}\n[dir] .theme-dark #algolia-instant-search-demo #algolia-content-container .vs-sidebar {\n  background-color: #10163a;\n}\n@media (min-width: 992px) {\n[dir] .vs-sidebar-rounded .vs-sidebar {\n    border-radius: 0.5rem;\n}\n[dir] .vs-sidebar-rounded .vs-sidebar--items {\n    border-radius: 0.5rem;\n}\n}\n@media (max-width: 992px) {\n#algolia-content-container .vs-sidebar {\n    position: absolute !important;\n}\n[dir] #algolia-content-container .vs-sidebar {\n    float: none !important;\n}\n}", ""]);
+exports.push([module.i, "#ecommerce-checkout-demo .item-view-primary-action-btn[data-v-5ea2d3a4] {\n  color: #2c2c2c !important;\n}[dir] #ecommerce-checkout-demo .item-view-primary-action-btn[data-v-5ea2d3a4] {\n  background-color: #f6f6f6;\n}\n#ecommerce-checkout-demo .item-name[data-v-5ea2d3a4] {\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  -webkit-line-clamp: 2;\n}\n[dir] #ecommerce-checkout-demo .vue-form-wizard[data-v-5ea2d3a4] {\n  padding-bottom: 0;\n}\n[dir] #ecommerce-checkout-demo .vue-form-wizard[data-v-5ea2d3a4]  .wizard-header {\n  padding: 0;\n}\n[dir] #ecommerce-checkout-demo .vue-form-wizard[data-v-5ea2d3a4]  .wizard-tab-content {\n  padding-bottom: 0;\n}\n[dir=ltr] #ecommerce-checkout-demo .vue-form-wizard[data-v-5ea2d3a4]  .wizard-tab-content {\n  padding-right: 0;\n  padding-left: 0;\n}\n[dir=rtl] #ecommerce-checkout-demo .vue-form-wizard[data-v-5ea2d3a4]  .wizard-tab-content {\n  padding-left: 0;\n  padding-right: 0;\n}\n[dir] #ecommerce-checkout-demo .vue-form-wizard[data-v-5ea2d3a4]  .wizard-tab-content .wizard-tab-container {\n  margin-bottom: 0 !important;\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceShop.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -479,10 +536,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=template&id=23854758&":
-/*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=template&id=23854758& ***!
-  \******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -496,171 +553,884 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { attrs: { id: "ecommerce-checkout-demo" } },
     [
       _c(
-        "ais-instant-search",
+        "form-wizard",
         {
+          ref: "checkoutWizard",
           attrs: {
-            "search-client": _vm.searchClient,
-            "index-name": "instant_search",
-            id: "algolia-instant-search-demo"
+            color: "rgba(var(--vs-primary), 1)",
+            title: null,
+            subtitle: null,
+            "hide-buttons": true
           }
         },
         [
-          _c("ais-configure", { attrs: { hitsPerPage: 9 } }),
+          _c(
+            "tab-content",
+            {
+              staticClass: "mb-5",
+              attrs: { title: "Cart", icon: "feather icon-shopping-cart" }
+            },
+            [
+              _vm.cartItems.length
+                ? _c("div", { staticClass: "vx-row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "vx-col lg:w-2/3 w-full relative" },
+                      _vm._l(_vm.cartItems, function(item, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: item.objectID,
+                            staticClass: "items-list-view"
+                          },
+                          [
+                            _c(
+                              "item-list-view",
+                              { staticClass: "mb-base", attrs: { item: item } },
+                              [
+                                _c(
+                                  "template",
+                                  { slot: "item-meta" },
+                                  [
+                                    _c(
+                                      "h6",
+                                      {
+                                        staticClass:
+                                          "item-name font-semibold mb-1 cursor-pointer hover:text-primary",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.$router
+                                              .push({
+                                                name:
+                                                  "ecommerce-item-detail-view",
+                                                params: {
+                                                  item_id: item.objectID
+                                                }
+                                              })
+                                              .catch(function() {})
+                                          }
+                                        }
+                                      },
+                                      [_vm._v(_vm._s(item.name))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "text-sm mb-2" }, [
+                                      _vm._v("By "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "font-semibold cursor-pointer"
+                                        },
+                                        [_vm._v(_vm._s(item.brand))]
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "text-success text-sm" },
+                                      [_vm._v("In Stock")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "mt-4 font-bold text-sm" },
+                                      [_vm._v("Quantity")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("vs-input-number", {
+                                      staticClass: "inline-flex",
+                                      attrs: {
+                                        min: "1",
+                                        max: "10",
+                                        value: item.quantity
+                                      },
+                                      on: {
+                                        input: function($event) {
+                                          return _vm.updateItemQuantity(
+                                            $event,
+                                            index
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      {
+                                        staticClass:
+                                          "font-medium text-grey mt-4"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Delivery by, " +
+                                            _vm._s(item.delivery_date)
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      {
+                                        staticClass: "text-success font-medium"
+                                      },
+                                      [
+                                        _vm._v(
+                                          _vm._s(item.discount_in_percentage) +
+                                            "% off " +
+                                            _vm._s(item.offers_count) +
+                                            " offers Available"
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c("template", { slot: "action-buttons" }, [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "item-view-primary-action-btn p-3 rounded-lg flex flex-grow items-center justify-center cursor-pointer mb-3",
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.removeItemFromCart(item)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("feather-icon", {
+                                        attrs: {
+                                          icon: "XIcon",
+                                          svgClasses: "h-4 w-4"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "text-sm font-semibold ml-2"
+                                        },
+                                        [_vm._v("REMOVE")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "item-view-secondary-action-btn bg-primary p-3 rounded-lg flex flex-grow items-center justify-center text-white cursor-pointer",
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.wishListButtonClicked(item)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("feather-icon", {
+                                        attrs: {
+                                          icon: "HeartIcon",
+                                          svgClasses: [
+                                            {
+                                              "text-white fill-current": _vm.isInWishList(
+                                                item.objectID
+                                              )
+                                            },
+                                            "h-4 w-4"
+                                          ]
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _vm.isInWishList(item.objectID)
+                                        ? _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "text-sm font-semibold ml-2"
+                                            },
+                                            [_vm._v("WISHLIST")]
+                                          )
+                                        : _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "text-sm font-semibold ml-2"
+                                            },
+                                            [_vm._v("WISHLIST")]
+                                          )
+                                    ],
+                                    1
+                                  )
+                                ])
+                              ],
+                              2
+                            )
+                          ],
+                          1
+                        )
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "vx-col lg:w-1/3 w-full" },
+                      [
+                        _c(
+                          "vx-card",
+                          [
+                            _c("p", { staticClass: "text-grey mb-3" }, [
+                              _vm._v("Options")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "flex justify-between" }, [
+                              _c("span", { staticClass: "font-semibold" }, [
+                                _vm._v("Coupons")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "font-medium text-primary cursor-pointer"
+                                },
+                                [_vm._v("Apply")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("vs-divider"),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "font-semibold mb-3" }, [
+                              _vm._v("Price Details")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-between mb-2" },
+                              [
+                                _c("span", { staticClass: "text-grey" }, [
+                                  _vm._v("Total MRP")
+                                ]),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("$598")])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-between mb-2" },
+                              [
+                                _c("span", { staticClass: "text-grey" }, [
+                                  _vm._v("Bag Discount")
+                                ]),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "text-success" }, [
+                                  _vm._v("-25$")
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-between mb-2" },
+                              [
+                                _c("span", { staticClass: "text-grey" }, [
+                                  _vm._v("Estimated Tax")
+                                ]),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("$1.3")])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-between mb-2" },
+                              [
+                                _c("span", { staticClass: "text-grey" }, [
+                                  _vm._v("EMI Eligibility")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "text-primary",
+                                    attrs: { href: "#" }
+                                  },
+                                  [_vm._v("Details")]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-between mb-2" },
+                              [
+                                _c("span", { staticClass: "text-grey" }, [
+                                  _vm._v("Delivery Charges")
+                                ]),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "text-success" }, [
+                                  _vm._v("Free")
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("vs-divider"),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex justify-between font-semibold mb-3"
+                              },
+                              [
+                                _c("span", [_vm._v("Total")]),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("$574.3")])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "vs-button",
+                              {
+                                staticClass: "w-full",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.$refs.checkoutWizard.nextTab()
+                                  }
+                                }
+                              },
+                              [_vm._v("PLACE ORDER")]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                : _c(
+                    "vx-card",
+                    {
+                      attrs: { title: "You don't have any items in your cart." }
+                    },
+                    [
+                      _c(
+                        "vs-button",
+                        {
+                          on: {
+                            click: function($event) {
+                              _vm.$router
+                                .push("/apps/eCommerce/shop")
+                                .catch(function() {})
+                            }
+                          }
+                        },
+                        [_vm._v("Browse Shop")]
+                      )
+                    ],
+                    1
+                  )
+            ],
+            1
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "algolia-header mb-4" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "flex md:items-end items-center justify-between flex-wrap"
-              },
-              [
-                _c("feather-icon", {
-                  staticClass: "inline-flex lg:hidden cursor-pointer mr-4",
-                  attrs: { icon: "MenuIcon" },
-                  on: {
-                    click: function($event) {
-                      $event.stopPropagation()
-                      return _vm.toggleFilterSidebar($event)
-                    }
-                  }
-                }),
-                _vm._v(" "),
+          _c(
+            "tab-content",
+            {
+              staticClass: "mb-5",
+              attrs: { title: "Address", icon: "feather icon-home" }
+            },
+            [
+              _c("div", { staticClass: "vx-row" }, [
                 _c(
-                  "p",
-                  {
-                    staticClass:
-                      "lg:inline-flex hidden font-semibold algolia-filters-label"
-                  },
-                  [_vm._v("Filters")]
+                  "div",
+                  { staticClass: "vx-col lg:w-2/3 w-full" },
+                  [
+                    _c(
+                      "vx-card",
+                      {
+                        staticClass: "mb-base",
+                        attrs: {
+                          title: "Add New Address",
+                          subtitle:
+                            'Be sure to check "Deliver to this address" when you have finished'
+                        }
+                      },
+                      [
+                        _c(
+                          "form",
+                          { attrs: { "data-vv-scope": "add-new-address" } },
+                          [
+                            _c("div", { staticClass: "vx-row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|alpha_spaces",
+                                        expression: "'required|alpha_spaces'"
+                                      }
+                                    ],
+                                    staticClass: "w-full mt-5",
+                                    attrs: {
+                                      "data-vv-as": "field",
+                                      name: "fullName",
+                                      label: "Full Name:"
+                                    },
+                                    model: {
+                                      value: _vm.fullName,
+                                      callback: function($$v) {
+                                        _vm.fullName = $$v
+                                      },
+                                      expression: "fullName"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.errors.has(
+                                            "add-new-address.fullName"
+                                          ),
+                                          expression:
+                                            "errors.has('add-new-address.fullName')"
+                                        }
+                                      ],
+                                      staticClass: "text-danger"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.errors.first(
+                                            "add-new-address.fullName"
+                                          )
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|digits:10",
+                                        expression: "'required|digits:10'"
+                                      }
+                                    ],
+                                    staticClass: "w-full mt-5",
+                                    attrs: {
+                                      name: "mobileNum",
+                                      label: "Mobile Number:"
+                                    },
+                                    model: {
+                                      value: _vm.mobileNum,
+                                      callback: function($$v) {
+                                        _vm.mobileNum = $$v
+                                      },
+                                      expression: "mobileNum"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.errors.has(
+                                            "add-new-address.mobileNum"
+                                          ),
+                                          expression:
+                                            "errors.has('add-new-address.mobileNum')"
+                                        }
+                                      ],
+                                      staticClass: "text-danger"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.errors.first(
+                                            "add-new-address.mobileNum"
+                                          )
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "vx-row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required",
+                                        expression: "'required'"
+                                      }
+                                    ],
+                                    staticClass: "w-full mt-5",
+                                    attrs: {
+                                      name: "houseNum",
+                                      label: "Flat, House No:"
+                                    },
+                                    model: {
+                                      value: _vm.houseNum,
+                                      callback: function($$v) {
+                                        _vm.houseNum = $$v
+                                      },
+                                      expression: "houseNum"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.errors.has(
+                                            "add-new-address.houseNum"
+                                          ),
+                                          expression:
+                                            "errors.has('add-new-address.houseNum')"
+                                        }
+                                      ],
+                                      staticClass: "text-danger"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.errors.first(
+                                            "add-new-address.houseNum"
+                                          )
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c("vs-input", {
+                                    staticClass: "w-full mt-5",
+                                    attrs: {
+                                      name: "landmark",
+                                      label:
+                                        "Landmark e.g. near apollo hospital:"
+                                    },
+                                    model: {
+                                      value: _vm.landmark,
+                                      callback: function($$v) {
+                                        _vm.landmark = $$v
+                                      },
+                                      expression: "landmark"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "vx-row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required",
+                                        expression: "'required'"
+                                      }
+                                    ],
+                                    staticClass: "w-full mt-5",
+                                    attrs: {
+                                      name: "city",
+                                      label: "Town/City:"
+                                    },
+                                    model: {
+                                      value: _vm.city,
+                                      callback: function($$v) {
+                                        _vm.city = $$v
+                                      },
+                                      expression: "city"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.errors.has(
+                                            "add-new-address.city"
+                                          ),
+                                          expression:
+                                            "errors.has('add-new-address.city')"
+                                        }
+                                      ],
+                                      staticClass: "text-danger"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.errors.first(
+                                            "add-new-address.city"
+                                          )
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|min:3|max:6|numeric",
+                                        expression:
+                                          "'required|min:3|max:6|numeric'"
+                                      }
+                                    ],
+                                    staticClass: "w-full mt-5",
+                                    attrs: {
+                                      name: "pincode",
+                                      label: "Pincode:"
+                                    },
+                                    model: {
+                                      value: _vm.pincode,
+                                      callback: function($$v) {
+                                        _vm.pincode = $$v
+                                      },
+                                      expression: "pincode"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.errors.has(
+                                            "add-new-address.pincode"
+                                          ),
+                                          expression:
+                                            "errors.has('add-new-address.pincode')"
+                                        }
+                                      ],
+                                      staticClass: "text-danger"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.errors.first(
+                                            "add-new-address.pincode"
+                                          )
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "vx-row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required",
+                                        expression: "'required'"
+                                      }
+                                    ],
+                                    staticClass: "w-full mt-5",
+                                    attrs: { name: "state", label: "State:" },
+                                    model: {
+                                      value: _vm.state,
+                                      callback: function($$v) {
+                                        _vm.state = $$v
+                                      },
+                                      expression: "state"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.errors.has(
+                                            "add-new-address.state"
+                                          ),
+                                          expression:
+                                            "errors.has('add-new-address.state')"
+                                        }
+                                      ],
+                                      staticClass: "text-danger"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.errors.first(
+                                            "add-new-address.state"
+                                          )
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "vx-col sm:w-1/2 w-full" },
+                                [
+                                  _c(
+                                    "vs-select",
+                                    {
+                                      staticClass: "w-full mt-5",
+                                      attrs: { label: "Address Type:" },
+                                      model: {
+                                        value: _vm.addressType,
+                                        callback: function($$v) {
+                                          _vm.addressType = $$v
+                                        },
+                                        expression: "addressType"
+                                      }
+                                    },
+                                    _vm._l(_vm.addressTypeOptions, function(
+                                      item,
+                                      index
+                                    ) {
+                                      return _c("vs-select-item", {
+                                        key: index,
+                                        attrs: {
+                                          value: item.value,
+                                          text: item.text
+                                        }
+                                      })
+                                    }),
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "vs-button",
+                              {
+                                staticClass: "mt-6 ml-auto flex",
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.submitNewAddressForm($event)
+                                  }
+                                }
+                              },
+                              [_vm._v("SAVE AND DELIVER HERE")]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "flex justify-between items-end flex-grow" },
+                  { staticClass: "vx-col lg:w-1/3 w-full" },
                   [
-                    _c("ais-stats", {
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function(ref) {
-                            var hitsPerPage = ref.hitsPerPage
-                            var nbPages = ref.nbPages
-                            var nbHits = ref.nbHits
-                            var page = ref.page
-                            var processingTimeMS = ref.processingTimeMS
-                            var query = ref.query
-                            return _c(
-                              "p",
-                              { staticClass: "font-semibold md:block hidden" },
-                              [
-                                _vm._v(
-                                  "\n                            " +
-                                    _vm._s(nbHits) +
-                                    " results found in " +
-                                    _vm._s(processingTimeMS) +
-                                    "ms\n                        "
-                                )
-                              ]
-                            )
-                          }
-                        }
-                      ])
-                    }),
-                    _vm._v(" "),
                     _c(
-                      "div",
-                      { staticClass: "flex flex-wrap" },
+                      "vx-card",
+                      { attrs: { title: "John Doe" } },
                       [
-                        _c("ais-sort-by", {
-                          attrs: {
-                            items: [
-                              { value: "instant_search", label: "Featured" },
-                              {
-                                value: "instant_search_price_asc",
-                                label: "Lowest Price"
-                              },
-                              {
-                                value: "instant_search_price_desc",
-                                label: "Highest Price"
-                              }
-                            ]
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var items = ref.items
-                                var currentRefinement = ref.currentRefinement
-                                var refine = ref.refine
-                                return _c(
-                                  "vs-select",
-                                  {
-                                    staticClass:
-                                      "mr-4 vs-input-shadow-drop vs-select-no-border d-theme-input-dark-bg w-48",
-                                    attrs: { value: currentRefinement },
-                                    on: {
-                                      input: function(val) {
-                                        return refine(val)
-                                      }
-                                    }
-                                  },
-                                  _vm._l(items, function(item) {
-                                    return _c("vs-select-item", {
-                                      key: item.value,
-                                      attrs: {
-                                        value: item.value,
-                                        text: item.label
-                                      }
-                                    })
-                                  }),
-                                  1
-                                )
-                              }
-                            }
-                          ])
-                        }),
+                        _c("div", [
+                          _c("p", [_vm._v("9447 Glen Eagles Drive")]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("Lewis Center, OH 43035")]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "my-4" }, [
+                            _vm._v("UTC-5: Eastern Standard Time (EST)")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("202-555-0140")])
+                        ]),
+                        _vm._v(" "),
+                        _c("vs-divider"),
                         _vm._v(" "),
                         _c(
-                          "div",
-                          [
-                            _c("feather-icon", {
-                              staticClass:
-                                "p-2 shadow-drop rounded-lg d-theme-dark-bg cursor-pointer",
-                              attrs: {
-                                icon: "GridIcon",
-                                svgClasses: {
-                                  "text-primary stroke-current":
-                                    _vm.currentItemView == "item-grid-view"
-                                }
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.currentItemView = "item-grid-view"
-                                }
+                          "vs-button",
+                          {
+                            staticClass: "w-full",
+                            on: {
+                              click: function($event) {
+                                return _vm.$refs.checkoutWizard.nextTab()
                               }
-                            }),
-                            _vm._v(" "),
-                            _c("feather-icon", {
-                              staticClass:
-                                "p-2 ml-4 shadow-drop rounded-lg d-theme-dark-bg cursor-pointer hidden sm:inline-flex",
-                              attrs: {
-                                icon: "ListIcon",
-                                svgClasses: {
-                                  "text-primary stroke-current":
-                                    _vm.currentItemView == "item-list-view"
-                                }
-                              },
-                              on: {
-                                click: function($event) {
-                                  _vm.currentItemView = "item-list-view"
-                                }
-                              }
-                            })
-                          ],
-                          1
+                            }
+                          },
+                          [_vm._v("DELIVER TO THIS ADDRESS")]
                         )
                       ],
                       1
@@ -668,882 +1438,348 @@ var render = function() {
                   ],
                   1
                 )
-              ],
-              1
-            )
-          ]),
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c(
-            "div",
+            "tab-content",
             {
-              staticClass: "relative clearfix",
-              attrs: { id: "algolia-content-container" }
+              staticClass: "mb-5",
+              attrs: { title: "Payment", icon: "feather icon-credit-card" }
             },
             [
-              _c(
-                "vs-sidebar",
-                {
-                  staticClass:
-                    "items-no-padding vs-sidebar-rounded background-absolute",
-                  attrs: {
-                    parent: "#algolia-content-container",
-                    "click-not-close": _vm.clickNotClose,
-                    "hidden-background": _vm.clickNotClose
-                  },
-                  model: {
-                    value: _vm.isFilterSidebarActive,
-                    callback: function($$v) {
-                      _vm.isFilterSidebarActive = $$v
-                    },
-                    expression: "isFilterSidebarActive"
-                  }
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "p-6 filter-container" },
-                    [
-                      _c("h6", { staticClass: "font-bold mb-3" }, [
-                        _vm._v("Multi Range")
-                      ]),
-                      _vm._v(" "),
-                      _c("ais-numeric-menu", {
-                        attrs: { attribute: "price", items: _vm.numericItems },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "default",
-                            fn: function(ref) {
-                              var items = ref.items
-                              var refine = ref.refine
-                              var createURL = ref.createURL
-                              return _c(
-                                "ul",
-                                {},
-                                _vm._l(items, function(item) {
-                                  return _c(
-                                    "li",
+              _c("div", { staticClass: "vx-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "vx-col lg:w-2/3 w-full" },
+                  [
+                    _c(
+                      "vx-card",
+                      {
+                        staticClass: "mb-base",
+                        attrs: {
+                          title: "Payment Options",
+                          subtitle: "Be sure to click on correct payment option"
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "mt-3" },
+                          [
+                            _c(
+                              "ul",
+                              [
+                                _c("li", [
+                                  _c(
+                                    "div",
                                     {
-                                      key: item.value,
                                       staticClass:
-                                        "flex items-center cursor-pointer py-1",
-                                      on: {
-                                        click: function($event) {
-                                          return refine(item.value)
-                                        }
-                                      }
+                                        "flex flex-wrap justify-between items-center"
                                     },
                                     [
-                                      _c("feather-icon", {
-                                        attrs: {
-                                          icon: "CircleIcon",
-                                          svgClasses: [
-                                            {
-                                              "text-primary fill-current":
-                                                item.isRefined
-                                            },
-                                            "h-5 w-5"
-                                          ]
-                                        }
-                                      }),
-                                      _vm._v(" "),
                                       _c(
-                                        "span",
+                                        "vs-radio",
                                         {
-                                          staticClass: "ml-2",
-                                          class: {
-                                            "text-primary": item.isRefined
-                                          }
-                                        },
-                                        [_vm._v(_vm._s(item.label))]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                }),
-                                0
-                              )
-                            }
-                          }
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c("vs-divider"),
-                      _vm._v(" "),
-                      _c("h6", { staticClass: "font-bold mb-3" }, [
-                        _vm._v("Price Slider")
-                      ]),
-                      _vm._v(" "),
-                      _c("ais-range-input", {
-                        attrs: { attribute: "price" },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "default",
-                            fn: function(ref) {
-                              var currentRefinement = ref.currentRefinement
-                              var range = ref.range
-                              var refine = ref.refine
-                              return _c(
-                                "div",
-                                {},
-                                [
-                                  _c("vs-slider", {
-                                    staticClass: "algolia-price-slider",
-                                    attrs: {
-                                      "text-fixed": "$",
-                                      min: range.min,
-                                      max: range.max,
-                                      value: _vm.toValue(
-                                        currentRefinement,
-                                        range
-                                      )
-                                    },
-                                    on: {
-                                      input: function($event) {
-                                        return refine({
-                                          min: $event[0],
-                                          max: $event[1]
-                                        })
-                                      }
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            }
-                          }
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c("vs-divider"),
-                      _vm._v(" "),
-                      _c("h6", { staticClass: "font-bold mb-4" }, [
-                        _vm._v("Category")
-                      ]),
-                      _vm._v(" "),
-                      _c("ais-hierarchical-menu", {
-                        attrs: { attributes: _vm.algoliaCategories },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "default",
-                            fn: function(ref) {
-                              var items = ref.items
-                              var refine = ref.refine
-                              return _c("div", {}, [
-                                _c(
-                                  "ul",
-                                  _vm._l(items, function(item) {
-                                    return _c(
-                                      "li",
-                                      {
-                                        key: item.value,
-                                        staticClass:
-                                          "flex items-center cursor-pointer py-1",
-                                        on: {
-                                          click: function($event) {
-                                            return refine(item.value)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("feather-icon", {
-                                          attrs: {
-                                            icon: "CircleIcon",
-                                            svgClasses: [
-                                              {
-                                                "text-primary fill-current":
-                                                  item.isRefined
-                                              },
-                                              "h-5 w-5"
-                                            ]
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "ml-2",
-                                            class: {
-                                              "text-primary": item.isRefined
-                                            }
-                                          },
-                                          [_vm._v(_vm._s(item.label))]
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  }),
-                                  0
-                                )
-                              ])
-                            }
-                          }
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c("vs-divider"),
-                      _vm._v(" "),
-                      _c("h6", { staticClass: "font-bold mb-4" }, [
-                        _vm._v("Brand")
-                      ]),
-                      _vm._v(" "),
-                      _c("ais-refinement-list", {
-                        attrs: { attribute: "brand" },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "default",
-                            fn: function(ref) {
-                              var items = ref.items
-                              var isFromSearch = ref.isFromSearch
-                              var refine = ref.refine
-                              return _c("div", {}, [
-                                _c(
-                                  "ul",
-                                  [
-                                    isFromSearch && !items.length
-                                      ? _c("li", [_vm._v("No results.")])
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _vm._l(items, function(item) {
-                                      return _c(
-                                        "li",
-                                        {
-                                          key: item.value,
-                                          staticClass:
-                                            "mb-2 flex items-center justify-between"
-                                        },
-                                        [
-                                          _c(
-                                            "vs-checkbox",
-                                            {
-                                              staticClass: "ml-0",
-                                              on: {
-                                                click: function($event) {
-                                                  return refine(item.value)
-                                                }
-                                              },
-                                              model: {
-                                                value: item.isRefined,
-                                                callback: function($$v) {
-                                                  _vm.$set(
-                                                    item,
-                                                    "isRefined",
-                                                    $$v
-                                                  )
-                                                },
-                                                expression: "item.isRefined"
-                                              }
+                                          attrs: { "vs-value": "debit-card" },
+                                          model: {
+                                            value: _vm.paymentMethod,
+                                            callback: function($$v) {
+                                              _vm.paymentMethod = $$v
                                             },
-                                            [_vm._v(_vm._s(item.label))]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("span", [
-                                            _vm._v(_vm._s(item.count))
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    })
-                                  ],
-                                  2
-                                )
-                              ])
-                            }
-                          }
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c("vs-divider"),
-                      _vm._v(" "),
-                      _c("h6", { staticClass: "font-bold mb-3" }, [
-                        _vm._v("Rating")
-                      ]),
-                      _vm._v(" "),
-                      _c("ais-rating-menu", {
-                        attrs: { attribute: "rating" },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "default",
-                            fn: function(ref) {
-                              var items = ref.items
-                              var refine = ref.refine
-                              var createURL = ref.createURL
-                              return _c(
-                                "ul",
-                                {},
-                                _vm._l(items, function(item) {
-                                  return _c(
-                                    "li",
-                                    { key: item.value, staticClass: "mb-2" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "flex justify-between items-center",
-                                          on: {
-                                            click: function($event) {
-                                              $event.preventDefault()
-                                              return refine(item.value)
-                                            }
+                                            expression: "paymentMethod"
                                           }
                                         },
                                         [
                                           _c(
                                             "div",
                                             {
-                                              staticClass:
-                                                "flex items-center flex-wrap"
+                                              staticClass: "flex items-center"
                                             },
                                             [
-                                              _vm._l(item.stars, function(
-                                                full,
-                                                index
-                                              ) {
-                                                return _c("feather-icon", {
-                                                  key: index,
-                                                  attrs: {
-                                                    icon: "StarIcon",
-                                                    svgClasses: [
-                                                      {
-                                                        "text-warning": full,
-                                                        "text-grey": !full,
-                                                        "ml-1": index
-                                                      },
-                                                      "cursor-pointer stroke-current h-6 w-6"
-                                                    ]
-                                                  }
-                                                })
+                                              _c("img", {
+                                                staticClass: "inline-flex",
+                                                attrs: {
+                                                  src: __webpack_require__(/*! @assets/images/pages/eCommerce/bank.png */ "./resources/assets/images/pages/eCommerce/bank.png"),
+                                                  alt: "bank-logo",
+                                                  height: "40",
+                                                  width: "50"
+                                                }
                                               }),
                                               _vm._v(" "),
-                                              _c(
-                                                "span",
-                                                { staticClass: "ml-2" },
-                                                [_vm._v("& up")]
-                                              )
-                                            ],
-                                            2
-                                          ),
+                                              _c("span", [
+                                                _vm._v(
+                                                  "US Unlocked Debit Card 12XX XXXX XXXX 0000"
+                                                )
+                                              ])
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("John Doe")]),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("11/2020")])
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "form",
+                                    { attrs: { "data-vv-scope": "cvv-form" } },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center flex-wrap"
+                                        },
+                                        [
+                                          _c("span", { staticClass: "mt-4" }, [
+                                            _vm._v("Enter CVV: ")
+                                          ]),
                                           _vm._v(" "),
-                                          _c("span", [
-                                            _vm._v(
-                                              "(" + _vm._s(item.count) + ")"
+                                          _c("vs-input", {
+                                            directives: [
+                                              {
+                                                name: "validate",
+                                                rawName: "v-validate",
+                                                value: "required|digits:3",
+                                                expression:
+                                                  "'required|digits:3'"
+                                              }
+                                            ],
+                                            staticClass: "mr-3 ml-2 mt-4",
+                                            attrs: { name: "cvv" },
+                                            model: {
+                                              value: _vm.cvv,
+                                              callback: function($$v) {
+                                                _vm.cvv = $$v
+                                              },
+                                              expression: "cvv"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "vs-button",
+                                            {
+                                              staticClass: "mt-4",
+                                              attrs: { disabled: false },
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.makePayment($event)
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("CONTINUE")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "show",
+                                              rawName: "v-show",
+                                              value: _vm.errors.has(
+                                                "cvv-form.cvv"
+                                              ),
+                                              expression:
+                                                "errors.has('cvv-form.cvv')"
+                                            }
+                                          ],
+                                          staticClass: "text-danger ml-24"
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.errors.first("cvv-form.cvv")
                                             )
-                                          ])
+                                          )
                                         ]
                                       )
                                     ]
                                   )
-                                }),
-                                0
-                              )
-                            }
-                          }
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c("vs-divider"),
-                      _vm._v(" "),
-                      _c("ais-clear-refinements", {
-                        staticClass: "flex justify-center",
-                        scopedSlots: _vm._u([
-                          {
-                            key: "default",
-                            fn: function(ref) {
-                              var canRefine = ref.canRefine
-                              var refine = ref.refine
-                              var createURL = ref.createURL
-                              return _c(
-                                "vs-button",
-                                {
-                                  staticClass: "w-full",
-                                  attrs: { disabled: !canRefine },
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      return refine($event)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Remove Filters")]
-                              )
-                            }
-                          }
-                        ])
-                      })
-                    ],
-                    1
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { class: { "sidebar-spacer-with-margin": _vm.clickNotClose } },
-                [
-                  _c("ais-search-box", {
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function(ref) {
-                          var currentRefinement = ref.currentRefinement
-                          var isSearchStalled = ref.isSearchStalled
-                          var refine = ref.refine
-                          return _c("div", {}, [
-                            _c(
-                              "div",
-                              { staticClass: "relative mb-8" },
-                              [
-                                _c("vs-input", {
-                                  staticClass:
-                                    "w-full vs-input-shadow-drop vs-input-no-border d-theme-input-dark-bg",
-                                  attrs: {
-                                    placeholder: "Search here",
-                                    size: "large"
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      return refine($event)
-                                    },
-                                    keyup: function($event) {
-                                      if (
-                                        !$event.type.indexOf("key") &&
-                                        _vm._k(
-                                          $event.keyCode,
-                                          "esc",
-                                          27,
-                                          $event.key,
-                                          ["Esc", "Escape"]
-                                        )
-                                      ) {
-                                        return null
-                                      }
-                                      return refine("")
-                                    }
-                                  },
-                                  model: {
-                                    value: currentRefinement,
-                                    callback: function($$v) {
-                                      currentRefinement = $$v
-                                    },
-                                    expression: "currentRefinement"
-                                  }
-                                }),
+                                ]),
+                                _vm._v(" "),
+                                _c("vs-divider", { staticClass: "my-6" }),
                                 _vm._v(" "),
                                 _c(
-                                  "p",
-                                  {
-                                    staticClass: "mt-4 text-grey",
-                                    attrs: { hidden: !isSearchStalled }
-                                  },
+                                  "li",
                                   [
-                                    _c("feather-icon", {
-                                      staticClass: "mr-2 align-middle",
-                                      attrs: {
-                                        icon: "ClockIcon",
-                                        svgClasses: "w-4 h-4"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c("span", [_vm._v("Loading...")])
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    directives: [
+                                    _c(
+                                      "vs-radio",
                                       {
-                                        name: "show",
-                                        rawName: "v-show",
-                                        value: !currentRefinement,
-                                        expression: "!currentRefinement"
-                                      }
-                                    ],
-                                    staticClass:
-                                      "absolute top-0 right-0 py-4 px-6",
-                                    attrs: { slot: "submit-icon" },
-                                    slot: "submit-icon"
-                                  },
-                                  [
-                                    _c("feather-icon", {
-                                      attrs: {
-                                        icon: "SearchIcon",
-                                        svgClasses: "h-6 w-6"
-                                      }
-                                    })
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "show",
-                                        rawName: "v-show",
-                                        value: currentRefinement,
-                                        expression: "currentRefinement"
-                                      }
-                                    ],
-                                    staticClass:
-                                      "absolute top-0 right-0 py-4 px-6",
-                                    attrs: { slot: "reset-icon" },
-                                    slot: "reset-icon"
-                                  },
-                                  [
-                                    _c("feather-icon", {
-                                      attrs: {
-                                        icon: "XIcon",
-                                        svgClasses: "h-6 w-6 cursor-pointer"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          return refine("")
+                                        attrs: {
+                                          "vs-value": "credit-debit-atmCard"
+                                        },
+                                        model: {
+                                          value: _vm.paymentMethod,
+                                          callback: function($$v) {
+                                            _vm.paymentMethod = $$v
+                                          },
+                                          expression: "paymentMethod"
                                         }
-                                      }
-                                    })
+                                      },
+                                      [_vm._v("Credit / Debit / ATM Card")]
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "li",
+                                  { staticClass: "mt-2" },
+                                  [
+                                    _c(
+                                      "vs-radio",
+                                      {
+                                        attrs: { "vs-value": "netBanking" },
+                                        model: {
+                                          value: _vm.paymentMethod,
+                                          callback: function($$v) {
+                                            _vm.paymentMethod = $$v
+                                          },
+                                          expression: "paymentMethod"
+                                        }
+                                      },
+                                      [_vm._v("Net Banking")]
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "li",
+                                  { staticClass: "mt-2" },
+                                  [
+                                    _c(
+                                      "vs-radio",
+                                      {
+                                        attrs: { "vs-value": "emi" },
+                                        model: {
+                                          value: _vm.paymentMethod,
+                                          callback: function($$v) {
+                                            _vm.paymentMethod = $$v
+                                          },
+                                          expression: "paymentMethod"
+                                        }
+                                      },
+                                      [_vm._v("EMI (Easy Installment)")]
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "li",
+                                  { staticClass: "mt-2" },
+                                  [
+                                    _c(
+                                      "vs-radio",
+                                      {
+                                        attrs: { "vs-value": "cashOnDelivery" },
+                                        model: {
+                                          value: _vm.paymentMethod,
+                                          callback: function($$v) {
+                                            _vm.paymentMethod = $$v
+                                          },
+                                          expression: "paymentMethod"
+                                        }
+                                      },
+                                      [_vm._v("Cash On Delivery")]
+                                    )
                                   ],
                                   1
                                 )
                               ],
                               1
-                            )
-                          ])
-                        }
-                      }
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _c("ais-hits", {
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function(ref) {
-                          var items = ref.items
-                          return _c(
-                            "div",
-                            {},
-                            [
-                              _vm.currentItemView == "item-grid-view"
-                                ? [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "items-grid-view vx-row match-height"
-                                      },
-                                      _vm._l(items, function(item) {
-                                        return _c(
-                                          "div",
-                                          {
-                                            key: item.objectID,
-                                            staticClass:
-                                              "vx-col lg:w-1/3 sm:w-1/2 w-full"
-                                          },
-                                          [
-                                            _c(
-                                              "item-grid-view",
-                                              { attrs: { item: item } },
-                                              [
-                                                _c(
-                                                  "template",
-                                                  { slot: "action-buttons" },
-                                                  [
-                                                    _c(
-                                                      "div",
-                                                      {
-                                                        staticClass:
-                                                          "flex flex-wrap"
-                                                      },
-                                                      [
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "item-view-primary-action-btn p-3 flex flex-grow items-center justify-center cursor-pointer",
-                                                            on: {
-                                                              click: function(
-                                                                $event
-                                                              ) {
-                                                                return _vm.toggleItemInWishList(
-                                                                  item
-                                                                )
-                                                              }
-                                                            }
-                                                          },
-                                                          [
-                                                            _c("feather-icon", {
-                                                              attrs: {
-                                                                icon:
-                                                                  "HeartIcon",
-                                                                svgClasses: [
-                                                                  {
-                                                                    "text-danger fill-current": _vm.isInWishList(
-                                                                      item.objectID
-                                                                    )
-                                                                  },
-                                                                  "h-4 w-4"
-                                                                ]
-                                                              }
-                                                            }),
-                                                            _vm._v(" "),
-                                                            _c(
-                                                              "span",
-                                                              {
-                                                                staticClass:
-                                                                  "text-sm font-semibold ml-2"
-                                                              },
-                                                              [
-                                                                _vm._v(
-                                                                  "WISHLIST"
-                                                                )
-                                                              ]
-                                                            )
-                                                          ],
-                                                          1
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "item-view-secondary-action-btn bg-primary p-3 flex flex-grow items-center justify-center text-white cursor-pointer",
-                                                            on: {
-                                                              click: function(
-                                                                $event
-                                                              ) {
-                                                                return _vm.cartButtonClicked(
-                                                                  item
-                                                                )
-                                                              }
-                                                            }
-                                                          },
-                                                          [
-                                                            _c("feather-icon", {
-                                                              attrs: {
-                                                                icon:
-                                                                  "ShoppingBagIcon",
-                                                                svgClasses:
-                                                                  "h-4 w-4"
-                                                              }
-                                                            }),
-                                                            _vm._v(" "),
-                                                            _vm.isInCart(
-                                                              item.objectID
-                                                            )
-                                                              ? _c(
-                                                                  "span",
-                                                                  {
-                                                                    staticClass:
-                                                                      "text-sm font-semibold ml-2"
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "VIEW IN CART"
-                                                                    )
-                                                                  ]
-                                                                )
-                                                              : _c(
-                                                                  "span",
-                                                                  {
-                                                                    staticClass:
-                                                                      "text-sm font-semibold ml-2"
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "ADD TO CART"
-                                                                    )
-                                                                  ]
-                                                                )
-                                                          ],
-                                                          1
-                                                        )
-                                                      ]
-                                                    )
-                                                  ]
-                                                )
-                                              ],
-                                              2
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      }),
-                                      0
-                                    )
-                                  ]
-                                : _vm._l(items, function(item) {
-                                    return _c(
-                                      "div",
-                                      {
-                                        key: item.objectID,
-                                        staticClass: "items-list-view mb-base"
-                                      },
-                                      [
-                                        _c(
-                                          "item-list-view",
-                                          { attrs: { item: item } },
-                                          [
-                                            _c(
-                                              "template",
-                                              { slot: "action-buttons" },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "item-view-primary-action-btn p-3 rounded-lg flex flex-grow items-center justify-center cursor-pointer mb-3",
-                                                    on: {
-                                                      click: function($event) {
-                                                        return _vm.toggleItemInWishList(
-                                                          item
-                                                        )
-                                                      }
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("feather-icon", {
-                                                      attrs: {
-                                                        icon: "HeartIcon",
-                                                        svgClasses: [
-                                                          {
-                                                            "text-danger fill-current": _vm.isInWishList(
-                                                              item.objectID
-                                                            )
-                                                          },
-                                                          "h-4 w-4"
-                                                        ]
-                                                      }
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "span",
-                                                      {
-                                                        staticClass:
-                                                          "text-sm font-semibold ml-2"
-                                                      },
-                                                      [_vm._v("WISHLIST")]
-                                                    )
-                                                  ],
-                                                  1
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "item-view-secondary-action-btn bg-primary p-3 rounded-lg flex flex-grow items-center justify-center text-white cursor-pointer",
-                                                    on: {
-                                                      click: function($event) {
-                                                        return _vm.cartButtonClicked(
-                                                          item
-                                                        )
-                                                      }
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("feather-icon", {
-                                                      attrs: {
-                                                        icon: "ShoppingBagIcon",
-                                                        svgClasses: "h-4 w-4"
-                                                      }
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _vm.isInCart(item.objectID)
-                                                      ? _c(
-                                                          "span",
-                                                          {
-                                                            staticClass:
-                                                              "text-sm font-semibold ml-2"
-                                                          },
-                                                          [
-                                                            _vm._v(
-                                                              "VIEW IN CART"
-                                                            )
-                                                          ]
-                                                        )
-                                                      : _c(
-                                                          "span",
-                                                          {
-                                                            staticClass:
-                                                              "text-sm font-semibold ml-2"
-                                                          },
-                                                          [
-                                                            _vm._v(
-                                                              "ADD TO CART"
-                                                            )
-                                                          ]
-                                                        )
-                                                  ],
-                                                  1
-                                                )
-                                              ]
-                                            )
-                                          ],
-                                          2
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  })
-                            ],
-                            2
-                          )
-                        }
-                      }
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _c("ais-pagination", {
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function(ref) {
-                          var currentRefinement = ref.currentRefinement
-                          var nbPages = ref.nbPages
-                          var pages = ref.pages
-                          var isFirstPage = ref.isFirstPage
-                          var isLastPage = ref.isLastPage
-                          var refine = ref.refine
-                          var createURL = ref.createURL
-                          return _c(
-                            "div",
-                            {},
-                            [
-                              _c("vs-pagination", {
-                                attrs: {
-                                  total: nbPages,
-                                  max: 7,
-                                  value: currentRefinement + 1
-                                },
-                                on: {
-                                  input: function(val) {
-                                    refine(val - 1)
+                            ),
+                            _vm._v(" "),
+                            _c("vs-divider"),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "inline-flex items-center cursor-pointer"
+                              },
+                              [
+                                _c("feather-icon", {
+                                  staticClass: "mr-2",
+                                  attrs: {
+                                    icon: "PlusSquareIcon",
+                                    svgClasses: "h-6 w-6"
                                   }
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        }
-                      }
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticClass: "flex mt-4 mx-auto h-8",
-                    attrs: {
-                      src: __webpack_require__(/*! @assets/images/pages/eCommerce/Algolia-logo.png */ "./resources/assets/images/pages/eCommerce/Algolia-logo.png"),
-                      alt: "algolia-logo"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
+                                }),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("Add Gift Card")])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "vx-col lg:w-1/3 w-full" },
+                  [
+                    _c(
+                      "vx-card",
+                      { attrs: { title: "Price Details" } },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "flex justify-between mb-2" },
+                          [
+                            _c("span", [_vm._v("Price 3 Items")]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "font-semibold" }, [
+                              _vm._v("$699.30")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "flex justify-between mb-2" },
+                          [
+                            _c("span", [_vm._v("Delivery Charges")]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "text-success" }, [
+                              _vm._v("Free")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("vs-divider"),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "flex justify-between" }, [
+                          _c("span", [_vm._v("Amount Payable")]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "font-semibold" }, [
+                            _vm._v("$699.30")
+                          ])
+                        ])
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]
           )
         ],
         1
@@ -1559,29 +1795,29 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/assets/images/pages/eCommerce/Algolia-logo.png":
-/*!******************************************************************!*\
-  !*** ./resources/assets/images/pages/eCommerce/Algolia-logo.png ***!
-  \******************************************************************/
+/***/ "./resources/assets/images/pages/eCommerce/bank.png":
+/*!**********************************************************!*\
+  !*** ./resources/assets/images/pages/eCommerce/bank.png ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/Algolia-logo.png?224640caab6194bdfc027e442bb2374c";
+module.exports = "/images/bank.png?5f6aa47cad6e07be32f187d78f4f1d1c";
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/eCommerce/ECommerceShop.vue":
-/*!*****************************************************************!*\
-  !*** ./resources/js/src/views/apps/eCommerce/ECommerceShop.vue ***!
-  \*****************************************************************/
+/***/ "./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue ***!
+  \*********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ECommerceShop_vue_vue_type_template_id_23854758___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ECommerceShop.vue?vue&type=template&id=23854758& */ "./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=template&id=23854758&");
-/* harmony import */ var _ECommerceShop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ECommerceShop.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _ECommerceShop_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ECommerceShop.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _ECommerceCheckout_vue_vue_type_template_id_5ea2d3a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true& */ "./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true&");
+/* harmony import */ var _ECommerceCheckout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ECommerceCheckout.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _ECommerceCheckout_vue_vue_type_style_index_0_id_5ea2d3a4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true& */ "./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1592,66 +1828,66 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _ECommerceShop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ECommerceShop_vue_vue_type_template_id_23854758___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ECommerceShop_vue_vue_type_template_id_23854758___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ECommerceCheckout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ECommerceCheckout_vue_vue_type_template_id_5ea2d3a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ECommerceCheckout_vue_vue_type_template_id_5ea2d3a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "5ea2d3a4",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/apps/eCommerce/ECommerceShop.vue"
+component.options.__file = "resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************/
+/***/ "./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceShop.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceCheckout.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss& ***!
-  \***************************************************************************************************/
+/***/ "./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceShop.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_style_index_0_id_5ea2d3a4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=style&index=0&id=5ea2d3a4&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_style_index_0_id_5ea2d3a4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_style_index_0_id_5ea2d3a4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_style_index_0_id_5ea2d3a4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_style_index_0_id_5ea2d3a4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_style_index_0_id_5ea2d3a4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=template&id=23854758&":
-/*!************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=template&id=23854758& ***!
-  \************************************************************************************************/
+/***/ "./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true& ***!
+  \****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_template_id_23854758___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceShop.vue?vue&type=template&id=23854758& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceShop.vue?vue&type=template&id=23854758&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_template_id_23854758___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_template_id_5ea2d3a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/eCommerce/ECommerceCheckout.vue?vue&type=template&id=5ea2d3a4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_template_id_5ea2d3a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceShop_vue_vue_type_template_id_23854758___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ECommerceCheckout_vue_vue_type_template_id_5ea2d3a4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

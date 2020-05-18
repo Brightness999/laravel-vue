@@ -1,16 +1,18 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[82],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/components/excel/ImportExcel.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/components/excel/ImportExcel.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! xlsx */ "./node_modules/xlsx/xlsx.js");
-/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ProgressColor_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProgressColor.vue */ "./resources/js/src/views/components/vuesax/progress/ProgressColor.vue");
+/* harmony import */ var _ProgressInterminate_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProgressInterminate.vue */ "./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue");
+/* harmony import */ var _ProgressHeight_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProgressHeight.vue */ "./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue");
+//
 //
 //
 //
@@ -29,292 +31,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    onSuccess: {
-      type: Function,
-      required: true
-    }
-  },
-  data: function data() {
-    return {
-      excelData: {
-        header: null,
-        results: null,
-        meta: null
-      }
-    };
-  },
-  methods: {
-    generateData: function generateData(_ref) {
-      var header = _ref.header,
-          results = _ref.results,
-          meta = _ref.meta;
-      this.excelData.header = header;
-      this.excelData.results = results;
-      this.excelData.meta = meta;
-      if (this.onSuccess) this.onSuccess(this.excelData);
-    },
-    getHeaderRow: function getHeaderRow(sheet) {
-      var headers = [];
-      var range = xlsx__WEBPACK_IMPORTED_MODULE_0___default.a.utils.decode_range(sheet['!ref']);
-      var C = undefined;
-      var R = range.s.r;
-      /* start in the first row */
 
-      for (C = range.s.c; C <= range.e.c; ++C) {
-        /* walk every column in the range */
-        var cell = sheet[xlsx__WEBPACK_IMPORTED_MODULE_0___default.a.utils.encode_cell({
-          c: C,
-          r: R
-        })];
-        /* find the cell in the first row */
-
-        var hdr = "UNKNOWN ".concat(C); // <-- replace with your desired default
-
-        if (cell && cell.t) hdr = xlsx__WEBPACK_IMPORTED_MODULE_0___default.a.utils.format_cell(cell);
-        headers.push(hdr);
-      }
-
-      return headers;
-    },
-    handleDragover: function handleDragover(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'copy';
-    },
-    handleDrop: function handleDrop(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      var files = e.dataTransfer.files;
-
-      if (files.length !== 1) {
-        this.$vs.notify({
-          title: 'Login Attempt',
-          text: 'Only support uploading one file!',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle',
-          color: 'warning'
-        });
-        return;
-      }
-
-      var rawFile = files[0]; // only use files[0]
-
-      if (!this.isExcel(rawFile)) {
-        this.$vs.notify({
-          title: 'Login Attempt',
-          text: 'Only supports upload .xlsx, .xls, .csv suffix files',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle',
-          color: 'warning'
-        });
-        return false;
-      }
-
-      this.uploadFile(rawFile);
-    },
-    readerData: function readerData(rawFile) {
-      var _this = this;
-
-      return new Promise(function (resolve) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          var data = e.target.result;
-          var workbook = xlsx__WEBPACK_IMPORTED_MODULE_0___default.a.read(data, {
-            type: 'array'
-          });
-          var firstSheetName = workbook.SheetNames[0];
-          var worksheet = workbook.Sheets[firstSheetName];
-
-          var header = _this.getHeaderRow(worksheet);
-
-          var results = xlsx__WEBPACK_IMPORTED_MODULE_0___default.a.utils.sheet_to_json(worksheet);
-          var meta = {
-            sheetName: firstSheetName
-          };
-
-          _this.generateData({
-            header: header,
-            results: results,
-            meta: meta
-          });
-
-          resolve();
-        };
-
-        reader.readAsArrayBuffer(rawFile);
-      });
-    },
-    handleClick: function handleClick(e) {
-      var files = e.target.files;
-      var rawFile = files[0];
-      if (!rawFile) return;
-      this.uploadFile(rawFile);
-    },
-    isExcel: function isExcel(file) {
-      return /\.(xlsx|xls|csv)$/.test(file.name);
-    },
-    uploadFile: function uploadFile(file) {
-      this.$refs['fileInput'].value = null; // fix can't select the same excel
-
-      this.readerData(file);
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_excel_ImportExcel_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/excel/ImportExcel.vue */ "./resources/js/src/components/excel/ImportExcel.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    ImportExcel: _components_excel_ImportExcel_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      tableData: [],
-      header: [],
-      sheetName: ''
-    };
-  },
-  methods: {
-    loadDataInTable: function loadDataInTable(_ref) {
-      var results = _ref.results,
-          header = _ref.header,
-          meta = _ref.meta;
-      this.header = header;
-      this.tableData = results;
-      this.sheetName = meta.sheetName;
-    }
+    ProgressColor: _ProgressColor_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    ProgressInterminate: _ProgressInterminate_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ProgressHeight: _ProgressHeight_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/components/excel/ImportExcel.vue?vue&type=template&id=435d3aaa&":
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/components/excel/ImportExcel.vue?vue&type=template&id=435d3aaa& ***!
-  \************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "excel-import" }, [
-    _c("input", {
-      ref: "fileInput",
-      staticClass: "hidden",
-      attrs: { type: "file", accept: ".xlsx, .xls" },
-      on: { change: _vm.handleClick }
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass:
-          "px-8 py-16 cursor-pointer text-center border-2 border-dashed d-theme-border-grey-light d-theme-dark-bg text-xl",
-        on: {
-          click: function($event) {
-            return _vm.$refs.fileInput.click()
-          },
-          drop: _vm.handleDrop,
-          dragover: _vm.handleDragover,
-          dragenter: _vm.handleDragover
-        }
-      },
-      [
-        _c("feather-icon", {
-          staticClass: "block",
-          attrs: {
-            icon: "UploadCloudIcon",
-            svgClasses: "h-16 w-16 stroke-current text-grey"
-          }
-        }),
-        _vm._v(" "),
-        _c("span", [_vm._v("Drop Excel File or ")]),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "font-medium text-primary",
-            on: {
-              click: function($event) {
-                $event.stopPropagation()
-                return _vm.$refs.fileInput.click()
-              }
-            }
-          },
-          [_vm._v("Browse")]
-        )
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=template&id=53f7b576&":
-/*!**************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=template&id=53f7b576& ***!
-  \**************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=template&id=791096fa&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=template&id=791096fa& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -328,86 +60,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { attrs: { id: "progress-demo" } },
     [
-      _c(
-        "div",
-        { staticClass: "mb-8" },
-        [_c("import-excel", { attrs: { onSuccess: _vm.loadDataInTable } })],
-        1
-      ),
+      _c("progress-color"),
       _vm._v(" "),
-      _vm.tableData.length && _vm.header.length
-        ? _c(
-            "vx-card",
-            [
-              _c(
-                "vs-table",
-                {
-                  attrs: {
-                    stripe: "",
-                    pagination: "",
-                    "max-items": 10,
-                    search: "",
-                    data: _vm.tableData
-                  },
-                  scopedSlots: _vm._u(
-                    [
-                      {
-                        key: "default",
-                        fn: function(ref) {
-                          var data = ref.data
-                          return _vm._l(data, function(tr, indextr) {
-                            return _c(
-                              "vs-tr",
-                              { key: indextr, attrs: { data: tr } },
-                              _vm._l(data[indextr], function(col, indexcol) {
-                                return _c(
-                                  "vs-td",
-                                  { key: indexcol + col, attrs: { data: col } },
-                                  [
-                                    _vm._v(
-                                      "\n            " +
-                                        _vm._s(col) +
-                                        "\n          "
-                                    )
-                                  ]
-                                )
-                              }),
-                              1
-                            )
-                          })
-                        }
-                      }
-                    ],
-                    null,
-                    false,
-                    3112142431
-                  )
-                },
-                [
-                  _c("template", { slot: "header" }, [
-                    _c("h4", [_vm._v(_vm._s(_vm.sheetName))])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "template",
-                    { slot: "thead" },
-                    _vm._l(_vm.header, function(heading) {
-                      return _c(
-                        "vs-th",
-                        { key: heading, attrs: { "sort-key": heading } },
-                        [_vm._v(_vm._s(heading))]
-                      )
-                    }),
-                    1
-                  )
-                ],
-                2
-              )
-            ],
-            1
-          )
-        : _vm._e()
+      _c("progress-interminate"),
+      _vm._v(" "),
+      _c("progress-height")
     ],
     1
   )
@@ -419,86 +78,206 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/components/excel/ImportExcel.vue":
-/*!***********************************************************!*\
-  !*** ./resources/js/src/components/excel/ImportExcel.vue ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ImportExcel_vue_vue_type_template_id_435d3aaa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ImportExcel.vue?vue&type=template&id=435d3aaa& */ "./resources/js/src/components/excel/ImportExcel.vue?vue&type=template&id=435d3aaa&");
-/* harmony import */ var _ImportExcel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ImportExcel.vue?vue&type=script&lang=js& */ "./resources/js/src/components/excel/ImportExcel.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ImportExcel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ImportExcel_vue_vue_type_template_id_435d3aaa___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ImportExcel_vue_vue_type_template_id_435d3aaa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/components/excel/ImportExcel.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/src/components/excel/ImportExcel.vue?vue&type=script&lang=js&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/src/components/excel/ImportExcel.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ImportExcel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ImportExcel.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/components/excel/ImportExcel.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ImportExcel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/components/excel/ImportExcel.vue?vue&type=template&id=435d3aaa&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/src/components/excel/ImportExcel.vue?vue&type=template&id=435d3aaa& ***!
-  \******************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/ProgressColor.vue?vue&type=template&id=648e1150&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/progress/ProgressColor.vue?vue&type=template&id=648e1150& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ImportExcel_vue_vue_type_template_id_435d3aaa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ImportExcel.vue?vue&type=template&id=435d3aaa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/components/excel/ImportExcel.vue?vue&type=template&id=435d3aaa&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ImportExcel_vue_vue_type_template_id_435d3aaa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ImportExcel_vue_vue_type_template_id_435d3aaa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Color", "code-toggler": "" } },
+    [
+      _c("p", [_vm._v("Nice colors for your progress bar")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c("vs-progress", { attrs: { percent: 100, color: "primary" } }),
+          _vm._v(" "),
+          _c("vs-progress", { attrs: { percent: 90, color: "warning" } }),
+          _vm._v(" "),
+          _c("vs-progress", { attrs: { percent: 75, color: "danger" } }),
+          _vm._v(" "),
+          _c("vs-progress", { attrs: { percent: 60, color: "success" } }),
+          _vm._v(" "),
+          _c("vs-progress", { attrs: { percent: 45, color: "dark" } }),
+          _vm._v(" "),
+          _c("vs-progress", {
+            attrs: { percent: 30, color: "rgb(164, 69, 15)" }
+          }),
+          _vm._v(" "),
+          _c("vs-progress", { attrs: { percent: 15, color: "#24c1a0" } })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<vs-progress :percent="100" color="primary"></vs-progress>\n<vs-progress :percent="90" color="warning"></vs-progress>\n<vs-progress :percent="75" color="danger"></vs-progress>\n<vs-progress :percent="60" color="success"></vs-progress>\n<vs-progress :percent="45" color="dark"></vs-progress>\n<vs-progress :percent="30" color="rgb(164, 69, 15)"></vs-progress>\n<vs-progress :percent="15" color="#24c1a0"></vs-progress>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/import-export/Import.vue":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/import-export/Import.vue ***!
-  \*************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue?vue&type=template&id=3bcada0a&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue?vue&type=template&id=3bcada0a& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Height", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v(
+          "You can change the height of the loading bar with the property height"
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "vs-alert",
+        {
+          staticClass: "mt-5",
+          attrs: { color: "primary", icon: "new_releases", active: "true" }
+        },
+        [
+          _c("p", [
+            _vm._v("By default the property "),
+            _c("code", [_vm._v("height")]),
+            _vm._v(" is "),
+            _c("strong", [_vm._v("5")]),
+            _vm._v("(5px)")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c("vs-progress", {
+            attrs: { height: 2, percent: 100, color: "primary" }
+          }),
+          _vm._v(" "),
+          _c("vs-progress", {
+            attrs: { height: 4, percent: 80, color: "warning" }
+          }),
+          _vm._v(" "),
+          _c("vs-progress", {
+            attrs: { height: 8, percent: 60, color: "danger" }
+          }),
+          _vm._v(" "),
+          _c("vs-progress", {
+            attrs: { height: 12, percent: 40, color: "success" }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<vs-progress :height="2" :percent="100" color="primary"></vs-progress>\n<vs-progress :height="4" :percent="80" color="warning"></vs-progress>\n<vs-progress :height="8" :percent="60" color="danger"></vs-progress>\n<vs-progress :height="12" :percent="40" color="success"></vs-progress>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue?vue&type=template&id=2bce7489&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue?vue&type=template&id=2bce7489& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Interminate", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v(
+          "You can have a progress bar with indeterminate value with the property indeterminate"
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [_c("vs-progress", { attrs: { indeterminate: "", color: "primary" } })],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<vs-progress indeterminate color="primary"></vs-progress>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/progress/Progress.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/Progress.vue ***!
+  \************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Import_vue_vue_type_template_id_53f7b576___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Import.vue?vue&type=template&id=53f7b576& */ "./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=template&id=53f7b576&");
-/* harmony import */ var _Import_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Import.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Progress_vue_vue_type_template_id_791096fa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Progress.vue?vue&type=template&id=791096fa& */ "./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=template&id=791096fa&");
+/* harmony import */ var _Progress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Progress.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -508,9 +287,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Import_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Import_vue_vue_type_template_id_53f7b576___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Import_vue_vue_type_template_id_53f7b576___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Progress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Progress_vue_vue_type_template_id_791096fa___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Progress_vue_vue_type_template_id_791096fa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -520,73 +299,199 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/extra-components/import-export/Import.vue"
+component.options.__file = "resources/js/src/views/components/vuesax/progress/Progress.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Import_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Import.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Import_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Progress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Progress.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Progress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=template&id=53f7b576&":
-/*!********************************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=template&id=53f7b576& ***!
-  \********************************************************************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=template&id=791096fa&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=template&id=791096fa& ***!
+  \*******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Import_vue_vue_type_template_id_53f7b576___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Import.vue?vue&type=template&id=53f7b576& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/extra-components/import-export/Import.vue?vue&type=template&id=53f7b576&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Import_vue_vue_type_template_id_53f7b576___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Progress_vue_vue_type_template_id_791096fa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Progress.vue?vue&type=template&id=791096fa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/Progress.vue?vue&type=template&id=791096fa&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Progress_vue_vue_type_template_id_791096fa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Import_vue_vue_type_template_id_53f7b576___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Progress_vue_vue_type_template_id_791096fa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/progress/ProgressColor.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/ProgressColor.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ProgressColor_vue_vue_type_template_id_648e1150___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProgressColor.vue?vue&type=template&id=648e1150& */ "./resources/js/src/views/components/vuesax/progress/ProgressColor.vue?vue&type=template&id=648e1150&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _ProgressColor_vue_vue_type_template_id_648e1150___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ProgressColor_vue_vue_type_template_id_648e1150___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/components/vuesax/progress/ProgressColor.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/progress/ProgressColor.vue?vue&type=template&id=648e1150&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/ProgressColor.vue?vue&type=template&id=648e1150& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressColor_vue_vue_type_template_id_648e1150___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ProgressColor.vue?vue&type=template&id=648e1150& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/ProgressColor.vue?vue&type=template&id=648e1150&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressColor_vue_vue_type_template_id_648e1150___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressColor_vue_vue_type_template_id_648e1150___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ 6:
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue":
+/*!******************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* (ignored) */
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ProgressHeight_vue_vue_type_template_id_3bcada0a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProgressHeight.vue?vue&type=template&id=3bcada0a& */ "./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue?vue&type=template&id=3bcada0a&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _ProgressHeight_vue_vue_type_template_id_3bcada0a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ProgressHeight_vue_vue_type_template_id_3bcada0a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/components/vuesax/progress/ProgressHeight.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ 7:
-/*!************************!*\
-  !*** crypto (ignored) ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue?vue&type=template&id=3bcada0a&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue?vue&type=template&id=3bcada0a& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* (ignored) */
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressHeight_vue_vue_type_template_id_3bcada0a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ProgressHeight.vue?vue&type=template&id=3bcada0a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/ProgressHeight.vue?vue&type=template&id=3bcada0a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressHeight_vue_vue_type_template_id_3bcada0a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressHeight_vue_vue_type_template_id_3bcada0a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
-/***/ 8:
-/*!************************!*\
-  !*** stream (ignored) ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* (ignored) */
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ProgressInterminate_vue_vue_type_template_id_2bce7489___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProgressInterminate.vue?vue&type=template&id=2bce7489& */ "./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue?vue&type=template&id=2bce7489&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _ProgressInterminate_vue_vue_type_template_id_2bce7489___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ProgressInterminate_vue_vue_type_template_id_2bce7489___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue?vue&type=template&id=2bce7489&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue?vue&type=template&id=2bce7489& ***!
+  \******************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressInterminate_vue_vue_type_template_id_2bce7489___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ProgressInterminate.vue?vue&type=template&id=2bce7489& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/progress/ProgressInterminate.vue?vue&type=template&id=2bce7489&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressInterminate_vue_vue_type_template_id_2bce7489___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProgressInterminate_vue_vue_type_template_id_2bce7489___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ })
 

@@ -8,6 +8,7 @@ export default {
       {title: "eCommerce Dashboard",        url: "/dashboard/ecommerce",                icon: "HomeIcon",           is_bookmarked: false},
 
       // APPS
+      {title: "Goals",                      url: "/apps/goals",                         icon: "CheckSquareIcon",    is_bookmarked: true},
       {title: "Todo",                       url: "/apps/todo",                          icon: "CheckSquareIcon",    is_bookmarked: true},
       {title: "Chat",                       url: "/apps/chat",                          icon: "MessageSquareIcon",  is_bookmarked: true},
       {title: "Email",                      url: "/apps/email",                         icon: "MailIcon",           is_bookmarked: true},

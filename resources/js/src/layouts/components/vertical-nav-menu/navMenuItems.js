@@ -55,6 +55,13 @@ export default [
     i18n: 'Apps',
     items: [
       {
+        url: '/apps/goals',
+        name: 'Goals',
+        slug: 'goals',
+        icon: 'CheckSquareIcon',
+        i18n: 'Todo'
+      },
+      {
         url: '/apps/email',
         name: 'Email',
         slug: 'email',

@@ -53,7 +53,12 @@
         </div>
 
         <!-- EDIT TODO DIALOG -->
-        <todo-edit :displayPrompt="displayPrompt" :taskId="taskIdToEdit" @hideDisplayPrompt="hidePrompt" v-if="displayPrompt"></todo-edit>
+        <todo-edit
+        :displayPrompt="displayPrompt"
+        :taskId="taskIdToEdit"
+        @hideDisplayPrompt="hidePrompt"
+        v-if="displayPrompt">
+        </todo-edit>
     </div>
 </template>
 

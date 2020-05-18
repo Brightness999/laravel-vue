@@ -17,3 +17,13 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .history/
+.docker/
+entrypoint.sh
+v8-compile-cache-0
+public/js/chunks/*
+public/js/app.js
+public/css/app.css
+public/css/main.css.
+public/mix-manifest.json
+public/css/material-icons/*
+public/css/prism-tomorrow.css

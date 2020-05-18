@@ -1,19 +1,19 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[65],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/List.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/List.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ListBasic_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListBasic.vue */ "./resources/js/src/views/components/vuesax/list/ListBasic.vue");
-/* harmony import */ var _ListHeader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListHeader.vue */ "./resources/js/src/views/components/vuesax/list/ListHeader.vue");
-/* harmony import */ var _ListIcon_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ListIcon.vue */ "./resources/js/src/views/components/vuesax/list/ListIcon.vue");
-/* harmony import */ var _ListContent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ListContent.vue */ "./resources/js/src/views/components/vuesax/list/ListContent.vue");
-/* harmony import */ var _ListAvatar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ListAvatar.vue */ "./resources/js/src/views/components/vuesax/list/ListAvatar.vue");
+/* harmony import */ var _CollapseDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CollapseDefault.vue */ "./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue");
+/* harmony import */ var _CollapseAccordion_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CollapseAccordion.vue */ "./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue");
+/* harmony import */ var _CollapseType_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CollapseType.vue */ "./resources/js/src/views/components/vuesax/collapse/CollapseType.vue");
+/* harmony import */ var _CollapseOpenHover_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CollapseOpenHover.vue */ "./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue");
+/* harmony import */ var _CollapseChangeArrowIcon_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CollapseChangeArrowIcon.vue */ "./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue");
 //
 //
 //
@@ -41,25 +41,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    ListBasic: _ListBasic_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ListHeader: _ListHeader_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ListIcon: _ListIcon_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    ListContent: _ListContent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    ListAvatar: _ListAvatar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    CollapseDefault: _CollapseDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    CollapseAccordion: _CollapseAccordion_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    CollapseType: _CollapseType_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    CollapseChangeArrowIcon: _CollapseChangeArrowIcon_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    CollapseOpenHover: _CollapseOpenHover_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -129,17 +179,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      val: false
+      type: 'shadow'
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/List.vue?vue&type=template&id=4e3bb023&":
-/*!*****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/List.vue?vue&type=template&id=4e3bb023& ***!
-  \*****************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=template&id=17756483&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=template&id=17756483& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -153,17 +203,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "list-demo" } },
+    { attrs: { id: "collapse-demo" } },
     [
-      _c("list-basic"),
+      _c("collapse-default"),
       _vm._v(" "),
-      _c("list-header"),
+      _c("collapse-accordion"),
       _vm._v(" "),
-      _c("list-icon"),
+      _c("collapse-type"),
       _vm._v(" "),
-      _c("list-content"),
+      _c("collapse-open-hover"),
       _vm._v(" "),
-      _c("list-avatar")
+      _c("collapse-change-arrow-icon")
     ],
     1
   )
@@ -175,10 +225,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListAvatar.vue?vue&type=template&id=79233648&":
-/*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/ListAvatar.vue?vue&type=template&id=79233648& ***!
-  \***********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue?vue&type=template&id=72b00a35&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue?vue&type=template&id=72b00a35& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -192,12 +242,123 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Avatar", "code-toggler": "" } },
+    { attrs: { title: "Accordion", "code-toggler": "" } },
     [
       _c("p", [
-        _vm._v("You can implement an avatar in the list with the "),
-        _c("code", [_vm._v('slot="avatar"')]),
-        _vm._v(" by putting a [vs-avatar] component")
+        _vm._v(
+          "You may need to show only one element at a time. For this add "
+        ),
+        _c("code", [_vm._v("accordion")]),
+        _vm._v(" prop to "),
+        _c("code", [_vm._v("vs-collapse")])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c(
+            "vs-collapse",
+            { attrs: { accordion: "" } },
+            [
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item")
+                ]),
+                _vm._v(
+                  "\n\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus eros tortor, non fringilla lectus cursus et. Fusce vel nisi ante. Aliquam sit amet lectus pharetra, luctus mi sed, aliquet felis. Mauris a tortor viverra, ornare tellus in, consectetur leo.\n                    "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                    Etiam nec nunc nec nisl luctus tincidunt efficitur vitae elit. Vestibulum iaculis nibh commodo neque ultrices lobortis. Cras magna massa, pretium vitae mattis varius, pharetra nec massa. Aliquam ac ex enim. Quisque consequat dui libero, vel blandit lorem porttitor sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam sed lobortis nisl, quis eleifend metus.\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 2")
+                ]),
+                _vm._v(
+                  "\n\n                    Nunc auctor et leo vitae suscipit. Nullam aliquet purus scelerisque enim hendrerit tristique. Maecenas tincidunt dui arcu, a aliquet nisl venenatis vitae. Praesent mauris ligula, porta at maximus ac, rutrum vitae sapien. Donec a sapien id erat dapibus dignissim sodales in est. Donec gravida dapibus sapien at sollicitudin. Maecenas iaculis quam ex,\n                    "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                    eu aliquam erat sagittis eget. Suspendisse mollis felis nec ipsum vehicula, at posuere libero viverra. Nam hendrerit dapibus eleifend. Aliquam elit nulla, tincidunt pellentesque enim mollis, consectetur placerat enim. Integer condimentum tristique ante et ullamcorper. Mauris placerat pretium ex. Nam aliquam sed tortor sit amet\n                    "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                    efficitur. Mauris quis faucibus nulla. Pellentesque egestas non ipsum vel maximus.\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c("vs-collapse-item", { attrs: { disabled: "" } }, [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 3 - Disabled")
+                ]),
+                _vm._v(
+                  "\n\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 4")
+                ]),
+                _vm._v(
+                  "\n\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu imperdiet. Nullam eget odio at magna gravida suscipit sed vestibulum odio. Maecenas porta elit vel lectus molestie, eget aliquam enim feugiat. Vivamus nec faucibus nisl. Nunc venenatis tempus finibus.\n                "
+                )
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n\n  <vs-collapse accordion>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item\n      </div>\n      Lorem...metus.\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 2\n      </div>\n      Nunc...maximus.\n    </vs-collapse-item>\n\n    <vs-collapse-item disabled>\n      <div slot="header">\n        Collapse item 3 - Disabled\n      </div>\n      Suspendisse...eu\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 4\n      </div>\n      Suspendisse...finibus.\n    </vs-collapse-item>\n  </vs-collapse>\n</template>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Change Arrow Icon", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v("You can customise the arrow on the component "),
+        _c("code", [_vm._v("vs-collapse-item")]),
+        _vm._v(" by passing the string name of an icon to the "),
+        _c("code", [_vm._v("icon-arrow")]),
+        _vm._v(" property")
       ]),
       _vm._v(" "),
       _c(
@@ -231,60 +392,94 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "demo-alignment" },
+        { staticClass: "mt-5" },
         [
           _c(
-            "vs-list",
+            "vs-collapse",
             [
-              _c("vs-list-header", {
-                attrs: { title: "Users", color: "danger" }
-              }),
-              _vm._v(" "),
               _c(
-                "vs-list-item",
-                {
-                  attrs: { title: "Steve Jobes", subtitle: "Top Contributor" }
-                },
-                [_c("template", { slot: "avatar" }, [_c("vs-avatar")], 1)],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "vs-list-item",
-                { attrs: { title: "Matt", subtitle: "11 Points" } },
-                [
-                  _c(
-                    "template",
-                    { slot: "avatar" },
-                    [_c("vs-avatar", { attrs: { "vs-text": "Vuexy" } })],
-                    1
-                  )
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c("vs-list-header", {
-                attrs: { title: "Profile photo", color: "warning" }
-              }),
-              _vm._v(" "),
-              _c(
-                "vs-list-item",
+                "vs-collapse-item",
                 {
                   attrs: {
-                    title: "Xian Famous Foods",
-                    subtitle:
-                      "A taste of Shaanxi's delicious culinary traditions, with delights like spicy cold noodles and lamb burgers."
+                    "icon-pack": "feather",
+                    "icon-arrow": "icon-arrow-down"
                   }
                 },
                 [
-                  _c(
-                    "template",
-                    { slot: "avatar" },
-                    [_c("vs-avatar", { attrs: { "vs-text": "Vue" } })],
-                    1
+                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                    _vm._v("Collapse item")
+                  ]),
+                  _vm._v(
+                    "\n\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus eros tortor, non fringilla lectus cursus et. Fusce vel nisi ante. Aliquam sit amet lectus pharetra, luctus mi sed, aliquet felis. Mauris a tortor viverra, ornare tellus in, consectetur leo.\n                    "
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    Etiam nec nunc nec nisl luctus tincidunt efficitur vitae elit. Vestibulum iaculis nibh commodo neque ultrices lobortis. Cras magna massa, pretium vitae mattis varius, pharetra nec massa. Aliquam ac ex enim. Quisque consequat dui libero, vel blandit lorem porttitor sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam sed lobortis nisl, quis eleifend metus.\n                "
                   )
-                ],
-                2
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "vs-collapse-item",
+                {
+                  attrs: { "icon-pack": "feather", "icon-arrow": "icon-star" }
+                },
+                [
+                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                    _vm._v("Collapse item 2")
+                  ]),
+                  _vm._v(
+                    "\n\n                    Nunc auctor et leo vitae suscipit. Nullam aliquet purus scelerisque enim hendrerit tristique. Maecenas tincidunt dui arcu, a aliquet nisl venenatis vitae. Praesent mauris ligula, porta at maximus ac, rutrum vitae sapien. Donec a sapien id erat dapibus dignissim sodales in est. Donec gravida dapibus sapien at sollicitudin. Maecenas iaculis quam ex,\n                    "
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    eu aliquam erat sagittis eget. Suspendisse mollis felis nec ipsum vehicula, at posuere libero viverra. Nam hendrerit dapibus eleifend. Aliquam elit nulla, tincidunt pellentesque enim mollis, consectetur placerat enim. Integer condimentum tristique ante et ullamcorper. Mauris placerat pretium ex. Nam aliquam sed tortor sit amet\n                    "
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    efficitur. Mauris quis faucibus nulla. Pellentesque egestas non ipsum vel maximus.\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "vs-collapse-item",
+                {
+                  attrs: {
+                    disabled: "",
+                    "icon-pack": "feather",
+                    "icon-arrow": "icon-bookmark"
+                  }
+                },
+                [
+                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                    _vm._v("Collapse item 3 - Disabled")
+                  ]),
+                  _vm._v(
+                    "\n\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "vs-collapse-item",
+                {
+                  attrs: {
+                    "icon-pack": "feather",
+                    "icon-arrow": "icon-chevrons-down"
+                  }
+                },
+                [
+                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                    _vm._v("Collapse item 4")
+                  ]),
+                  _vm._v(
+                    "\n\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu imperdiet. Nullam eget odio at magna gravida suscipit sed vestibulum odio. Maecenas porta elit vel lectus molestie, eget aliquam enim feugiat. Vivamus nec faucibus nisl. Nunc venenatis tempus finibus.\n                "
+                  )
+                ]
               )
             ],
             1
@@ -295,7 +490,7 @@ var render = function() {
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<vs-list>\n  <vs-list-header title="Users" color="danger"></vs-list-header>\n\n  <vs-list-item title="Steve Jobes" subtitle="Top Contributor">\n    <template slot="avatar">\n      <vs-avatar />\n    </template>\n  </vs-list-item>\n\n  <vs-list-item title="Matt" subtitle="11 Points">\n    <template slot="avatar">\n      <vs-avatar vs-text="Vuexy"/>\n    </template>\n  </vs-list-item>\n\n  <vs-list-header title="Profile photo" color="warning"></vs-list-header>\n\n  <vs-list-item title="Xian Famous Foods" subtitle="A taste of Shaanxi\'s delicious culinary traditions, with delights like spicy cold noodles and lamb burgers.">\n    <template slot="avatar">\n      <vs-avatar vs-text="Vue"/>\n    </template>\n  </vs-list-item>\n</vs-list>\n        '
+          '\n<template>\n\n  <vs-collapse>\n\n    <vs-collapse-item icon-pack="feather" icon-arrow="icon-arrow-down">\n      <div slot="header">\n        Collapse item\n      </div>\n      Lorem....metus.\n    </vs-collapse-item>\n\n    <vs-collapse-item icon-pack="feather" icon-arrow="icon-star">\n      <div slot="header">\n        Collapse item 2\n      </div>\n      Nunc....maximus.\n    </vs-collapse-item>\n\n    <vs-collapse-item disabled icon-pack="feather" icon-arrow="icon-bookmark">\n      <div slot="header">\n        Collapse item 3 - Disabled\n      </div>\n      Suspendisse....eu\n    </vs-collapse-item>\n\n    <vs-collapse-item icon-pack="feather" icon-arrow="icon-chevrons-down">\n      <div slot="header">\n        Collapse item 4\n      </div>\n      Suspendisse....finibus.\n    </vs-collapse-item>\n  </vs-collapse>\n</template>\n        '
         )
       ])
     ],
@@ -309,10 +504,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListBasic.vue?vue&type=template&id=bc86be0a&":
-/*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/ListBasic.vue?vue&type=template&id=bc86be0a& ***!
-  \**********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue?vue&type=template&id=502cf024&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue?vue&type=template&id=502cf024& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -326,36 +521,72 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Basic", "code-toggler": "" } },
+    { attrs: { title: "Default", "code-toggler": "" } },
     [
       _c("p", [
-        _vm._v("A basic list of items with "),
-        _c("code", [_vm._v("title")]),
-        _vm._v(" and "),
-        _c("code", [_vm._v("subtitle")])
+        _vm._v("To implement the collapse we have the component "),
+        _c("code", [_vm._v("vs-collapse")]),
+        _vm._v(" and as sub-component for each item the component "),
+        _c("code", [_vm._v("vs-collapse-item")])
       ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "demo-alignment" },
+        { staticClass: "mt-5" },
         [
           _c(
-            "vs-list",
+            "vs-collapse",
             [
-              _c("vs-list-item", { attrs: { title: "One text" } }),
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item")
+                ]),
+                _vm._v(
+                  "\n\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus eros tortor, non fringilla lectus cursus et. Fusce vel nisi ante. Aliquam sit amet lectus pharetra, luctus mi sed, aliquet felis. Mauris a tortor viverra, ornare tellus in, consectetur leo.\n                    "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                    Etiam nec nunc nec nisl luctus tincidunt efficitur vitae elit. Vestibulum iaculis nibh commodo neque ultrices lobortis. Cras magna massa, pretium vitae mattis varius, pharetra nec massa. Aliquam ac ex enim. Quisque consequat dui libero, vel blandit lorem porttitor sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam sed lobortis nisl, quis eleifend metus.\n                "
+                )
+              ]),
               _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: { title: "Another text", subtitle: "A little text" }
-              }),
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 2")
+                ]),
+                _vm._v(
+                  "\n\n                    Nunc auctor et leo vitae suscipit. Nullam aliquet purus scelerisque enim hendrerit tristique. Maecenas tincidunt dui arcu, a aliquet nisl venenatis vitae. Praesent mauris ligula, porta at maximus ac, rutrum vitae sapien. Donec a sapien id erat dapibus dignissim sodales in est. Donec gravida dapibus sapien at sollicitudin. Maecenas iaculis quam ex,\n                    "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                    eu aliquam erat sagittis eget. Suspendisse mollis felis nec ipsum vehicula, at posuere libero viverra. Nam hendrerit dapibus eleifend. Aliquam elit nulla, tincidunt pellentesque enim mollis, consectetur placerat enim. Integer condimentum tristique ante et ullamcorper. Mauris placerat pretium ex. Nam aliquam sed tortor sit amet\n                    "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                    efficitur. Mauris quis faucibus nulla. Pellentesque egestas non ipsum vel maximus.\n                "
+                )
+              ]),
               _vm._v(" "),
-              _c("vs-list-item", { attrs: { title: "Some more text" } }),
+              _c("vs-collapse-item", { attrs: { disabled: "" } }, [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 3 - Disabled")
+                ]),
+                _vm._v(
+                  "\n\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu\n                "
+                )
+              ]),
               _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  title: "Even more text",
-                  subtitle: "Another little text"
-                }
-              })
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 4")
+                ]),
+                _vm._v(
+                  "\n\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu imperdiet. Nullam eget odio at magna gravida suscipit sed vestibulum odio. Maecenas porta elit vel lectus molestie, eget aliquam enim feugiat. Vivamus nec faucibus nisl. Nunc venenatis tempus finibus.\n                "
+                )
+              ])
             ],
             1
           )
@@ -365,7 +596,7 @@ var render = function() {
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<vs-list>\n  <vs-list-item title="One text"></vs-list-item>\n  <vs-list-item title="Another text" subtitle="A little text"></vs-list-item>\n  <vs-list-item title="Some more text"></vs-list-item>\n  <vs-list-item title="Even more text" subtitle="Another little text"></vs-list-item>\n</vs-list>\n      '
+          '\n<template>\n\n  <vs-collapse>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item\n      </div>\n      Lorem....metus.\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 2\n      </div>\n      Nunc....maximus.\n    </vs-collapse-item>\n\n    <vs-collapse-item disabled>\n      <div slot="header">\n        Collapse item 3 - Disabled\n      </div>\n      Suspendisse....eu\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 4\n      </div>\n      Suspendisse....finibus.\n    </vs-collapse-item>\n  </vs-collapse>\n</template>\n        '
         )
       ])
     ],
@@ -379,10 +610,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=template&id=7e1e6a86&":
-/*!************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=template&id=7e1e6a86& ***!
-  \************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue?vue&type=template&id=4ca93e02&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue?vue&type=template&id=4ca93e02& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -396,95 +627,57 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Content", "code-toggler": "" } },
+    { attrs: { title: "Open Hover", "code-toggler": "" } },
     [
       _c("p", [
-        _vm._v(
-          "You can add custom content to the item. It will be pushed to the right side"
-        )
+        _vm._v("If you want the items to open when you hover in, add the "),
+        _c("code", [_vm._v("open-hover")]),
+        _vm._v(" property in the component")
       ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "demo-alignment" },
+        { staticClass: "mt-5" },
         [
           _c(
-            "vs-list",
+            "vs-collapse",
+            { attrs: { "open-hover": "" } },
             [
-              _c("vs-list-header", { attrs: { title: "Group 1" } }),
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item")
+                ]),
+                _vm._v(
+                  "\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus eros tortor, non fringilla lectus cursus et. Fusce vel nisi ante. Aliquam sit amet lectus pharetra, luctus mi sed, aliquet felis. Mauris a tortor viverra, ornare tellus in, consectetur leo.\n                "
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "vs-list-item",
-                {
-                  attrs: {
-                    title: "Snickerdoodle",
-                    subtitle: "An excellent companion"
-                  }
-                },
-                [
-                  _c("vs-button", { attrs: { color: "danger" } }, [
-                    _vm._v("One action")
-                  ])
-                ],
-                1
-              ),
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 2")
+                ]),
+                _vm._v(
+                  "\n                    efficitur. Mauris quis faucibus nulla. Pellentesque egestas non ipsum vel maximus.\n                "
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "vs-list-item",
-                {
-                  attrs: {
-                    title: "Sapporo Haru",
-                    subtitle:
-                      "An excellent polish restaurant, quick delivery and hearty, filling meals"
-                  }
-                },
-                [_c("vs-checkbox", { attrs: { color: "danger" } })],
-                1
-              ),
+              _c("vs-collapse-item", { attrs: { disabled: "" } }, [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 3 - Disabled")
+                ]),
+                _vm._v(
+                  "\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu\n                "
+                )
+              ]),
               _vm._v(" "),
-              _c("vs-list-header", {
-                attrs: { title: "Group 2", color: "success" }
-              }),
-              _vm._v(" "),
-              _c(
-                "vs-list-item",
-                {
-                  attrs: {
-                    title: "Enid's",
-                    subtitle:
-                      "At night a bar, during the day a delicious brunch spot."
-                  }
-                },
-                [
-                  _c("vs-chip", { attrs: { color: "warning mr-0" } }, [
-                    _vm._v("Another component")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "vs-list-item",
-                {
-                  attrs: {
-                    title: "Veronika Ossi",
-                    subtitle: "Has not watched anything recently"
-                  }
-                },
-                [
-                  _c("vs-switch", {
-                    attrs: { color: "warning" },
-                    model: {
-                      value: _vm.val,
-                      callback: function($$v) {
-                        _vm.val = $$v
-                      },
-                      expression: "val"
-                    }
-                  })
-                ],
-                1
-              )
+              _c("vs-collapse-item", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Collapse item 4")
+                ]),
+                _vm._v(
+                  "\n\n                    Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu imperdiet. Nullam eget odio at magna gravida suscipit sed vestibulum odio. Maecenas porta elit vel lectus molestie, eget aliquam enim feugiat.\n                "
+                )
+              ])
             ],
             1
           )
@@ -494,7 +687,7 @@ var render = function() {
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<vs-list>\n  <vs-list-header title="Group 1"></vs-list-header>\n\n  <vs-list-item title="Snickerdoodle" subtitle="An excellent companion">\n    <vs-button color="danger">One action</vs-button>\n  </vs-list-item>\n\n  <vs-list-item title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals">\n    <vs-checkbox color="danger"/>\n  </vs-list-item>\n\n  <vs-list-header title="Group 2" color="success"></vs-list-header>\n  <vs-list-item title="Enid\'s" subtitle="At night a bar, during the day a delicious brunch spot.">\n    <vs-chip color="warning">Another component</vs-chip>\n  </vs-list-item>\n\n  <vs-list-item title="Veronika Ossi" subtitle="Has not watched anything recently">\n    <vs-switch color="warning" v-model="val"/>\n  </vs-list-item>\n</vs-list>\n        '
+          '\n<template>\n\n  <vs-collapse open-hover>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item\n      </div>\n      Lorem...metus.\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 2\n      </div>\n      Nunc...maximus.\n    </vs-collapse-item>\n\n    <vs-collapse-item disabled>\n      <div slot="header">\n        Collapse item 3 - Disabled\n      </div>\n      Suspendisse...eu\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 4\n      </div>\n      Suspendisse...finibus.\n    </vs-collapse-item>\n  </vs-collapse>\n</template>\n        '
         )
       ])
     ],
@@ -508,10 +701,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListHeader.vue?vue&type=template&id=5154cc10&":
-/*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/ListHeader.vue?vue&type=template&id=5154cc10& ***!
-  \***********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=template&id=41f18546&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=template&id=41f18546& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -525,205 +718,144 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Header", "code-toggler": "" } },
+    { attrs: { title: "Type", "code-toggler": "" } },
     [
       _c("p", [
-        _vm._v("A "),
-        _c("code", [_vm._v("vs-list-header")]),
-        _vm._v(" separator with custom "),
-        _c("code", [_vm._v("color")])
+        _vm._v("You can easily change the style of the accordion with the "),
+        _c("code", [_vm._v("type")]),
+        _vm._v(" property, the supported styles are:")
       ]),
+      _vm._v(" "),
+      _c("vs-list", { attrs: { list: ["shadow", "border", "margin"] } }),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "demo-alignment" },
+        { staticClass: "demo-alignment mb-5" },
         [
           _c(
-            "vs-list",
-            [
-              _c("vs-list-header", { attrs: { title: "Group 1" } }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  title: "Snickerdoodle",
-                  subtitle: "An excellent companion"
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  title: "Sapporo Haru",
-                  subtitle:
-                    "An excellent polish restaurant, quick delivery and hearty, filling meals"
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-header", {
-                attrs: { title: "Group 2", color: "success" }
-              }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  title: "Enid's",
-                  subtitle:
-                    "At night a bar, during the day a delicious brunch spot."
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  title: "Veronika Ossi",
-                  subtitle: "Has not watched anything recently"
-                }
-              })
-            ],
-            1
+            "vs-radio",
+            {
+              attrs: { "vs-value": "default" },
+              model: {
+                value: _vm.type,
+                callback: function($$v) {
+                  _vm.type = $$v
+                },
+                expression: "type"
+              }
+            },
+            [_vm._v("Default")]
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-radio",
+            {
+              attrs: { "vs-value": "shadow" },
+              model: {
+                value: _vm.type,
+                callback: function($$v) {
+                  _vm.type = $$v
+                },
+                expression: "type"
+              }
+            },
+            [_vm._v("Shadow")]
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-radio",
+            {
+              attrs: { "vs-value": "border" },
+              model: {
+                value: _vm.type,
+                callback: function($$v) {
+                  _vm.type = $$v
+                },
+                expression: "type"
+              }
+            },
+            [_vm._v("Border")]
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-radio",
+            {
+              attrs: { "vs-value": "margin" },
+              model: {
+                value: _vm.type,
+                callback: function($$v) {
+                  _vm.type = $$v
+                },
+                expression: "type"
+              }
+            },
+            [_vm._v("Margin")]
           )
         ],
         1
       ),
       _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<vs-list>\n  <vs-list-header title="Group 1"></vs-list-header>\n\n  <vs-list-item title="Snickerdoodle" subtitle="An excellent companion"></vs-list-item>\n  <vs-list-item title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals"></vs-list-item>\n  <vs-list-header title="Group 2" color="success"></vs-list-header>\n  <vs-list-item title="Enid\'s" subtitle="At night a bar, during the day a delicious brunch spot."></vs-list-item>\n  <vs-list-item title="Veronika Ossi" subtitle="Has not watched anything recently"></vs-list-item>\n</vs-list>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListIcon.vue?vue&type=template&id=68d2aebc&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/components/vuesax/list/ListIcon.vue?vue&type=template&id=68d2aebc& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Icon", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("The list items and the headers can have a "),
-        _c("code", [_vm._v("icon")]),
-        _vm._v(" as well")
-      ]),
-      _vm._v(" "),
       _c(
-        "vs-alert",
-        {
-          staticClass: "mt-5",
-          attrs: { color: "primary", icon: "new_releases", active: "true" }
-        },
+        "vs-collapse",
+        { attrs: { type: _vm.type, accordion: "" } },
         [
-          _c("p", [
+          _c("vs-collapse-item", [
+            _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+              _vm._v("Collapse item")
+            ]),
             _vm._v(
-              "Vuesax uses the Google Material Icons font library by default. For a list of all available icons, visit the official "
+              "\n\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus eros tortor, non fringilla lectus cursus et. Fusce vel nisi ante. Aliquam sit amet lectus pharetra, luctus mi sed, aliquet felis. Mauris a tortor viverra, ornare tellus in, consectetur leo.\n                "
             ),
-            _c(
-              "a",
-              {
-                attrs: { href: "https://material.io/icons/", target: "_blank" }
-              },
-              [_vm._v("Material Icons page")]
-            ),
-            _vm._v(".")
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "\n                Etiam nec nunc nec nisl luctus tincidunt efficitur vitae elit. Vestibulum iaculis nibh commodo neque ultrices lobortis. Cras magna massa, pretium vitae mattis varius, pharetra nec massa. Aliquam ac ex enim. Quisque consequat dui libero, vel blandit lorem porttitor sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam sed lobortis nisl, quis eleifend metus.\n            "
+            )
           ]),
           _vm._v(" "),
-          _c("p", [
+          _c("vs-collapse-item", [
+            _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+              _vm._v("Collapse item 2")
+            ]),
             _vm._v(
-              "FontAwesome and other fonts library are supported. Simply use the icon-pack with fa or fas. You still need to include the Font Awesome icons in your project."
+              "\n\n                Nunc auctor et leo vitae suscipit. Nullam aliquet purus scelerisque enim hendrerit tristique. Maecenas tincidunt dui arcu, a aliquet nisl venenatis vitae. Praesent mauris ligula, porta at maximus ac, rutrum vitae sapien. Donec a sapien id erat dapibus dignissim sodales in est. Donec gravida dapibus sapien at sollicitudin. Maecenas iaculis quam ex,\n                "
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "\n                eu aliquam erat sagittis eget. Suspendisse mollis felis nec ipsum vehicula, at posuere libero viverra. Nam hendrerit dapibus eleifend. Aliquam elit nulla, tincidunt pellentesque enim mollis, consectetur placerat enim. Integer condimentum tristique ante et ullamcorper. Mauris placerat pretium ex. Nam aliquam sed tortor sit amet\n                "
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "\n                efficitur. Mauris quis faucibus nulla. Pellentesque egestas non ipsum vel maximus.\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _c("vs-collapse-item", { attrs: { disabled: "" } }, [
+            _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+              _vm._v("Collapse item 3 - Disabled")
+            ]),
+            _vm._v(
+              "\n\n                Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _c("vs-collapse-item", [
+            _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+              _vm._v("Collapse item 4")
+            ]),
+            _vm._v(
+              "\n\n                Suspendisse aliquet condimentum diam, sed aliquam nisl dapibus et. Aliquam euismod ullamcorper dolor eu imperdiet. Nullam eget odio at magna gravida suscipit sed vestibulum odio. Maecenas porta elit vel lectus molestie, eget aliquam enim feugiat. Vivamus nec faucibus nisl. Nunc venenatis tempus finibus.\n            "
             )
           ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c(
-            "vs-list",
-            [
-              _c("vs-list-header", {
-                attrs: {
-                  "icon-pack": "feather",
-                  icon: "icon-users",
-                  title: "Group 1"
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  "icon-pack": "feather",
-                  icon: "icon-check",
-                  title: "Snickerdoodle",
-                  subtitle: "An excellent companion"
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  "icon-pack": "feather",
-                  icon: "icon-check",
-                  title: "Sapporo Haru",
-                  subtitle:
-                    "An excellent polish restaurant, quick delivery and hearty, filling meals"
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-header", {
-                attrs: {
-                  "icon-pack": "feather",
-                  icon: "icon-user-plus",
-                  title: "Group 2",
-                  color: "success"
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  "icon-pack": "feather",
-                  icon: "icon-shield",
-                  title: "Enid's",
-                  subtitle:
-                    "At night a bar, during the day a delicious brunch spot."
-                }
-              }),
-              _vm._v(" "),
-              _c("vs-list-item", {
-                attrs: {
-                  "icon-pack": "feather",
-                  icon: "icon-shield",
-                  title: "Veronika Ossi",
-                  subtitle: "Has not watched anything recently"
-                }
-              })
-            ],
-            1
-          )
         ],
         1
       ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<vs-list>\n\n    <vs-list-header icon-pack="feather" icon="icon-users" title="Group 1"></vs-list-header>\n    <vs-list-item icon-pack="feather" icon="icon-check" title="Snickerdoodle" subtitle="An excellent companion"></vs-list-item>\n    <vs-list-item icon-pack="feather" icon="icon-check" title="Sapporo Haru" subtitle="An excellent polish restaurant, quick delivery and hearty, filling meals"></vs-list-item>\n\n    <vs-list-header icon-pack="feather" icon="icon-user-plus" title="Group 2" color="success"></vs-list-header>\n    <vs-list-item icon-pack="feather" icon="icon-shield" title="Enid\'s" subtitle="At night a bar, during the day a delicious brunch spot."></vs-list-item>\n    <vs-list-item icon-pack="feather" icon="icon-shield" title="Veronika Ossi" subtitle="Has not watched anything recently"></vs-list-item>\n</vs-list>\n        '
+          '\n<template>\n\n  <div class="demo-alignment">\n    <vs-radio v-model="type" vs-value="default">Default</vs-radio>\n    <vs-radio v-model="type" vs-value="shadow">Shadow</vs-radio>\n    <vs-radio v-model="type" vs-value="border">Border</vs-radio>\n    <vs-radio v-model="type" vs-value="margin">Margin</vs-radio>\n  </div>\n\n  <vs-collapse>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item\n      </div>\n      Lorem....metus.\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 2\n      </div>\n      Nunc....maximus.\n    </vs-collapse-item>\n\n    <vs-collapse-item disabled>\n      <div slot="header">\n        Collapse item 3 - Disabled\n      </div>\n      Suspendisse....eu\n    </vs-collapse-item>\n\n    <vs-collapse-item>\n      <div slot="header">\n        Collapse item 4\n      </div>\n      Suspendisse....finibus.\n    </vs-collapse-item>\n  </vs-collapse>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      type: \'shadow\',\n    }\n  }\n}\n</script>\n        '
         )
       ])
     ],
@@ -737,17 +869,17 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/List.vue":
-/*!****************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/List.vue ***!
-  \****************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/Collapse.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/Collapse.vue ***!
+  \************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _List_vue_vue_type_template_id_4e3bb023___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./List.vue?vue&type=template&id=4e3bb023& */ "./resources/js/src/views/components/vuesax/list/List.vue?vue&type=template&id=4e3bb023&");
-/* harmony import */ var _List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./List.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/vuesax/list/List.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Collapse_vue_vue_type_template_id_17756483___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Collapse.vue?vue&type=template&id=17756483& */ "./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=template&id=17756483&");
+/* harmony import */ var _Collapse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Collapse.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -757,9 +889,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _List_vue_vue_type_template_id_4e3bb023___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _List_vue_vue_type_template_id_4e3bb023___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Collapse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Collapse_vue_vue_type_template_id_17756483___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Collapse_vue_vue_type_template_id_17756483___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -769,53 +901,53 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/vuesax/list/List.vue"
+component.options.__file = "resources/js/src/views/components/vuesax/collapse/Collapse.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/List.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/List.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./List.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/List.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Collapse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Collapse.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Collapse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/List.vue?vue&type=template&id=4e3bb023&":
-/*!***********************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/List.vue?vue&type=template&id=4e3bb023& ***!
-  \***********************************************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=template&id=17756483&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=template&id=17756483& ***!
+  \*******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_4e3bb023___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./List.vue?vue&type=template&id=4e3bb023& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/List.vue?vue&type=template&id=4e3bb023&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_4e3bb023___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Collapse_vue_vue_type_template_id_17756483___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Collapse.vue?vue&type=template&id=17756483& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/Collapse.vue?vue&type=template&id=17756483&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Collapse_vue_vue_type_template_id_17756483___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_4e3bb023___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Collapse_vue_vue_type_template_id_17756483___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/ListAvatar.vue":
-/*!**********************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListAvatar.vue ***!
-  \**********************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue ***!
+  \*********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ListAvatar_vue_vue_type_template_id_79233648___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListAvatar.vue?vue&type=template&id=79233648& */ "./resources/js/src/views/components/vuesax/list/ListAvatar.vue?vue&type=template&id=79233648&");
+/* harmony import */ var _CollapseAccordion_vue_vue_type_template_id_72b00a35___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CollapseAccordion.vue?vue&type=template&id=72b00a35& */ "./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue?vue&type=template&id=72b00a35&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 var script = {}
@@ -825,8 +957,8 @@ var script = {}
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
   script,
-  _ListAvatar_vue_vue_type_template_id_79233648___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ListAvatar_vue_vue_type_template_id_79233648___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CollapseAccordion_vue_vue_type_template_id_72b00a35___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CollapseAccordion_vue_vue_type_template_id_72b00a35___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -836,39 +968,39 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/vuesax/list/ListAvatar.vue"
+component.options.__file = "resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/ListAvatar.vue?vue&type=template&id=79233648&":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListAvatar.vue?vue&type=template&id=79233648& ***!
-  \*****************************************************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue?vue&type=template&id=72b00a35&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue?vue&type=template&id=72b00a35& ***!
+  \****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAvatar_vue_vue_type_template_id_79233648___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ListAvatar.vue?vue&type=template&id=79233648& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListAvatar.vue?vue&type=template&id=79233648&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAvatar_vue_vue_type_template_id_79233648___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseAccordion_vue_vue_type_template_id_72b00a35___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CollapseAccordion.vue?vue&type=template&id=72b00a35& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseAccordion.vue?vue&type=template&id=72b00a35&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseAccordion_vue_vue_type_template_id_72b00a35___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListAvatar_vue_vue_type_template_id_79233648___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseAccordion_vue_vue_type_template_id_72b00a35___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/ListBasic.vue":
-/*!*********************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListBasic.vue ***!
-  \*********************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue ***!
+  \***************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ListBasic_vue_vue_type_template_id_bc86be0a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListBasic.vue?vue&type=template&id=bc86be0a& */ "./resources/js/src/views/components/vuesax/list/ListBasic.vue?vue&type=template&id=bc86be0a&");
+/* harmony import */ var _CollapseChangeArrowIcon_vue_vue_type_template_id_54e9f302___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302& */ "./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 var script = {}
@@ -878,8 +1010,8 @@ var script = {}
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
   script,
-  _ListBasic_vue_vue_type_template_id_bc86be0a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ListBasic_vue_vue_type_template_id_bc86be0a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CollapseChangeArrowIcon_vue_vue_type_template_id_54e9f302___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CollapseChangeArrowIcon_vue_vue_type_template_id_54e9f302___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -889,40 +1021,146 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/vuesax/list/ListBasic.vue"
+component.options.__file = "resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/ListBasic.vue?vue&type=template&id=bc86be0a&":
-/*!****************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListBasic.vue?vue&type=template&id=bc86be0a& ***!
-  \****************************************************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302& ***!
+  \**********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListBasic_vue_vue_type_template_id_bc86be0a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ListBasic.vue?vue&type=template&id=bc86be0a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListBasic.vue?vue&type=template&id=bc86be0a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListBasic_vue_vue_type_template_id_bc86be0a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseChangeArrowIcon_vue_vue_type_template_id_54e9f302___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseChangeArrowIcon.vue?vue&type=template&id=54e9f302&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseChangeArrowIcon_vue_vue_type_template_id_54e9f302___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListBasic_vue_vue_type_template_id_bc86be0a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseChangeArrowIcon_vue_vue_type_template_id_54e9f302___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/ListContent.vue":
-/*!***********************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListContent.vue ***!
-  \***********************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue ***!
+  \*******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ListContent_vue_vue_type_template_id_7e1e6a86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListContent.vue?vue&type=template&id=7e1e6a86& */ "./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=template&id=7e1e6a86&");
-/* harmony import */ var _ListContent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListContent.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CollapseDefault_vue_vue_type_template_id_502cf024___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CollapseDefault.vue?vue&type=template&id=502cf024& */ "./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue?vue&type=template&id=502cf024&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _CollapseDefault_vue_vue_type_template_id_502cf024___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CollapseDefault_vue_vue_type_template_id_502cf024___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue?vue&type=template&id=502cf024&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue?vue&type=template&id=502cf024& ***!
+  \**************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseDefault_vue_vue_type_template_id_502cf024___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CollapseDefault.vue?vue&type=template&id=502cf024& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseDefault.vue?vue&type=template&id=502cf024&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseDefault_vue_vue_type_template_id_502cf024___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseDefault_vue_vue_type_template_id_502cf024___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CollapseOpenHover_vue_vue_type_template_id_4ca93e02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CollapseOpenHover.vue?vue&type=template&id=4ca93e02& */ "./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue?vue&type=template&id=4ca93e02&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _CollapseOpenHover_vue_vue_type_template_id_4ca93e02___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CollapseOpenHover_vue_vue_type_template_id_4ca93e02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue?vue&type=template&id=4ca93e02&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue?vue&type=template&id=4ca93e02& ***!
+  \****************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseOpenHover_vue_vue_type_template_id_4ca93e02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CollapseOpenHover.vue?vue&type=template&id=4ca93e02& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseOpenHover.vue?vue&type=template&id=4ca93e02&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseOpenHover_vue_vue_type_template_id_4ca93e02___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseOpenHover_vue_vue_type_template_id_4ca93e02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseType.vue":
+/*!****************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseType.vue ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CollapseType_vue_vue_type_template_id_41f18546___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CollapseType.vue?vue&type=template&id=41f18546& */ "./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=template&id=41f18546&");
+/* harmony import */ var _CollapseType_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CollapseType.vue?vue&type=script&lang=js& */ "./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -932,9 +1170,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ListContent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ListContent_vue_vue_type_template_id_7e1e6a86___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ListContent_vue_vue_type_template_id_7e1e6a86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CollapseType_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CollapseType_vue_vue_type_template_id_41f18546___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CollapseType_vue_vue_type_template_id_41f18546___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -944,144 +1182,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/vuesax/list/ListContent.vue"
+component.options.__file = "resources/js/src/views/components/vuesax/collapse/CollapseType.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListContent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ListContent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListContent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=template&id=7e1e6a86&":
-/*!******************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=template&id=7e1e6a86& ***!
-  \******************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListContent_vue_vue_type_template_id_7e1e6a86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ListContent.vue?vue&type=template&id=7e1e6a86& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListContent.vue?vue&type=template&id=7e1e6a86&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListContent_vue_vue_type_template_id_7e1e6a86___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListContent_vue_vue_type_template_id_7e1e6a86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/vuesax/list/ListHeader.vue":
-/*!**********************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListHeader.vue ***!
-  \**********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ListHeader_vue_vue_type_template_id_5154cc10___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListHeader.vue?vue&type=template&id=5154cc10& */ "./resources/js/src/views/components/vuesax/list/ListHeader.vue?vue&type=template&id=5154cc10&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _ListHeader_vue_vue_type_template_id_5154cc10___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ListHeader_vue_vue_type_template_id_5154cc10___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/vuesax/list/ListHeader.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/vuesax/list/ListHeader.vue?vue&type=template&id=5154cc10&":
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListHeader.vue?vue&type=template&id=5154cc10& ***!
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListHeader_vue_vue_type_template_id_5154cc10___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ListHeader.vue?vue&type=template&id=5154cc10& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListHeader.vue?vue&type=template&id=5154cc10&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListHeader_vue_vue_type_template_id_5154cc10___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListHeader_vue_vue_type_template_id_5154cc10___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/src/views/components/vuesax/list/ListIcon.vue":
-/*!********************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListIcon.vue ***!
-  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ListIcon_vue_vue_type_template_id_68d2aebc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListIcon.vue?vue&type=template&id=68d2aebc& */ "./resources/js/src/views/components/vuesax/list/ListIcon.vue?vue&type=template&id=68d2aebc&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _ListIcon_vue_vue_type_template_id_68d2aebc___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ListIcon_vue_vue_type_template_id_68d2aebc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/src/views/components/vuesax/list/ListIcon.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseType_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CollapseType.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseType_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/components/vuesax/list/ListIcon.vue?vue&type=template&id=68d2aebc&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/src/views/components/vuesax/list/ListIcon.vue?vue&type=template&id=68d2aebc& ***!
-  \***************************************************************************************************/
+/***/ "./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=template&id=41f18546&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=template&id=41f18546& ***!
+  \***********************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListIcon_vue_vue_type_template_id_68d2aebc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ListIcon.vue?vue&type=template&id=68d2aebc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/list/ListIcon.vue?vue&type=template&id=68d2aebc&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListIcon_vue_vue_type_template_id_68d2aebc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseType_vue_vue_type_template_id_41f18546___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CollapseType.vue?vue&type=template&id=41f18546& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/components/vuesax/collapse/CollapseType.vue?vue&type=template&id=41f18546&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseType_vue_vue_type_template_id_41f18546___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListIcon_vue_vue_type_template_id_68d2aebc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CollapseType_vue_vue_type_template_id_41f18546___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

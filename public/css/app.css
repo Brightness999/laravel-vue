@@ -1296,6 +1296,7 @@ i.wizard-icon {
 
 .vs__fade-enter-active,
 .vs__fade-leave-active {
+  pointer-events: none;
   transition: opacity 0.15s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
@@ -1469,6 +1470,7 @@ i.wizard-icon {
 
 .vs__dropdown-menu {
   display: block;
+  box-sizing: border-box;
   position: absolute;
   top: calc(100% - 1px);
   z-index: 1000;
@@ -1531,6 +1533,18 @@ i.wizard-icon {
   background: #7367F0;
 }
 
+.vs__dropdown-option--disabled {
+  color: rgba(60, 60, 60, 0.5);
+}
+
+[dir] .vs__dropdown-option--disabled {
+  background: inherit;
+}
+
+[dir] .vs__dropdown-option--disabled:hover {
+  cursor: inherit;
+}
+
 /* Selected Tags */
 
 .vs__selected {
@@ -1538,6 +1552,7 @@ i.wizard-icon {
   align-items: center;
   color: #333;
   line-height: 1.8;
+  z-index: 0;
 }
 
 [dir] .vs__selected {
@@ -1590,8 +1605,17 @@ i.wizard-icon {
 
 /* Search Input */
 
+/**
+ * Super weird bug... If this declaration is grouped
+ * below, the cancel button will still appear in chrome.
+ * If it's up here on it's own, it'll hide it.
+ */
+
+.vs__search::-webkit-search-cancel-button {
+  display: none;
+}
+
 .vs__search::-webkit-search-decoration,
-.vs__search::-webkit-search-cancel-button,
 .vs__search::-webkit-search-results-button,
 .vs__search::-webkit-search-results-decoration,
 .vs__search::-ms-clear {
@@ -1609,6 +1633,7 @@ i.wizard-icon {
   width: 0;
   max-width: 100%;
   flex-grow: 1;
+  z-index: 1;
 }
 
 [dir] .vs__search, [dir] .vs__search:focus {
@@ -1655,7 +1680,7 @@ i.wizard-icon {
   opacity: 1;
 }
 
-[dir] .vs--unsearchable .vs__search:hover {
+[dir] .vs--unsearchable:not(.vs--disabled) .vs__search:hover {
   cursor: pointer;
 }
 
