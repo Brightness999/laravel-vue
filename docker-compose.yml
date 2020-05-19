@@ -2,7 +2,7 @@ version: '3'
 services:
     php-fpm:
         build: ./
-        container_name: ppr-tool
+        container_name: spacegoals
         volumes:
             - ./:/var/www/html:cached
         links:

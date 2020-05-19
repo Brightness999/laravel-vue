@@ -21,7 +21,8 @@ RUN set -xe \
 	# Install composer and prestissimo
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
 	&& composer global require "hirak/prestissimo:^0.3" \
-
+    && pecl install -f xdebug-2.8.1 \
+    && docker-php-ext-enable xdebug \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
 
 	&& chmod uga+x /usr/local/bin/install-php-extensions \
@@ -30,13 +31,9 @@ RUN set -xe \
         calendar fileinfo iconv json mbstring \
         gettext mcrypt pcntl pdo pdo_mysql soap \
         tokenizer zip ldap gd intl xdebug \
+    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_autostart=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.idekey=PHPSTORM" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
 
 	&& rm -rf /var/cache/apk/* \
-	&& apk del pcre-dev ${PHPIZE_DEPS} \
-	&& chmod +x /entrypoint.sh
-
-COPY .docker/www.conf /usr/local/etc/php-fpm.d/
-COPY .docker/docker-php-memory-limit.ini /usr/local/etc/php/conf.d/
-COPY .docker/docker-php-ext-xdebug-enabled.ini /usr/local/etc/php/
-
-ENTRYPOINT ["/entrypoint.sh"]
+	&& apk del pcre-dev ${PHPIZE_DEPS}
