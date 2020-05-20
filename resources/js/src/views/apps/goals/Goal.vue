@@ -40,7 +40,7 @@
                       :key="String(currFilter) + String(task.id)"
                       :style="[{transitionDelay: (index * 0.1) + 's'}]">
 
-                      <todo-task :taskId="task.id" @showDisplayPrompt="showDisplayPrompt($event)" :key="String(task.title)" />
+                      <todo-task :taskId="task.id" @showDisplayPrompt="showDisplayPrompt($event)" />
                         <!--
                         Note: Remove "todo-task" component's key just concat lastUpdated field in li key list.
                         e.g. <li class="..." v-for="..." :key="String(currFilter) + String(task.id) + String(task.lastUpdated)" .. >

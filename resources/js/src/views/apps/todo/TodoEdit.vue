@@ -10,13 +10,13 @@
 
 <template>
     <vs-prompt
-        title="Edit Task"
-        accept-text= "Submit"
+        title ="Edit Task"
+        accept-text = "Submit"
         cancel-text = "Remove"
         button-cancel = "border"
-        @cancel="removeTodo"
-        @accept="submitTodo"
-        @close="init"
+        @cancel ="removeTodo"
+        @accept ="submitTodo"
+        @close ="init"
         :is-valid="validateForm"
         :active.sync="activePrompt">
         <div>
@@ -108,6 +108,7 @@ export default {
     },
     init () {
       this.taskLocal = Object.assign({}, this.$store.getters['todo/getTask'](this.taskId))
+      console.log(this.taskLocal)
     },
     submitTodo () {
       this.$store.dispatch('todo/updateTask', this.taskLocal)

@@ -24,7 +24,6 @@
         <div>
             <form>
                 <div class="vx-row">
-
                     <div class="vx-col ml-auto flex">
                         <feather-icon icon="InfoIcon" class="cursor-pointer" :svgClasses="[{'text-success stroke-current': taskLocal.isImportant}, 'w-5', 'h-5 mr-4']" @click.prevent="taskLocal.isImportant = !taskLocal.isImportant"></feather-icon>
 
