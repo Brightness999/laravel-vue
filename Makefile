@@ -1,6 +1,6 @@
 ENV=local
 dir=${CURDIR}
-project=-p ppr-tool
+project=-p spacegoals
 service=ppr_php-fpm
 serviceNode=eugenebalaban/laravel-node
 
