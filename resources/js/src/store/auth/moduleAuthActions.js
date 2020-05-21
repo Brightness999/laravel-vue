@@ -305,6 +305,7 @@ export default {
     return new Promise((resolve, reject) => {
       jwt.login(payload.userDetails.email, payload.userDetails.password)
         .then(response => {
+            console.log(response);
 
           // If there's user data in response
           if (response.data.userData) {
@@ -326,7 +327,9 @@ export default {
           }
 
         })
-        .catch(error => { reject(error) })
+        .catch(error => {
+            reject({message: error}) 
+        })
     })
   },
   registerUserJWT ({ commit }, payload) {

@@ -1,5 +1,6 @@
 import axios from '../../../axios/index.js'
 import store from '../../../../store/store.js'
+import router from '@/router'
 
 // Token Refresh
 let isAlreadyFetchingAccessToken = false
@@ -20,7 +21,9 @@ export default {
     }, function (error) {
       // const { config, response: { status } } = error
       const { config, response } = error
+/*
       const originalRequest = config
+*/
 
       // if (status === 401) {
       if (response && response.status === 401) {
@@ -28,20 +31,23 @@ export default {
           isAlreadyFetchingAccessToken = true
           store.dispatch('auth/fetchAccessToken')
             .then((access_token) => {
-              isAlreadyFetchingAccessToken = false
+              isAlreadyFetchingAccessToken = fals
               onAccessTokenFetched(access_token)
             })
         }
 
-        const retryOriginalRequest = new Promise((resolve) => {
+        /*const retryOriginalRequest = new Promise((resolve) => {
           addSubscriber(access_token => {
             originalRequest.headers.Authorization = `Bearer ${access_token}`
             resolve(axios(originalRequest))
           })
-        })
-        return retryOriginalRequest
+        })*/
+        const loginPath = '/pages/login';
+        router.push(loginPath).catch(err => {})
       }
-      return Promise.reject(error)
+      const message = typeof response.data !== 'undefined' ? response.data : 'Something went wrong';
+      
+      return Promise.reject(message)
     })
   },
   login (email, pwd) {
