@@ -58,26 +58,21 @@ class AuthController extends Controller
 		
 		$credentials = request(['email', 'password']);
 		
-		if (!Auth::attempt($credentials)) {
+		if (!$token = auth()->attempt($credentials)) {
 			return response()->json('Credentials are not correct.', 401);
 		}
 		
-		$user        = $request->user();
-		$tokenResult = $user->createToken('Personal Access Token');
-		$token       = $tokenResult->token;
+		$expiresAt = auth()->factory()->getTTL() * 10800;
 		
 		if ($request->remember_me) {
-			$token->expires_at = Carbon::now()->addWeeks(1);
-			$token->save();
+			$expiresAt = auth()->factory()->getTTL() * 60000;
 		}
 
 		return response()->json([
-			'accessToken' => $tokenResult->accessToken,
+			'accessToken' => $token,
 			'token_type'  => 'Bearer',
-			'expires_at'  => Carbon::parse(
-				$tokenResult->token->expires_at
-			)->toDateTimeString(),
-			'userData'    => ['email' => $user->email, 'avatar' => $user->avatar]
+			'expires_at'  => $expiresAt,
+			'userData'    => ['email' => 'test@gmail.com', 'avatar' => 'test']
 		]);
 	}
 
@@ -104,4 +99,14 @@ class AuthController extends Controller
 	{
 		return response()->json($request->user());
 	}
+	
+	/**
+     * Get the authenticated User.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function me()
+    {
+        return response()->json(auth()->user());
+    }
 }

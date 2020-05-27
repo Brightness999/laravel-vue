@@ -16,6 +16,7 @@ function addSubscriber (callback) {
 
 export default {
   init () {
+    axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('accessToken')}`;
     axios.interceptors.response.use(function (response) {
       return response
     }, function (error) {
@@ -27,14 +28,14 @@ export default {
 
       // if (status === 401) {
       if (response && response.status === 401) {
-        if (!isAlreadyFetchingAccessToken) {
+        /*if (!isAlreadyFetchingAccessToken) {
           isAlreadyFetchingAccessToken = true
           store.dispatch('auth/fetchAccessToken')
             .then((access_token) => {
-              isAlreadyFetchingAccessToken = fals
+              isAlreadyFetchingAccessToken = false
               onAccessTokenFetched(access_token)
             })
-        }
+        }*/
 
         /*const retryOriginalRequest = new Promise((resolve) => {
           addSubscriber(access_token => {

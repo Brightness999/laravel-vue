@@ -18,18 +18,25 @@ use App\Http\Controllers\Api;
 Route::get('/user', function (Request $request) {
 	return $request->user();
 });
-Route::resource('/user-management/users', 'UserController');
 
 Route::group([
-    'prefix' => 'auth'
+		'middleware' => 'jwt.auth'
+    ], function() {
+	Route::resource('/user-management/users', 'UserController');
+
+});
+
+Route::group([
+    'prefix' => 'auth',
 ], function () {
     Route::post('login', 'AuthController@login');
     Route::post('register', 'AuthController@register');
   
     Route::group([
-      'middleware' => 'auth:api'
+		'middleware' => 'jwt.auth'
     ], function() {
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
+        Route::post('me', 'AuthController@me');
     });
 });
