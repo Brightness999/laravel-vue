@@ -371,11 +371,24 @@ export default {
     }
   },
   created () {
+      console.log('created');
     if (!moduleUserManagement.isRegistered) {
       this.$store.registerModule('userManagement', moduleUserManagement)
       moduleUserManagement.isRegistered = true
     }
-    this.$store.dispatch('userManagement/fetchUsers').catch(err => {  })
+    // Loading
+    this.$vs.loading()
+    this.$store.dispatch('userManagement/fetchUsers').then(() => { this.$vs.loading.close() })
+        .catch(error => {
+          this.$vs.loading.close()
+          this.$vs.notify({
+            title: 'Error',
+            text: error.message,
+            iconPack: 'feather',
+            icon: 'icon-alert-circle',
+            color: 'danger'
+          })
+        })
   }
 }
 
