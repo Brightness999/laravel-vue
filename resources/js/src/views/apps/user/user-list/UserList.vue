@@ -213,11 +213,8 @@ export default {
         {
           headerName: 'ID',
           field: 'id',
-          width: 125,
-          filter: true,
-          checkboxSelection: true,
-          headerCheckboxSelectionFilteredOnly: true,
-          headerCheckboxSelection: true
+          width: 100,
+          filter: true
         },
         {
           headerName: 'Username',
@@ -371,13 +368,13 @@ export default {
     }
   },
   created () {
-      console.log('created');
     if (!moduleUserManagement.isRegistered) {
+      // Loading
+      this.$vs.loading()
       this.$store.registerModule('userManagement', moduleUserManagement)
       moduleUserManagement.isRegistered = true
     }
-    // Loading
-    this.$vs.loading()
+    
     this.$store.dispatch('userManagement/fetchUsers').then(() => { this.$vs.loading.close() })
         .catch(error => {
           this.$vs.loading.close()

@@ -57,12 +57,16 @@ class Handler extends ExceptionHandler
             } else if ($preException instanceof \Tymon\JWTAuth\Exceptions\TokenBlacklistedException) {
             	return response()->json(['token is in blacklist'], 401);
             }
-            
             if ($exception->getMessage() === 'Token not provided') {
                 return response()->json(['token is not provided'], 401);
             }
     	}
-    	$exceptionCode = $exception->getCode() !== 0 ? $exception->getCode() : 500;
+    	
+    	if ($this->isHttpException($exception)) {
+            $exceptionCode = $exception->getStatusCode();
+        } else {
+    		$exceptionCode = $exception->getCode() !== 0 ? $exception->getCode() : 500;
+	    }
     	
         return response()->json(
             [$exception->getMessage()], $exceptionCode

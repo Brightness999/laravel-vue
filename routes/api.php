@@ -20,10 +20,11 @@ Route::get('/user', function (Request $request) {
 });
 
 Route::group([
-		'middleware' => 'jwt.auth'
+		'middleware' => 'jwt.auth',
+		'prefix'     => 'user-management'
     ], function() {
-	Route::resource('/user-management/users', 'UserController');
-
+	Route::get('/users', 'UserController@index');
+	Route::get('/users/{id}', 'UserController@show')->middleware('hasAccessToUser');
 });
 
 Route::group([
