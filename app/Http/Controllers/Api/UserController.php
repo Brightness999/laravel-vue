@@ -31,7 +31,8 @@ class UserController extends Controller
 	 */
 	public function index()
 	{
-		$data = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
+		$data = $this->userRepository->getUsersDependingOnRoleExcludingSelf()->toJson();
+		
 		$test = [
 			'id' => 271,
 			'username' => 'bumbo426',
