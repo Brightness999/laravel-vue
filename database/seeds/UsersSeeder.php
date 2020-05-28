@@ -86,6 +86,7 @@ class UsersSeeder extends Seeder
 		$user->full_name = 'Hr + mentor';
 		$user->email = 'hr3cccc4@gmail.com';
 		$user->assignRole(\App\Role::HR_ROLE);
+		$user->assignRole(\App\Role::MENTOR_ROLE);
 		$user->password = bcrypt('123123123');
 		$user->campaign_id = 1;
 		$user->save();

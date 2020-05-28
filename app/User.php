@@ -11,7 +11,8 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable, HasRoles, HasApiTokens;
-
+    protected $guard_name = 'api';
+    
     /**
      * The attributes that are mass assignable.
      *

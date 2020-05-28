@@ -306,7 +306,7 @@ export default {
       this.setColumnFilter('is_verified', val)
     },*/
     departmentFilter (obj) {
-      this.setColumnFilter('department', obj.value)
+      this.setColumnFilter('department_name', obj.value)
     }
   },
   computed: {
@@ -339,7 +339,7 @@ export default {
       if (val !== 'all') {
         modelObj = { type: 'equals', filter: val }
       }
-
+        
       filter.setModel(modelObj)
       this.gridApi.onFilterChanged()
     },

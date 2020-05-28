@@ -35,7 +35,7 @@ class UserController extends Controller
 		
 		if ($users) {
 			$users = $users->map(function ($user) {
-				$user->role = $user->roles->toArray();
+				$user->role = $this->userRepository->getUserRoles($user);
 				$user->department_name = $user->department_id ? $user->department->name : '';
 				$user->position_name = $user->position_id ? $user->position->name : '';
 				
