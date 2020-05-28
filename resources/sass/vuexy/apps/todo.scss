@@ -8,10 +8,11 @@
 ==========================================================================================*/
 
 
-#todo-app{
-    .vs-sidebar--background{
+#todo-app {
+    .vs-sidebar--background {
         position: absolute;
     }
+
     .todo-scroll-area {
         position: relative;
         margin: auto;
@@ -19,9 +20,10 @@
         height: calc(100% - 70px);
 
         &:not(.ps) {
-          overflow-y: auto;
+            overflow-y: auto;
         }
     }
+
     .todo-content-scroll-area {
         position: relative;
         margin: auto;
@@ -29,7 +31,7 @@
         height: calc(100% - 50px);
 
         &:not(.ps) {
-          overflow-y: auto;
+            overflow-y: auto;
         }
     }
 
@@ -41,23 +43,35 @@
     .list-item-component {
         transition: background-color .2s, transform .2s;
         border-top: 1px solid #dae1e7;
+
         &:hover {
             // background-color: #eee;
             transform: translateY(-4px);
-			box-shadow: 0px 3px 10px 0px #ccc;
+            box-shadow: 0px 3px 10px 0px #ccc;
             transition: all 0.2s;
         }
     }
 
     .todo-list {
-      .todo-tags {
-        .con-vs-chip {
-          margin-right: 2px !important;
+        .todo-tags {
+            .con-vs-chip {
+                margin-right: 2px !important;
+            }
         }
-      }
     }
 
     .goal {
         padding-bottom: 1rem;
+    }
+
+    .goal-view-sidebar {
+        .vs-sidebar--items {
+            .p-12 {
+                padding: 0 0rem !important;
+            }
+
+            padding: 0 3rem !important;
+        }
+
     }
 }

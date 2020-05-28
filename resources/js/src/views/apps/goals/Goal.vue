@@ -49,6 +49,7 @@
                 </transition-group>
             </component>
             <!-- /TODO LIST -->
+            <!-- /TODO LIST -->
 
         </div>
 

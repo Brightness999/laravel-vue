@@ -12,10 +12,10 @@
         <vs-sidebar
             click-not-close parent="#todo-app"
             :hidden-background="true"
-            class="full-vs-sidebar email-view-sidebar items-no-padding"
+            class="full-vs-sidebar goal-view-sidebar items-no-padding"
             v-model="isEmailSidebarActive"
             position-right>
-            <div v-if="taskLocalData" class="scroll-area--data-list-add-new">
+            <div id="taskLocalData" v-if="taskLocalData" class="scroll-area--data-list-add-new">
                 <div
                     class="flex flex-wrap items-center email-header justify-between md:px-8 px-6 sm:pb-2 sm: pt-6 d-theme-dark-bg">
                     <div class="flex mb-4">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="p-6">
+                <div class="p-12">
 
                     <!-- NAME -->
                     <vs-input v-validate="'required'" name="title" class="w-full mb-4 mt-5" placeholder="Title"
@@ -60,12 +60,49 @@
                 <vs-button class="mr-6" @click="submitTodo">Submit</vs-button>
                 <vs-button type="border" color="danger" @click="init">Cancel</vs-button>
             </div>
+            <div class="mt-5">
+                <vs-list>
+                    <draggable :list="list" class="cursor-move">
+                        <transition-group>
+                            <vs-list-item class="list-item" v-for="listItem in list" :key="listItem.name"
+                                          :subtitle="listItem.name">
+                                <vs-avatar slot="avatar" :text="listItem.name"/>
+                            </vs-list-item>
+                        </transition-group>
+                    </draggable>
+                </vs-list>
+            </div>
+            <div>
+                <div v-for="(invoice_product, k) in taskLocalData.invoice_products" :key="k">
+                    <div
+                        class="d-theme-dark-bg items-center border border-l-0 border-r-0 border-t-0 border-solid d-theme-border-grey-light">
+                        <vx-input-group>
+                            <vs-input v-validate="'required'" name="objective" type="text"
+                                      placeholder="Title" v-model="invoice_product.product_name"
+                                      class="vs-input-no-border vs-input-no-shdow-focus"/>
+
+                            <template slot="append">
+                                <div class="append-text btn-addon">
+                                    <vs-button color="primary" @click="addNewRow">Add</vs-button>
+                                </div>
+                            </template>
+                        </vx-input-group>
+                    </div>
+                </div>
+            </div>
         </vs-sidebar>
     </div>
 </template>
-
 <script>
+    import draggable from 'vuedraggable'
+    import Prism from 'vue-prism-component'
+
     export default {
+        data() {
+            return {
+                list: []
+            }
+        },
         props: {
             isEmailSidebarActive: {
                 type: Boolean,
@@ -91,8 +128,26 @@
             }
         },
         computed: {
-            taskLocalData() {
-                return Object.assign({}, this.$store.getters['todo/getTask'](this.taskId))
+            taskLocalData: {
+                get() {
+                    if (!this.$store.getters['todo/getTask'](this.taskId).invoice_products)
+                        this.$store.getters['todo/getTask'](this.taskId).invoice_products = [{
+                            product_name: ''
+                        }]
+
+                    if (this.$store.getters['todo/getTask'](this.taskId).list !== undefined) {
+                        this.list = this.$store.getters['todo/getTask'](this.taskId).list
+                    } else {
+                        this.list = []
+                    }
+                    if (!this.$store.getters['todo/getTask'](this.taskId).list)
+                        this.$store.getters['todo/getTask'](this.taskId).list = []
+
+                    return this.$store.getters['todo/getTask'](this.taskId)
+                },
+                set(value) {
+
+                }
             },
             taskTags() {
                 return this.$store.state.todo.taskTags
@@ -102,6 +157,23 @@
             }
         },
         methods: {
+            deleteRow(index, invoice_product) {
+                let idx = this.taskLocalData.invoice_products.indexOf(invoice_product)
+                console.log(idx, index)
+                if (idx > -1) {
+                    this.taskLocalData.invoice_products.splice(idx, 1)
+                }
+                this.calculateTotal()
+            },
+            addNewRow() {
+                this.list.push({
+                    name: this.taskLocalData.invoice_products.slice(-1).pop().product_name
+                })
+                this.taskLocalData.invoice_products = [{
+                    product_name: ''
+                }]
+                this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData))
+            },
             removeTodo() {
                 this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData, {isTrashed: true}))
                     .then(() => {
@@ -122,13 +194,18 @@
                     })
             },
             init() {
-                this.taskLocal = Object.assign({}, this.$store.getters['todo/getTask'](this.taskId))
+                this.taskLocalData = Object.assign({}, this.$store.getters['todo/getTask'](this.taskId))
                 this.$emit('closeSidebar')
             },
             submitTodo() {
+                this.taskLocalData.list = this.list
                 this.$store.dispatch('todo/updateTask', this.taskLocalData)
                 this.$emit('closeSidebar')
             }
+        },
+        components: {
+            draggable,
+            Prism
         }
     }
 </script>
