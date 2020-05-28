@@ -31,20 +31,22 @@ class UserController extends Controller
 	 */
 	public function index()
 	{
-		$data = $this->userRepository->getUsersDependingOnRoleExcludingSelf()->toJson();
+		$users = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
 		
-		$test = [
-			'id' => 271,
-			'username' => 'bumbo426',
-			'avatar' => '/images/portrait/small/avatar-s-12.jpg',
-			'email' => 'ardith@duffett.com',
-			'name' => 'Ardith Duffett',
-			'role' => 'user',
-			'department' => 'sales'
-		];
-
-
-		return response()->json([$test]);
+		if ($users) {
+			$users = $users->map(function ($user) {
+				$user->role = $user->roles->toArray();
+				$user->department_name = $user->department_id ? $user->department->name : '';
+				$user->position_name = $user->position_id ? $user->position->name : '';
+				
+				return $user;
+			});
+			$users = array_values($users->toArray());
+		} else {
+			$users = [];
+		}
+		
+		return response()->json($users);
 	}
 
     /**

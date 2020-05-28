@@ -221,7 +221,7 @@ export default {
         },
         {
           headerName: 'Username',
-          field: 'username',
+          field: 'full_name',
           filter: true,
           width: 210,
           cellRendererFramework: 'CellRendererLink'
@@ -232,12 +232,12 @@ export default {
           filter: true,
           width: 255
         },
-        {
+        /*{
           headerName: 'Name',
           field: 'name',
           filter: true,
           width: 250
-        },
+        },*/
         {
           headerName: 'Role',
           field: 'role',
@@ -261,13 +261,13 @@ export default {
         },*/
         {
           headerName: 'Department',
-          field: 'department',
+          field: 'department_name',
           filter: true,
           width: 150
         },
         {
           headerName: 'Position',
-          field: 'position',
+          field: 'position_name',
           filter: false,
           width: 150
         },
