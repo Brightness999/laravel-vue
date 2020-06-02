@@ -24,18 +24,32 @@ class HasAccessToUser
 		$this->userRepository = $userRepository;
 	}
 
-	
+	/**
+	 * Check if user has access to requested user.
+	 * 
+	 * @param $request
+	 * @param Closure $next
+	 * @return mixed
+	 * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+	 * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+	 */
     public function handle($request, Closure $next)
     {
     	$currentUser = auth()->user();
     	$userToGet   = $this->userRepository->find($request->id);
+    	$userMentors = $userToGet->mentors->map(function($mentor) {
+    		return $mentor->id;
+	    })->toArray();
+    	$userHrs = $userToGet->hrs->map(function($hr) {
+    		return $hr->id;
+	    })->toArray();
     	
-        if ($currentUser->campaign_id !== $userToGet->campaign_id ||
-	        !$currentUser->hasRole(Role::ADMIN_ROLE)
+        if ($currentUser->campaign_id == $userToGet->campaign_id &&
+	        ($currentUser->hasRole(Role::ADMIN_ROLE) || in_array($currentUser->id, $userMentors) || in_array($currentUser->id, $userHrs))
+	        
         ) {
-            abort(403, 'Access denied');
+            return $next($request);
         }
-        
-        return $next($request);
+        abort(403, 'Access denied');
     }
 }
