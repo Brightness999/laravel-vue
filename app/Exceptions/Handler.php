@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Throwable;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
@@ -62,10 +63,16 @@ class Handler extends ExceptionHandler
             }
     	}
     	
+    	
+    	
     	if ($this->isHttpException($exception)) {
             $exceptionCode = $exception->getStatusCode();
         } else {
     		$exceptionCode = $exception->getCode() !== 0 ? $exception->getCode() : 500;
+	    }
+    	
+    	if ($exception instanceof ModelNotFoundException) {
+    		$exceptionCode = 404;
 	    }
     	
         return response()->json(

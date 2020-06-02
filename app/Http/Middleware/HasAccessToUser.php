@@ -31,8 +31,6 @@ class HasAccessToUser
     	$userToGet   = $this->userRepository->find($request->id);
     	
         if ($currentUser->campaign_id !== $userToGet->campaign_id ||
-	        $userToGet->mentor_id !== $currentUser->id ||
-	        $userToGet->hr_id !== $currentUser->id || 
 	        !$currentUser->hasRole(Role::ADMIN_ROLE)
         ) {
             abort(403, 'Access denied');

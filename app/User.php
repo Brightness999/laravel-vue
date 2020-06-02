@@ -51,13 +51,23 @@ class User extends Authenticatable implements JWTSubject
 	}
 
 	/**
-	 * Get user HR People Manager
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+	 * Get user hrs.
+	 * 
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
-	public function hr()
+	public function hrs()
 	{
-		return $this->belongsTo(self::class, 'hr_id', 'id');
+		return $this->belongsToMany('App\User', 'hrs', 'hr_id');
+	}
+	
+	/**
+	 * Get user mentors.
+	 * 
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function mentors()
+	{
+		return $this->belongsToMany('App\User', 'mentors', 'mentor_id');
 	}
 
 	/**

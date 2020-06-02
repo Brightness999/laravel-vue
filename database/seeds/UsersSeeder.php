@@ -68,8 +68,6 @@ class UsersSeeder extends Seeder
 		$user->full_name = 'Admin admin';
 		$user->email = 'admin@gmail.com';
 		$user->assignRole(\App\Role::ADMIN_ROLE);
-		$user->mentor_id = 5;
-		$user->hr_id = 3;
 		$user->password = bcrypt('123123123');
 		$user->campaign_id = 1;
 		$user->save();

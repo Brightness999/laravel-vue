@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GoalsTableSeeder::class);
         $this->call(ObjectivesTableSeeder::class);
         $this->call(InvoicesSeeder::class);
+        $this->call(HrsSeeder::class);
+        $this->call(MentorsSeeder::class);
     }
 }
