@@ -651,14 +651,14 @@ const data = {
 }
 
 // GET: Fetch Single User Details
-mock.onGet(/\/api\/user-management\/users\/\d+/).reply((request) => {
+/*mock.onGet(/\/api\/user-management\/users\/\d+/).reply((request) => {
 
   const userId = request.url.substring(request.url.lastIndexOf('/') + 1)
 
   const user = data.users.find((user) => user.id == userId)
 
   return user ? [200, JSON.parse(JSON.stringify(user))] : [404]
-})
+})*/
 
 // // POST : Add new Item
 // mock.onPost("/api/data-list/products/").reply((request) => {

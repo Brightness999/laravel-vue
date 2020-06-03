@@ -199,4 +199,18 @@ class UserRepository extends BaseRepository
 		$userForUpdate->mentor_id = $this->find($mentorId)->id;
 		$userForUpdate->save();
 	}
+
+	/**
+	 * @param User $user
+	 * 
+	 * @return mixed
+	 */
+	public function getUserRoles(User $user)
+	{
+		$userRoles = $user->roles->map(function($role) {
+			return $role->name;
+		});
+		
+		return $userRoles->toArray();
+	}
 }

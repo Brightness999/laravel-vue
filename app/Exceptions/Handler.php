@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Throwable;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
@@ -57,12 +58,22 @@ class Handler extends ExceptionHandler
             } else if ($preException instanceof \Tymon\JWTAuth\Exceptions\TokenBlacklistedException) {
             	return response()->json(['token is in blacklist'], 401);
             }
-            
             if ($exception->getMessage() === 'Token not provided') {
                 return response()->json(['token is not provided'], 401);
             }
     	}
-    	$exceptionCode = $exception->getCode() !== 0 ? $exception->getCode() : 500;
+    	
+    	
+    	
+    	if ($this->isHttpException($exception)) {
+            $exceptionCode = $exception->getStatusCode();
+        } else {
+    		$exceptionCode = $exception->getCode() !== 0 ? $exception->getCode() : 500;
+	    }
+    	
+    	if ($exception instanceof ModelNotFoundException) {
+    		$exceptionCode = 404;
+	    }
     	
         return response()->json(
             [$exception->getMessage()], $exceptionCode

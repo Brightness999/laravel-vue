@@ -8,13 +8,12 @@ class Department extends Model
 {
 	public $timestamps = false;
 
-    const HR_DEPARTMENT          = 'HR';
-    const SALES_DEPARTMENT       = 'SALES';
-    const FINANCE_DEPARTMENT     = 'FINANCE';
-    const DEVELOPMENT_DEPARTMENT = 'DEVELOPMENT';
-    const MANAGEMENT_DEPARTMENT  = 'MANAGEMENT';
-
-
+    const HR_DEPARTMENT          = 'Hr';
+    const SALES_DEPARTMENT       = 'Sales';
+    const FINANCE_DEPARTMENT     = 'Finance';
+    const DEVELOPMENT_DEPARTMENT = 'Development';
+    const MANAGEMENT_DEPARTMENT  = 'Management';
+    
     const DEPARTMENTS = [self::HR_DEPARTMENT, self::SALES_DEPARTMENT, self::FINANCE_DEPARTMENT, self::DEVELOPMENT_DEPARTMENT];
     
     /**

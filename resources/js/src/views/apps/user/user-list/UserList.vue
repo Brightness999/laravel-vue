@@ -213,15 +213,12 @@ export default {
         {
           headerName: 'ID',
           field: 'id',
-          width: 125,
-          filter: true,
-          checkboxSelection: true,
-          headerCheckboxSelectionFilteredOnly: true,
-          headerCheckboxSelection: true
+          width: 100,
+          filter: true
         },
         {
           headerName: 'Username',
-          field: 'username',
+          field: 'full_name',
           filter: true,
           width: 210,
           cellRendererFramework: 'CellRendererLink'
@@ -232,12 +229,12 @@ export default {
           filter: true,
           width: 255
         },
-        {
+        /*{
           headerName: 'Name',
           field: 'name',
           filter: true,
           width: 250
-        },
+        },*/
         {
           headerName: 'Role',
           field: 'role',
@@ -261,13 +258,13 @@ export default {
         },*/
         {
           headerName: 'Department',
-          field: 'department',
+          field: 'department_name',
           filter: true,
           width: 150
         },
         {
           headerName: 'Position',
-          field: 'position',
+          field: 'position_name',
           filter: false,
           width: 150
         },
@@ -306,7 +303,7 @@ export default {
       this.setColumnFilter('is_verified', val)
     },*/
     departmentFilter (obj) {
-      this.setColumnFilter('department', obj.value)
+      this.setColumnFilter('department_name', obj.value)
     }
   },
   computed: {
@@ -339,7 +336,7 @@ export default {
       if (val !== 'all') {
         modelObj = { type: 'equals', filter: val }
       }
-
+        
       filter.setModel(modelObj)
       this.gridApi.onFilterChanged()
     },
@@ -372,10 +369,23 @@ export default {
   },
   created () {
     if (!moduleUserManagement.isRegistered) {
+      // Loading
+      this.$vs.loading()
       this.$store.registerModule('userManagement', moduleUserManagement)
       moduleUserManagement.isRegistered = true
     }
-    this.$store.dispatch('userManagement/fetchUsers').catch(err => {  })
+    
+    this.$store.dispatch('userManagement/fetchUsers').then(() => { this.$vs.loading.close() })
+        .catch(error => {
+          this.$vs.loading.close()
+          this.$vs.notify({
+            title: 'Error',
+            text: error.message,
+            iconPack: 'feather',
+            icon: 'icon-alert-circle',
+            color: 'danger'
+          })
+        })
   }
 }
 

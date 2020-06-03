@@ -62,10 +62,10 @@ class AuthController extends Controller
 			return response()->json('Credentials are not correct.', 401);
 		}
 		
-		$expiresAt = auth()->factory()->getTTL() * 10800;
+		$expiresAt = auth()->factory()->getTTL() * 108000;
 		
 		if ($request->remember_me) {
-			$expiresAt = auth()->factory()->getTTL() * 60000;
+			$expiresAt = auth()->factory()->getTTL() * 600000;
 		}
 
 		return response()->json([

@@ -11,14 +11,15 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable, HasRoles, HasApiTokens;
-
+    protected $guard_name = 'api';
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'full_name', 'service_id', 'email', 'password', 'hr_id', 'mentor_id', 'campaign_id',
+        'full_name', 'service_id', 'email', 'password', 'hr_id', 'mentor_id', 'campaign_id', 'last_ppr_date'
     ];
 
     /**
@@ -50,13 +51,23 @@ class User extends Authenticatable implements JWTSubject
 	}
 
 	/**
-	 * Get user HR People Manager
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+	 * Get user hrs.
+	 * 
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
-	public function hr()
+	public function hrs()
 	{
-		return $this->belongsTo(self::class, 'hr_id', 'id');
+		return $this->belongsToMany('App\User', 'hrs', 'hr_id');
+	}
+	
+	/**
+	 * Get user mentors.
+	 * 
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function mentors()
+	{
+		return $this->belongsToMany('App\User', 'mentors', 'mentor_id');
 	}
 
 	/**
@@ -73,6 +84,14 @@ class User extends Authenticatable implements JWTSubject
 	public function department()
 	{
 		return $this->belongsTo('App\Department');
+	}
+	
+	/**
+	 * Get the department of user.
+	 */
+	public function position()
+	{
+		return $this->belongsTo('App\Position');
 	}
 
 	/**
