@@ -187,6 +187,7 @@ export default {
       this.activeProfileSidebar = !this.activeProfileSidebar
     },
     sendMsg () {
+     console.log(this.activeChatUser)
       if (!this.typedMessage) return
       const payload = {
         'isPinned': this.isChatPinned,
