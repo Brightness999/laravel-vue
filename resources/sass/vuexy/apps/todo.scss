@@ -69,7 +69,17 @@
             .p-12 {
                 padding: 0 0rem !important;
             }
-
+            .vs-list--slot {
+                width: 100%;
+                display: inline-flex;
+                margin: 0 !important;
+                .vs-con-input-label {
+                    width: 100%;
+                }
+                .cursor-pointer {
+                    float: right;
+                }
+            }
             padding: 0 3rem !important;
         }
 

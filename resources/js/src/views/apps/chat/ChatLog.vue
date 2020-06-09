@@ -53,6 +53,7 @@ export default{
   },
   computed: {
     chatData () {
+        console.log(this.$store.getters['chat/chatDataOfUser'](this.userId))
       return this.$store.getters['chat/chatDataOfUser'](this.userId)
     },
     activeUserImg () {

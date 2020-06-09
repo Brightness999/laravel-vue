@@ -49,46 +49,91 @@
                 <div class="p-12">
 
                     <!-- NAME -->
-                    <vs-input v-validate="'required'" name="title" class="w-full mb-4 mt-5" placeholder="Title"
-                              v-model="taskLocalData.title"/>
+                    <div
+                        class="d-theme-dark-bg items-center border border-l-0 border-r-0 border-t-0 border-solid d-theme-border-grey-light">
+                        <vx-input-group>
+                            <vs-input v-validate="'required'" name="objective" type="text"
+                                      placeholder="New objective" v-model="taskLocalData.title"
+                                      class="vs-input-no-border vs-input-no-shdow-focus"/>
+
+                        </vx-input-group>
+                    </div>
+
                     <span class="text-danger text-sm"
                           v-show="errors.has('item-name')">{{ errors.first('item-name') }}</span>
 
+                </div>
+                <div class="mt-5">
+                    <vs-tabs>
+
+                        <vs-tab label="Objectives">
+                            <div class="mt-5">
+                                <vs-list>
+                                    <draggable :list="list" :key="list.length" class="cursor-move">
+                                        <transition-group>
+                                            <vs-list-item v-if="!listItem.isTrashed" class="list-item"
+                                                          v-for="(listItem) in list"
+                                                          :key="listItem">
+                                                <vs-avatar slot="avatar"/>
+                                                <vs-input class="vs-input-no-border vs-input-no-shdow-focus" type="text"
+                                                          v-model="listItem.name"/>
+                                                <feather-icon
+                                                    v-if="!taskLocalData.list.isTrashed"
+                                                    icon="TrashIcon"
+                                                    class="cursor-pointer"
+                                                    svgClasses="w-5 h-5"
+                                                    @click.stop="listItem.isTrashed = true"/>
+                                            </vs-list-item>
+
+                                        </transition-group>
+                                    </draggable>
+                                </vs-list>
+                            </div>
+                            <div>
+                                <div v-for="(invoice_product, k) in taskLocalData.invoice_products" :key="k">
+                                    <div
+                                        class="d-theme-dark-bg items-center border border-l-0 border-r-0 border-t-0 border-solid d-theme-border-grey-light">
+                                        <vx-input-group>
+                                            <vs-input v-validate="'required'" name="objective" type="text"
+                                                      placeholder="New objective" v-model="invoice_product.product_name"
+                                                      class="vs-input-no-border vs-input-no-shdow-focus"/>
+
+                                            <template slot="append">
+                                                <div class="append-text btn-addon">
+                                                    <vs-button color="primary" @click="addNewRow">Add</vs-button>
+                                                </div>
+                                            </template>
+                                        </vx-input-group>
+                                    </div>
+                                </div>
+                            </div>
+                        </vs-tab>
+                        <vs-tab label="Comments">
+                            <div class="comments-container mt-4">
+                                <ul class="user-comments-list">
+                                    <li v-for="(commentedUser, commentIndex) in comments"
+                                        :key="commentIndex" class="commented-user flex items-center mb-4">
+                                        <div class="mr-3">
+                                            <vs-avatar class="m-0" :src="commentedUser.img" size="30px"/>
+                                        </div>
+                                        <div class="leading-tight">
+                                            <p class="font-medium">{{ commentedUser.author }}</p>
+                                            <span class="text-xs">{{ commentedUser.comment }}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="post-comment">
+                                <vs-textarea label="Add Comment" class="mb-2" v-model="comments.commentbox"/>
+                                <vs-button size="small" @click="addNewComment">Post Comment</vs-button>
+                            </div>
+                        </vs-tab>
+                    </vs-tabs>
                 </div>
             </div>
             <div class="flex flex-wrap items-center p-6" slot="footer">
                 <vs-button class="mr-6" @click="submitTodo">Submit</vs-button>
                 <vs-button type="border" color="danger" @click="init">Cancel</vs-button>
-            </div>
-            <div class="mt-5">
-                <vs-list>
-                    <draggable :list="list" class="cursor-move">
-                        <transition-group>
-                            <vs-list-item class="list-item" v-for="listItem in list" :key="listItem.name"
-                                          :subtitle="listItem.name">
-                                <vs-avatar slot="avatar" :text="listItem.name"/>
-                            </vs-list-item>
-                        </transition-group>
-                    </draggable>
-                </vs-list>
-            </div>
-            <div>
-                <div v-for="(invoice_product, k) in taskLocalData.invoice_products" :key="k">
-                    <div
-                        class="d-theme-dark-bg items-center border border-l-0 border-r-0 border-t-0 border-solid d-theme-border-grey-light">
-                        <vx-input-group>
-                            <vs-input v-validate="'required'" name="objective" type="text"
-                                      placeholder="Title" v-model="invoice_product.product_name"
-                                      class="vs-input-no-border vs-input-no-shdow-focus"/>
-
-                            <template slot="append">
-                                <div class="append-text btn-addon">
-                                    <vs-button color="primary" @click="addNewRow">Add</vs-button>
-                                </div>
-                            </template>
-                        </vx-input-group>
-                    </div>
-                </div>
             </div>
         </vs-sidebar>
     </div>
@@ -96,11 +141,16 @@
 <script>
     import draggable from 'vuedraggable'
     import Prism from 'vue-prism-component'
+    import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
     export default {
         data() {
             return {
-                list: []
+                list: [],
+                comments: [{
+                    commentbox: '',
+                }],
+                defaultTaskLocalData: Object.assign({}, this.$store.getters['todo/getTask'](this.taskId)),
             }
         },
         props: {
@@ -140,6 +190,16 @@
                     } else {
                         this.list = []
                     }
+
+                    if (this.$store.getters['todo/getTask'](this.taskId).comments !== undefined) {
+                        this.comments = this.$store.getters['todo/getTask'](this.taskId).comments
+                    } else {
+                        this.comments = []
+                    }
+
+                    if (!this.$store.getters['todo/getTask'](this.taskId).comments)
+                        this.$store.getters['todo/getTask'](this.taskId).comments = []
+
                     if (!this.$store.getters['todo/getTask'](this.taskId).list)
                         this.$store.getters['todo/getTask'](this.taskId).list = []
 
@@ -148,6 +208,9 @@
                 set(value) {
 
                 }
+            },
+            scrollbarTag() {
+                return this.$store.getters.scrollbarTag
             },
             taskTags() {
                 return this.$store.state.todo.taskTags
@@ -159,7 +222,6 @@
         methods: {
             deleteRow(index, invoice_product) {
                 let idx = this.taskLocalData.invoice_products.indexOf(invoice_product)
-                console.log(idx, index)
                 if (idx > -1) {
                     this.taskLocalData.invoice_products.splice(idx, 1)
                 }
@@ -167,12 +229,23 @@
             },
             addNewRow() {
                 this.list.push({
-                    name: this.taskLocalData.invoice_products.slice(-1).pop().product_name
+                    name: this.taskLocalData.invoice_products.slice(-1).pop().product_name,
+                    isTrashed: false
                 })
                 this.taskLocalData.invoice_products = [{
                     product_name: ''
                 }]
                 this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData))
+            },
+            addNewComment() {
+                let userInfo = JSON.parse(localStorage.getItem('userInfo'))
+                this.comments.push({
+                    author: userInfo.displayName,
+                    img: userInfo.photoURL,
+                    comment: this.comments.commentbox
+                })
+                this.comments.commentbox = ''
+                // this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData))
             },
             removeTodo() {
                 this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData, {isTrashed: true}))
@@ -194,16 +267,30 @@
                     })
             },
             init() {
-                this.taskLocalData = Object.assign({}, this.$store.getters['todo/getTask'](this.taskId))
+                this.taskLocalData = this.defaultTaskLocalData
+                this.$store.dispatch('todo/updateTask', this.defaultTaskLocalData)
                 this.$emit('closeSidebar')
             },
             submitTodo() {
                 this.taskLocalData.list = this.list
+                this.taskLocalData.comments = this.comments
                 this.$store.dispatch('todo/updateTask', this.taskLocalData)
                 this.$emit('closeSidebar')
+            },
+            moveToTrash() {
+                this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData.list, {isTrashed: true}))
+                    .then((response) => {
+                        // console.log(response.data);
+                        this.taskLocalData.list.isTrashed = response.data.isTrashed
+                        this.$el.style.display = 'none'   // Hides element from DOM
+                    })
+                    .catch((error) => {
+                        console.error(error)
+                    })
             }
         },
         components: {
+            VuePerfectScrollbar,
             draggable,
             Prism
         }

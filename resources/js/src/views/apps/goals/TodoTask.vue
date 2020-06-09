@@ -94,7 +94,6 @@ export default{
         .catch((error) => { console.error(error) })
     },
     moveToTrash () {
-
       this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocal, {isTrashed: true}))
         .then((response) => {
           // console.log(response.data);
