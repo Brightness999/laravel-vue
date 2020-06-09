@@ -16,5 +16,10 @@ class HrsSeeder extends Seeder
 		$hr->user_id = 1;
 		$hr->hr_id = 3;
 		$hr->save();
+		
+		$hr = new \App\Hr();
+		$hr->user_id = 1;
+		$hr->hr_id = 4;
+		$hr->save();
     }
 }

@@ -35,16 +35,16 @@
           <div class="vx-col flex-1" id="account-info-col-1">
             <table>
               <tr>
-                <td class="font-semibold">Username</td>
-                <td>{{ user_data.full_name }}</td>
+                <td>Full name:</td>
+                <td class="font-semibold">{{ user_data.full_name }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Email</td>
-                <td>{{ user_data.email }}</td>
+                <td>Email:</td>
+                <td class="font-semibold">{{ user_data.email }}</td>
               </tr>
                 <tr>
-                    <td class="font-semibold">Position</td>
-                    <td>{{ user_data.position ? user_data.position.name : '' }}</td>
+                    <td>Position:</td>
+                    <td class="font-semibold">{{ user_data.position ? user_data.position.name : '' }}</td>
                 </tr>
             </table>
           </div>
@@ -58,16 +58,16 @@
                 <!--<td>{{ user_data.status }}</td>-->
               </tr>
               <tr>
-                <td class="font-semibold">Department</td>
-                <td>{{ user_data.department ? user_data.department.name : '' }}</td>
+                <td>Department:</td>
+                <td class="font-semibold">{{ user_data.department ? user_data.department.name : '' }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Hrs</td>
-                <!--<td>{{ user_data.company }}</td>-->
+                <td>Hrs:</td>
+                <td class="font-semibold"><span v-for="hr in user_data.hrs">{{ hr.full_name }} </span></td>
               </tr>
               <tr>
-                <td class="font-semibold">Mentors</td>
-                <!--<td>{{ user_data.company }}</td>-->
+                <td>Mentors:</td>
+                <td class="font-semibold"><span v-for="(mentor, index) in user_data.mentors"><span v-if="index != 0">, </span><span>{{ mentor.full_name }}</span></span></td>
               </tr>
             </table>
           </div>
@@ -194,7 +194,8 @@ export default {
     }
   },
   computed: {
-    userAddress () {
+    hrs () {
+        console.log(this.user_data.hrs)
       let str = ''
       /*for (const field in this.user_data.location) {
         str += `${field  } `
