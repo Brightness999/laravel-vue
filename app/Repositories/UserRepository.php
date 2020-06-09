@@ -205,9 +205,11 @@ class UserRepository extends BaseRepository
 	 */
 	public function getUserModelAttributesForView(User $user) : User
 	{
-		$user->department_name = $user->department_id ? $user->department->name : '';
-		$user->position_name   = $user->position_id ? $user->position->name : '';
-		$user->role            = $this->getUserRoles($user);
+		$user->department;
+		$user->position;
+		$user->roles;
+		$user->hrs;
+		$user->mentors;
 		
 		return $user;
 	}

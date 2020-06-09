@@ -13,7 +13,7 @@ class HrsSeeder extends Seeder
     public function run()
     {
 		$hr = new \App\Hr();
-		$hr->user_id = 7;
+		$hr->user_id = 1;
 		$hr->hr_id = 3;
 		$hr->save();
     }

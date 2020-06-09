@@ -57,7 +57,7 @@ class User extends Authenticatable implements JWTSubject
 	 */
 	public function hrs()
 	{
-		return $this->belongsToMany('App\User', 'hrs', 'hr_id');
+		return $this->belongsToMany('App\User', 'hrs', 'user_id', 'hr_id');
 	}
 	
 	/**
@@ -67,7 +67,7 @@ class User extends Authenticatable implements JWTSubject
 	 */
 	public function mentors()
 	{
-		return $this->belongsToMany('App\User', 'mentors', 'mentor_id');
+		return $this->belongsToMany('App\User', 'mentors', 'user_id', 'mentor_id');
 	}
 
 	/**

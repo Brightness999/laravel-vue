@@ -13,7 +13,7 @@ class MentorsSeeder extends Seeder
     public function run()
     {
 		$hr = new \App\Mentor();
-		$hr->user_id = 7;
+		$hr->user_id = 1;
 		$hr->mentor_id = 5;
 		$hr->save();
     }

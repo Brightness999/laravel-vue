@@ -69,7 +69,7 @@ class UserController extends Controller
         $user = $this->userRepository->find($id);
         $userForRender = $this->userRepository->getUserModelAttributesForView($user);
         
-        return response()->json($user);
+        return response()->json($userForRender);
     }
 
     /**

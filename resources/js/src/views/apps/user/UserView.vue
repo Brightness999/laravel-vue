@@ -42,6 +42,10 @@
                 <td class="font-semibold">Email</td>
                 <td>{{ user_data.email }}</td>
               </tr>
+                <tr>
+                    <td class="font-semibold">Position</td>
+                    <td>{{ user_data.position ? user_data.position.name : '' }}</td>
+                </tr>
             </table>
           </div>
           <!-- /Information - Col 1 -->
@@ -50,24 +54,28 @@
           <div class="vx-col flex-1" id="account-info-col-2">
             <table>
               <tr>
-                <td class="font-semibold">Status</td>
+                
                 <!--<td>{{ user_data.status }}</td>-->
               </tr>
               <tr>
-                <td class="font-semibold">Role</td>
-                <!--<td>{{ user_data.role }}</td>-->
+                <td class="font-semibold">Department</td>
+                <td>{{ user_data.department ? user_data.department.name : '' }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Company</td>
+                <td class="font-semibold">Hrs</td>
+                <!--<td>{{ user_data.company }}</td>-->
+              </tr>
+              <tr>
+                <td class="font-semibold">Mentors</td>
                 <!--<td>{{ user_data.company }}</td>-->
               </tr>
             </table>
           </div>
           <!-- /Information - Col 2 -->
-          <div class="vx-col w-full flex" id="account-manage-buttons">
+          <!--<div class="vx-col w-full flex" id="account-manage-buttons">
             <vs-button icon-pack="feather" icon="icon-edit" class="mr-4" :to="{name: 'app-user-edit', params: { userId: $route.params.userId }}">Edit</vs-button>
             <vs-button type="border" color="danger" icon-pack="feather" icon="icon-trash" @click="confirmDeleteRecord">Delete</vs-button>
-          </div>
+          </div>-->
 
         </div>
 
