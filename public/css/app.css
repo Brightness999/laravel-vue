@@ -4228,6 +4228,34 @@ i.wizard-icon {
   border-bottom: 1px solid #dae1e7;
 }
 
+#page-user-view table td,
+#page-user-edit table td {
+  vertical-align: top;
+  min-width: 140px;
+  word-break: break-all;
+}
+
+[dir] #page-user-view table td, [dir] #page-user-edit table td {
+  padding-bottom: .8rem;
+}
+
+@media screen and (max-width: 370px) {
+  #page-user-view table:not(.permissions-table) td,
+  #page-user-edit table:not(.permissions-table) td {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1211px), only screen and (min-width: 636px) and (max-width: 991px) {
+  #account-info-col-1 {
+    width: calc(100% - 12rem) !important;
+  }
+}
+
+#avatar-col {
+  width: 10rem;
+}
+
 /*=========================================================================================
   File Name: _fixesVuesax.scss
   Description: Partial - Fixes/Add vuesax framework styles

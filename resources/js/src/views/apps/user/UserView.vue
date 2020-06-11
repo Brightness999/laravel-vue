@@ -63,11 +63,15 @@
               </tr>
               <tr>
                 <td>Hrs:</td>
-                <td class="font-semibold"><span v-for="hr in user_data.hrs">{{ hr.full_name }} </span></td>
+                   <td class="font-semibold">
+                       <span v-for="(hr, index) in user_data.hrs"><span v-if="index !== 0">, </span><span>{{ hr.full_name }}</span></span>
+                   </td>
               </tr>
               <tr>
                 <td>Mentors:</td>
-                <td class="font-semibold"><span v-for="(mentor, index) in user_data.mentors"><span v-if="index != 0">, </span><span>{{ mentor.full_name }}</span></span></td>
+                <td class="font-semibold">
+                    <span v-for="(mentor, index) in user_data.mentors"><span v-if="index !== 0">, </span><span>{{ mentor.full_name }}</span></span>
+                </td>
               </tr>
             </table>
           </div>
@@ -254,58 +258,3 @@ export default {
 }
 
 </script>
-
-<style lang="scss">
-#avatar-col {
-  width: 10rem;
-}
-
-#page-user-view {
-  table {
-    td {
-      vertical-align: top;
-      min-width: 140px;
-      padding-bottom: .8rem;
-      word-break: break-all;
-    }
-
-    &:not(.permissions-table) {
-      td {
-        @media screen and (max-width:370px) {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-// #account-info-col-1 {
-//   // flex-grow: 1;
-//   width: 30rem !important;
-//   @media screen and (min-width:1200px) {
-//     & {
-//       flex-grow: unset !important;
-//     }
-//   }
-// }
-
-
-@media screen and (min-width:1201px) and (max-width:1211px),
-only screen and (min-width:636px) and (max-width:991px) {
-  #account-info-col-1 {
-    width: calc(100% - 12rem) !important;
-  }
-
-  // #account-manage-buttons {
-  //   width: 12rem !important;
-  //   flex-direction: column;
-
-  //   > button {
-  //     margin-right: 0 !important;
-  //     margin-bottom: 1rem;
-  //   }
-  // }
-
-}
-
-</style>

@@ -525,3 +525,44 @@ ul.bordered-items {
     border-bottom: 1px solid $grey-light;
   }
 }
+
+#page-user-view, #page-user-edit {
+  table {
+    td {
+      vertical-align: top;
+      min-width: 140px;
+      padding-bottom: .8rem;
+      word-break: break-all;
+    }
+
+    &:not(.permissions-table) {
+      td {
+        @media screen and (max-width:370px) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1201px) and (max-width:1211px),
+only screen and (min-width:636px) and (max-width:991px) {
+  #account-info-col-1 {
+    width: calc(100% - 12rem) !important;
+  }
+
+  // #account-manage-buttons {
+  //   width: 12rem !important;
+  //   flex-direction: column;
+
+  //   > button {
+  //     margin-right: 0 !important;
+  //     margin-bottom: 1rem;
+  //   }
+  // }
+
+}
+
+#avatar-col {
+  width: 10rem;
+}
