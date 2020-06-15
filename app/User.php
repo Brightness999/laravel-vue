@@ -87,7 +87,7 @@ class User extends Authenticatable implements JWTSubject
 	}
 	
 	/**
-	 * Get the department of user.
+	 * Get the position of user.
 	 */
 	public function position()
 	{
@@ -100,6 +100,14 @@ class User extends Authenticatable implements JWTSubject
 	public function goals()
 	{
 		return $this->hasMany('App\Goal');
+	}
+	
+	/**
+	 * Get the pprs of user.
+	 */
+	public function pprs()
+	{
+		return $this->hasMany('App\Ppr');
 	}
 	
 	/**

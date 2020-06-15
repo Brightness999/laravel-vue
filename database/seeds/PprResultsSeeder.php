@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
 use Illuminate\Support\Facades\DB;
 
-class HrsSeeder extends Seeder
+class PprResultsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,14 +12,14 @@ class HrsSeeder extends Seeder
      */
     public function run()
     {
-    	DB::table('hrs')->insert([
+    	DB::table('ppr_results')->insert([
     		[
-    		    'user_id' => 1,
-                'hr_id' => 3
+    		    'ppr_id' => 1,
+                'result_id' => 1
 	        ],
 		    [
-	    	    'user_id' => 1,
-                'hr_id' => 5
+	    	    'ppr_id' => 2,
+                'result_id' => 2
 	    	]
         ]);
     }
