@@ -19,7 +19,7 @@ export default {
       {title: "E-Commerce Checkout",        url: "/apps/eCommerce/checkout",            icon: "CreditCardIcon",     is_bookmarked: false},
       {title: "User List",                  url: "/apps/user/user-list",                icon: "ListIcon",           is_bookmarked: false},
       {title: "User View",                  url: "/apps/user/user-view/1",            icon: "UserIcon",           is_bookmarked: false},
-      {title: "User Edit",                  url: "/apps/user/user-edit/268",            icon: "EditIcon",           is_bookmarked: false},
+      {title: "User Edit",                  url: "/apps/user/user-edit/1",            icon: "EditIcon",           is_bookmarked: false},
 
       // UI ELEMENTS
       {title: "Data List - List View",     url: "/ui-elements/data-list/list-view",    icon: "ListIcon",           is_bookmarked: false},
