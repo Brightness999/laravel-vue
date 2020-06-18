@@ -135,13 +135,13 @@ export default [
             i18n: 'List'
           },
           {
-            url: '/apps/user/user-view/268',
+            url: '/apps/user/user-view/1',
             name: 'View',
             slug: 'app-user-view',
             i18n: 'View'
           },
           {
-            url: '/apps/user/user-edit/268',
+            url: '/apps/user/user-edit/1',
             name: 'Edit',
             slug: 'app-user-edit',
             i18n: 'Edit'

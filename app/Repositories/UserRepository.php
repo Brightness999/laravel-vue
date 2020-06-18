@@ -193,7 +193,7 @@ class UserRepository extends BaseRepository
 	 * @param $id
 	 * @param $hrId
 	 */
-	public function setMentor($id, $mentorId)
+	public function setMentor($id, $mentorId) : void
 	{
 		$userForUpdate = $this->find($id);
 		$userForUpdate->mentor_id = $this->find($mentorId)->id;
@@ -201,11 +201,24 @@ class UserRepository extends BaseRepository
 	}
 
 	/**
-	 * @param User $user
-	 * 
-	 * @return mixed
+	 * @return User
 	 */
-	public function getUserRoles(User $user)
+	public function getUserModelAttributesForView(User $user) : User
+	{
+		$user->department;
+		$user->position;
+		$user->roles;
+		$user->hrs;
+		$user->mentors;
+		
+		return $user;
+	}
+
+	/**
+	 * @param User $user
+	 * @return array
+	 */
+	private function getUserRoles(User $user) : array 
 	{
 		$userRoles = $user->roles->map(function($role) {
 			return $role->name;

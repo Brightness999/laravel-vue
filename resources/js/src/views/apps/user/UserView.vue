@@ -35,17 +35,17 @@
           <div class="vx-col flex-1" id="account-info-col-1">
             <table>
               <tr>
-                <td class="font-semibold">Username</td>
-                <td>{{ user_data.username }}</td>
+                <td>Full name:</td>
+                <td class="font-semibold">{{ user_data.full_name }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Name</td>
-                <td>{{ user_data.name }}</td>
+                <td>Email:</td>
+                <td class="font-semibold">{{ user_data.email }}</td>
               </tr>
-              <tr>
-                <td class="font-semibold">Email</td>
-                <td>{{ user_data.email }}</td>
-              </tr>
+                <tr>
+                    <td>Position:</td>
+                    <td class="font-semibold">{{ user_data.position ? user_data.position.name : '' }}</td>
+                </tr>
             </table>
           </div>
           <!-- /Information - Col 1 -->
@@ -54,24 +54,32 @@
           <div class="vx-col flex-1" id="account-info-col-2">
             <table>
               <tr>
-                <td class="font-semibold">Status</td>
-                <td>{{ user_data.status }}</td>
+                
+                <!--<td>{{ user_data.status }}</td>-->
               </tr>
               <tr>
-                <td class="font-semibold">Role</td>
-                <td>{{ user_data.role }}</td>
+                <td>Department:</td>
+                <td class="font-semibold">{{ user_data.department ? user_data.department.name : '' }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Company</td>
-                <td>{{ user_data.company }}</td>
+                <td>Hrs:</td>
+                   <td class="font-semibold">
+                       <span v-for="(hr, index) in user_data.hrs"><span v-if="index !== 0">, </span><span>{{ hr.full_name }}</span></span>
+                   </td>
+              </tr>
+              <tr>
+                <td>Mentors:</td>
+                <td class="font-semibold">
+                    <span v-for="(mentor, index) in user_data.mentors"><span v-if="index !== 0">, </span><span>{{ mentor.full_name }}</span></span>
+                </td>
               </tr>
             </table>
           </div>
           <!-- /Information - Col 2 -->
-          <div class="vx-col w-full flex" id="account-manage-buttons">
+          <!--<div class="vx-col w-full flex" id="account-manage-buttons">
             <vs-button icon-pack="feather" icon="icon-edit" class="mr-4" :to="{name: 'app-user-edit', params: { userId: $route.params.userId }}">Edit</vs-button>
             <vs-button type="border" color="danger" icon-pack="feather" icon="icon-trash" @click="confirmDeleteRecord">Delete</vs-button>
-          </div>
+          </div>-->
 
         </div>
 
@@ -83,27 +91,27 @@
             <table>
               <tr>
                 <td class="font-semibold">Birth Date</td>
-                <td>{{ user_data.dob }}</td>
+                <!--<td>{{ user_data.dob }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Mobile</td>
-                <td>{{ user_data.mobile }}</td>
+                <!--<td>{{ user_data.mobile }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Website</td>
-                <td>{{ user_data.website }}</td>
+                <!--<td>{{ user_data.website }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Languages</td>
-                <td>{{ user_data.languages_known.join(", ") }}</td>
+                <!-- <td>{{ user_data.languages_known.join(", ") }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Gender</td>
-                <td>{{ user_data.gender }}</td>
+                <!--<td>{{ user_data.gender }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Contact</td>
-                <td>{{ user_data.contact_options.join(", ") }}</td>
+                <!-- <td>{{ user_data.contact_options.join(", ") }}</td>-->
               </tr>
             </table>
           </vx-card>
@@ -114,27 +122,27 @@
             <table>
               <tr>
                 <td class="font-semibold">Twitter</td>
-                <td>{{ user_data.social_links.twitter }}</td>
+                <!--<td>{{ user_data.social_links.twitter }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Facebook</td>
-                <td>{{ user_data.social_links.facebook }}</td>
+                <!--<td>{{ user_data.social_links.facebook }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Instagram</td>
-                <td>{{ user_data.social_links.instagram }}</td>
+                <!--<td>{{ user_data.social_links.instagram }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Github</td>
-                <td>{{ user_data.social_links.github }}</td>
+                <!--<td>{{ user_data.social_links.github }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">CodePen</td>
-                <td>{{ user_data.social_links.codepen }}</td>
+                <!--<td>{{ user_data.social_links.codepen }}</td>-->
               </tr>
               <tr>
                 <td class="font-semibold">Slack</td>
-                <td>{{ user_data.social_links.slack }}</td>
+                <!--<td>{{ user_data.social_links.slack }}</td>-->
               </tr>
             </table>
           </vx-card>
@@ -190,11 +198,12 @@ export default {
     }
   },
   computed: {
-    userAddress () {
+    hrs () {
+        console.log(this.user_data.hrs)
       let str = ''
-      for (const field in this.user_data.location) {
+      /*for (const field in this.user_data.location) {
         str += `${field  } `
-      }
+      }*/
       return str
     }
   },
@@ -236,7 +245,8 @@ export default {
 
     const userId = this.$route.params.userId
     this.$store.dispatch('userManagement/fetchUser', userId)
-      .then(res => { this.user_data = res.data })
+      .then(res => { this.user_data = res.data 
+      console.log(res.data)})
       .catch(err => {
         if (err.response.status === 404) {
           this.user_not_found = true
@@ -248,58 +258,3 @@ export default {
 }
 
 </script>
-
-<style lang="scss">
-#avatar-col {
-  width: 10rem;
-}
-
-#page-user-view {
-  table {
-    td {
-      vertical-align: top;
-      min-width: 140px;
-      padding-bottom: .8rem;
-      word-break: break-all;
-    }
-
-    &:not(.permissions-table) {
-      td {
-        @media screen and (max-width:370px) {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-// #account-info-col-1 {
-//   // flex-grow: 1;
-//   width: 30rem !important;
-//   @media screen and (min-width:1200px) {
-//     & {
-//       flex-grow: unset !important;
-//     }
-//   }
-// }
-
-
-@media screen and (min-width:1201px) and (max-width:1211px),
-only screen and (min-width:636px) and (max-width:991px) {
-  #account-info-col-1 {
-    width: calc(100% - 12rem) !important;
-  }
-
-  // #account-manage-buttons {
-  //   width: 12rem !important;
-  //   flex-direction: column;
-
-  //   > button {
-  //     margin-right: 0 !important;
-  //     margin-bottom: 1rem;
-  //   }
-  // }
-
-}
-
-</style>
