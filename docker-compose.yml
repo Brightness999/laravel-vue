@@ -13,7 +13,7 @@ services:
             - PHP_XDEBUG_ENABLED=1
 
     nginx:
-        image: eugenebalaban/laravel-nginx
+        image: olehmotyka/laravel-nginx:latest
         links:
             - php-fpm
         volumes:
@@ -21,13 +21,6 @@ services:
             - ./storage/nginx-logs:/var/log/nginx:cached
         ports:
             - "8086:80"
-
-    ssh:
-        image: eugenebalaban/laravel-php-fpm-ssh
-        volumes:
-            - ./:/var/www/html:cached
-        ports:
-            - "2226"
 
     database:
         image: mysql:5.7

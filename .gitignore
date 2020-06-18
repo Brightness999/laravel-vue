@@ -24,6 +24,7 @@ public/js/chunks/*
 public/js/app.js
 public/css/app.css
 public/css/main.css
+public/css/iconfont.css
 public/mix-manifest.json
 public/css/material-icons/*
 public/css/prism-tomorrow.css

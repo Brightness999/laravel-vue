@@ -2,7 +2,7 @@ ENV=local
 dir=${CURDIR}
 project=-p spacegoals
 service=ppr_php-fpm
-serviceNode=eugenebalaban/laravel-node
+serviceNode=node:12-alpine
 
 start:
 	@docker-compose $(project) up -d
@@ -12,13 +12,6 @@ start-ci:
 
 stop:
 	@docker-compose $(project) down
-
-update-images:
-	@docker pull eugenebalaban/laravel-php-fpm-debug
-	@docker pull eugenebalaban/laravel-php-fpm-ssh
-	@docker pull eugenebalaban/laravel-php-fpm
-	@docker pull eugenebalaban/laravel-nginx
-	@docker pull eugenebalaban/laravel-node
 
 restart: stop start
 
@@ -35,7 +28,7 @@ exec-db:
 	@docker run -t -v $(dir):/var/www/html --network ppr_default --link database $(service) $$cmd
 
 exec-node:
-	@docker run -t -v $(dir):/var/www/html $(serviceNode) $$cmd
+	@docker run -t -v $(dir):/var/www/html -w /var/www/html $(serviceNode) $$cmd
 
 chmod:
 	@make exec cmd="chmod -R 777 *"
