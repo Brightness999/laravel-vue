@@ -28,11 +28,20 @@ Route::group([
 });
 
 Route::group([
+		'middleware' => 'jwt.auth',
+		'prefix'     => 'apps/todo'
+    ], function() {
+	Route::get('/goals', 'GoalController@index');
+	Route::post('/goals/add', 'GoalController@save');
+	Route::post('/goals/update/{id}', 'GoalController@update');
+});
+
+Route::group([
     'prefix' => 'auth',
 ], function () {
     Route::post('login', 'AuthController@login');
     Route::post('register', 'AuthController@register');
-  
+
     Route::group([
 		'middleware' => 'jwt.auth'
     ], function() {

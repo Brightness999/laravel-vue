@@ -78,7 +78,7 @@
                                                 <vs-input class="vs-input-no-border vs-input-no-shdow-focus" type="text"
                                                           v-model="listItem.name"/>
                                                 <feather-icon
-                                                    v-if="!taskLocalData.list.isTrashed"
+                                                    v-if="!listItem.isTrashed"
                                                     icon="TrashIcon"
                                                     class="cursor-pointer"
                                                     svgClasses="w-5 h-5"
@@ -185,12 +185,13 @@
                             product_name: ''
                         }]
 
-                    if (this.$store.getters['todo/getTask'](this.taskId).list !== undefined) {
-                        this.list = this.$store.getters['todo/getTask'](this.taskId).list
+                    console.log(this.$store.state.tasks)
+
+                    if (this.$store.getters['todo/getTask'](this.taskId).objectives !== undefined) {
+                        this.list = this.$store.getters['todo/getTask'](this.taskId).objectives
                     } else {
                         this.list = []
                     }
-
                     if (this.$store.getters['todo/getTask'](this.taskId).comments !== undefined) {
                         this.comments = this.$store.getters['todo/getTask'](this.taskId).comments
                     } else {
@@ -200,8 +201,8 @@
                     if (!this.$store.getters['todo/getTask'](this.taskId).comments)
                         this.$store.getters['todo/getTask'](this.taskId).comments = []
 
-                    if (!this.$store.getters['todo/getTask'](this.taskId).list)
-                        this.$store.getters['todo/getTask'](this.taskId).list = []
+                    if (!this.$store.getters['todo/getTask'](this.taskId).objectives)
+                        this.$store.getters['todo/getTask'](this.taskId).objectives = []
 
                     return this.$store.getters['todo/getTask'](this.taskId)
                 },
@@ -268,6 +269,8 @@
             },
             init() {
                 this.taskLocalData = this.defaultTaskLocalData
+                this.taskLocalData.list = this.list
+                this.taskLocalData.comments = this.comments
                 this.$store.dispatch('todo/updateTask', this.defaultTaskLocalData)
                 this.$emit('closeSidebar')
             },
@@ -276,6 +279,7 @@
                 this.taskLocalData.comments = this.comments
                 this.$store.dispatch('todo/updateTask', this.taskLocalData)
                 this.$emit('closeSidebar')
+                this.showUpdateSuccess()
             },
             moveToTrash() {
                 this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData.list, {isTrashed: true}))
@@ -287,6 +291,13 @@
                     .catch((error) => {
                         console.error(error)
                     })
+            },
+            showUpdateSuccess() {
+                this.$vs.notify({
+                    color: 'success',
+                    title: 'Goal Updated',
+                    text: 'The selected goal was successfully updated'
+                })
             }
         },
         components: {

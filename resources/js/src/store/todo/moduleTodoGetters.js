@@ -11,7 +11,7 @@
 export default {
   queriedTasks: state => state.tasks.filter((task) => {
     let isItemOfCurrentFilter = false
-
+    task.title = task.name
     if (
       (state.todoFilter === 'all' && !task.isTrashed)
           || (state.todoFilter === 'important' && !task.isTrashed && task.isImportant)
