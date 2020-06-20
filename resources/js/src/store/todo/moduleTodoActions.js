@@ -46,7 +46,7 @@ export default {
     })
   },
 
-  updateTask ({ commit }, task) {
+  updateTask ({ commit }, task, isTrashed) {
     return new Promise((resolve, reject) => {
       axios.post(`/api/apps/todo/goals/update/${task.id}`, {task})
         .then((response) => {
@@ -55,5 +55,6 @@ export default {
         })
         .catch((error) => { reject(error) })
     })
-  }
+  },
+
 }
