@@ -11,7 +11,7 @@
 <template>
     <div class="px-6 pb-2 pt-6">
     <data-view-sidebar :isSidebarActive="addNewDataSidebar" @closeSidebar="toggleDataSidebar" :data="sidebarData" />
-    <vs-button @click="addNewData" class="w-full">Add Task</vs-button>
+    <vs-button @click="addNewData" class="w-full">Add Goal</vs-button>
     <vs-prompt
         title="Add Task"
         accept-text= "Add Task"
@@ -45,7 +45,7 @@
 
                 <div class="vx-row">
                     <div class="vx-col w-full">
-                        <vs-input v-validate="'required'" name="title" class="w-full mb-4 mt-5" placeholder="Title" v-model="taskLocal.title" :color="validateForm ? 'success' : 'danger'" />
+                        <vs-input v-validate="'required'" name="name" class="w-full mb-4 mt-5" placeholder="Title" v-model="taskLocal.name" :color="validateForm ? 'success' : 'danger'" />
                         <vs-textarea rows="5" label="Add description" v-model="taskLocal.desc" />
                     </div>
                 </div>
@@ -82,7 +82,7 @@ export default {
       return this.$store.state.todo.taskTags
     },
     validateForm () {
-      return !this.errors.any() && this.taskLocal.title !== ''
+      return !this.errors.any() && this.taskLocal.name !== ''
     }
   },
   methods: {

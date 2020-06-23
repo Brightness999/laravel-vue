@@ -12,9 +12,9 @@ class Goal extends Model
 	 * @var array
 	 */
 	protected $fillable = [
-		'name'
+		'name','user_id'
 	];
-	
+
 	/**
 	 * Get the user of goal.
 	 */
@@ -22,7 +22,7 @@ class Goal extends Model
 	{
 		return $this->belongsTo('App\User');
 	}
-	
+
 	/**
 	 * Get the objectives of goal.
 	 */

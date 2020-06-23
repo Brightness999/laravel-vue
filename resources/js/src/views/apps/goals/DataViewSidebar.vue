@@ -11,13 +11,13 @@
 <template>
     <vs-sidebar click-not-close position-right parent="body" default-index="1" color="primary"
                 class="add-new-data-sidebar items-no-padding" spacer v-model="isSidebarActiveLocal">
-            <div class="mt-6 flex items-center justify-between px-6">
-                <h4>{{ Object.entries(this.data).length === 0 ? "ADD NEW" : "UPDATE" }} ITEM</h4>
-                <feather-icon icon="XIcon" @click.stop="isSidebarActiveLocal = false" class="cursor-pointer"></feather-icon>
-            </div>
-            <vs-divider class="mb-0"></vs-divider>
+        <div class="mt-6 flex items-center justify-between px-6">
+            <h4>{{ Object.entries(this.data).length === 0 ? "ADD NEW" : "UPDATE" }} GOAL</h4>
+            <feather-icon icon="XIcon" @click.stop="isSidebarActiveLocal = false" class="cursor-pointer"></feather-icon>
+        </div>
+        <vs-divider class="mb-0"></vs-divider>
 
-            <component :is="scrollbarTag" class="scroll-area--data-list-add-new" :settings="settings" :key="$vs.rtl">
+        <component :is="scrollbarTag" class="scroll-area--data-list-add-new" :settings="settings" :key="$vs.rtl">
 
             <div class="p-6">
 
@@ -51,7 +51,47 @@
                     <div class="vx-col w-full">
                         <vs-input v-validate="'required'" name="title" class="w-full mb-4 mt-5" placeholder="Title"
                                   v-model="taskLocal.title" :color="validateForm ? 'success' : 'danger'"/>
-                        <vs-textarea rows="5" label="Add description" v-model="taskLocal.desc"/>
+                        <div class="mt-5">
+                            <vs-list>
+                                <draggable :list="taskLocalData.list" :key="taskLocalData.list.length"
+                                           class="cursor-move">
+                                    <transition-group>
+                                        <vs-list-item v-if="!listItem.isTrashed" class="list-item"
+                                                      v-for="(listItem) in taskLocalData.list"
+                                                      :key="listItem">
+                                            <vs-avatar slot="avatar"/>
+                                            <vs-input class="vs-input-no-border vs-input-no-shdow-focus" type="text"
+                                                      v-model="listItem.name"/>
+                                            <feather-icon
+                                                v-if="!taskLocalData.list.isTrashed"
+                                                icon="TrashIcon"
+                                                class="cursor-pointer"
+                                                svgClasses="w-5 h-5"
+                                                @click.stop="listItem.isTrashed = true"/>
+                                        </vs-list-item>
+
+                                    </transition-group>
+                                </draggable>
+                            </vs-list>
+                        </div>
+                        <div>
+                            <div v-for="(invoice_product, k) in taskLocal.invoice_products" :key="k">
+                                <div
+                                    class="d-theme-dark-bg items-center border border-l-0 border-r-0 border-t-0 border-solid d-theme-border-grey-light">
+                                    <vx-input-group>
+                                        <vs-input name="objective" type="text"
+                                                  placeholder="New objective" v-model="invoice_product.product_name"
+                                                  class="vs-input-no-border vs-input-no-shdow-focus"/>
+
+                                        <template slot="append">
+                                            <div class="append-text btn-addon">
+                                                <vs-button color="primary" @click="addNewRow">Add</vs-button>
+                                            </div>
+                                        </template>
+                                    </vx-input-group>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,83 +105,130 @@
 </template>
 
 <script>
-import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-export default {
- props: {
-    isSidebarActive: {
-      type: Boolean,
-      required: true
-    },
-    data: {
-      type: Object,
-      default: () => {}
-    }
-  },
-    components: {
-    VuePerfectScrollbar
-  },
-  data () {
-    return {
-      activePrompt: false,
+    import VuePerfectScrollbar from 'vue-perfect-scrollbar'
+    import draggable from "vuedraggable";
 
-      taskLocal: {
-        title: '',
-        desc: '',
-        isCompleted: false,
-        isImportant: false,
-        isStarred: false,
-        tags: []
-      },
-      settings: { // perfectscrollbar settings
-        maxScrollbarLength: 60,
-        wheelSpeed: .60
-      }
-    }
-  },
-  computed: {
-    taskTags () {
-      return this.$store.state.todo.taskTags
-    },
-    validateForm () {
-      return !this.errors.any() && this.taskLocal.title !== ''
-    },
-    scrollbarTag () { return this.$store.getters.scrollbarTag },
-        isSidebarActiveLocal: {
-      get () {
-        return this.isSidebarActive
-      },
-      set (val) {
-        if (!val) {
-          this.$emit('closeSidebar')
-          // this.$validator.reset()
-          // this.initValues()
+    export default {
+        props: {
+            isSidebarActive: {
+                type: Boolean,
+                required: true
+            },
+            data: {
+                type: Object,
+                default: () => {
+                }
+            }
+        },
+        components: {
+            VuePerfectScrollbar,
+            draggable
+
+        },
+        data() {
+            return {
+                activePrompt: false,
+
+                taskLocal: {
+                    title: '',
+                    desc: '',
+                    isCompleted: false,
+                    isImportant: false,
+                    isStarred: false,
+                    tags: [],
+                    list: [],
+                    invoice_products: [{
+                        product_name: ''
+                    }]
+                },
+                taskLocalData: {
+                    list: []
+                },
+                settings: { // perfectscrollbar settings
+                    maxScrollbarLength: 60,
+                    wheelSpeed: .60
+                }
+            }
+        },
+        computed: {
+            taskTags() {
+                return this.$store.state.todo.taskTags
+            },
+            validateForm() {
+                return !this.errors.any() && this.taskLocal.title !== ''
+            },
+            scrollbarTag() {
+                return this.$store.getters.scrollbarTag
+            },
+            isSidebarActiveLocal: {
+                get() {
+                    return this.isSidebarActive
+                },
+                set(val) {
+                    if (!val) {
+                        this.$emit('closeSidebar')
+                        // this.$validator.reset()
+                        // this.initValues()
+                    }
+                }
+            }
+        },
+        methods: {
+            clearFields() {
+                this.taskLocalData.list = []
+                Object.assign(this.taskLocal, {
+                    title: '',
+                    desc: '',
+                    list: [],
+                    invoice_products: [{
+                        product_name: ''
+                    }],
+                    isCompleted: false,
+                    isImportant: false,
+                    isStarred: false,
+                    tags: []
+                })
+                this.$emit('closeSidebar')
+            },
+            addTodo() {
+                this.$validator.validateAll().then(result => {
+                    if (result) {
+                        let arr = this.taskLocalData.list
+                        for (let index = 0; index < this.taskLocalData.list.length; index++) {
+                            if (this.taskLocalData.list[index].isTrashed === true) {
+                                let indexI = this.taskLocalData.list.indexOf(this.taskLocalData.list[index])
+                                if (indexI > -1) {
+                                    this.taskLocalData.list.splice(indexI, 1)
+                                }
+                            }
+                        }
+                        this.taskLocal.list = this.taskLocalData.list
+                        this.$store.dispatch('todo/addTask', Object.assign({}, this.taskLocal))
+                        this.clearFields()
+                        this.taskLocalData.list = []
+                        this.$emit('closeSidebar')
+                        this.showAddSuccess()
+                    }
+                })
+            },
+            showAddSuccess() {
+                this.$vs.notify({
+                    color: 'success',
+                    title: 'Goal Added',
+                    text: 'The goal was successfully added'
+                })
+            },
+            addNewRow() {
+                this.taskLocalData.list.push({
+                    name: this.taskLocal.invoice_products.slice(-1).pop().product_name,
+                    isTrashed: false
+                })
+                this.taskLocal.invoice_products = [{
+                    product_name: ''
+                }]
+            },
         }
-      }
     }
-  },
-  methods: {
-    clearFields () {
-      Object.assign(this.taskLocal, {
-        title: '',
-        desc: '',
-        isCompleted: false,
-        isImportant: false,
-        isStarred: false,
-        tags: []
-      })
-      this.$emit('closeSidebar')
-    },
-    addTodo () {
-      this.$validator.validateAll().then(result => {
-        if (result) {
-          this.$store.dispatch('todo/addTask', Object.assign({}, this.taskLocal))
-          this.clearFields()
-          this.$emit('closeSidebar')
-        }
-      })
-    }
-  }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -152,8 +239,24 @@ export default {
 
         ::v-deep .vs-sidebar {
             z-index: 52010;
-            width: 400px;
+            width: 40%;
             max-width: 90vw;
+
+            .vs-sidebar--items {
+                .vs-list--slot {
+                    width: 100% !important;
+                    display: inline-flex !important;
+                    margin: 0 !important;
+
+                    .vs-con-input-label {
+                        width: 100%;
+                    }
+
+                    .cursor-pointer {
+                        float: right;
+                    }
+                }
+            }
 
             .img-upload {
                 margin-top: 2rem;

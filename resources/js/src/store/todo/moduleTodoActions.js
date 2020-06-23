@@ -15,7 +15,7 @@ export default {
   },
   fetchTasks ({ commit }, payload) {
     return new Promise((resolve, reject) => {
-      axios.get('/api/apps/todo/tasks', { params: {filter: payload.filter} })
+      axios.get('/api/apps/todo/goals', { params: {filter: payload.filter == 'all' ? '*' : payload.filter} })
         .then((response) => {
           commit('SET_TASKS', response.data)
           resolve(response)
@@ -37,23 +37,24 @@ export default {
 
   addTask ({ commit }, task) {
     return new Promise((resolve, reject) => {
-      axios.post('/api/apps/todo/tasks/', {task})
+      axios.post('/api/apps/todo/goals/add', {task})
         .then((response) => {
-          commit('ADD_TASK', Object.assign(task, {id: response.data.id}))
+          commit('ADD_TASK', response.data)
           resolve(response)
         })
         .catch((error) => { reject(error) })
     })
   },
 
-  updateTask ({ commit }, task) {
+  updateTask ({ commit }, task, isTrashed) {
     return new Promise((resolve, reject) => {
-      axios.post(`/api/apps/todo/task/${task.id}`, {task})
+      axios.post(`/api/apps/todo/goals/update/${task.id}`, {task})
         .then((response) => {
           commit('UPDATE_TASK', response.data)
           resolve(response)
         })
         .catch((error) => { reject(error) })
     })
-  }
+  },
+
 }

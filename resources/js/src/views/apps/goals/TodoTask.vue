@@ -14,7 +14,7 @@
             <div class="vx-col w-full sm:w-5/6 flex sm:items-center sm:flex-row flex-col">
                 <div class="flex items-center">
                     <vs-checkbox v-model="isCompleted" class="w-8 m-0 vs-checkbox-small" @click.stop />
-                    <h6 class="todo-title" :class="{'line-through': taskLocal.isCompleted}">{{ taskLocal.title }}</h6>
+                    <h6 class="todo-title" :class="{'line-through': taskLocalData.isCompleted}">{{ taskLocalData.title }}</h6>
                 </div>
             </div>
 
@@ -22,19 +22,19 @@
                 <feather-icon
                   icon="StarIcon"
                   class="cursor-pointer"
-                  :svgClasses="[{'text-warning stroke-current': taskLocal.isStarred}, 'w-5', 'h-5 mr-4']"
+                  :svgClasses="[{'text-warning stroke-current': taskLocalData.isStarred}, 'w-5', 'h-5 mr-4']"
                   @click.stop="toggleIsStarred" />
                 <feather-icon
-                  v-if="!taskLocal.isTrashed"
+                  v-if="!taskLocalData.isTrashed"
                   icon="TrashIcon"
                   class="cursor-pointer"
                   svgClasses="w-5 h-5"
                   @click.stop="moveToTrash" />
             </div>
         </div>
-        <div class="vx-row" v-if="taskLocal.tags">
+        <div class="vx-row" v-if="taskLocalData.tags">
             <div class="todo-tags sm:ml-2 sm:my-0 my-2 flex">
-                <vs-chip v-for="(tag, index) in taskLocal.tags" :key="index">
+                <vs-chip v-for="(tag, index) in taskLocalData.tags" :key="index">
                     <div class="h-2 w-2 rounded-full mr-1" :class="'bg-' + todoLabelColor(tag)"></div>
                     <span>{{ tag | capitalize }}</span>
                 </vs-chip>
@@ -51,20 +51,20 @@ export default{
       required: true
     }
   },
-  data () {
-    return {
-      taskLocal: this.$store.getters['todo/getTask'](this.taskId)
-    }
-  },
   computed: {
+    taskLocalData: {
+      get () {
+        return this.$store.getters['todo/getTask'](this.taskId)
+      }
+    },
     isCompleted: {
       get () {
-        return this.taskLocal.isCompleted
+        return this.taskLocalData.isCompleted
       },
       set (value) {
-        this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocal, {isCompleted: value}))
+        this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData, {isCompleted: value}))
           .then((response) => {
-            this.taskLocal.isCompleted = response.data.isCompleted
+            this.taskLocalData.isCompleted = response.data.isCompleted
           })
           .catch((error) => { console.error(error) })
       }
@@ -80,24 +80,24 @@ export default{
   },
   methods: {
     toggleIsImportant () {
-      this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocal, {isImportant: !this.taskLocal.isImportant}))
+      this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData, {isImportant: !this.taskLocalData.isImportant}))
         .then((response) => {
-          this.taskLocal.isImportant = response.data.isImportant
+          this.taskLocalData.isImportant = response.data.isImportant
         })
         .catch((error) => { console.error(error) })
     },
     toggleIsStarred () {
-      this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocal, {isStarred: !this.taskLocal.isStarred}))
+      this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData, {isStarred: !this.taskLocalData.isStarred}))
         .then((response) => {
-          this.taskLocal.isStarred = response.data.isStarred
+          this.taskLocalData.isStarred = response.data.isStarred
         })
         .catch((error) => { console.error(error) })
     },
     moveToTrash () {
-      this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocal, {isTrashed: true}))
+      this.$store.dispatch('todo/updateTask', Object.assign({}, this.taskLocalData, {isTrashed: true}))
         .then((response) => {
           // console.log(response.data);
-          this.taskLocal.isTrashed = response.data.isTrashed
+          this.taskLocalData.isTrashed = response.data.isTrashed
           this.$el.style.display = 'none'   // Hides element from DOM
         })
         .catch((error) => { console.error(error) })

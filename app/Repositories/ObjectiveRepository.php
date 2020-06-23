@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Goal;
+use App\Objective;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 
@@ -11,7 +11,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
  *
  * @package namespace App\Repositories;
  */
-class GoalRepository extends BaseRepository
+class ObjectiveRepository extends BaseRepository
 {
     /**
      * Specify Model class name
@@ -20,7 +20,7 @@ class GoalRepository extends BaseRepository
      */
     public function model()
     {
-        return Goal::class;
+        return Objective::class;
     }
 
     /**
