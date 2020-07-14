@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
+        "watch": "node_modules/.bin/webpack --watch --watch-poll --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
@@ -82,5 +82,9 @@
         "vuesax": "jd-0001/vuesax",
         "vuex": "^3.1.1",
         "xlsx": "^0.15.0"
+    },
+    "dependencies": {
+        "vue-cookie": "^1.1.4",
+        "vue-social-auth": "^1.4.3"
     }
 }

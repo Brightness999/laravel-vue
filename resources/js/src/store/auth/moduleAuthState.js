@@ -23,5 +23,9 @@ export default {
     else isAuthenticated = false
 
     return localStorage.getItem('userInfo') && isAuthenticated
-  }
+  },
+  api_token: null,
+  user_id: null,
+  error: null,
+  redirect: null
 }

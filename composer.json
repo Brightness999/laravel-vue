@@ -15,6 +15,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/passport": "^7.3",
+        "laravel/socialite": "^4.4",
         "laravel/tinker": "^2.0",
         "laravolt/avatar": "^3.2",
         "prettus/l5-repository": "^2.6",

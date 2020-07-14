@@ -16,7 +16,7 @@ function addSubscriber (callback) {
 
 export default {
   init () {
-    axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('accessToken')}`;
+    // axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('accessToken')}`;
     axios.interceptors.response.use(function (response) {
       return response
     }, function (error) {
