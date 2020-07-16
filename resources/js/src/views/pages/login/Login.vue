@@ -60,6 +60,11 @@ export default {
     LoginFirebase,
     LoginAuth0
   },
+  mounted() {
+    this.$store.commit('auth/INITIALIZE',this.$cookie.get('authentication'))
+
+    this.$cookie.delete('authentication')
+  },
   methods: {
     AuthProvider(provider) {
       var self = this

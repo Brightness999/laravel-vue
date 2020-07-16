@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vs-input
+    <!-- <vs-input
         v-validate="'required|email|min:3'"
         data-vv-validate-on="blur"
         name="email"
@@ -32,9 +32,24 @@
     <vs-button  type="border" @click="registerUser">Register</vs-button>
     <vs-button class="float-right" :disabled="!validateForm" @click="login">Login</vs-button>
 
-    <vs-divider>OR</vs-divider>
-
-    <div class="social-login-buttons flex flex-wrap items-center mt-4">
+    <vs-divider>OR</vs-divider> -->
+    <div v-if="isCompanyFilled">
+      <vs-input
+          v-validate="'required|min:3'"
+          data-vv-validate-on="blur"
+          name="company"
+          icon-no-border
+          icon="icon icon-user"
+          icon-pack="feather"
+          label-placeholder="Company"
+          v-model="company"
+          class="w-full my-5"/>
+      <span class="text-danger text-sm">{{ errors.first('company') }}</span>
+      <div>
+        <vs-button  type="border" :disabled="!validateForm" @click="registerUser">Register</vs-button>
+      </div>
+    </div>
+    <div class="social-login-buttons flex flex-wrap items-center mt-4" v-else>
 
       <!-- facebook -->
       <div class="bg-facebook pt-3 pb-2 px-4 rounded-lg cursor-pointer mr-4" @click="AuthProvider('facebook')">
@@ -65,12 +80,19 @@ export default {
     return {
       email: 'demo@demo.com',
       password: 'demodemo',
+      company: null,
       checkbox_remember_me: false
     }
   },
   computed: {
     validateForm () {
-      return !this.errors.any() && this.email !== '' && this.password !== ''
+      return !this.errors.any() && this.email !== '' && this.password !== '' && this.company
+    },
+    isCompanyFilled() {
+      return this.$store.state.auth.company
+    },
+    userId() {
+      return this.$store.state.auth.user.id
     }
   },
   methods: {
@@ -144,9 +166,14 @@ export default {
     loginWithGithub () {
       this.$store.dispatch('auth/loginWithGithub', { notify: this.$vs.notify })
     },
-    registerUser () {
-      if (!this.checkLogin()) return
-      this.$router.push('/pages/register').catch(() => {})
+    async registerUser () {
+      // if (!this.checkLogin()) return
+      // this.$router.push('/pages/register').catch(() => {})
+      await this.$http.post('/api/user-management/users/'+this.userId,{
+        company: this.company
+      })
+      localStorage.removeItem('company')
+      this.$router.push({name: 'goals'})
     }
   }
 }

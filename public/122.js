@@ -1,20 +1,19 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[122],{
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-simple-suggest/dist/styles.css":
-/*!*****************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-simple-suggest/dist/styles.css ***!
-  \*****************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-simple-suggest/dist/styles.css":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-simple-suggest/dist/styles.css ***!
+  \*****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
 exports.push([module.i, ".vue-simple-suggest > ul {\n  list-style: none;\n}[dir] .vue-simple-suggest > ul {\n  margin: 0;\n  padding: 0;\n}\n\n.vue-simple-suggest.designed {\n  position: relative;\n}\n\n.vue-simple-suggest.designed, .vue-simple-suggest.designed * {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\n.vue-simple-suggest.designed .input-wrapper input {\n  display: block;\n  width: 100%;\n  color: black;\n  outline:none;\n  -webkit-transition: all .1s;\n  transition: all .1s\n}\n\n[dir] .vue-simple-suggest.designed .input-wrapper input {\n  padding: 10px;\n  border: 1px solid #cde;\n  border-radius: 3px;\n  background: white;\n  -webkit-transition-delay: .05s;\n          transition-delay: .05s\n}\n\n[dir] .vue-simple-suggest.designed.focus .input-wrapper input {\n  border: 1px solid #aaa;\n}\n\n.vue-simple-suggest.designed .suggestions {\n  position: absolute;\n  top: 100%;\n  top: calc(100% + 5px);\n  opacity: 1;\n  z-index: 1000;\n}\n\n[dir] .vue-simple-suggest.designed .suggestions {\n  border-radius: 3px;\n  border: 1px solid #aaa;\n  background-color: #fff;\n}\n\n[dir=ltr] .vue-simple-suggest.designed .suggestions {\n  left: 0;\n  right: 0;\n}\n\n[dir=rtl] .vue-simple-suggest.designed .suggestions {\n  right: 0;\n  left: 0;\n}\n\n.vue-simple-suggest.designed .suggestions .suggest-item {\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n[dir] .vue-simple-suggest.designed .suggestions .suggest-item {\n  cursor: pointer;\n}\n\n[dir] .vue-simple-suggest.designed .suggestions .suggest-item, [dir] .vue-simple-suggest.designed .suggestions .misc-item {\n  padding: 5px 10px;\n}\n\n.vue-simple-suggest.designed .suggestions .suggest-item.hover {\n  color: #fff !important;\n}\n\n[dir] .vue-simple-suggest.designed .suggestions .suggest-item.hover {\n  background-color: #2874D5 !important;\n}\n\n.vue-simple-suggest.designed .suggestions .suggest-item.selected {\n  color: #fff;\n}\n\n[dir] .vue-simple-suggest.designed .suggestions .suggest-item.selected {\n  background-color: #2832D5;\n}\r\n", ""]);
-
-// exports
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -705,7 +704,7 @@ function _invoke(body, then) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--7-1!../../postcss-loader/src??ref--7-2!./styles.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-simple-suggest/dist/styles.css");
+var content = __webpack_require__(/*! !../../css-loader/dist/cjs.js??ref--7-1!../../postcss-loader/src??ref--7-2!./styles.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-simple-suggest/dist/styles.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 

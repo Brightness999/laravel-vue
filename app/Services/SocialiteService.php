@@ -28,10 +28,19 @@ class SocialiteService implements SocialiteServiceInterface
         if (SocialiteHelper::isSocialPresent($userSocial)) {
             $user = $this->searchUserByEmail($userSocial->email);
             if ($user) {
-                return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
-                && $user->createToken()->save()
-                    ? $this->prepareSuccessResult($user)
-                    : $this->prepareErrorResult();
+                if($user->company)
+                {
+                    return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
+                    && $user->createToken()->save()
+                        ? $this->prepareSuccessResult($user)
+                        : $this->prepareErrorResult();
+                }
+                else {
+                    return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
+                    && $user->createToken()->save()
+                        ? $this->prepareCompanyResult($user)
+                        : $this->prepareErrorResult(); 
+                }
             } else {
                 $user = New User([], $userSocial);
                 return $user->save()
@@ -76,8 +85,18 @@ class SocialiteService implements SocialiteServiceInterface
         return $this->makeAuthenticationCookie([
             'api_token' => $user->api_token,
             'access_token' => JWTAuth::fromUser($user),
-            'user_id' => $user->id,
-            'redirect_url' => '/#/'
+            'user' => json_encode($user),
+            'redirect_url' => '/apps/goals/all'
+        ]);
+    }
+
+    private function prepareCompanyResult(User $user): array
+    {
+        return $this->makeAuthenticationCookie([
+            'access_token' => JWTAuth::fromUser($user),
+            'user' => json_encode($user),
+            'company' => 1,
+            'redirect_url' => '/pages/login'
         ]);
     }
 }
