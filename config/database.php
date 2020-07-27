@@ -72,9 +72,12 @@ return [
             'username' => $DATABASE_URL["user"],
             'password' => $DATABASE_URL["pass"],
             'charset' => 'utf8',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'require',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
         ],
 
         'sqlsrv' => [
