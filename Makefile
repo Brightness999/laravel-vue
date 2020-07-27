@@ -86,3 +86,4 @@ npm-watch:
 
 get-avatars:
 	@make exec-db cmd="php artisan get-avatars"
+	
