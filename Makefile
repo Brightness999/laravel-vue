@@ -1,7 +1,7 @@
 ENV=local
 dir=${CURDIR}
 project=-p spacegoals
-service=ppr_php-fpm
+service=spacegoals_php-fpm
 serviceNode=node:12-alpine
 
 start:
@@ -25,7 +25,7 @@ exec:
 	@docker run -t  --interactive -v $(dir):/var/www/html $(service) $$cmd
 
 exec-db:
-	@docker run -t -v $(dir):/var/www/html --network ppr_default --link database $(service) $$cmd
+	@docker run -t -v $(dir):/var/www/html --network spacegoals_default --link database $(service) $$cmd
 
 exec-node:
 	@docker run -t -v $(dir):/var/www/html -w /var/www/html $(serviceNode) $$cmd
