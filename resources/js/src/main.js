@@ -16,6 +16,9 @@ import Vuesax from 'vuesax'
 
 Vue.use(Vuesax)
 
+import VueCookie from 'vue-cookie'
+
+Vue.use(VueCookie);
 
 // axios
 import axios from './axios.js'
@@ -34,10 +37,23 @@ import '../themeConfig.js'
 // Firebase
 import '@/firebase/firebaseConfig'
 
+// import VueSocialauth from 'vue-social-auth'
 
-// Auth0 Plugin
-import AuthPlugin from './plugins/auth'
-Vue.use(AuthPlugin)
+//Auth0 Plugin
+// import AuthPlugin from './plugins/auth'
+// Vue.use(VueSocialauth, {
+//   providers: {
+//     github: {
+//       clientId: '',
+//       redirectUri: '/auth/github/callback' // Your client app URL
+//     },
+//     google: {
+//       clientId: '364309348530-0u8brorclbd841nvjta6ftbmdh47jgm0.apps.googleusercontent.com',
+//       redirectUri: 'http://localhost.spacegoals.com/auth/google/callback'
+//     }
+//   }
+// })
+// Vue.use(AuthPlugin)
 
 
 // ACL

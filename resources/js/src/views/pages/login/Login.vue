@@ -29,15 +29,12 @@
                 </div>
 
                 <vs-tabs>
-                  <vs-tab label="JWT">
-                    <login-jwt></login-jwt>
-                  </vs-tab>
 
-                  <!--<vs-tab label="Firebase">
+                  <vs-tab label="Firebase">
                     <login-firebase></login-firebase>
                   </vs-tab>
 
-                  <vs-tab label="Auth0">
+                  <!--vs-tab label="Auth0">
                     <login-auth0></login-auth0>
                   </vs-tab>-->
                 </vs-tabs>
@@ -62,6 +59,36 @@ export default {
     LoginJwt,
     LoginFirebase,
     LoginAuth0
+  },
+  mounted() {
+    this.$store.commit('auth/INITIALIZE',this.$cookie.get('authentication'))
+
+    this.$cookie.delete('authentication')
+  },
+  methods: {
+    AuthProvider(provider) {
+      var self = this
+      this.$http.get('/sociallogin/'+provider).then((response) => {
+        if(response.data.error){
+          this.error = err.response.data.error;
+        } else if(response.data.redirectUrl){
+          window.location.href = response.data.redirectUrl;
+        }
+      })
+      .catch((err) => {
+        if(err.response.data.error){
+          this.error = err.response.data.error;
+        }
+        this.isProcessing = false;
+      });
+    },
+    SocialLogin(provider,response){
+        this.$http.post('/sociallogin/'+provider,response).then(response => {
+            console.log(response.data)
+        }).catch(err => {
+            console.log({err:err})
+        })
+    }
   }
 }
 </script>

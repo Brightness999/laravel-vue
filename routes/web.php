@@ -11,4 +11,7 @@
 |
 */
 
+Route::get('sociallogin/{provider}', 'Auth\AuthController@SocialSignup');
+Route::get('auth/{provider}/callback', 'OutController@index')->where('provider', '.*');
+
 Route::get('/{any}', 'ApplicationController')->where('any', '.*');

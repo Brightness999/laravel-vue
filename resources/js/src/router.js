@@ -33,7 +33,12 @@ const router = new Router({
     return { x: 0, y: 0 }
   },
   routes: [
-
+    {
+      path: '/auth/:provider/callback',
+      component: {
+        template: '<div class="auth-component"></div>'
+      }
+    },
     {
     // =============================================================================
     // MAIN LAYOUT ROUTES
