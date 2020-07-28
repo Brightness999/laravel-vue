@@ -37,3 +37,4 @@ RUN set -xe \
 
 	&& rm -rf /var/cache/apk/* \
 	&& apk del pcre-dev ${PHPIZE_DEPS}
+	
