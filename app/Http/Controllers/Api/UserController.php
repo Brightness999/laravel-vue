@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
+use App\User;
 
 class UserController extends Controller
 {
@@ -81,7 +82,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = $this->userRepository->update($request->all(), $id);
+        return $user;
     }
 
     /**

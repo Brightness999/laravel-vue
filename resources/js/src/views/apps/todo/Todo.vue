@@ -139,6 +139,10 @@ export default {
     VuePerfectScrollbar
   },
   created () {
+    if(this.$cookie.get('authentication')){
+      this.$store.commit('auth/INITIALIZE',this.$cookie.get('authentication'))
+      this.$cookie.delete('authentication')
+    }
     this.$store.registerModule('todo', moduleTodo)
     this.setSidebarWidth()
 

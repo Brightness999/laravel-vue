@@ -17,6 +17,7 @@
 <script>
 import themeConfig from '@/../themeConfig.js'
 import jwt         from '@/http/requests/auth/jwt/index.js'
+import Auth from './store/auth/moduleAuth'
 
 export default {
   data () {
@@ -67,6 +68,12 @@ export default {
     document.documentElement.style.setProperty('--vh', `${vh}px`)
   },
   async created () {
+    this.$store.commit('auth/INITIALIZE',this.$cookie.get('authentication'))
+
+    this.$cookie.delete('authentication')
+    // if(Auth.state.redirect){
+    //     this.$router.push(Auth.state.redirect);
+    // }
 
     // jwt
     jwt.init()
@@ -78,7 +85,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
 
     // Auth0
-    try       { await this.$auth.renewTokens() } catch (e) { console.error(e) }
+    // try       { await this.$auth.renewTokens() } catch (e) { console.error(e) }
 
   },
   destroyed () {

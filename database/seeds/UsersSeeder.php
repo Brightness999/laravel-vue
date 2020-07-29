@@ -79,7 +79,6 @@ class UsersSeeder extends Seeder
 		$user->password = bcrypt('123123123');
 		$user->campaign_id = 2;
 		$user->save();
-
 		$user = new \App\User();
 		$user->full_name = 'Hr + mentor';
 		$user->email = 'hr3cccc4@gmail.com';
@@ -88,7 +87,7 @@ class UsersSeeder extends Seeder
 		$user->password = bcrypt('123123123');
 		$user->campaign_id = 1;
 		$user->save();
-			
+
 	    User::all()->each(function(User $user) {
 	    	$userHelper = new \App\Helpers\UserHelper();
 		    $userHelper->createUserAvatar($user);
