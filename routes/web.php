@@ -11,4 +11,5 @@
 |
 */
 
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 Route::get('/{any}', 'ApplicationController')->where('any', '.*');
