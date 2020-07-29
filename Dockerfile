@@ -37,4 +37,5 @@ RUN set -xe \
 
 	&& rm -rf /var/cache/apk/* \
 	&& apk del pcre-dev ${PHPIZE_DEPS}
-	
+
+COPY .docker/docker-php-memory-limit.ini /usr/local/etc/php/conf.d/
