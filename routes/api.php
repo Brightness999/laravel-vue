@@ -24,7 +24,8 @@ Route::group([
 		'prefix'     => 'user-management'
     ], function() {
 	Route::get('/users', 'UserController@index');
-	Route::get('/users/{id}', 'UserController@show')->middleware('hasAccessToUser');
+  Route::get('/users/{id}', 'UserController@show')->middleware('hasAccessToUser');
+  Route::post('/users/{id}', 'UserController@update');
 });
 
 Route::group([

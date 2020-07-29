@@ -4,9 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Passport\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Laravel\Socialite\Two\User as SocialiteUser;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -18,8 +21,17 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array
      */
+
+		public function __construct(array $attributes = [],
+                                SocialiteUser $socialiteUser = null)
+    {
+        parent::__construct($attributes);
+        $socialiteUser === null
+            ?: $this->prepareUserBySocialite($socialiteUser);
+    }
+		
     protected $fillable = [
-        'full_name', 'service_id', 'email', 'password', 'hr_id', 'mentor_id', 'campaign_id', 'last_ppr_date'
+        'full_name', 'service_id', 'email', 'password', 'hr_id', 'mentor_id', 'campaign_id', 'last_ppr_date', 'company'
     ];
 
     /**
@@ -130,4 +142,31 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+
+		public function revokeToken(): User{
+			$this->api_token = null;
+			return $this;
+		}
+
+		public function createToken(): User{
+			$this->api_token = Str::random(40);
+			return $this;
+		}
+
+		private function prepareUserBySocialite($social): void
+		{
+			$this->name = $social->name;
+			$this->email = $social->email;
+			$this->hashPassword($social->email . $social->id);
+			$this->createToken();
+		}
+
+		public function hashPassword(string $password): User{
+			$this->password = Hash::make($password);
+			return $this;
+		}
+
+		public function setNameAttribute($value) {
+			$this->attributes['full_name'] = $value;
+		}
 }

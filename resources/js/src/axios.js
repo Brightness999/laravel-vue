@@ -1,9 +1,14 @@
 // axios
 import axios from 'axios'
-
+import vue from 'vue'
 const baseURL = ''
 
-export default axios.create({
-  baseURL
-  // You can add your headers here
+console.log(localStorage.getItem('access_token'))
+
+const instance =  axios.create({
+  baseURL,
 })
+
+instance.defaults.headers.common['Authorization'] = localStorage.getItem('access_token') !== 'null' ? ('bearer' + localStorage.getItem('access_token')):''
+
+export default instance;
