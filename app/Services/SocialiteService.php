@@ -28,7 +28,7 @@ class SocialiteService implements SocialiteServiceInterface
         if (SocialiteHelper::isSocialPresent($userSocial)) {
             $user = $this->searchUserByEmail($userSocial->email);
             if ($user) {
-                if($user->company)
+                if($user->campaign_id)
                 {
                     return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
                     && $user->createToken()->save()
@@ -43,8 +43,16 @@ class SocialiteService implements SocialiteServiceInterface
                 }
             } else {
                 $user = New User([], $userSocial);
+                session_start();
+                if(isset($_SESSION['campaign_id'])) {
+                    $user->campaign_id = $_SESSION['campaign_id'];
+                    session_unset();
+                    return $user->save()
+                        ? $this->prepareSuccessResult($user)
+                        : $this->prepareErrorResult();
+                }
                 return $user->save()
-                    ? $this->prepareSuccessResult($user)
+                    ? $this->prepareCompanyResult($user)
                     : $this->prepareErrorResult();
             }
         } else {

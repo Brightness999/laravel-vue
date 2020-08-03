@@ -91,6 +91,7 @@
         "xlsx": "^0.15.0"
     },
     "dependencies": {
+        "@johmun/vue-tags-input": "^2.1.0",
         "vue-cookie": "^1.1.4",
         "vue-social-auth": "^1.4.3"
     }

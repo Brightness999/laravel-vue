@@ -34,17 +34,14 @@
 
     <vs-divider>OR</vs-divider> -->
     <div v-if="isCompanyFilled">
-      <vs-input
-          v-validate="'required|min:3'"
-          data-vv-validate-on="blur"
-          name="company"
-          icon-no-border
-          icon="icon icon-user"
-          icon-pack="feather"
-          label-placeholder="Company"
-          v-model="company"
-          class="w-full my-5"/>
-      <span class="text-danger text-sm">{{ errors.first('company') }}</span>
+     <vs-select
+        class="w-full my-5"
+        label="Compaign"
+        v-model="compaign"
+        >
+        <vs-select-item :key="index" :value="item.id" :text="item.name" v-for="(item,index) in compaigns" />
+      </vs-select>
+      <span class="text-danger text-sm">{{ errors.first('compaign') }}</span>
       <div>
         <vs-button  type="border" :disabled="!validateForm" @click="registerUser">Register</vs-button>
       </div>
@@ -76,17 +73,23 @@
 
 <script>
 export default {
+  async mounted() {
+    let {data} = await this.$http('/api/campaigns')
+    this.compaigns = data
+  },
   data () {
     return {
       email: 'demo@demo.com',
       password: 'demodemo',
       company: null,
+      compaigns: null,
+      compaign: null,
       checkbox_remember_me: false
     }
   },
   computed: {
     validateForm () {
-      return !this.errors.any() && this.email !== '' && this.password !== '' && this.company
+      return !this.errors.any() && this.email !== '' && this.password !== '' && this.compaign
     },
     isCompanyFilled() {
       return this.$store.state.auth.company
@@ -170,7 +173,7 @@ export default {
       // if (!this.checkLogin()) return
       // this.$router.push('/pages/register').catch(() => {})
       await this.$http.post('/api/user-management/users/'+this.userId,{
-        company: this.company
+        campaign_id: this.compaign
       })
       localStorage.removeItem('company')
       this.$router.push({name: 'goals'})
