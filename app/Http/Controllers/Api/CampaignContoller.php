@@ -22,7 +22,7 @@ class CampaignContoller extends Controller
 	 */
 	public function __construct(CampaignRepository $campaignRepository)
 	{
-		$this->campaignRepository = $campaignRepository;
+	    $this->campaignRepository = $campaignRepository;
     }
     
 
@@ -34,6 +34,7 @@ class CampaignContoller extends Controller
     public function index()
     {
         $campaigns = $this->campaignRepository->all();
+        
         return response()->json($campaigns);
     }
 

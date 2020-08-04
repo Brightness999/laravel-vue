@@ -17,7 +17,16 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class SocialiteService implements SocialiteServiceInterface
 {
+    /**
+     * @var invitation_slug_repository
+     * @var user_repository
+     */
     protected $user_repository, $invitation_slug_repository;
+
+    /**
+	 * SocialiteService constructor.
+     * 
+     */
     public function __construct(){
         $this->user_repository = app(UserRepository::class);
         $this->invitation_slug_repository = app(InvitationSlugRepository::class);
@@ -73,6 +82,7 @@ class SocialiteService implements SocialiteServiceInterface
                 if(isset($_REQUEST['state'])) {
                     $campaign_id = $this->invitation_slug_repository->findByField('slug',$_REQUEST['state'])->first()->user->campaign_id;
                     $user->campaign_id = $campaign_id;
+
                     return $user->save()
                         ? $this->prepareSuccessResult($user)
                         : $this->prepareErrorResult();

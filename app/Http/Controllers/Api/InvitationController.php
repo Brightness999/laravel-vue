@@ -19,10 +19,10 @@ class InvitationController extends Controller
     protected $repository;
 
     /**
-	* InvitationController constructor.
-	*
-	* @param InvitationSlugRepository $InvitationSlugRepository
-    */
+	 * InvitationController constructor.
+	 *
+	 * @param InvitationSlugRepository $InvitationSlugRepository
+     */
     public function __construct(InvitationSlugRepository $repository){
         $this->repository = $repository;
     }
