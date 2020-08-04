@@ -45,10 +45,10 @@ class InviteNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->greeting('Hello')
-                    ->line($this->user->full_name.' has invited to his campaign')
-                    ->line('follow this link to accept invitation')
-                    ->action('Accept invitation', url("/accept/".$this->slug->slug));
+            ->greeting('Hello')
+            ->line($this->user->full_name.' has invited to his campaign')
+            ->line('follow this link to accept invitation')
+            ->action('Accept invitation', url("/accept/".$this->slug->slug));
     }
 
     /**

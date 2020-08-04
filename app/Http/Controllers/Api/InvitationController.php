@@ -14,14 +14,26 @@ class InvitationController extends Controller
 {
 
     /**
-     * @var PostRepository
+     * @var InvitationSlugRepository
      */
     protected $repository;
 
+    /**
+	* InvitationController constructor.
+	*
+	* @param InvitationSlugRepository $InvitationSlugRepository
+    */
     public function __construct(InvitationSlugRepository $repository){
         $this->repository = $repository;
     }
 
+    /**
+     * Store a newly created resource in storage.
+     * Emailed link to user so that he can join the campaign he is invited
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request) :void
     {
         $user = auth()->user();

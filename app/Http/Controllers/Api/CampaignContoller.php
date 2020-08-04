@@ -14,24 +14,23 @@ class CampaignContoller extends Controller
 	 * @var CampaignRepository
 	 */
     protected $campaignRepository;
+
+    /**
+	 * CampaignContoller constructor.
+	 *
+	 * @param CampaignRepsitory $CampaignRepsitory
+	 */
+	public function __construct(CampaignRepository $campaignRepository)
+	{
+		$this->campaignRepository = $campaignRepository;
+    }
+    
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    /**
-	 * UserController constructor.
-	 *
-	 * @param UserRepository $userRepository
-	 */
-	public function __construct(
-		CampaignRepository $campaignRepository
-	)
-	{
-		$this->campaignRepository = $campaignRepository;
-    }
-    
     public function index()
     {
         $campaigns = $this->campaignRepository->all();

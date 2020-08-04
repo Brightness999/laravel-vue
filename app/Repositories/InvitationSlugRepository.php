@@ -23,8 +23,6 @@ class InvitationSlugRepository extends BaseRepository
         return InvitationSlug::class;
     }
 
-    
-
     /**
      * Boot up the repository, pushing criteria
      */

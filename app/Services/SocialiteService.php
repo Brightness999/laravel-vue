@@ -6,14 +6,23 @@ namespace App\Services;
 
 use App\Helpers\SocialiteHelper;
 use App\InvitationSlug;
+use App\Repositories\InvitationSlugRepository;
+use App\Repositories\UserRepository;
 use App\Services\Contracts\SocialiteServiceInterface;
 use App\User;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class SocialiteService implements SocialiteServiceInterface
 {
+    protected $user_repository, $invitation_slug_repository;
+    public function __construct(){
+        $this->user_repository = app(UserRepository::class);
+        $this->invitation_slug_repository = app(InvitationSlugRepository::class);
+    }
+
     public function getRedirectUrlByProvider($provider): array
     {
         if(isset($_REQUEST['slug'])){
@@ -36,7 +45,6 @@ class SocialiteService implements SocialiteServiceInterface
     public function loginWithSocialite($provider): array
     {
         $userSocial = Socialite::driver($provider)->stateless()->user();
-        Log::error(['error' => $_REQUEST]);
         if (SocialiteHelper::isSocialPresent($userSocial)) {
             $user = $this->searchUserByEmail($userSocial->email);
 
@@ -55,9 +63,15 @@ class SocialiteService implements SocialiteServiceInterface
                         : $this->prepareErrorResult(); 
                 }
             } else {
-                $user = New User([], $userSocial);
+                $user = $this->user_repository->create([
+                    'email' => $userSocial->email,
+                    'full_name' => $userSocial->name,
+                    'password' => Hash::make($userSocial->email . $userSocial->id),
+                    'api_token' => Str::random(40)
+                ]);
+                //$user = New User([], $userSocial);
                 if(isset($_REQUEST['state'])) {
-                    $campaign_id = InvitationSlug::where('slug',$_REQUEST['state'])->first()->user->campaign_id;
+                    $campaign_id = $this->invitation_slug_repository->findByField('slug',$_REQUEST['state'])->first()->user->campaign_id;
                     $user->campaign_id = $campaign_id;
                     return $user->save()
                         ? $this->prepareSuccessResult($user)
