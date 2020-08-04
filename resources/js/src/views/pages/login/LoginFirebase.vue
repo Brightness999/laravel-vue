@@ -101,7 +101,11 @@ export default {
   methods: {
     AuthProvider(provider) {
       var self = this
-      this.$http.get('/sociallogin/'+provider).then((response) => {
+      this.$http.get('/sociallogin/'+provider, {
+        params: {
+          slug: localStorage.getItem('slug')
+        }
+      }).then((response) => {
         if(response.data.error){
           this.error = err.response.data.error;
         } else if(response.data.redirectUrl){

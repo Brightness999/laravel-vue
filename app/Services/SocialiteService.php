@@ -5,8 +5,10 @@ namespace App\Services;
 
 
 use App\Helpers\SocialiteHelper;
+use App\InvitationSlug;
 use App\Services\Contracts\SocialiteServiceInterface;
 use App\User;
+use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -14,6 +16,15 @@ class SocialiteService implements SocialiteServiceInterface
 {
     public function getRedirectUrlByProvider($provider): array
     {
+        if(isset($_REQUEST['slug'])){
+            return [
+                'redirectUrl' => Socialite::driver($provider)
+                    ->stateless()
+                    ->with(['state' => $_REQUEST['slug']])
+                    ->redirect()
+                    ->getTargetUrl()
+            ];
+        }
         return [
             'redirectUrl' => Socialite::driver($provider)
                 ->stateless()
@@ -25,11 +36,13 @@ class SocialiteService implements SocialiteServiceInterface
     public function loginWithSocialite($provider): array
     {
         $userSocial = Socialite::driver($provider)->stateless()->user();
+        Log::error(['error' => $_REQUEST]);
         if (SocialiteHelper::isSocialPresent($userSocial)) {
             $user = $this->searchUserByEmail($userSocial->email);
+
             if ($user) {
-                if($user->campaign_id)
-                {
+                
+                if($user->campaign_id) {
                     return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
                     && $user->createToken()->save()
                         ? $this->prepareSuccessResult($user)
@@ -43,10 +56,9 @@ class SocialiteService implements SocialiteServiceInterface
                 }
             } else {
                 $user = New User([], $userSocial);
-                session_start();
-                if(isset($_SESSION['campaign_id'])) {
-                    $user->campaign_id = $_SESSION['campaign_id'];
-                    session_unset();
+                if(isset($_REQUEST['state'])) {
+                    $campaign_id = InvitationSlug::where('slug',$_REQUEST['state'])->first()->user->campaign_id;
+                    $user->campaign_id = $campaign_id;
                     return $user->save()
                         ? $this->prepareSuccessResult($user)
                         : $this->prepareErrorResult();

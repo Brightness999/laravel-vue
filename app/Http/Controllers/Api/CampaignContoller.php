@@ -5,17 +5,37 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Campaign;
 use App\Http\Controllers\Controller;
+use App\Repositories\CampaignRepository;
 
 class CampaignContoller extends Controller
 {
+
+    /**
+	 * @var CampaignRepository
+	 */
+    protected $campaignRepository;
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+	 * UserController constructor.
+	 *
+	 * @param UserRepository $userRepository
+	 */
+	public function __construct(
+		CampaignRepository $campaignRepository
+	)
+	{
+		$this->campaignRepository = $campaignRepository;
+    }
+    
     public function index()
     {
-        return Campaign::get();
+        $campaigns = $this->campaignRepository->all();
+        return response()->json($campaigns);
     }
 
     /**

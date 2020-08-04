@@ -1316,6 +1316,14 @@ const router = new Router({
           }
         },
         {
+          path: '/accept/:id',
+          name: 'accept-invite',
+          component: () => import('@/views/pages/Accept.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/pages/register',
           name: 'page-register',
           component: () => import('@/views/pages/register/Register.vue'),
