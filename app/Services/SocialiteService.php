@@ -25,11 +25,11 @@ class SocialiteService implements SocialiteServiceInterface
 
     /**
 	 * SocialiteService constructor.
-     * 
+     * @param user_repository, invitation_slug_repository
      */
-    public function __construct(){
-        $this->user_repository = app(UserRepository::class);
-        $this->invitation_slug_repository = app(InvitationSlugRepository::class);
+    public function __construct(UserRepository $user_repository, InvitationSlugRepository $invitation_slug_repository){
+        $this->user_repository = $user_repository;
+        $this->invitation_slug_repository = $invitation_slug_repository;
     }
 
     public function getRedirectUrlByProvider($provider): array
