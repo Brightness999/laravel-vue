@@ -39,26 +39,26 @@ mix.js('resources/js/app.js', 'public/js')
 
 
 // Change below options according to your requirement
-// if (mix.inProduction()) {
-//     mix.version();
-//     mix.webpackConfig({
-//         output: {
-//             publicPath: '/demo/vuexy-vuejs-laravel-admin-template/demo-1/',
-//             chunkFilename: 'js/chunks/[name].[chunkhash].js',
-//         }
-//     });
-//     mix.setResourceRoot("/demo/vuexy-vuejs-laravel-admin-template/demo-1/");
-// }
-// else{
-//     mix.webpackConfig({
-//         output: {
-//             chunkFilename: 'js/chunks/[name].js',
-//         }
-//     });
-// }
+if (mix.inProduction()) {
+    mix.version();
+    mix.webpackConfig({
+        output: {
+            publicPath: '/demo/vuexy-vuejs-laravel-admin-template/demo-1/',
+            chunkFilename: 'js/chunks/[name].[chunkhash].js',
+        }
+    });
+    mix.setResourceRoot("/demo/vuexy-vuejs-laravel-admin-template/demo-1/");
+}
+else{
+    mix.webpackConfig({
+        output: {
+            chunkFilename: 'js/chunks/[name].js',
+        }
+    });
+}
 
-// mix.webpackConfig({
-//     output: {
-//         chunkFilename: 'js/chunks/[name].js',
-//     }
-// });
+mix.webpackConfig({
+    output: {
+        chunkFilename: 'js/chunks/[name].js',
+    }
+});

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\InvitationSlugRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;

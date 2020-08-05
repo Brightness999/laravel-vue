@@ -5,15 +5,44 @@ namespace App\Services;
 
 
 use App\Helpers\SocialiteHelper;
+use App\InvitationSlug;
+use App\Repositories\InvitationSlugRepository;
+use App\Repositories\UserRepository;
 use App\Services\Contracts\SocialiteServiceInterface;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class SocialiteService implements SocialiteServiceInterface
 {
+    /**
+     * @var invitation_slug_repository
+     * @var user_repository
+     */
+    protected $user_repository, $invitation_slug_repository;
+
+    /**
+	 * SocialiteService constructor.
+     * @param user_repository, invitation_slug_repository
+     */
+    public function __construct(UserRepository $user_repository, InvitationSlugRepository $invitation_slug_repository){
+        $this->user_repository = $user_repository;
+        $this->invitation_slug_repository = $invitation_slug_repository;
+    }
+
     public function getRedirectUrlByProvider($provider): array
     {
+        if(isset($_REQUEST['slug'])){
+            return [
+                'redirectUrl' => Socialite::driver($provider)
+                    ->stateless()
+                    ->with(['state' => $_REQUEST['slug']])
+                    ->redirect()
+                    ->getTargetUrl()
+            ];
+        }
         return [
             'redirectUrl' => Socialite::driver($provider)
                 ->stateless()
@@ -27,9 +56,10 @@ class SocialiteService implements SocialiteServiceInterface
         $userSocial = Socialite::driver($provider)->stateless()->user();
         if (SocialiteHelper::isSocialPresent($userSocial)) {
             $user = $this->searchUserByEmail($userSocial->email);
+
             if ($user) {
-                if($user->company)
-                {
+                
+                if($user->campaign_id) {
                     return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
                     && $user->createToken()->save()
                         ? $this->prepareSuccessResult($user)
@@ -42,9 +72,23 @@ class SocialiteService implements SocialiteServiceInterface
                         : $this->prepareErrorResult(); 
                 }
             } else {
-                $user = New User([], $userSocial);
+                $user = $this->user_repository->create([
+                    'email' => $userSocial->email,
+                    'full_name' => $userSocial->name,
+                    'password' => Hash::make($userSocial->email . $userSocial->id),
+                    'api_token' => Str::random(40)
+                ]);
+                //$user = New User([], $userSocial);
+                if(isset($_REQUEST['state'])) {
+                    $campaign_id = $this->invitation_slug_repository->findByField('slug',$_REQUEST['state'])->first()->user->campaign_id;
+                    $user->campaign_id = $campaign_id;
+
+                    return $user->save()
+                        ? $this->prepareSuccessResult($user)
+                        : $this->prepareErrorResult();
+                }
                 return $user->save()
-                    ? $this->prepareSuccessResult($user)
+                    ? $this->prepareCompanyResult($user)
                     : $this->prepareErrorResult();
             }
         } else {

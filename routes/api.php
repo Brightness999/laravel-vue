@@ -19,6 +19,8 @@ Route::get('/user', function (Request $request) {
 	return $request->user();
 });
 
+Route::get('campaigns', 'CampaignContoller@index');
+
 Route::group([
 		'middleware' => 'jwt.auth',
 		'prefix'     => 'user-management'
@@ -26,7 +28,9 @@ Route::group([
 	Route::get('/users', 'UserController@index');
   Route::get('/users/{id}', 'UserController@show')->middleware('hasAccessToUser');
   Route::post('/users/{id}', 'UserController@update');
+  Route::post('/invite','InvitationController@store');
 });
+
 
 Route::group([
 		'middleware' => 'jwt.auth',
