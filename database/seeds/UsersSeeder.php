@@ -88,9 +88,9 @@ class UsersSeeder extends Seeder
 		$user->campaign_id = 1;
 		$user->save();
 
-	    User::all()->each(function(User $user) {
+	    /*User::all()->each(function(User $user) {
 	    	$userHelper = new \App\Helpers\UserHelper();
 		    $userHelper->createUserAvatar($user);
-	    });
+	    });*/
     }
 }
