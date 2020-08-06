@@ -141,6 +141,9 @@
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
     border-radius: 5px !important;
 }
+.ti-tag {
+    background: rgba(var(--vs-primary),1)!important;
+}
 </style>
 
 <style lang="scss" scoped>

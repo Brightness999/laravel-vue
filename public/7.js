@@ -45241,7 +45241,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Mixins", function() { return vue_class_component__WEBPACK_IMPORTED_MODULE_1__["mixins"]; });
 
-/** vue-property-decorator verson 8.5.1 MIT LICENSE copyright 2020 kaorun343 */
+/** vue-property-decorator verson 8.4.2 MIT LICENSE copyright 2019 kaorun343 */
 /// <reference types='reflect-metadata'/>
 
 
@@ -45299,10 +45299,12 @@ function produceProvide(original) {
         }
         var _loop_1 = function (i) {
             rv[provide.managedReactive[i]] = this_1[i]; // Duplicates the behavior of `@Provide`
-            Object.defineProperty(rv[reactiveInjectKey], provide.managedReactive[i], {
-                enumerable: true,
-                get: function () { return _this[i]; },
-            });
+            if (!rv[reactiveInjectKey].hasOwnProperty(provide.managedReactive[i])) {
+                Object.defineProperty(rv[reactiveInjectKey], provide.managedReactive[i], {
+                    enumerable: true,
+                    get: function () { return _this[i]; },
+                });
+            }
         };
         var this_1 = this;
         for (var i in provide.managedReactive) {
@@ -45494,7 +45496,9 @@ function Emit(event) {
             };
             var returnValue = original.apply(this, args);
             if (isPromise(returnValue)) {
-                returnValue.then(emit);
+                returnValue.then(function (returnValue) {
+                    emit(returnValue);
+                });
             }
             else {
                 emit(returnValue);

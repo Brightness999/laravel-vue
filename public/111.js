@@ -131,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
     exportToExcel: function exportToExcel() {
       var _this = this;
 
-      Promise.all(/*! import() */[__webpack_require__.e(5), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, /*! @/vendor/Export2Excel */ "./resources/js/src/vendor/Export2Excel.js")).then(function (excel) {
+      Promise.all(/*! import() */[__webpack_require__.e(6), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, /*! @/vendor/Export2Excel */ "./resources/js/src/vendor/Export2Excel.js")).then(function (excel) {
         var list = _this.users;
 
         var data = _this.formatJson(_this.headerVal, list);

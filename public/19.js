@@ -1,19 +1,20 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[19],{
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
 exports.push([module.i, ".echarts {\n  width: 600px;\n  height: 400px;\n}\n", ""]);
-// Exports
-module.exports = exports;
+
+// exports
 
 
 /***/ }),
@@ -929,7 +930,6 @@ var _default = echarts.extendChartView({
     var roundCap = seriesModel.get('roundCap', true);
     var drawBackground = seriesModel.get('showBackground', true);
     var backgroundModel = seriesModel.getModel('backgroundStyle');
-    var barBorderRadius = backgroundModel.get('barBorderRadius') || 0;
     var bgEls = [];
     var oldBgEls = this._backgroundEls || [];
     data.diff(oldData).add(function (dataIndex) {
@@ -937,14 +937,8 @@ var _default = echarts.extendChartView({
       var layout = getLayout[coord.type](data, dataIndex, itemModel);
 
       if (drawBackground) {
-        var bgLayout = getLayout[coord.type](data, dataIndex);
-        var bgEl = createBackgroundEl(coord, isHorizontalOrRadial, bgLayout);
-        bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
-
-        if (coord.type === 'cartesian2d') {
-          bgEl.setShape('r', barBorderRadius);
-        }
-
+        var bgEl = createBackgroundEl(coord, isHorizontalOrRadial, layout);
+        bgEl.useStyle(backgroundModel.getBarItemStyle());
         bgEls[dataIndex] = bgEl;
       } // If dataZoom in filteMode: 'empty', the baseValue can be set as NaN in "axisProxy".
 
@@ -974,15 +968,9 @@ var _default = echarts.extendChartView({
 
       if (drawBackground) {
         var bgEl = oldBgEls[oldIndex];
-        bgEl.useStyle(backgroundModel.getBarItemStyle()); // Only cartesian2d support borderRadius.
-
-        if (coord.type === 'cartesian2d') {
-          bgEl.setShape('r', barBorderRadius);
-        }
-
+        bgEl.useStyle(backgroundModel.getBarItemStyle());
         bgEls[newIndex] = bgEl;
-        var bgLayout = getLayout[coord.type](data, newIndex);
-        var shape = createBackgroundShape(isHorizontalOrRadial, bgLayout, coord);
+        var shape = createBackgroundShape(isHorizontalOrRadial, layout, coord);
         graphic.updateProps(bgEl, {
           shape: shape
         }, animationModel, newIndex);
@@ -1204,11 +1192,9 @@ function removeSector(dataIndex, animationModel, el) {
 }
 
 var getLayout = {
-  // itemModel is only used to get borderWidth, which is not needed
-  // when calculating bar background layout.
   cartesian2d: function (data, dataIndex, itemModel) {
     var layout = data.getItemLayout(dataIndex);
-    var fixedLineWidth = itemModel ? getLineWidth(itemModel, layout) : 0; // fix layout with lineWidth
+    var fixedLineWidth = getLineWidth(itemModel, layout); // fix layout with lineWidth
 
     var signX = layout.width > 0 ? 1 : -1;
     var signY = layout.height > 0 ? 1 : -1;
@@ -9208,8 +9194,8 @@ var _default = echarts.extendChartView({
         var point = coordSys.dataToPoint([data.get(dataDims[0], idx), data.get(dataDims[1], idx)]);
         rect = new graphic.Rect({
           shape: {
-            x: Math.floor(Math.round(point[0]) - width / 2),
-            y: Math.floor(Math.round(point[1]) - height / 2),
+            x: Math.floor(point[0] - width / 2),
+            y: Math.floor(point[1] - height / 2),
             width: Math.ceil(width),
             height: Math.ceil(height)
           },
@@ -9945,8 +9931,7 @@ effectSymbolProto.updateData = function (data, idx) {
     pos[1] = parsePercent(symbolOffset[1], symbolSize[1]);
   }
 
-  var symbolRotate = data.getItemVisual(idx, 'symbolRotate');
-  rippleGroup.rotation = (symbolRotate || 0) * Math.PI / 180 || 0;
+  rippleGroup.rotation = (itemModel.getShallow('symbolRotate') || 0) * Math.PI / 180 || 0;
   var effectCfg = {};
   effectCfg.showEffectOn = seriesModel.get('showEffectOn');
   effectCfg.rippleScale = itemModel.get('rippleEffect.scale');
@@ -11205,13 +11190,9 @@ lineDrawProto.incrementalPrepareUpdate = function (lineData) {
   this.group.removeAll();
 };
 
-function isEffectObject(el) {
-  return el.animators && el.animators.length > 0;
-}
-
 lineDrawProto.incrementalUpdate = function (taskParams, lineData) {
   function updateIncrementalAndHover(el) {
-    if (!el.isGroup && !isEffectObject(el)) {
+    if (!el.isGroup) {
       el.incremental = el.useHoverLayer = true;
     }
   }
@@ -11764,6 +11745,7 @@ symbolProto._updateCommon = function (data, idx, symbolSize, seriesScope) {
 
   var itemStyle = seriesScope && seriesScope.itemStyle;
   var hoverItemStyle = seriesScope && seriesScope.hoverItemStyle;
+  var symbolRotate = seriesScope && seriesScope.symbolRotate;
   var symbolOffset = seriesScope && seriesScope.symbolOffset;
   var labelModel = seriesScope && seriesScope.labelModel;
   var hoverLabelModel = seriesScope && seriesScope.hoverLabelModel;
@@ -11776,6 +11758,7 @@ symbolProto._updateCommon = function (data, idx, symbolSize, seriesScope) {
 
     itemStyle = itemModel.getModel(normalStyleAccessPath).getItemStyle(['color']);
     hoverItemStyle = itemModel.getModel(emphasisStyleAccessPath).getItemStyle();
+    symbolRotate = itemModel.getShallow('symbolRotate');
     symbolOffset = itemModel.getShallow('symbolOffset');
     labelModel = itemModel.getModel(normalLabelAccessPath);
     hoverLabelModel = itemModel.getModel(emphasisLabelAccessPath);
@@ -11786,7 +11769,6 @@ symbolProto._updateCommon = function (data, idx, symbolSize, seriesScope) {
   }
 
   var elStyle = symbolPath.style;
-  var symbolRotate = data.getItemVisual(idx, 'symbolRotate');
   symbolPath.attr('rotation', (symbolRotate || 0) * Math.PI / 180 || 0);
 
   if (symbolOffset) {
@@ -12183,10 +12165,7 @@ function createGridClipPath(cartesian, hasAnimation, seriesModel) {
   x -= lineWidth / 2;
   y -= lineWidth / 2;
   width += lineWidth;
-  height += lineWidth; // fix: https://github.com/apache/incubator-echarts/issues/11369
-
-  x = Math.floor(x);
-  width = Math.round(width);
+  height += lineWidth;
   var clipPath = new graphic.Rect({
     shape: {
       x: x,
@@ -13368,10 +13347,6 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zrender/lib/core/util.js");
 
-var _bbox = __webpack_require__(/*! zrender/lib/core/bbox */ "./node_modules/zrender/lib/core/bbox.js");
-
-var fromPoints = _bbox.fromPoints;
-
 var SymbolDraw = __webpack_require__(/*! ../helper/SymbolDraw */ "./node_modules/echarts/lib/chart/helper/SymbolDraw.js");
 
 var SymbolClz = __webpack_require__(/*! ../helper/Symbol */ "./node_modules/echarts/lib/chart/helper/Symbol.js");
@@ -13433,17 +13408,6 @@ function isPointsSame(points1, points2) {
   }
 
   return true;
-}
-
-function getBoundingDiff(points1, points2) {
-  var min1 = [];
-  var max1 = [];
-  var min2 = [];
-  var max2 = [];
-  fromPoints(points1, min1, max1);
-  fromPoints(points2, min2, max2); // Get a max value from each corner of two boundings.
-
-  return Math.max(Math.abs(min1[0] - min2[0]), Math.abs(min1[1] - min2[1]), Math.abs(max1[0] - max2[0]), Math.abs(max1[1] - max2[1]));
 }
 
 function getSmooth(smooth) {
@@ -13989,24 +13953,6 @@ var _default = ChartView.extend({
       stackedOnCurrent = turnPointsIntoStep(diff.stackedOnCurrent, coordSys, step);
       next = turnPointsIntoStep(diff.next, coordSys, step);
       stackedOnNext = turnPointsIntoStep(diff.stackedOnNext, coordSys, step);
-    } // Don't apply animation if diff is large.
-    // For better result and avoid memory explosion problems like
-    // https://github.com/apache/incubator-echarts/issues/12229
-
-
-    if (getBoundingDiff(current, next) > 3000 || polygon && getBoundingDiff(stackedOnCurrent, stackedOnNext) > 3000) {
-      polyline.setShape({
-        points: next
-      });
-
-      if (polygon) {
-        polygon.setShape({
-          points: next,
-          stackedOnPoints: stackedOnNext
-        });
-      }
-
-      return;
     } // `diff.current` is subset of `current` (which should be ensured by
     // turnPointsIntoStep), so points in `__points` can be updated when
     // points in `current` are update during animation.
@@ -15839,7 +15785,7 @@ var MapSeries = SeriesModel.extend({
       });
     }
 
-    var geoSource = geoSourceManager.load(this.getMapType(), this.option.nameMap, this.option.nameProperty);
+    var geoSource = geoSourceManager.load(this.getMapType(), this.option.nameMap);
     zrUtil.each(geoSource.regions, function (region) {
       var name = region.name;
 
@@ -16000,8 +15946,7 @@ var MapSeries = SeriesModel.extend({
       itemStyle: {
         areaColor: 'rgba(255,215,0,0.8)'
       }
-    },
-    nameProperty: 'name'
+    }
   }
 });
 zrUtil.mixin(MapSeries, dataSelectableMixin);
@@ -17704,34 +17649,27 @@ piePieceProto.updateData = function (data, idx, firstCreate) {
 
   this._updateLabel(data, idx, withAnimation);
 
-  this.highDownOnUpdate = !seriesModel.get('silent') ? function (fromState, toState) {
-    var hasAnimation = seriesModel.isAnimationEnabled() && itemModel.get('hoverAnimation');
-
+  this.highDownOnUpdate = itemModel.get('hoverAnimation') && seriesModel.isAnimationEnabled() ? function (fromState, toState) {
     if (toState === 'emphasis') {
       labelLine.ignore = labelLine.hoverIgnore;
       labelText.ignore = labelText.hoverIgnore; // Sector may has animation of updating data. Force to move to the last frame
       // Or it may stopped on the wrong shape
 
-      if (hasAnimation) {
-        sector.stopAnimation(true);
-        sector.animateTo({
-          shape: {
-            r: layout.r + seriesModel.get('hoverOffset')
-          }
-        }, 300, 'elasticOut');
-      }
+      sector.stopAnimation(true);
+      sector.animateTo({
+        shape: {
+          r: layout.r + seriesModel.get('hoverOffset')
+        }
+      }, 300, 'elasticOut');
     } else {
       labelLine.ignore = labelLine.normalIgnore;
       labelText.ignore = labelText.normalIgnore;
-
-      if (hasAnimation) {
-        sector.stopAnimation(true);
-        sector.animateTo({
-          shape: {
-            r: layout.r
-          }
-        }, 300, 'elasticOut');
-      }
+      sector.stopAnimation(true);
+      sector.animateTo({
+        shape: {
+          r: layout.r
+        }
+      }, 300, 'elasticOut');
     }
   } : null;
   graphic.setHoverStyle(this);
@@ -20393,11 +20331,6 @@ function relaxRightToLeft(nodesByBreadth, alpha, orient) {
       if (node.outEdges.length) {
         var y = sum(node.outEdges, weightedTarget, orient) / sum(node.outEdges, getEdgeValue, orient);
 
-        if (isNaN(y)) {
-          var len = node.outEdges.length;
-          y = len ? sum(node.outEdges, centerTarget, orient) / len : 0;
-        }
-
         if (orient === 'vertical') {
           var nodeX = node.getLayout().x + (y - center(node, orient)) * alpha;
           node.setLayout({
@@ -20418,16 +20351,8 @@ function weightedTarget(edge, orient) {
   return center(edge.node2, orient) * edge.getValue();
 }
 
-function centerTarget(edge, orient) {
-  return center(edge.node2, orient);
-}
-
 function weightedSource(edge, orient) {
   return center(edge.node1, orient) * edge.getValue();
-}
-
-function centerSource(edge, orient) {
-  return center(edge.node1, orient);
 }
 
 function center(node, orient) {
@@ -20467,11 +20392,6 @@ function relaxLeftToRight(nodesByBreadth, alpha, orient) {
     zrUtil.each(nodes, function (node) {
       if (node.inEdges.length) {
         var y = sum(node.inEdges, weightedSource, orient) / sum(node.inEdges, getEdgeValue, orient);
-
-        if (isNaN(y)) {
-          var len = node.inEdges.length;
-          y = len ? sum(node.inEdges, centerSource, orient) / len : 0;
-        }
 
         if (orient === 'vertical') {
           var nodeX = node.getLayout().x + (y - center(node, orient)) * alpha;
@@ -21178,7 +21098,6 @@ SunburstPieceProto.updateData = function (firstCreate, node, state, seriesModel,
 
   this._seriesModel = seriesModel || this._seriesModel;
   this._ecModel = ecModel || this._ecModel;
-  graphic.setHoverStyle(this);
 };
 
 SunburstPieceProto.onEmphasis = function (highlightPolicy) {
@@ -21544,7 +21463,8 @@ var _default = SeriesModel.extend({
       align: 'center',
       position: 'inside',
       distance: 5,
-      silent: true
+      silent: true,
+      emphasis: {}
     },
     itemStyle: {
       borderWidth: 1,
@@ -21554,19 +21474,13 @@ var _default = SeriesModel.extend({
       shadowColor: 'rgba(0, 0, 0, 0.2)',
       shadowOffsetX: 0,
       shadowOffsetY: 0,
-      opacity: 1
-    },
-    highlight: {
-      itemStyle: {
+      opacity: 1,
+      emphasis: {},
+      highlight: {
         opacity: 1
-      }
-    },
-    downplay: {
-      itemStyle: {
-        opacity: 0.5
       },
-      label: {
-        opacity: 0.6
+      downplay: {
+        opacity: 0.9
       }
     },
     // Animation type canbe expansion, scale
@@ -21678,10 +21592,6 @@ var ChartView = __webpack_require__(/*! ../../view/Chart */ "./node_modules/echa
 var SunburstPiece = __webpack_require__(/*! ./SunburstPiece */ "./node_modules/echarts/lib/chart/sunburst/SunburstPiece.js");
 
 var DataDiffer = __webpack_require__(/*! ../../data/DataDiffer */ "./node_modules/echarts/lib/data/DataDiffer.js");
-
-var _format = __webpack_require__(/*! ../../util/format */ "./node_modules/echarts/lib/util/format.js");
-
-var windowOpen = _format.windowOpen;
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -21850,7 +21760,7 @@ var SunburstView = ChartView.extend({
 
             if (link) {
               var linkTarget = itemModel.get('target', true) || '_blank';
-              windowOpen(link, linkTarget);
+              window.open(link, linkTarget);
             }
           }
 
@@ -23191,8 +23101,6 @@ var _format = __webpack_require__(/*! ../../util/format */ "./node_modules/echar
 
 var encodeHTML = _format.encodeHTML;
 
-var Model = __webpack_require__(/*! ../../model/Model */ "./node_modules/echarts/lib/model/Model.js");
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -23230,12 +23138,14 @@ var _default = SeriesModel.extend({
       children: option.data
     };
     var leaves = option.leaves || {};
-    var leavesModel = new Model(leaves, this, this.ecModel);
-    var tree = Tree.createTree(root, this, {}, beforeLink);
+    var treeOption = {};
+    treeOption.leaves = leaves;
+    var tree = Tree.createTree(root, this, treeOption, beforeLink);
 
     function beforeLink(nodeData) {
       nodeData.wrapMethod('getItemModel', function (model, idx) {
         var node = tree.getNodeByDataIndex(idx);
+        var leavesModel = node.getLeavesModel();
 
         if (!node.children.length || !node.isExpand) {
           model.parentModel = leavesModel;
@@ -25251,24 +25161,12 @@ var _default = SeriesModel.extend({
     completeTreeValue(root);
     var levels = option.levels || [];
     levels = option.levels = setDefault(levels, ecModel);
-    var levelModels = zrUtil.map(levels || [], function (levelDefine) {
-      return new Model(levelDefine, this, ecModel);
-    }, this); // Make sure always a new tree is created when setOption,
+    var treeOption = {};
+    treeOption.levels = levels; // Make sure always a new tree is created when setOption,
     // in TreemapView, we check whether oldTree === newTree
     // to choose mappings approach among old shapes and new shapes.
 
-    var tree = Tree.createTree(root, this, null, beforeLink);
-
-    function beforeLink(nodeData) {
-      nodeData.wrapMethod('getItemModel', function (model, idx) {
-        var node = tree.getNodeByDataIndex(idx);
-        var levelModel = levelModels[node.depth];
-        levelModel && (model.parentModel = levelModel);
-        return model;
-      });
-    }
-
-    return tree.data;
+    return Tree.createTree(root, this, treeOption).data;
   },
   optionUpdated: function () {
     this.resetViewRoot();
@@ -25488,10 +25386,6 @@ var matrix = __webpack_require__(/*! zrender/lib/core/matrix */ "./node_modules/
 var animationUtil = __webpack_require__(/*! ../../util/animation */ "./node_modules/echarts/lib/util/animation.js");
 
 var makeStyleMapper = __webpack_require__(/*! ../../model/mixin/makeStyleMapper */ "./node_modules/echarts/lib/model/mixin/makeStyleMapper.js");
-
-var _format = __webpack_require__(/*! ../../util/format */ "./node_modules/echarts/lib/util/format.js");
-
-var windowOpen = _format.windowOpen;
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -25982,7 +25876,7 @@ var _default = echarts.extendChartView({
           var itemModel = node.hostTree.data.getItemModel(node.dataIndex);
           var link = itemModel.get('link', true);
           var linkTarget = itemModel.get('target', true) || 'blank';
-          link && windowOpen(link, linkTarget);
+          link && window.open(link, linkTarget);
         }
       }
     }, this);
@@ -26168,7 +26062,7 @@ function renderNode(seriesModel, thisStorage, oldStorage, reRoot, lastsForAnimat
   var nodeModel = thisNode.getModel(); // Background
 
   var bg = giveGraphic('background', Rect, depth, Z_BG);
-  bg && renderBackground(group, bg, isParent && thisLayout.upperLabelHeight); // No children, render content.
+  bg && renderBackground(group, bg, isParent && thisLayout.upperHeight); // No children, render content.
 
   if (isParent) {
     // Because of the implementation about "traverse" in graphic hover style, we
@@ -26285,35 +26179,27 @@ function renderNode(seriesModel, thisStorage, oldStorage, reRoot, lastsForAnimat
   }
 
   function prepareText(normalStyle, emphasisStyle, visualColor, width, height, upperLabelRect) {
-    var defaultText = nodeModel.get('name');
+    var text = zrUtil.retrieve(seriesModel.getFormattedLabel(thisNode.dataIndex, 'normal', null, null, upperLabelRect ? 'upperLabel' : 'label'), nodeModel.get('name'));
+
+    if (!upperLabelRect && thisLayout.isLeafRoot) {
+      var iconChar = seriesModel.get('drillDownIcon', true);
+      text = iconChar ? iconChar + ' ' + text : text;
+    }
+
     var normalLabelModel = nodeModel.getModel(upperLabelRect ? PATH_UPPERLABEL_NORMAL : PATH_LABEL_NOAMAL);
     var emphasisLabelModel = nodeModel.getModel(upperLabelRect ? PATH_UPPERLABEL_EMPHASIS : PATH_LABEL_EMPHASIS);
     var isShow = normalLabelModel.getShallow('show');
     graphic.setLabelStyle(normalStyle, emphasisStyle, normalLabelModel, emphasisLabelModel, {
-      defaultText: isShow ? defaultText : null,
+      defaultText: isShow ? text : null,
       autoColor: visualColor,
-      isRectText: true,
-      labelFetcher: seriesModel,
-      labelDataIndex: thisNode.dataIndex,
-      labelProp: upperLabelRect ? 'upperLabel' : 'label'
+      isRectText: true
     });
-    addDrillDownIcon(normalStyle, upperLabelRect, thisLayout);
-    addDrillDownIcon(emphasisStyle, upperLabelRect, thisLayout);
     upperLabelRect && (normalStyle.textRect = zrUtil.clone(upperLabelRect));
     normalStyle.truncate = isShow && normalLabelModel.get('ellipsis') ? {
       outerWidth: width,
       outerHeight: height,
       minChar: 2
     } : null;
-  }
-
-  function addDrillDownIcon(style, upperLabelRect, thisLayout) {
-    var text = style.text;
-
-    if (!upperLabelRect && thisLayout.isLeafRoot && text != null) {
-      var iconChar = seriesModel.get('drillDownIcon', true);
-      style.text = iconChar ? iconChar + ' ' + text : text;
-    }
   }
 
   function giveGraphic(storageName, Ctor, depth, z) {
@@ -39761,8 +39647,6 @@ var _component = __webpack_require__(/*! ../../util/component */ "./node_modules
 
 var getUID = _component.getUID;
 
-var Transformable = __webpack_require__(/*! zrender/lib/mixin/Transformable */ "./node_modules/zrender/lib/mixin/Transformable.js");
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -39933,27 +39817,10 @@ MapDraw.prototype = {
 
     var regionsGroup = this._regionsGroup;
     var group = this.group;
-    var transformInfo = geo.getTransformInfo(); // No animation when first draw or in action
-
-    var isFirstDraw = !regionsGroup.childAt(0) || payload;
-    var targetScale;
-
-    if (isFirstDraw) {
-      group.transform = transformInfo.roamTransform;
-      group.decomposeTransform();
-      group.dirty();
-    } else {
-      var target = new Transformable();
-      target.transform = transformInfo.roamTransform;
-      target.decomposeTransform();
-      var props = {
-        scale: target.scale,
-        position: target.position
-      };
-      targetScale = target.scale;
-      graphic.updateProps(group, props, mapOrGeoModel);
-    }
-
+    var transformInfo = geo.getTransformInfo();
+    group.transform = transformInfo.roamTransform;
+    group.decomposeTransform();
+    group.dirty();
     var scale = transformInfo.rawScale;
     var position = transformInfo.rawPosition;
     regionsGroup.removeAll();
@@ -40075,15 +39942,6 @@ MapDraw.prototype = {
           textAlign: 'center',
           textVerticalAlign: 'middle'
         });
-
-        if (!isFirstDraw) {
-          // Text animation
-          var textScale = [1 / targetScale[0], 1 / targetScale[1]];
-          graphic.updateProps(textEl, {
-            scale: textScale
-          }, mapOrGeoModel);
-        }
-
         regionGroup.add(textEl);
       } // setItemGraphicEl, setHoverStyle after all polygons and labels
       // are added to the rigionGroup
@@ -47027,10 +46885,6 @@ var _layout = __webpack_require__(/*! ../util/layout */ "./node_modules/echarts/
 
 var getLayoutRect = _layout.getLayoutRect;
 
-var _format = __webpack_require__(/*! ../util/format */ "./node_modules/echarts/lib/util/format.js");
-
-var windowOpen = _format.windowOpen;
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -47153,13 +47007,13 @@ echarts.extendComponentView({
 
     if (link) {
       textEl.on('click', function () {
-        windowOpen(link, '_' + titleModel.get('target'));
+        window.open(link, '_' + titleModel.get('target'));
       });
     }
 
     if (sublink) {
       subTextEl.on('click', function () {
-        windowOpen(link, '_' + titleModel.get('subtarget'));
+        window.open(sublink, '_' + titleModel.get('subtarget'));
       });
     }
 
@@ -47476,7 +47330,7 @@ var _default = echarts.extendComponentView({
       var featureModel = new Model(featureOpt, toolboxModel, toolboxModel.ecModel);
       var feature; // FIX#11236, merge feature title from MagicType newOption. TODO: consider seriesIndex ?
 
-      if (payload && payload.newTitle != null && payload.featureName === featureName) {
+      if (payload && payload.newTitle != null) {
         featureOpt.title = payload.newTitle;
       }
 
@@ -48908,8 +48762,7 @@ proto.onclick = function (ecModel, api, type) {
     type: 'changeMagicType',
     currentType: type,
     newOption: newOption,
-    newTitle: newTitle,
-    featureName: 'magicType'
+    newTitle: newTitle
   });
 };
 
@@ -49095,8 +48948,7 @@ var proto = SaveAsImage.prototype;
 proto.onclick = function (ecModel, api) {
   var model = this.model;
   var title = model.get('name') || ecModel.get('title.0.text') || 'echarts';
-  var isSvg = api.getZr().painter.getType() === 'svg';
-  var type = isSvg ? 'svg' : model.get('type', true) || 'png';
+  var type = model.get('type', true) || 'png';
   var url = api.getConnectedDataURL({
     type: type,
     backgroundColor: model.get('backgroundColor', true) || ecModel.get('backgroundColor') || '#fff',
@@ -50438,7 +50290,7 @@ var _default = echarts.extendComponentView({
     var dataModel = el.dataModel || seriesModel;
     var dataIndex = el.dataIndex;
     var dataType = el.dataType;
-    var data = dataModel.getData(dataType);
+    var data = dataModel.getData();
     var tooltipModel = buildTooltipModel([data.getItemModel(dataIndex), dataModel, seriesModel && (seriesModel.coordinateSystem || {}).model, this._tooltipModel]);
     var tooltipTrigger = tooltipModel.get('trigger');
 
@@ -52318,17 +52170,20 @@ var resetMethods = {
 
     thisOption.precision = precision;
     splitStep = +splitStep.toFixed(precision);
+    var index = 0;
 
     if (thisOption.minOpen) {
       pieceList.push({
+        index: index++,
         interval: [-Infinity, dataExtent[0]],
         close: [0, 0]
       });
     }
 
-    for (var index = 0, curr = dataExtent[0]; index < splitNumber; curr += splitStep, index++) {
+    for (var curr = dataExtent[0], len = index + splitNumber; index < len; curr += splitStep) {
       var max = index === splitNumber - 1 ? dataExtent[1] : curr + splitStep;
       pieceList.push({
+        index: index++,
         interval: [curr, max],
         close: [1, 1]
       });
@@ -52336,14 +52191,14 @@ var resetMethods = {
 
     if (thisOption.maxOpen) {
       pieceList.push({
+        index: index++,
         interval: [dataExtent[1], Infinity],
         close: [0, 0]
       });
     }
 
     reformIntervals(pieceList);
-    zrUtil.each(pieceList, function (piece, index) {
-      piece.index = index;
+    zrUtil.each(pieceList, function (piece) {
       piece.text = this.formatValueText(piece.interval);
     }, this);
   },
@@ -55132,6 +54987,8 @@ function getScaleExtent(scale, model) {
   var scaleType = scale.type;
   var min = model.getMin();
   var max = model.getMax();
+  var fixMin = min != null;
+  var fixMax = max != null;
   var originalExtent = scale.getExtent();
   var axisDataLen;
   var boundaryGap;
@@ -55168,6 +55025,14 @@ function getScaleExtent(scale, model) {
   // that the results processed by boundaryGap are positive/negative?
 
 
+  if (min == null) {
+    min = scaleType === 'ordinal' ? axisDataLen ? 0 : NaN : originalExtent[0] - boundaryGap[0] * span;
+  }
+
+  if (max == null) {
+    max = scaleType === 'ordinal' ? axisDataLen ? axisDataLen - 1 : NaN : originalExtent[1] + boundaryGap[1] * span;
+  }
+
   if (min === 'dataMin') {
     min = originalExtent[0];
   } else if (typeof min === 'function') {
@@ -55184,17 +55049,6 @@ function getScaleExtent(scale, model) {
       min: originalExtent[0],
       max: originalExtent[1]
     });
-  }
-
-  var fixMin = min != null;
-  var fixMax = max != null;
-
-  if (min == null) {
-    min = scaleType === 'ordinal' ? axisDataLen ? 0 : NaN : originalExtent[0] - boundaryGap[0] * span;
-  }
-
-  if (max == null) {
-    max = scaleType === 'ordinal' ? axisDataLen ? axisDataLen - 1 : NaN : originalExtent[1] + boundaryGap[1] * span;
   }
 
   (min == null || !isFinite(min)) && (min = NaN);
@@ -55243,13 +55097,7 @@ function getScaleExtent(scale, model) {
     }
   }
 
-  return {
-    extent: [min, max],
-    // "fix" means "fixed", the value should not be
-    // changed in the subsequent steps.
-    fixMin: fixMin,
-    fixMax: fixMax
-  };
+  return [min, max];
 }
 
 function adjustScaleForOverflow(min, max, model, barWidthAndOffset) {
@@ -55290,8 +55138,9 @@ function adjustScaleForOverflow(min, max, model, barWidthAndOffset) {
 }
 
 function niceScaleExtent(scale, model) {
-  var extentInfo = getScaleExtent(scale, model);
-  var extent = extentInfo.extent;
+  var extent = getScaleExtent(scale, model);
+  var fixMin = model.getMin() != null;
+  var fixMax = model.getMax() != null;
   var splitNumber = model.get('splitNumber');
 
   if (scale.type === 'log') {
@@ -55302,8 +55151,8 @@ function niceScaleExtent(scale, model) {
   scale.setExtent(extent[0], extent[1]);
   scale.niceExtent({
     splitNumber: splitNumber,
-    fixMin: extentInfo.fixMin,
-    fixMax: extentInfo.fixMax,
+    fixMin: fixMin,
+    fixMax: fixMax,
     minInterval: scaleType === 'interval' || scaleType === 'time' ? model.get('minInterval') : null,
     maxInterval: scaleType === 'interval' || scaleType === 'time' ? model.get('maxInterval') : null
   }); // If some one specified the min, max. And the default calculated interval
@@ -56466,9 +56315,7 @@ Calendar.prototype = {
       range.reverse();
     }
 
-    var allDay = Math.floor(range[1].time / PROXIMATE_ONE_DAY) - Math.floor(range[0].time / PROXIMATE_ONE_DAY) + 1; // Consider case1 (#11677 #10430):
-    // Set the system timezone as "UK", set the range to `['2016-07-01', '2016-12-31']`
-    // Consider case2:
+    var allDay = Math.floor(range[1].time / PROXIMATE_ONE_DAY) - Math.floor(range[0].time / PROXIMATE_ONE_DAY) + 1; // Consider case:
     // Firstly set system timezone as "Time Zone: America/Toronto",
     // ```
     // var first = new Date(1478412000000 - 3600 * 1000 * 2.5);
@@ -56482,14 +56329,12 @@ Calendar.prototype = {
     var endDateNum = range[1].date.getDate();
     date.setDate(startDateNum + allDay - 1); // The bias can not over a month, so just compare date.
 
-    var dateNum = date.getDate();
-
-    if (dateNum !== endDateNum) {
+    if (date.getDate() !== endDateNum) {
       var sign = date.getTime() - range[1].time > 0 ? 1 : -1;
 
-      while ((dateNum = date.getDate()) !== endDateNum && (date.getTime() - range[1].time) * sign > 0) {
+      while (date.getDate() !== endDateNum && (date.getTime() - range[1].time) * sign > 0) {
         allDay -= sign;
-        date.setDate(dateNum - sign);
+        date.setDate(startDateNum + allDay - 1);
       }
     }
 
@@ -59525,10 +59370,9 @@ var _default = {
   /**
    * @param {string} mapName
    * @param {Object} mapRecord {specialAreas, geoJSON}
-   * @param {string} nameProperty
    * @return {Object} {regions, boundingRect}
    */
-  load: function (mapName, mapRecord, nameProperty) {
+  load: function (mapName, mapRecord) {
     var parsed = inner(mapRecord).parsed;
 
     if (parsed) {
@@ -59540,7 +59384,7 @@ var _default = {
     var regions; // https://jsperf.com/try-catch-performance-overhead
 
     try {
-      regions = geoJSON ? parseGeoJson(geoJSON, nameProperty) : [];
+      regions = geoJSON ? parseGeoJson(geoJSON) : [];
     } catch (e) {
       throw new Error('Invalid geoJson format\n' + e.message);
     }
@@ -59830,17 +59674,16 @@ var _default = {
   /**
    * @param {string} mapName
    * @param {Object} nameMap
-   * @param {string} nameProperty
    * @return {Object} source {regions, regionsMap, nameCoordMap, boundingRect}
    */
-  load: function (mapName, nameMap, nameProperty) {
+  load: function (mapName, nameMap) {
     var regions = [];
     var regionsMap = createHashMap();
     var nameCoordMap = createHashMap();
     var boundingRect;
     var mapRecords = retrieveMap(mapName);
     each(mapRecords, function (record) {
-      var singleSource = loaders[record.type].load(mapName, record, nameProperty);
+      var singleSource = loaders[record.type].load(mapName, record);
       each(singleSource.regions, function (region) {
         var regionName = region.name; // Try use the alias in geoNameMap
 
@@ -60144,12 +59987,11 @@ function decodePolygon(coordinate, encodeOffsets, encodeScale) {
 /**
  * @alias module:echarts/coord/geo/parseGeoJson
  * @param {Object} geoJson
- * @param {string} nameProperty
  * @return {module:zrender/container/Group}
  */
 
 
-function _default(geoJson, nameProperty) {
+function _default(geoJson) {
   decode(geoJson);
   return zrUtil.map(zrUtil.filter(geoJson.features, function (featureObj) {
     // Output of mapshaper may have geometry null
@@ -60182,7 +60024,7 @@ function _default(geoJson, nameProperty) {
       });
     }
 
-    var region = new Region(properties[nameProperty || 'name'], geometries, properties.cp);
+    var region = new Region(properties.name, geometries, properties.cp);
     region.properties = properties;
     return region;
   });
@@ -62711,7 +62553,7 @@ Radar.prototype.update = function (ecModel, api) {
 
 
   zrUtil.each(indicatorAxes, function (indicatorAxis, idx) {
-    var rawExtent = getScaleExtent(indicatorAxis.scale, indicatorAxis.model).extent;
+    var rawExtent = getScaleExtent(indicatorAxis.scale, indicatorAxis.model);
     niceScaleExtent(indicatorAxis.scale, indicatorAxis.model);
     var axisModel = indicatorAxis.model;
     var scale = indicatorAxis.scale;
@@ -67458,13 +67300,14 @@ TreeNode.prototype = {
 
     var hostTree = this.hostTree;
     var itemModel = hostTree.data.getItemModel(this.dataIndex);
-    var levelModel = this.getLevelModel(); // FIXME: refactor levelModel to "beforeLink", and remove levelModel here.
+    var levelModel = this.getLevelModel();
+    var leavesModel;
 
-    if (levelModel) {
-      return itemModel.getModel(path, levelModel.getModel(path));
-    } else {
-      return itemModel.getModel(path);
+    if (!levelModel && (this.children.length === 0 || this.children.length !== 0 && this.isExpand === false)) {
+      leavesModel = this.getLeavesModel();
     }
+
+    return itemModel.getModel(path, (levelModel || leavesModel || hostTree.hostModel).getModel(path));
   },
 
   /**
@@ -67472,6 +67315,13 @@ TreeNode.prototype = {
    */
   getLevelModel: function () {
     return (this.hostTree.levelModels || [])[this.depth];
+  },
+
+  /**
+   * @return {module:echarts/model/Model}
+   */
+  getLeavesModel: function () {
+    return this.hostTree.leavesModel;
   },
 
   /**
@@ -67545,9 +67395,10 @@ TreeNode.prototype = {
  * @alias module:echarts/data/Tree
  * @param {module:echarts/model/Model} hostModel
  * @param {Array.<Object>} levelOptions
+ * @param {Object} leavesOption
  */
 
-function Tree(hostModel, levelOptions) {
+function Tree(hostModel, levelOptions, leavesOption) {
   /**
    * @type {module:echarts/data/Tree~TreeNode}
    * @readOnly
@@ -67582,6 +67433,7 @@ function Tree(hostModel, levelOptions) {
   this.levelModels = zrUtil.map(levelOptions || [], function (levelDefine) {
     return new Model(levelDefine, hostModel, hostModel.ecModel);
   });
+  this.leavesModel = new Model(leavesOption || {}, hostModel, hostModel.ecModel);
 }
 
 Tree.prototype = {
@@ -67670,11 +67522,12 @@ Tree.prototype = {
  * @param {module:echarts/model/Model} hostModel
  * @param {Object} treeOptions
  * @param {Array.<Object>} treeOptions.levels
+ * @param {Array.<Object>} treeOptions.leaves
  * @return module:echarts/data/Tree
  */
 
 Tree.createTree = function (dataRoot, hostModel, treeOptions, beforeLink) {
-  var tree = new Tree(hostModel, treeOptions && treeOptions.levels);
+  var tree = new Tree(hostModel, treeOptions.levels, treeOptions.leaves);
   var listData = [];
   var dimMax = 1;
   buildHierarchy(dataRoot);
@@ -67704,13 +67557,13 @@ Tree.createTree = function (dataRoot, hostModel, treeOptions, beforeLink) {
   });
   var list = new List(dimensionsInfo, hostModel);
   list.initData(listData);
-  beforeLink && beforeLink(list);
   linkList({
     mainData: list,
     struct: tree,
     structAttr: 'tree'
   });
   tree.update();
+  beforeLink && beforeLink(list);
   return tree;
 };
 /**
@@ -69960,9 +69813,9 @@ var each = zrUtil.each;
 var isFunction = zrUtil.isFunction;
 var isObject = zrUtil.isObject;
 var parseClassType = ComponentModel.parseClassType;
-var version = '4.8.0';
+var version = '4.7.0';
 var dependencies = {
-  zrender: '4.3.1'
+  zrender: '4.3.0'
 };
 var TEST_FRAME_REMAIN_TIME = 1;
 var PRIORITY_PROCESSOR_FILTER = 1000;
@@ -70357,7 +70210,7 @@ echartsProto.getRenderedCanvas = function (opts) {
  */
 
 
-echartsProto.getSvgDataURL = function () {
+echartsProto.getSvgDataUrl = function () {
   if (!env.svgSupported) {
     return;
   }
@@ -70368,7 +70221,7 @@ echartsProto.getSvgDataURL = function () {
   zrUtil.each(list, function (el) {
     el.stopAnimation(true);
   });
-  return zr.painter.toDataURL();
+  return zr.painter.pathToDataUrl();
 };
 /**
  * @return {string}
@@ -70403,7 +70256,7 @@ echartsProto.getDataURL = function (opts) {
       }
     });
   });
-  var url = this._zr.painter.getType() === 'svg' ? this.getSvgDataURL() : this.getRenderedCanvas(opts).toDataURL('image/' + (opts && opts.type || 'png'));
+  var url = this._zr.painter.getType() === 'svg' ? this.getSvgDataUrl() : this.getRenderedCanvas(opts).toDataURL('image/' + (opts && opts.type || 'png'));
   each(excludesComponentViews, function (view) {
     view.group.ignore = false;
   });
@@ -70428,7 +70281,6 @@ echartsProto.getConnectedDataURL = function (opts) {
     return;
   }
 
-  var isSvg = opts.type === 'svg';
   var groupId = this.group;
   var mathMin = Math.min;
   var mathMax = Math.max;
@@ -70443,7 +70295,7 @@ echartsProto.getConnectedDataURL = function (opts) {
     var dpr = opts && opts.pixelRatio || 1;
     zrUtil.each(instances, function (chart, id) {
       if (chart.group === groupId) {
-        var canvas = isSvg ? chart.getZr().painter.getSvgDom().innerHTML : chart.getRenderedCanvas(zrUtil.clone(opts));
+        var canvas = chart.getRenderedCanvas(zrUtil.clone(opts));
         var boundingRect = chart.getDom().getBoundingClientRect();
         left = mathMin(boundingRect.left, left);
         top = mathMin(boundingRect.top, top);
@@ -70463,58 +70315,36 @@ echartsProto.getConnectedDataURL = function (opts) {
     var width = right - left;
     var height = bottom - top;
     var targetCanvas = zrUtil.createCanvas();
-    var zr = zrender.init(targetCanvas, {
-      renderer: isSvg ? 'svg' : 'canvas'
-    });
-    zr.resize({
-      width: width,
-      height: height
-    });
+    targetCanvas.width = width;
+    targetCanvas.height = height;
+    var zr = zrender.init(targetCanvas); // Background between the charts
 
-    if (isSvg) {
-      var content = '';
-      each(canvasList, function (item) {
-        var x = item.left - left;
-        var y = item.top - top;
-        content += '<g transform="translate(' + x + ',' + y + ')">' + item.dom + '</g>';
-      });
-      zr.painter.getSvgRoot().innerHTML = content;
-
-      if (opts.connectedBackgroundColor) {
-        zr.painter.setBackgroundColor(opts.connectedBackgroundColor);
-      }
-
-      zr.refreshImmediately();
-      return zr.painter.toDataURL();
-    } else {
-      // Background between the charts
-      if (opts.connectedBackgroundColor) {
-        zr.add(new graphic.Rect({
-          shape: {
-            x: 0,
-            y: 0,
-            width: width,
-            height: height
-          },
-          style: {
-            fill: opts.connectedBackgroundColor
-          }
-        }));
-      }
-
-      each(canvasList, function (item) {
-        var img = new graphic.Image({
-          style: {
-            x: item.left * dpr - left,
-            y: item.top * dpr - top,
-            image: item.dom
-          }
-        });
-        zr.add(img);
-      });
-      zr.refreshImmediately();
-      return targetCanvas.toDataURL('image/' + (opts && opts.type || 'png'));
+    if (opts.connectedBackgroundColor) {
+      zr.add(new graphic.Rect({
+        shape: {
+          x: 0,
+          y: 0,
+          width: width,
+          height: height
+        },
+        style: {
+          fill: opts.connectedBackgroundColor
+        }
+      }));
     }
+
+    each(canvasList, function (item) {
+      var img = new graphic.Image({
+        style: {
+          x: item.left * dpr - left,
+          y: item.top * dpr - top,
+          image: item.dom
+        }
+      });
+      zr.add(img);
+    });
+    zr.refreshImmediately();
+    return targetCanvas.toDataURL('image/' + (opts && opts.type || 'png'));
   } else {
     return this.getDataURL(opts);
   }
@@ -73678,8 +73508,6 @@ var zrUtil = __webpack_require__(/*! zrender/lib/core/util */ "./node_modules/zr
 
 var graphic = __webpack_require__(/*! ../util/graphic */ "./node_modules/echarts/lib/util/graphic.js");
 
-var textContain = __webpack_require__(/*! zrender/lib/contain/text */ "./node_modules/zrender/lib/contain/text.js");
-
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -73712,16 +73540,11 @@ function _default(api, opts) {
   opts = opts || {};
   zrUtil.defaults(opts, {
     text: 'loading',
-    textColor: '#000',
-    fontSize: '12px',
-    maskColor: 'rgba(255, 255, 255, 0.8)',
-    showSpinner: true,
     color: '#c23531',
-    spinnerRadius: 10,
-    lineWidth: 5,
+    textColor: '#000',
+    maskColor: 'rgba(255, 255, 255, 0.8)',
     zlevel: 0
   });
-  var group = new graphic.Group();
   var mask = new graphic.Rect({
     style: {
       fill: opts.maskColor
@@ -73729,13 +73552,24 @@ function _default(api, opts) {
     zlevel: opts.zlevel,
     z: 10000
   });
-  group.add(mask);
-  var font = opts.fontSize + ' sans-serif';
+  var arc = new graphic.Arc({
+    shape: {
+      startAngle: -PI / 2,
+      endAngle: -PI / 2 + 0.1,
+      r: 10
+    },
+    style: {
+      stroke: opts.color,
+      lineCap: 'round',
+      lineWidth: 5
+    },
+    zlevel: opts.zlevel,
+    z: 10001
+  });
   var labelRect = new graphic.Rect({
     style: {
       fill: 'none',
       text: opts.text,
-      font: font,
       textPosition: 'right',
       textDistance: 10,
       textFill: opts.textColor
@@ -73743,45 +73577,25 @@ function _default(api, opts) {
     zlevel: opts.zlevel,
     z: 10001
   });
+  arc.animateShape(true).when(1000, {
+    endAngle: PI * 3 / 2
+  }).start('circularInOut');
+  arc.animateShape(true).when(1000, {
+    startAngle: PI * 3 / 2
+  }).delay(300).start('circularInOut');
+  var group = new graphic.Group();
+  group.add(arc);
   group.add(labelRect);
-
-  if (opts.showSpinner) {
-    var arc = new graphic.Arc({
-      shape: {
-        startAngle: -PI / 2,
-        endAngle: -PI / 2 + 0.1,
-        r: opts.spinnerRadius
-      },
-      style: {
-        stroke: opts.color,
-        lineCap: 'round',
-        lineWidth: opts.lineWidth
-      },
-      zlevel: opts.zlevel,
-      z: 10001
-    });
-    arc.animateShape(true).when(1000, {
-      endAngle: PI * 3 / 2
-    }).start('circularInOut');
-    arc.animateShape(true).when(1000, {
-      startAngle: PI * 3 / 2
-    }).delay(300).start('circularInOut');
-    group.add(arc);
-  } // Inject resize
-
+  group.add(mask); // Inject resize
 
   group.resize = function () {
-    var textWidth = textContain.getWidth(opts.text, font);
-    var r = opts.showSpinner ? opts.spinnerRadius : 0; // cx = (containerWidth - arcDiameter - textDistance - textWidth) / 2
-    // textDistance needs to be calculated when both animation and text exist
-
-    var cx = (api.getWidth() - r * 2 - (opts.showSpinner && textWidth ? 10 : 0) - textWidth) / 2 // only show the text
-    - (opts.showSpinner ? 0 : textWidth / 2);
+    var cx = api.getWidth() / 2;
     var cy = api.getHeight() / 2;
-    opts.showSpinner && arc.setShape({
+    arc.setShape({
       cx: cx,
       cy: cy
     });
+    var r = arc.shape.r;
     labelRect.setShape({
       x: cx - r,
       y: cy - r,
@@ -76082,7 +75896,7 @@ function dataTaskReset(context) {
 
 function dataTaskProgress(param, context) {
   // Avoid repead cloneShallow when data just created in reset.
-  if (context.outputData && param.end > context.outputData.count()) {
+  if (param.end > context.outputData.count()) {
     context.model.getRawData().cloneShallow(context.outputData);
   }
 } // TODO refactor
@@ -81152,7 +80966,7 @@ var numberUtil = __webpack_require__(/*! ./number */ "./node_modules/echarts/lib
 // import Text from 'zrender/src/graphic/Text';
 
 /**
- * add commas after every three numbers
+ * 每三位默认加,格式化
  * @param {string|number} x
  * @return {string}
  */
@@ -81368,22 +81182,6 @@ function getTextBoundingRect(opt) {
 function getTextRect(text, font, textAlign, textVerticalAlign, textPadding, rich, truncate, textLineHeight) {
   return textContain.getBoundingRect(text, font, textAlign, textVerticalAlign, textPadding, textLineHeight, rich, truncate);
 }
-/**
- * open new tab
- * @param {string} link url
- * @param {string} target blank or self
- */
-
-
-function windowOpen(link, target) {
-  if (target === '_blank' || target === 'blank') {
-    var blank = window.open();
-    blank.opener = null;
-    blank.location = link;
-  } else {
-    window.open(link, target);
-  }
-}
 
 exports.addCommas = addCommas;
 exports.toCamelCase = toCamelCase;
@@ -81397,7 +81195,6 @@ exports.capitalFirst = capitalFirst;
 exports.truncateText = truncateText;
 exports.getTextBoundingRect = getTextBoundingRect;
 exports.getTextRect = getTextRect;
-exports.windowOpen = windowOpen;
 
 /***/ }),
 
@@ -82137,13 +81934,11 @@ function getHighlightDigit(highlightKey) {
  * @param {Object} opt Check `opt` of `setTextStyleCommon` to find other props.
  * @param {string|Function} [opt.defaultText]
  * @param {module:echarts/model/Model} [opt.labelFetcher] Fetch text by
- *      `opt.labelFetcher.getFormattedLabel(opt.labelDataIndex, 'normal'/'emphasis', null, opt.labelDimIndex, opt.labelProp)`
- * @param {number} [opt.labelDataIndex] Fetch text by
- *      `opt.textFetcher.getFormattedLabel(opt.labelDataIndex, 'normal'/'emphasis', null, opt.labelDimIndex, opt.labelProp)`
- * @param {number} [opt.labelDimIndex] Fetch text by
- *      `opt.textFetcher.getFormattedLabel(opt.labelDataIndex, 'normal'/'emphasis', null, opt.labelDimIndex, opt.labelProp)`
- * @param {string} [opt.labelProp] Fetch text by
- *      `opt.textFetcher.getFormattedLabel(opt.labelDataIndex, 'normal'/'emphasis', null, opt.labelDimIndex, opt.labelProp)`
+ *      `opt.labelFetcher.getFormattedLabel(opt.labelDataIndex, 'normal'/'emphasis', null, opt.labelDimIndex)`
+ * @param {module:echarts/model/Model} [opt.labelDataIndex] Fetch text by
+ *      `opt.textFetcher.getFormattedLabel(opt.labelDataIndex, 'normal'/'emphasis', null, opt.labelDimIndex)`
+ * @param {module:echarts/model/Model} [opt.labelDimIndex] Fetch text by
+ *      `opt.textFetcher.getFormattedLabel(opt.labelDataIndex, 'normal'/'emphasis', null, opt.labelDimIndex)`
  * @param {Object} [normalSpecified]
  * @param {Object} [emphasisSpecified]
  */
@@ -82153,8 +81948,7 @@ function setLabelStyle(normalStyle, emphasisStyle, normalModel, emphasisModel, o
   opt = opt || EMPTY_OBJ;
   var labelFetcher = opt.labelFetcher;
   var labelDataIndex = opt.labelDataIndex;
-  var labelDimIndex = opt.labelDimIndex;
-  var labelProp = opt.labelProp; // This scenario, `label.normal.show = true; label.emphasis.show = false`,
+  var labelDimIndex = opt.labelDimIndex; // This scenario, `label.normal.show = true; label.emphasis.show = false`,
   // is not supported util someone requests.
 
   var showNormal = normalModel.getShallow('show');
@@ -82166,7 +81960,7 @@ function setLabelStyle(normalStyle, emphasisStyle, normalModel, emphasisModel, o
 
   if (showNormal || showEmphasis) {
     if (labelFetcher) {
-      baseText = labelFetcher.getFormattedLabel(labelDataIndex, 'normal', null, labelDimIndex, labelProp);
+      baseText = labelFetcher.getFormattedLabel(labelDataIndex, 'normal', null, labelDimIndex);
     }
 
     if (baseText == null) {
@@ -82175,7 +81969,7 @@ function setLabelStyle(normalStyle, emphasisStyle, normalModel, emphasisModel, o
   }
 
   var normalStyleText = showNormal ? baseText : null;
-  var emphasisStyleText = showEmphasis ? zrUtil.retrieve2(labelFetcher ? labelFetcher.getFormattedLabel(labelDataIndex, 'emphasis', null, labelDimIndex, labelProp) : null, baseText) : null; // Optimize: If style.text is null, text will not be drawn.
+  var emphasisStyleText = showEmphasis ? zrUtil.retrieve2(labelFetcher ? labelFetcher.getFormattedLabel(labelDataIndex, 'emphasis', null, labelDimIndex) : null, baseText) : null; // Optimize: If style.text is null, text will not be drawn.
 
   if (normalStyleText != null || emphasisStyleText != null) {
     // Always set `textStyle` even if `normalStyle.text` is null, because default
@@ -86837,14 +86631,11 @@ function _default(seriesType, defaultSymbolType, legendSymbol) {
       var symbolType = seriesModel.get('symbol');
       var symbolSize = seriesModel.get('symbolSize');
       var keepAspect = seriesModel.get('symbolKeepAspect');
-      var symbolRotate = seriesModel.get('symbolRotate');
       var hasSymbolTypeCallback = isFunction(symbolType);
       var hasSymbolSizeCallback = isFunction(symbolSize);
-      var hasSymbolRotateCallback = isFunction(symbolRotate);
-      var hasCallback = hasSymbolTypeCallback || hasSymbolSizeCallback || hasSymbolRotateCallback;
+      var hasCallback = hasSymbolTypeCallback || hasSymbolSizeCallback;
       var seriesSymbol = !hasSymbolTypeCallback && symbolType ? symbolType : defaultSymbolType;
       var seriesSymbolSize = !hasSymbolSizeCallback ? symbolSize : null;
-      var seriesSymbolRotate = !hasSymbolRotateCallback ? seriesSymbolRotate : null;
       data.setVisual({
         legendSymbol: legendSymbol || seriesSymbol,
         // If seting callback functions on `symbol` or `symbolSize`, for simplicity and avoiding
@@ -86853,8 +86644,7 @@ function _default(seriesType, defaultSymbolType, legendSymbol) {
         // some cases but generally it is not recommanded.
         symbol: seriesSymbol,
         symbolSize: seriesSymbolSize,
-        symbolKeepAspect: keepAspect,
-        symbolRotate: symbolRotate
+        symbolKeepAspect: keepAspect
       }); // Only visible series has each data be visual encoded
 
       if (ecModel.isSeriesFiltered(seriesModel)) {
@@ -86867,14 +86657,12 @@ function _default(seriesType, defaultSymbolType, legendSymbol) {
           var params = seriesModel.getDataParams(idx);
           hasSymbolTypeCallback && data.setItemVisual(idx, 'symbol', symbolType(rawValue, params));
           hasSymbolSizeCallback && data.setItemVisual(idx, 'symbolSize', symbolSize(rawValue, params));
-          hasSymbolRotateCallback && data.setItemVisual(idx, 'symbolRotate', symbolRotate(rawValue, params));
         }
 
         if (data.hasItemOption) {
           var itemModel = data.getItemModel(idx);
           var itemSymbolType = itemModel.getShallow('symbol', true);
           var itemSymbolSize = itemModel.getShallow('symbolSize', true);
-          var itemSymbolRotate = itemModel.getShallow('symbolRotate', true);
           var itemSymbolKeepAspect = itemModel.getShallow('symbolKeepAspect', true); // If has item symbol
 
           if (itemSymbolType != null) {
@@ -86884,10 +86672,6 @@ function _default(seriesType, defaultSymbolType, legendSymbol) {
           if (itemSymbolSize != null) {
             // PENDING Transform symbolSize ?
             data.setItemVisual(idx, 'symbolSize', itemSymbolSize);
-          }
-
-          if (itemSymbolRotate != null) {
-            data.setItemVisual(idx, 'symbolRotate', itemSymbolRotate);
           }
 
           if (itemSymbolKeepAspect != null) {
@@ -88365,15 +88149,15 @@ function resetTriggers (elem) {
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader/dist/cjs.js??ref--7-1!../../vue-loader/lib/loaders/stylePostLoader.js!../../postcss-loader/src??ref--7-2!../../vue-loader/lib??vue-loader-options!./ECharts.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&");
+var content = __webpack_require__(/*! !../../css-loader??ref--7-1!../../vue-loader/lib/loaders/stylePostLoader.js!../../postcss-loader/src??ref--7-2!../../vue-loader/lib??vue-loader-options!./ECharts.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -88457,10 +88241,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _style_loader_index_js_css_loader_dist_cjs_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../style-loader!../../css-loader/dist/cjs.js??ref--7-1!../../vue-loader/lib/loaders/stylePostLoader.js!../../postcss-loader/src??ref--7-2!../../vue-loader/lib??vue-loader-options!./ECharts.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _style_loader_index_js_css_loader_dist_cjs_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_index_js_css_loader_dist_cjs_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _style_loader_index_js_css_loader_dist_cjs_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _style_loader_index_js_css_loader_dist_cjs_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_style_loader_index_js_css_loader_dist_cjs_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../style-loader!../../css-loader??ref--7-1!../../vue-loader/lib/loaders/stylePostLoader.js!../../postcss-loader/src??ref--7-2!../../vue-loader/lib??vue-loader-options!./ECharts.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-echarts/components/ECharts.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_index_js_css_loader_index_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _style_loader_index_js_css_loader_index_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _style_loader_index_js_css_loader_index_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_style_loader_index_js_css_loader_index_js_ref_7_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_vue_loader_lib_index_js_vue_loader_options_ECharts_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -90357,10 +90141,7 @@ Painter.prototype = {
 
       if (this._layerConfig[zlevel]) {
         util.merge(layer, this._layerConfig[zlevel], true);
-      } // TODO Remove EL_AFTER_INCREMENTAL_INC magic number
-      else if (this._layerConfig[zlevel - EL_AFTER_INCREMENTAL_INC]) {
-          util.merge(layer, this._layerConfig[zlevel - EL_AFTER_INCREMENTAL_INC], true);
-        }
+      }
 
       if (virtual) {
         layer.virtual = virtual;
@@ -90505,25 +90286,12 @@ Painter.prototype = {
 
     var prevLayer = null;
     var incrementalLayerCount = 0;
-    var prevZlevel;
 
     for (var i = 0; i < list.length; i++) {
       var el = list[i];
       var zlevel = el.zlevel;
-      var layer;
-
-      if (prevZlevel !== zlevel) {
-        prevZlevel = zlevel;
-        incrementalLayerCount = 0;
-      } // TODO Not use magic number on zlevel.
-      // Each layer with increment element can be separated to 3 layers.
-      //          (Other Element drawn after incremental element)
-      // -----------------zlevel + EL_AFTER_INCREMENTAL_INC--------------------
-      //                      (Incremental element)
-      // ----------------------zlevel + INCREMENTAL_INC------------------------
-      //              (Element drawn before incremental element)
-      // --------------------------------zlevel--------------------------------
-
+      var layer; // PENDING If change one incremental element style ?
+      // TODO Where there are non-incremental elements between incremental elements.
 
       if (el.incremental) {
         layer = this.getLayer(zlevel + INCREMENTAL_INC, this._needsManuallyCompositing);
@@ -90617,7 +90385,7 @@ Painter.prototype = {
       }
 
       for (var i = 0; i < this._zlevelList.length; i++) {
-        var _zlevel = this._zlevelList[i]; // TODO Remove EL_AFTER_INCREMENTAL_INC magic number
+        var _zlevel = this._zlevelList[i];
 
         if (_zlevel === zlevel || _zlevel === zlevel + EL_AFTER_INCREMENTAL_INC) {
           var layer = this._layers[_zlevel];
@@ -104593,26 +104361,20 @@ var SVGPainter = function (root, storage, opts, zrId) {
   this.root = root;
   this.storage = storage;
   this._opts = opts = util.extend({}, opts || {});
-  var svgDom = createElement('svg');
-  svgDom.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-  svgDom.setAttribute('version', '1.1');
-  svgDom.setAttribute('baseProfile', 'full');
-  svgDom.style.cssText = 'user-select:none;position:absolute;left:0;top:0;';
-  var bgRoot = createElement('g');
-  svgDom.appendChild(bgRoot);
-  var svgRoot = createElement('g');
-  svgDom.appendChild(svgRoot);
+  var svgRoot = createElement('svg');
+  svgRoot.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svgRoot.setAttribute('version', '1.1');
+  svgRoot.setAttribute('baseProfile', 'full');
+  svgRoot.style.cssText = 'user-select:none;position:absolute;left:0;top:0;';
   this.gradientManager = new GradientManager(zrId, svgRoot);
   this.clipPathManager = new ClippathManager(zrId, svgRoot);
   this.shadowManager = new ShadowManager(zrId, svgRoot);
   var viewport = document.createElement('div');
   viewport.style.cssText = 'overflow:hidden;position:relative';
-  this._svgDom = svgDom;
   this._svgRoot = svgRoot;
-  this._backgroundRoot = bgRoot;
   this._viewport = viewport;
   root.appendChild(viewport);
-  viewport.appendChild(svgDom);
+  viewport.appendChild(svgRoot);
   this.resize(opts.width, opts.height);
   this._visibleList = [];
 };
@@ -104624,12 +104386,6 @@ SVGPainter.prototype = {
   },
   getViewportRoot: function () {
     return this._viewport;
-  },
-  getSvgDom: function () {
-    return this._svgDom;
-  },
-  getSvgRoot: function () {
-    return this._svgRoot;
   },
   getViewportRootOffset: function () {
     var viewportRoot = this.getViewportRoot();
@@ -104648,23 +104404,7 @@ SVGPainter.prototype = {
   },
   setBackgroundColor: function (backgroundColor) {
     // TODO gradient
-    // Insert a bg rect instead of setting background to viewport.
-    // Otherwise, the exported SVG don't have background.
-    if (this._backgroundRoot && this._backgroundNode) {
-      this._backgroundRoot.removeChild(this._backgroundNode);
-    }
-
-    var bgNode = createElement('rect');
-    bgNode.setAttribute('width', this.getWidth());
-    bgNode.setAttribute('height', this.getHeight());
-    bgNode.setAttribute('x', 0);
-    bgNode.setAttribute('y', 0);
-    bgNode.setAttribute('id', 0);
-    bgNode.style.fill = backgroundColor;
-
-    this._backgroundRoot.appendChild(bgNode);
-
-    this._backgroundNode = bgNode;
+    this._viewport.style.background = backgroundColor;
   },
   _paintList: function (list) {
     this.gradientManager.markAllUnused();
@@ -104773,8 +104513,9 @@ SVGPainter.prototype = {
     this._visibleList = newVisibleList;
   },
   _getDefs: function (isForceCreating) {
-    var svgRoot = this._svgDom;
-    var defs = svgRoot.getElementsByTagName('defs');
+    var svgRoot = this._svgRoot;
+
+    var defs = this._svgRoot.getElementsByTagName('defs');
 
     if (defs.length === 0) {
       // Not exist
@@ -104828,16 +104569,10 @@ SVGPainter.prototype = {
       var viewportStyle = viewport.style;
       viewportStyle.width = width + 'px';
       viewportStyle.height = height + 'px';
-      var svgRoot = this._svgDom; // Set width by 'svgRoot.width = width' is invalid
+      var svgRoot = this._svgRoot; // Set width by 'svgRoot.width = width' is invalid
 
       svgRoot.setAttribute('width', width);
       svgRoot.setAttribute('height', height);
-    }
-
-    if (this._backgroundNode) {
-      this._backgroundNode.setAttribute('width', width);
-
-      this._backgroundNode.setAttribute('height', height);
     }
   },
 
@@ -104872,16 +104607,16 @@ SVGPainter.prototype = {
   },
   dispose: function () {
     this.root.innerHTML = '';
-    this._svgRoot = this._backgroundRoot = this._svgDom = this._backgroundNode = this._viewport = this.storage = null;
+    this._svgRoot = this._viewport = this.storage = null;
   },
   clear: function () {
     if (this._viewport) {
       this.root.removeChild(this._viewport);
     }
   },
-  toDataURL: function () {
+  pathToDataUrl: function () {
     this.refresh();
-    var html = encodeURIComponent(this._svgDom.outerHTML.replace(/></g, '>\n\r<'));
+    var html = this._svgRoot.outerHTML;
     return 'data:image/svg+xml;charset=UTF-8,' + html;
   }
 }; // Not supported methods
@@ -104893,7 +104628,7 @@ function createMethodNotSupport(method) {
 } // Unsuppoted methods
 
 
-util.each(['getLayer', 'insertLayer', 'eachLayer', 'eachBuiltinLayer', 'eachOtherLayer', 'getLayers', 'modLayer', 'delLayer', 'clearLayer', 'pathToImage'], function (name) {
+util.each(['getLayer', 'insertLayer', 'eachLayer', 'eachBuiltinLayer', 'eachOtherLayer', 'getLayers', 'modLayer', 'delLayer', 'clearLayer', 'toDataURL', 'pathToImage'], function (name) {
   SVGPainter.prototype[name] = createMethodNotSupport(name);
 });
 var _default = SVGPainter;
@@ -109543,7 +109278,7 @@ var instances = {}; // ZRender实例map索引
  * @type {string}
  */
 
-var version = '4.3.1';
+var version = '4.3.0';
 /**
  * Initializing a zrender instance
  * @param {HTMLElement} dom
