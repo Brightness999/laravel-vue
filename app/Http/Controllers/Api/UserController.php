@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use App\Repositories\CampaignRepository;
 use App\Repositories\UserRepository;
 use App\User;
 
@@ -12,7 +14,7 @@ class UserController extends Controller
 	/**
 	 * @var UserRepository
 	 */
-	protected $userRepository;
+	protected $userRepository, $campaignRepository;
 
 	/**
 	 * UserController constructor.
@@ -20,10 +22,12 @@ class UserController extends Controller
 	 * @param UserRepository $userRepository
 	 */
 	public function __construct(
-		UserRepository $userRepository
+        UserRepository $userRepository,
+        CampaignRepository $campaignRepository
 	)
 	{
-		$this->userRepository = $userRepository;
+        $this->userRepository = $userRepository;
+        $this->campaignRepository = $campaignRepository;
 	}
 
 	/**
@@ -80,9 +84,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        $user = $this->userRepository->update($request->all(), $id);
+        $params = $request->all();
+        $campaign = $this->campaignRepository->create([
+            'name' => $params['campaign']
+        ]);
+        $params['campaign_id'] = $campaign->id;
+        $user = $this->userRepository->update($params, $id);
+        
         return $user;
     }
 

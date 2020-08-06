@@ -34,13 +34,11 @@
 
     <vs-divider>OR</vs-divider> -->
     <div v-if="isCompanyFilled">
-     <vs-select
+     <vs-input
         class="w-full my-5"
         label="Compaign"
         v-model="compaign"
-        >
-        <vs-select-item :key="index" :value="item.id" :text="item.name" v-for="(item,index) in compaigns" />
-      </vs-select>
+      />
       <span class="text-danger text-sm">{{ errors.first('compaign') }}</span>
       <div>
         <vs-button  type="border" :disabled="!validateForm" @click="registerUser">Register</vs-button>
@@ -177,7 +175,7 @@ export default {
       // if (!this.checkLogin()) return
       // this.$router.push('/pages/register').catch(() => {})
       await this.$http.post('/api/user-management/users/'+this.userId,{
-        campaign_id: this.compaign
+        campaign: this.compaign
       })
       localStorage.removeItem('company')
       this.$router.push({name: 'goals'})
