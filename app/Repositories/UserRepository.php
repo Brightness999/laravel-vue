@@ -93,6 +93,10 @@ class UserRepository extends BaseRepository
 			return $this->all()->where('campaign_id', $currentUser->campaign_id)->where('hr_id', $currentUser->id)->whereNotIn('id', $currentUser->id);
 		}
 
+		else{
+			return $this->all()->whereNotIn('id', $currentUser->id);
+		}
+
 		throw new \Exception('Something went wrong');
 	}
 
