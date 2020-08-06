@@ -93,7 +93,7 @@ class UserRepository extends BaseRepository
 			return $this->all()->where('campaign_id', $currentUser->campaign_id)->where('hr_id', $currentUser->id)->whereNotIn('id', $currentUser->id);
 		}
 
-		if($currentUser->hasRole(Role::USER_ROLE)){
+		if($currentUser->hasRole(Role::USER_ROLE)) {
 			return $this->all()->where('campaign_id', $currentUser->campaign_id)->whereNotIn('id', $currentUser->id);
 		}
 
