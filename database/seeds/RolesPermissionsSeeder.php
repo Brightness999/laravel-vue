@@ -15,6 +15,7 @@ class RolesPermissionsSeeder extends Seeder
     {
 		Role::create(['name' => \App\Role::ADMIN_ROLE]);
 		Role::create(['name' => \App\Role::HR_ROLE]);
-		Role::create(['name' => \App\Role::MENTOR_ROLE]);
+    Role::create(['name' => \App\Role::MENTOR_ROLE]);
+    Role::create(['name' => \App\Role::USER_ROLE]);
     }
 }

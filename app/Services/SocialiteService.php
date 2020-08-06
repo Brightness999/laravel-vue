@@ -10,6 +10,7 @@ use App\Repositories\InvitationSlugRepository;
 use App\Repositories\UserRepository;
 use App\Services\Contracts\SocialiteServiceInterface;
 use App\User;
+use App\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
@@ -78,7 +79,7 @@ class SocialiteService implements SocialiteServiceInterface
                     'password' => Hash::make($userSocial->email . $userSocial->id),
                     'api_token' => Str::random(40)
                 ]);
-                //$user = New User([], $userSocial);
+                $user->assignRole(Role::USER_ROLE);
                 if(isset($_REQUEST['state'])) {
                     $campaign_id = $this->invitation_slug_repository->findByField('slug',$_REQUEST['state'])->first()->user->campaign_id;
                     $user->campaign_id = $campaign_id;

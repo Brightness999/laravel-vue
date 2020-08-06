@@ -92,6 +92,7 @@ class UserController extends Controller
         ]);
         $params['campaign_id'] = $campaign->id;
         $user = $this->userRepository->update($params, $id);
+        
         return $user;
     }
 
