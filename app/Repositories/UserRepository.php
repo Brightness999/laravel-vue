@@ -197,7 +197,7 @@ class UserRepository extends BaseRepository
 	 * @param $id
 	 * @param $hrId
 	 */
-	public function setHrs($id, $hrIds)
+	public function setHrs($id, $hrIds) : void
 	{
 		$userForUpdate = $this->find($id);
 		$userForUpdate->hrs()->sync($hrIds);
@@ -205,7 +205,7 @@ class UserRepository extends BaseRepository
 
 	/**
 	 * @param $id
-	 * @param $hrId
+	 * @param $mentorId
 	 */
 	public function setMentor($id, $mentorId) : void
 	{

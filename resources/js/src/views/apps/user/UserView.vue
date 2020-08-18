@@ -29,7 +29,7 @@
           <img ref="image" v-if="user_data.avatar" :src="user_data.avatar" class="rounded w-full"/>
           <img v-else ref="placeholder-image" src="@assets/images/profile/user-uploads/user-01.jpg"  class="rounded w-full mb-3" />
           <input ref="image-file" type="file" class="opacity-0 absolute" style="width:0px;height:0px" @change="loadImage">
-          <div class="icon" @click="$refs['image-file'].click()">
+          <div class="icon" @click="$refs['image-file'].click()" v-if="edit">
             <feather-icon icon="EditIcon" svgClasses="h-5 w-5" class="cursor-pointer" @click.prevent></feather-icon>
           </div>
         </div>
@@ -49,7 +49,7 @@
                     <span v-for="(hr, index) in user_data.hrs"><span v-if="index !== 0">, </span><span>{{ hr.full_name }}</span></span>
                 </td>
                 <td v-else>
-                  <v-select label="full_name" class="vs-con-input-label" multiple :closeOnSelect="false" v-model="user_data.hrs" :options="hrs" :reduce="a => a.id"/><br>
+                  <v-select label="full_name" class="vs-con-input-label" multiple :closeOnSelect="false" v-model="user_data.hrs_ids" :options="hrs" :reduce="a => a.id"/><br>
                 </td>
           </tr>
           <tr>
@@ -58,7 +58,7 @@
                 <span v-for="(mentor, index) in user_data.mentors"><span v-if="index !== 0">, </span><span>{{ mentor.full_name }}</span></span>
             </td>
             <td v-else>
-              <v-select label="full_name" class="vs-con-input-label" multiple :closeOnSelect="false" v-model="user_data.mentors" :options="mentors" :reduce="a => a.id"/><br>
+              <v-select label="full_name" class="vs-con-input-label" multiple :closeOnSelect="false" v-model="user_data.mentors_ids" :options="mentors" :reduce="a => a.id"/><br>
             </td>
           </tr>
         </table>
@@ -107,13 +107,33 @@ export default {
     }
   },
   methods: {
-    save() {
+    async save() {
       let formData = new FormData();
-      formData.append('hrs', JSON.stringify(this.user_data.hrs))
-      formData.append('mentors', JSON.stringify(this.user_data.mentors))
+      formData.append('hrs', JSON.stringify(this.user_data.hrs_ids))
+      formData.append('mentors', JSON.stringify(this.user_data.mentors_ids))
       if(this.user_data.new_avatar)
       formData.append('new_avatar', this.user_data.new_avatar)
-      this.$http.post('/api/user-management/users/'+this.$route.params.userId, formData)
+      await this.$http.post('/api/user-management/users/'+this.$route.params.userId, formData)
+      await this.loadData()
+      this.edit = !this.edit
+    },
+    async loadData() {
+      const userId = this.$route.params.userId
+      await this.$store.dispatch('userManagement/fetchUser', userId)
+        .then(res => { this.user_data = res.data 
+        console.log(res.data)})
+        .catch(err => {
+          if (err.response.status === 404) {
+            this.user_not_found = true
+            return
+          }
+          console.error(err) 
+        })
+      await this.$store.dispatch('userManagement/fetchHrsAndMentors')
+      this.hrs = this.$store.state.userManagement.hrs
+      this.mentors = this.$store.state.userManagement.mentors
+      this.user_data.hrs_ids= this.user_data.hrs.map(a => a.id)
+      this.user_data.mentors_ids = this.user_data.mentors.map(a => a.id)
     },
     loadImage(e) {
       let vm = this
@@ -159,23 +179,7 @@ export default {
       moduleUserManagement.isRegistered = true
     }
 
-    const userId = this.$route.params.userId
-    this.$store.dispatch('userManagement/fetchUser', userId)
-      .then(res => { this.user_data = res.data 
-      console.log(res.data)})
-      .catch(err => {
-        if (err.response.status === 404) {
-          this.user_not_found = true
-          return
-        }
-        console.error(err) 
-      })
-    await this.$store.dispatch('userManagement/fetchHrs')
-    await this.$store.dispatch('userManagement/fetchMentors')
-    this.hrs = this.$store.state.userManagement.hrs
-    this.mentors = this.$store.state.userManagement.mentors
-    this.user_data.hrs = this.user_data.hrs.map(a => a.id)
-    this.user_data.mentors = this.user_data.mentors.map(a => a.id)
+    await this.loadData()
   }
 }
 

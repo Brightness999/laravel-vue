@@ -30,11 +30,12 @@ export default {
         .catch((error) => { reject(error) })
     })
   },
-  fetchHrs ({commit}) {
+  fetchHrsAndMentors ({commit}) {
     return new Promise((resolve, reject) => {
-      axios.get('/api/user-management/users?hrs=1')
+      axios.get('/api/user-management/users?hrs_and_mentors=1')
         .then((response) => {
-          commit('SET_HRS', response.data)
+          commit('SET_HRS', response.data.hrs)
+          commit('SET_MENTORS', response.data.mentors)
           resolve(response)
         })
         .catch((error) => { reject(error) })

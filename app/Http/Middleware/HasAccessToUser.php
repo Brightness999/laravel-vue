@@ -40,7 +40,7 @@ class HasAccessToUser
     	$userMentors = $userToGet->mentors->map(function($mentor) {
     		return $mentor->id;
 			})->toArray();
-			return $next($request);
+			
     	$userHrs = $userToGet->hrs->map(function($hr) {
     		return $hr->id;
 			})->toArray();

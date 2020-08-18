@@ -37,10 +37,23 @@ class UserController extends Controller
 	 */
 	public function index(Request $request)
 	{
-        if(isset($request['hrs'])) {
-            $users = $this->userRepository->getAllHrs()->get();
-        } else if(isset($request['mentors'])) {
-            $users = $this->userRepository->getAllMentors()->get();
+        if(isset($request['hrs_and_mentors'])) {
+            $hrs = $this->userRepository->getAllHrs()->get();
+            $mentors = $this->userRepository->getAllMentors()->get();
+            $hrs = $hrs->map(function ($user) {
+				$userForRender = $this->userRepository->getUserModelAttributesForView($user);
+				
+				return $userForRender;
+			});
+            $hrs = array_values($hrs->toArray());
+            $mentors = $mentors->map(function ($user) {
+				$userForRender = $this->userRepository->getUserModelAttributesForView($user);
+				
+				return $userForRender;
+			});
+            $mentors = array_values($mentors->toArray());
+            
+            return response()->json(['hrs' => $hrs, 'mentors' => $mentors]);
         } else {
 		    $users = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
         }
@@ -95,25 +108,25 @@ class UserController extends Controller
     {
         $params = $request->all();
 
-        if(isset($request['campaign_id'])){
+        if(isset($request['campaign_id'])) {
             $campaign = $this->campaignRepository->create([
                 'name' => $params['campaign']
             ]);
             $params['campaign_id'] = $campaign->id;
         }
 
-        if(isset($request['hrs'])){
+        if(isset($request['hrs'])) {
             $hrs = json_decode($request['hrs']);
             $this->userRepository->setHrs($id, $hrs);
         }
 
-        if(isset($request['mentors'])){
+        if(isset($request['mentors'])) {
             $mentors = json_decode($request['mentors']);
             $this->userRepository->setMentors($id, $mentors);
         }
 
-        if(isset($request['new_avatar'])){
-            $file_path = ImageHelper::uploadFile($request['new_avatar'], '/user/avatar');
+        if(isset($request['new_avatar'])) {
+            $file_path = ImageHelper::uploadFile($request['new_avatar'], '/uploads/user/avatar');
             $params['avatar'] = $file_path;
         }
 
