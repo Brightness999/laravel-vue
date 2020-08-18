@@ -31,6 +31,13 @@ Route::group([
   Route::post('/invite','InvitationController@store');
 });
 
+Route::group([
+  'middleware' => 'jwt.auth',
+  ], function() {
+    Route::resource('hrs', 'HrsController');
+  }
+);
+
 
 Route::group([
 		'middleware' => 'jwt.auth',

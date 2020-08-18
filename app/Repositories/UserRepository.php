@@ -197,11 +197,31 @@ class UserRepository extends BaseRepository
 	 * @param $id
 	 * @param $hrId
 	 */
+	public function setHrs($id, $hrIds)
+	{
+		$userForUpdate = $this->find($id);
+		$userForUpdate->hrs()->sync($hrIds);
+	}
+
+	/**
+	 * @param $id
+	 * @param $hrId
+	 */
 	public function setMentor($id, $mentorId) : void
 	{
 		$userForUpdate = $this->find($id);
 		$userForUpdate->mentor_id = $this->find($mentorId)->id;
 		$userForUpdate->save();
+	}
+
+	/**
+	 * @param $id
+	 * @param $hrId
+	 */
+	public function setMentors($id, $mentorIds)
+	{
+		$userForUpdate = $this->find($id);
+		$userForUpdate->mentors()->sync($mentorIds);
 	}
 
 	/**
@@ -214,6 +234,7 @@ class UserRepository extends BaseRepository
 		$user->roles;
 		$user->hrs;
 		$user->mentors;
+		$user->campaign;
 		
 		return $user;
 	}
