@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\ImageHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
@@ -34,10 +35,16 @@ class UserController extends Controller
 	 * @return \Illuminate\Http\JsonResponse
 	 * @throws \Exception
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$users = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
-		
+        if (isset($request['hrs_and_mentors'])) {
+            $hrs = $this->userRepository->getAllHrs()->get();
+            $mentors = $this->userRepository->getAllMentors()->get();
+            $users = $mentors->concat($hrs);
+        } else {
+		    $users = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
+        }
+
 		if ($users) {
 			$users = $users->map(function ($user) {
 				$userForRender = $this->userRepository->getUserModelAttributesForView($user);
@@ -87,10 +94,29 @@ class UserController extends Controller
     public function update(UserRequest $request, $id)
     {
         $params = $request->all();
-        $campaign = $this->campaignRepository->create([
-            'name' => $params['campaign']
-        ]);
-        $params['campaign_id'] = $campaign->id;
+
+        if (isset($request['campaign_id'])) {
+            $campaign = $this->campaignRepository->create([
+                'name' => $params['campaign']
+            ]);
+            $params['campaign_id'] = $campaign->id;
+        }
+
+        if (isset($request['hrs'])) {
+            $hrs = json_decode($request['hrs']);
+            $this->userRepository->setHrs($id, $hrs);
+        }
+
+        if (isset($request['mentors'])) {
+            $mentors = json_decode($request['mentors']);
+            $this->userRepository->setMentors($id, $mentors);
+        }
+
+        if (isset($request['new_avatar'])) {
+            $file_path = ImageHelper::uploadFile($request['new_avatar'], '/uploads/user/avatar');
+            $params['avatar'] = $file_path;
+        }
+
         $user = $this->userRepository->update($params, $id);
         
         return $user;

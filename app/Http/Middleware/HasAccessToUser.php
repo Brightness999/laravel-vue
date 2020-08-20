@@ -39,17 +39,22 @@ class HasAccessToUser
     	$userToGet   = $this->userRepository->find($request->id);
     	$userMentors = $userToGet->mentors->map(function($mentor) {
     		return $mentor->id;
-	    })->toArray();
+			})->toArray();
+
     	$userHrs = $userToGet->hrs->map(function($hr) {
     		return $hr->id;
-	    })->toArray();
-    	
-        if ($currentUser->campaign_id == $userToGet->campaign_id &&
-	        ($currentUser->hasRole(Role::ADMIN_ROLE) || in_array($currentUser->id, $userMentors) || in_array($currentUser->id, $userHrs))
-	        
-        ) {
-            return $next($request);
-        }
-        abort(403, 'Access denied');
+			})->toArray();
+			
+			if ($currentUser->id == $userToGet->id || ($currentUser->campaign_id == $userToGet->campaign_id && $userToGet->hasRole(ROLE::USER_ROLE))) {
+				return $next($request);
+			}
+			
+			if ($currentUser->campaign_id == $userToGet->campaign_id &&
+				($currentUser->hasRole(Role::ADMIN_ROLE) || in_array($currentUser->id, $userMentors) || in_array($currentUser->id, $userHrs))
+				
+			) {
+					return $next($request);
+			}
+			abort(403, 'Access denied');
     }
 }

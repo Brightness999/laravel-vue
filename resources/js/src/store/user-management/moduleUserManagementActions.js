@@ -30,6 +30,26 @@ export default {
         .catch((error) => { reject(error) })
     })
   },
+  fetchHrsAndMentors ({commit}) {
+    return new Promise((resolve, reject) => {
+      axios.get('/api/user-management/users?hrs_and_mentors=1')
+        .then((response) => {
+          commit('SET_HRS_AND_MENTORS', response.data)
+          resolve(response)
+        })
+        .catch((error) => { reject(error) })
+    })
+  },
+  fetchMentors ({commit}) {
+    return new Promise((resolve, reject) => {
+      axios.get('/api/user-management/users?mentors=1')
+        .then((response) => {
+          commit('SET_MENTORS', response.data)
+          resolve(response)
+        })
+        .catch((error) => { reject(error) })
+    })
+  },
   fetchUser (context, userId) {
     return new Promise((resolve, reject) => {
       axios.get(`/api/user-management/users/${userId}`)

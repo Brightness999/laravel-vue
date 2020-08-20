@@ -3,8 +3,6 @@ import axios from 'axios'
 import vue from 'vue'
 const baseURL = ''
 
-console.log(localStorage.getItem('access_token'))
-
 const instance =  axios.create({
   baseURL,
 })
