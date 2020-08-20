@@ -120,14 +120,12 @@ export default {
     async loadData() {
       const userId = this.$route.params.userId
       await this.$store.dispatch('userManagement/fetchUser', userId)
-        .then(res => { this.user_data = res.data 
-        console.log(res.data)})
+        .then(res => { this.user_data = res.data })
         .catch(err => {
           if (err.response.status === 404) {
             this.user_not_found = true
             return
           }
-          console.error(err) 
         })
       await this.$store.dispatch('userManagement/fetchHrsAndMentors')
       this.hrs = this.$store.state.userManagement.hrs

@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Passport::routes();
         
-        if(config('app.env') !== 'local') {
+        if (config('app.env') !== 'local') {
             URL::forceScheme('https');
         }
     }

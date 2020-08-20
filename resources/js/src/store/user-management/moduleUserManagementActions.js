@@ -34,8 +34,7 @@ export default {
     return new Promise((resolve, reject) => {
       axios.get('/api/user-management/users?hrs_and_mentors=1')
         .then((response) => {
-          commit('SET_HRS', response.data.hrs)
-          commit('SET_MENTORS', response.data.mentors)
+          commit('SET_HRS_AND_MENTORS', response.data)
           resolve(response)
         })
         .catch((error) => { reject(error) })

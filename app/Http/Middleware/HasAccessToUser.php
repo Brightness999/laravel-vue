@@ -40,12 +40,12 @@ class HasAccessToUser
     	$userMentors = $userToGet->mentors->map(function($mentor) {
     		return $mentor->id;
 			})->toArray();
-			
+
     	$userHrs = $userToGet->hrs->map(function($hr) {
     		return $hr->id;
 			})->toArray();
 			
-			if($currentUser->id == $userToGet->id || ($currentUser->campaign_id == $userToGet->campaign_id && $userToGet->hasRole(ROLE::USER_ROLE))) {
+			if ($currentUser->id == $userToGet->id || ($currentUser->campaign_id == $userToGet->campaign_id && $userToGet->hasRole(ROLE::USER_ROLE))) {
 				return $next($request);
 			}
 			

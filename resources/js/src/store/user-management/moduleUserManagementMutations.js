@@ -1,3 +1,5 @@
+import { distinct } from "../../helpers/functions"
+
 /*=========================================================================================
   File Name: moduleCalendarMutations.js
   Description: Calendar Module Mutations
@@ -16,10 +18,10 @@ export default {
     const userIndex = state.users.findIndex((u) => u.id === itemId)
     state.users.splice(userIndex, 1)
   },
-  SET_HRS (state, users) {
-    state.hrs = users
-  },
-  SET_MENTORS (state, users) {
-    state.mentors = users
+  SET_HRS_AND_MENTORS (state, users) {
+    let hrs = users.filter(user => user.roles.find(role => role.name === 'hr'))
+    let mentors = users.filter(user => user.roles.find(role => role.name === 'mentor'))
+    state.hrs = distinct(hrs, 'id')
+    state.mentors = distinct(mentors, 'id')
   }
 }

@@ -35,7 +35,7 @@ class SocialiteService implements SocialiteServiceInterface
 
     public function getRedirectUrlByProvider($provider): array
     {
-        if(isset($_REQUEST['slug'])){
+        if (isset($_REQUEST['slug'])) {
             return [
                 'redirectUrl' => Socialite::driver($provider)
                     ->stateless()
@@ -60,7 +60,7 @@ class SocialiteService implements SocialiteServiceInterface
 
             if ($user) {
                 
-                if($user->campaign_id) {
+                if ($user->campaign_id) {
                     return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
                     && $user->createToken()->save()
                         ? $this->prepareSuccessResult($user)
@@ -80,7 +80,7 @@ class SocialiteService implements SocialiteServiceInterface
                     'api_token' => Str::random(40)
                 ]);
                 $user->assignRole(Role::USER_ROLE);
-                if(isset($_REQUEST['state'])) {
+                if (isset($_REQUEST['state'])) {
                     $campaign_id = $this->invitation_slug_repository->findByField('slug',$_REQUEST['state'])->first()->user->campaign_id;
                     $user->campaign_id = $campaign_id;
 
