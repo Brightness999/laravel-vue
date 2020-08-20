@@ -1372,6 +1372,14 @@ const router = new Router({
           }
         },
         {
+          path: '/pages/error-403',
+          name: 'page-error-403',
+          component: () => import('@/views/pages/Error403.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/pages/error-500',
           name: 'page-error-500',
           component: () => import('@/views/pages/Error500.vue'),
