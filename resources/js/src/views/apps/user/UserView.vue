@@ -11,7 +11,7 @@
   <div id="page-user-view">
     <div class="flex justify-end">
       <div>
-        <vs-button icon="icon-edit" icon-pack="feather" v-if="edit==false" @click="edit=!edit">
+        <vs-button icon="icon-edit" icon-pack="feather" v-if="edit==false&&currentUser.id === id" @click="edit=!edit">
           edit
         </vs-button>
       </div>
@@ -29,15 +29,15 @@
           <img ref="image" v-if="user_data.avatar" :src="user_data.avatar" class="rounded w-full"/>
           <img v-else ref="placeholder-image" src="@assets/images/profile/user-uploads/user-01.jpg"  class="rounded w-full mb-3" />
           <input ref="image-file" type="file" class="opacity-0 absolute" style="width:0px;height:0px" @change="loadImage">
-          <div class="icon" @click="$refs['image-file'].click()" v-if="edit">
+          <div class="icon" @click="$refs['image-file'].click()" v-if="edit&&currentUser.id === id">
             <feather-icon icon="EditIcon" svgClasses="h-5 w-5" class="cursor-pointer" @click.prevent></feather-icon>
           </div>
         </div>
-        <div class="text-center">
-          {{user_data.position.name}}
+        <div class="text-center" v-if="user_data.position">
+          {{ user_data.position ? user_data.position.name : '' }}
         </div>
-        <div class="text-center font-semibold">
-          {{user_data.campaign.name}}
+        <div class="text-center font-semibold" v-if="user_data.campaign">
+          {{user_data.campaign ? user_data.campaign.name: '' }}
         </div>
       </vx-card>
       </div>
@@ -103,8 +103,14 @@ export default {
       user_not_found: false,
       edit: false,
       hrs: [],
-      mentors: []
+      mentors: [],
+      id: null
     }
+  },
+  computed: {
+    ...mapState({
+      currentUser: state => state.auth.user
+    })
   },
   methods: {
     async save() {
@@ -118,7 +124,8 @@ export default {
       this.edit = !this.edit
     },
     async loadData() {
-      const userId = this.$route.params.userId
+      const userId = parseInt(this.$route.params.userId, 10)
+      this.id = userId
       await this.$store.dispatch('userManagement/fetchUser', userId)
         .then(res => { this.user_data = res.data })
         .catch(err => {
