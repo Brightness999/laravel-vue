@@ -7,7 +7,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use App\Position;
 
 /**
- * Class PositionRRepositoryEloquent.
+ * Class PositionRepository.
  *
  * @package namespace App\Repositories;
  */

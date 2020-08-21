@@ -11,10 +11,9 @@ class PositionController extends Controller
 
     protected $positionRepository;
     /**
-     * UserController constructor.
+     * PositionController constructor.
      *
-     * @param GoalRepository $goalRepository
-     * @param ObjectiveRepository $objectiveRepository
+     * @param PositionRepository $positionRepository
      */
     public function __construct(PositionRepository $positionRepository)
     {
