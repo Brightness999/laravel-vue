@@ -23,8 +23,6 @@ class PositionRepository extends BaseRepository
         return Position::class;
     }
 
-    
-
     /**
      * Boot up the repository, pushing criteria
      */

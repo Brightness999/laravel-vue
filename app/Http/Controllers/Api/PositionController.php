@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Position;
+use App\Repositories\PositionRepository;
 use Illuminate\Http\Request;
 
 class PositionController extends Controller
@@ -16,7 +16,7 @@ class PositionController extends Controller
      * @param GoalRepository $goalRepository
      * @param ObjectiveRepository $objectiveRepository
      */
-    public function __construct(Position $positionRepository)
+    public function __construct(PositionRepository $positionRepository)
     {
         $this->positionRepository = $positionRepository;
     }
@@ -24,16 +24,11 @@ class PositionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $positions = [];
-
-        if (isset($request['all'])) {
-            $positions = $this->positionRepository->all();
-        }
+        $positions = $this->positionRepository->all();
         
         return response()->json($positions);
     }
