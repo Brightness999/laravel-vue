@@ -25,7 +25,7 @@
     <div class="flex" v-if="user_data">
       <div class="w-1/4 pr-2">
       <vx-card>
-        <div class=image-container>
+        <div class="image-container mb-2">
           <img ref="image" v-if="user_data.avatar" :src="user_data.avatar" class="rounded w-full"/>
           <img v-else ref="placeholder-image" src="@assets/images/profile/user-uploads/user-01.jpg"  class="rounded w-full mb-3" />
           <input ref="image-file" type="file" class="opacity-0 absolute" style="width:0px;height:0px" @change="loadImage">
@@ -33,12 +33,16 @@
             <feather-icon icon="EditIcon" svgClasses="h-5 w-5" class="cursor-pointer" @click.prevent></feather-icon>
           </div>
         </div>
-        <div class="text-center" v-if="user_data.position">
+        <div class="text-center font-semibold mb-2" v-if="user_data.position&&edit===false">
           {{ user_data.position ? user_data.position.name : '' }}
         </div>
-        <div class="text-center font-semibold" v-if="user_data.campaign">
+        <div v-else-if="edit" class="flex justify-center mb-2">
+          <v-select label="name" class="w-full" v-model="user_data.position_id" :options="positions" :reduce="a => a.id"/><br>
+        </div>
+        <div class="text-center font-semibold" v-if="user_data.campaign&&edit===false">
           {{user_data.campaign ? user_data.campaign.name: '' }}
         </div>
+        <vs-input v-else-if="edit" class="w-full" disabled icon-pack="feather" icon="icon-lock" icon-after placeholder="icon-after" vs-placeholder="Nombre"  :value="user_data.campaign ? user_data.campaign.name: ''" />
       </vx-card>
       </div>
       <div class="flex-1 pl-2">
@@ -104,6 +108,7 @@ export default {
       edit: false,
       hrs: [],
       mentors: [],
+      positions: [],
       id: null
     }
   },
@@ -117,6 +122,7 @@ export default {
       let formData = new FormData();
       formData.append('hrs', JSON.stringify(this.user_data.hrs_ids))
       formData.append('mentors', JSON.stringify(this.user_data.mentors_ids))
+      formData.append('position_id', this.user_data.position_id)
       if(this.user_data.new_avatar)
       formData.append('new_avatar', this.user_data.new_avatar)
       await this.$http.post('/api/user-management/users/'+this.id, formData)
@@ -135,6 +141,8 @@ export default {
           }
         })
       await this.$store.dispatch('userManagement/fetchHrsAndMentors')
+      let {data} = await this.$http('/api/positions?all=1')
+      this.positions = data
       this.hrs = this.$store.state.userManagement.hrs
       this.mentors = this.$store.state.userManagement.mentors
       this.user_data.hrs_ids= this.user_data.hrs.map(a => a.id)
