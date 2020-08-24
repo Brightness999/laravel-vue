@@ -20,6 +20,7 @@ Route::get('/user', function (Request $request) {
 });
 
 Route::get('campaigns', 'CampaignContoller@index');
+Route::get('positions', 'PositionController@index');
 
 Route::group([
 		'middleware' => 'jwt.auth',
