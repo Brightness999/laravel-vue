@@ -1,6 +1,5 @@
 // axios
 import axios from 'axios'
-import vue from 'vue'
 import router from './router'
 const baseURL = ''
 
@@ -17,6 +16,10 @@ instance.interceptors.response.use(undefined, function (error) {
   
   if (error.response.status === 401) {
     router.replace('/pages/login');
+  }
+
+  if (error.response.status === 413) {
+    router.replace('/pages/error-413')
   }
   
   return Promise.reject(error);
