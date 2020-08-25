@@ -127,6 +127,13 @@ export default {
       if(this.user_data.new_avatar)
       formData.append('new_avatar', this.user_data.new_avatar)
       await this.$http.put('/api/users/'+this.id, formData)
+      this.$vs.notify({
+        title: 'Success',
+        text: 'Profile info saved successfully',
+        iconPack: 'feather',
+        icon: 'icon-alert-circle',
+        color: 'success'
+      })
       await this.loadData()
       this.edit = !this.edit
     },
