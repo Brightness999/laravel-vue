@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,22 +13,15 @@ use App\Http\Controllers\Api;
 |
 */
 
-//auth:api TBD
-Route::get('/user', function (Request $request) {
-	return $request->user();
-});
-
 Route::get('campaigns', 'CampaignContoller@index');
 Route::get('positions', 'PositionController@index');
 
 Route::group([
-		'middleware' => 'jwt.auth',
-		'prefix'     => 'user-management'
+		'middleware' => 'jwt.auth'
     ], function() {
-	Route::get('/users', 'UserController@index');
-  Route::get('/users/{id}', 'UserController@show')->middleware('hasAccessToUser');
-  Route::post('/users/{id}', 'UserController@update');
-  Route::post('/invite','InvitationController@store');
+    Route::resource('users', 'UserController');
+    Route::resource('users.goals', 'GoalController');
+    Route::post('/invite','InvitationController@store');
 });
 
 Route::group([
@@ -38,16 +30,6 @@ Route::group([
     Route::resource('hrs', 'HrsController');
   }
 );
-
-
-Route::group([
-		'middleware' => 'jwt.auth',
-		'prefix'     => 'apps/todo'
-    ], function() {
-	Route::get('/goals', 'GoalController@index');
-	Route::post('/goals/add', 'GoalController@save');
-	Route::post('/goals/update/{id}', 'GoalController@update');
-});
 
 Route::group([
     'prefix' => 'auth',

@@ -2,8 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Campaign;
-use App\Objective;
 use App\Role;
 use Illuminate\Support\Collection;
 use Prettus\Repository\Eloquent\BaseRepository;
@@ -36,41 +34,6 @@ class UserRepository extends BaseRepository
     }
 
 	/**
-	 * Get average percentage of completed goals.
-	 *
-	 * @param $userId
-	 *
-	 * @return int
-	 */
-    public function getAverageStatusOfGoals($userId)
-	{
-		$userGoals = $this->find($userId)->goals;
-
-		if (!$userGoals) {
-			return 0;
-		}
-		$completedObjectives = 0;
-		$totalObjectives     = 0;
-
-		foreach ($userGoals as $goal) {
-			foreach ($goal->objectives as $objective) {
-				if ($objective->status === Objective::STATUS_COMPLETED) {
-					$completedObjectives += 1;
-				}
-				$totalObjectives += 1;
-			};
-		};
-
-		if (!$completedObjectives || !$totalObjectives) {
-			return 0;
-		}
-
-		$floatNumber = $completedObjectives / $totalObjectives * 100;
-
-		return number_format($floatNumber, 0, '.', '');
-	}
-
-	/**
 	 * Get users depending on role.
 	 *
 	 * @return Collection
@@ -92,12 +55,8 @@ class UserRepository extends BaseRepository
 		if ($currentUser->hasRole(Role::HR_ROLE)) {
 			return $this->all()->where('campaign_id', $currentUser->campaign_id)->where('hr_id', $currentUser->id)->whereNotIn('id', $currentUser->id);
 		}
-
-		if ($currentUser->hasRole(Role::USER_ROLE)) {
-			return $this->all()->where('campaign_id', $currentUser->campaign_id)->whereNotIn('id', $currentUser->id);
-		}
-
-		throw new \Exception('Something went wrong');
+		
+		return new Collection();
 	}
 
 	/**

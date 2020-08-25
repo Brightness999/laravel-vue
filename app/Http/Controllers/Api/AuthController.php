@@ -10,50 +10,32 @@ use App\User;
 class AuthController extends Controller
 {
     /**
-     * Create user
-     *
-     * @param  [string] name
-     * @param  [string] email
-     * @param  [string] password
-     * @param  [string] password_confirmation
-     * @return [string] message
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|confirmed'
-        ]);
-        
         $user = new User([
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => bcrypt($request->password)
+            'full_name' => $request->name,
+            'email'     => $request->email,
+            'password'  => bcrypt($request->password),
+            'service_id' => 'tets'
+
         ]);
         $user->save();
         
-        return response()->json([
-            'message' => 'Successfully created user!'
-        ], 201);
+        return response()->json('User is created', 201);
     }
 
-	/**
-	 * Login user and create token
-	 *
-	 * @param  [string] email
-	 * @param  [string] password
-	 * @param  [boolean] remember_me
-	 * @return [string] access_token
-	 * @return [string] token_type
-	 * @return [string] expires_at
-	 */
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
 	public function login(Request $request)
 	{
 		$request->validate([
 			'email' => 'required|string|email',
 			'password' => 'required|string',
-			'remember_me' => 'boolean'
 		]);
 		
 		$credentials = request(['email', 'password']);

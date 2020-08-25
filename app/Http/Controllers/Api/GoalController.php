@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Criteria\GoalsCriteria;
 use Illuminate\Http\Request;
 use App\Repositories\GoalRepository;
-use App\Repositories\ObjectiveRepository;
 use App\Http\Controllers\Controller;
 
 class GoalController extends Controller
@@ -15,108 +15,81 @@ class GoalController extends Controller
     protected $goalRepository;
 
     /**
-     * @var ObjectiveRepository
-     */
-    protected $objectiveRepository;
-
-    /**
      * UserController constructor.
      *
      * @param GoalRepository $goalRepository
-     * @param ObjectiveRepository $objectiveRepository
      */
-    public function __construct(GoalRepository $goalRepository, ObjectiveRepository $objectiveRepository)
+    public function __construct(GoalRepository $goalRepository)
     {
         $this->goalRepository = $goalRepository;
-        $this->objectiveRepository = $objectiveRepository;
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|Request
+     * @throws \Prettus\Repository\Exceptions\RepositoryException
      */
-    public function index()
+    public function index($id)
     {
+        $this->goalRepository->pushCriteria(new GoalsCriteria($id));
         $goals = $this->goalRepository->all();
-        foreach ($goals as $key => $goal) {
-            $objectives = [];
-            foreach ($goal->objectives()->get()->pluck('name') as $val) {
-                $objectives[] = (object)['name' => $val, 'isTrashed' => false];
-            }
-            $goals[$key]->objectives = $objectives;
-        }
-
+        
         return response()->json($goals);
     }
 
     /**
      * @param Request $request
-     * @return mixed
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function save(Request $request)
+    public function store(Request $request, $id)
     {
         $encodedData = $request->all();
 
-        try {
-            $goal = $this->goalRepository->create([
-                'user_id' => $request->user()->id,
-                'name' => $encodedData['task']['title']
-            ]);
-            if ($encodedData['task']['list']) {
-                foreach ($encodedData['task']['list'] as $objective) {
-                    if ($objective['isTrashed'] == false)
-                        $this->objectiveRepository->create([
-                            'name' => $objective['name'],
-                            'goal_id' => $goal->id
-                        ]);
-                }
-            }
+        $goal = $this->goalRepository->create([
+            'user_id'             => $id,
+            'name'                => $encodedData['name'],
+            'description'         => $encodedData['description'],
+            'evaluation_criteria' => $encodedData['evaluation_criteria'],
+            'status'              => $encodedData['status']
+        ]);
 
-            $goal->objectives = $encodedData['task']['list'];
-
-            return $goal;
-
-        } catch (\Exception $exception) {
-            //something is here
-        }
+        return response()->json($goal);
     }
 
     /**
      * @param Request $request
-     * @param int $id
-     *
-     * @return mixed
+     * @param $id
+     * @param $goalId
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $goalId)
     {
         $encodedData = $request->all();
-
-        try {
-            if (isset($encodedData['task']['isTrashed'])) {
-                $goal = $this->goalRepository->delete($id);
-                $this->objectiveRepository->deleteWhere(['goal_id' => $id]);
-            } else {
-                $goal = $this->goalRepository->update([
-                    'user_id' => $request->user()->id,
-                    'name' => $encodedData['task']['title']
-                ], $id);
-                $this->objectiveRepository->deleteWhere(['goal_id' => $goal->id]);
-                if ($encodedData['task']['list']) {
-                    foreach ($encodedData['task']['list'] as $objective) {
-                        if ($objective['isTrashed'] == false)
-                            $this->objectiveRepository->create([
-                                'name' => $objective['name'],
-                                'goal_id' => $goal->id
-                            ]);
-                    }
-                }
-            }
-
-            return $goal;
-
-        } catch (\Exception $exception) {
-            //something is here
-        }
+        
+        $goal = $this->goalRepository->update([
+            'user_id'             => $id,
+            'name'                => $encodedData['name'],
+            'description'         => $encodedData['description'],
+            'evaluation_criteria' => $encodedData['evaluation_criteria'],
+            'status'              => $encodedData['status']
+        ], $goalId);
+        
+        return response()->json($goal);
+    }
+    
+    /**
+     * @param Request $request
+     * @param $id
+     * @param $goalId
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Prettus\Validator\Exceptions\ValidatorException
+     */
+    public function destroy(Request $request, $id, $goalId)
+    {
+        $goal = $this->goalRepository->delete($goalId);
+        
+        return response()->json($goal);
     }
 }

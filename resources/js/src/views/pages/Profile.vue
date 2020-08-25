@@ -125,7 +125,7 @@ export default {
       formData.append('position_id', this.user_data.position_id)
       if(this.user_data.new_avatar)
       formData.append('new_avatar', this.user_data.new_avatar)
-      await this.$http.post('/api/user-management/users/'+this.id, formData)
+      await this.$http.post('/api/users/'+this.id, formData)
       await this.loadData()
       this.edit = !this.edit
     },

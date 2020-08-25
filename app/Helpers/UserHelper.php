@@ -6,7 +6,7 @@ use App\User;
 use Laravolt\Avatar\Avatar;
 
 /**
- * Class ObjectiveHelper
+ * Class UserHelper
  *
  * @package App\Helpers
  */

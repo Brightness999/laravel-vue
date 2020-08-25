@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
 /**
- * Class ObjectiveHelper
+ * Class ImageHelper
  *
  * @package App\Helpers
  */
