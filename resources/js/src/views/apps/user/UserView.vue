@@ -119,7 +119,7 @@ export default {
       formData.append('mentors', JSON.stringify(this.user_data.mentors_ids))
       if(this.user_data.new_avatar)
       formData.append('new_avatar', this.user_data.new_avatar)
-      await this.$http.post('/api/users/'+this.$route.params.userId, formData)
+      await this.$http.put('/api/users/'+this.$route.params.userId, formData)
       await this.loadData()
       this.edit = !this.edit
     },

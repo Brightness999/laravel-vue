@@ -172,8 +172,6 @@ export default {
       this.$store.dispatch('auth/loginWithGithub', { notify: this.$vs.notify })
     },
     async registerUser () {
-      // if (!this.checkLogin()) return
-      // this.$router.push('/pages/register').catch(() => {})
       await this.$http.put('/api/users/'+this.userId,{
         campaign: this.compaign
       })
