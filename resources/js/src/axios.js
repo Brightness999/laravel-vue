@@ -15,6 +15,10 @@ instance.interceptors.response.use(undefined, function (error) {
     router.replace('/pages/error-403');
   }
   
+  if (error.response.status === 401) {
+    router.replace('/pages/login');
+  }
+  
   return Promise.reject(error);
 })
 
