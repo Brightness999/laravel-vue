@@ -76,9 +76,9 @@
           </tr>
           <tr>
             <td>Ppr date:</td>
-            <td v-if="edit===false" class="font-semibold">{{ user_data.email }}</td>
+            <td v-if="edit===false" class="font-semibold">{{ppr_date}}</td>
             <td v-else>
-              <vs-input icon-pack="feather" icon="icon-edit-2" icon-after placeholder="PPR date" vs-placeholder="Nombre"  />
+              <vs-input icon-pack="feather" icon="icon-edit-2" icon-after placeholder="PPR date" v-model="ppr_date" vs-placeholder="Nombre"  />
             </td>
           </tr>
         </table>
@@ -109,6 +109,7 @@ export default {
       hrs: [],
       mentors: [],
       positions: [],
+      ppr_date: '10-10-2020',
       id: null
     }
   },
