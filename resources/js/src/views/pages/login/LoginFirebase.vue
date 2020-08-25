@@ -174,7 +174,7 @@ export default {
     async registerUser () {
       // if (!this.checkLogin()) return
       // this.$router.push('/pages/register').catch(() => {})
-      await this.$http.post('/api/users/'+this.userId,{
+      await this.$http.put('/api/users/'+this.userId,{
         campaign: this.compaign
       })
       localStorage.removeItem('company')
