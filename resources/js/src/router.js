@@ -24,6 +24,8 @@ import auth from '@/auth/authService'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
+import store from './store/store'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -905,7 +907,8 @@ const router = new Router({
               { title: 'Profile', active: true }
             ],
             pageTitle: 'Profile',
-            rule: 'editor'
+            rule: 'editor',
+            authRequired: true
           }
         },
         {
@@ -1441,8 +1444,9 @@ router.beforeEach((to, from, next) => {
     // }
 
     // If auth required, check login. If login fails redirect to login page
+    let isLoggedIn = store.state.auth.access_token !== null
     if (to.meta.authRequired) {
-      if (!(auth.isAuthenticated() || firebaseCurrentUser)) {
+      if (!(isLoggedIn || firebaseCurrentUser)) {
         router.push({ path: '/pages/login', query: { to: to.path } })
       }
     }
