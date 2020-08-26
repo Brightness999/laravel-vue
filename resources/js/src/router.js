@@ -1377,7 +1377,7 @@ const router = new Router({
         {
           path: '/pages/error-403',
           name: 'page-error-403',
-          component: () => import('@/views/pages/Error403.vue'),
+          component: () => import('@/views/pages/error403.vue'),
           meta: {
             rule: 'editor'
           }
