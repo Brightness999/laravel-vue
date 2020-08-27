@@ -126,7 +126,9 @@ export default {
       formData.append('position_id', this.user_data.position_id)
       if(this.user_data.new_avatar)
       formData.append('new_avatar', this.user_data.new_avatar)
-      await this.$http.put('/api/users/'+this.id, formData)
+      formData.append('_method','PUT')
+      this.$vs.loading()
+      await this.$http.post('/api/users/'+this.id, formData)
       this.$vs.notify({
         title: 'Success',
         text: 'Profile info saved successfully',
@@ -134,8 +136,9 @@ export default {
         icon: 'icon-alert-circle',
         color: 'success'
       })
-      await this.loadData()
+      this.$vs.loading.close()
       this.edit = !this.edit
+      await this.loadData()
     },
     async loadData() {
       const userId = this.currentUser.id
