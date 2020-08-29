@@ -9,27 +9,26 @@
 
 
 <template>
-  <div class="h-screen flex w-full bg-img vx-row no-gutter items-center justify-center" id="page-login">
+  <div
+    class="h-screen flex w-full bg-img vx-row no-gutter items-center justify-center"
+    id="page-login"
+  >
     <div class="vx-col sm:w-1/2 md:w-1/2 lg:w-3/4 xl:w-3/5 sm:m-0 m-4">
       <vx-card>
         <div slot="no-body" class="full-page-bg-color">
-
           <div class="vx-row no-gutter justify-center items-center">
-
             <div class="vx-col hidden lg:block lg:w-1/2">
-              <img src="@assets/images/pages/login.png" alt="login" class="mx-auto">
+              <img src="@assets/images/pages/login.png" alt="login" class="mx-auto" />
             </div>
 
             <div class="vx-col sm:w-full md:w-full lg:w-1/2 d-theme-dark-bg">
               <div class="px-8 pt-8 login-tabs-container">
-
                 <div class="vx-card__title mb-4">
                   <h4 class="mb-4">Login</h4>
                   <p>Welcome back, please login to your account.</p>
                 </div>
 
                 <vs-tabs>
-
                   <vs-tab label="Firebase">
                     <login-firebase></login-firebase>
                   </vs-tab>
@@ -38,7 +37,6 @@
                     <login-auth0></login-auth0>
                   </vs-tab>-->
                 </vs-tabs>
-
               </div>
             </div>
           </div>
@@ -50,47 +48,52 @@
 
 
 <script>
-import LoginJwt from './LoginJWT.vue'
-import LoginFirebase from './LoginFirebase.vue'
-import LoginAuth0 from './LoginAuth0.vue'
+import LoginJwt from "./LoginJWT.vue";
+import LoginFirebase from "./LoginFirebase.vue";
+import LoginAuth0 from "./LoginAuth0.vue";
 
 export default {
   components: {
     LoginJwt,
     LoginFirebase,
-    LoginAuth0
+    LoginAuth0,
   },
   mounted() {
-    this.$store.commit('auth/INITIALIZE',this.$cookie.get('authentication'))
+    this.$store.commit("auth/INITIALIZE", this.$cookie.get("authentication"));
 
-    this.$cookie.delete('authentication')
+    this.$cookie.delete("authentication");
   },
   methods: {
     AuthProvider(provider) {
-      var self = this
-      this.$http.get('/sociallogin/'+provider).then((response) => {
-        if(response.data.error){
-          this.error = err.response.data.error;
-        } else if(response.data.redirectUrl){
-          window.location.href = response.data.redirectUrl;
-        }
-      })
-      .catch((err) => {
-        if(err.response.data.error){
-          this.error = err.response.data.error;
-        }
-        this.isProcessing = false;
-      });
-    },
-    SocialLogin(provider,response){
-        this.$http.post('/sociallogin/'+provider,response).then(response => {
-            console.log(response.data)
-        }).catch(err => {
-            console.log({err:err})
+      var self = this;
+      this.$http
+        .get("/sociallogin/" + provider)
+        .then((response) => {
+          if (response.data.error) {
+            this.error = err.response.data.error;
+          } else if (response.data.redirectUrl) {
+            window.location.href = response.data.redirectUrl;
+          }
         })
-    }
-  }
-}
+        .catch((err) => {
+          if (err.response.data.error) {
+            this.error = err.response.data.error;
+          }
+          this.isProcessing = false;
+        });
+    },
+    SocialLogin(provider, response) {
+      this.$http
+        .post("/sociallogin/" + provider, response)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.log({ err: err });
+        });
+    },
+  },
+};
 </script>
 
 <style lang="scss">

@@ -23,5 +23,8 @@ export default {
     let mentors = users.filter(user => user.roles.find(role => role.name === 'mentor'))
     state.hrs = distinct(hrs, 'id')
     state.mentors = distinct(mentors, 'id')
+  },
+  setCurrentUser (state,payload) {
+    state.currentUser = payload
   }
 }

@@ -1,0 +1,38 @@
+<template>
+  <div class="px-6 pb-2 pt-6">
+    <data-view-sidebar
+      :isSidebarActive="addNewDataSidebar"
+      @closeSidebar="toggleDataSidebar"
+      :data="sidebarData"
+    />
+    <vs-button @click="addNewData" class="w-full">Add New</vs-button>
+  </div>
+</template>
+<script>
+import DataViewSidebar from "./DataViewSidebar.vue";
+export default {
+  data() {
+    return {
+      addNewDataSidebar: false,
+      sidebarData: {},
+    };
+  },
+  methods: {
+    addNewData() {
+      this.sidebarData = {};
+      this.toggleDataSidebar(true);
+    },
+    toggleDataSidebar(val = false) {
+      this.addNewDataSidebar = val;
+    },
+    editData(data) {
+      // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
+      this.sidebarData = data;
+      this.toggleDataSidebar(true);
+    },
+  },
+  components: {
+    DataViewSidebar,
+  },
+};
+</script>

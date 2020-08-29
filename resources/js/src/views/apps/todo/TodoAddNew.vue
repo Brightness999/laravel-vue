@@ -61,7 +61,6 @@ export default {
   data () {
     return {
       activePrompt: false,
-
       taskLocal: {
         title: '',
         desc: '',

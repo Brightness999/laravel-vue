@@ -1,6 +1,6 @@
 /*=========================================================================================
-  File Name: moduleCalendarState.js
-  Description: Calendar Module State
+  File Name: moduleGoalsState.js
+  Description: Goals Module State
   ----------------------------------------------------------------------------------------
   Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
@@ -8,8 +8,5 @@
 ==========================================================================================*/
 
 export default {
-  currentUser: '',
-  users: [],
-  hrs: [],
-  mentors: []
+  goals: [],
 }

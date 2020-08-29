@@ -1,6 +1,6 @@
 /*=========================================================================================
-  File Name: moduleCalendarState.js
-  Description: Calendar Module State
+  File Name: moduleGoalsGetters.js
+  Description: Goals Module Getters
   ----------------------------------------------------------------------------------------
   Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
@@ -8,8 +8,19 @@
 ==========================================================================================*/
 
 export default {
-  currentUser: '',
-  users: [],
-  hrs: [],
-  mentors: []
+  todoGoals (state) {
+    return state.goals.filter(goal => {
+      return goal.status == 'Todo'
+    })
+  },
+  inProgressGoals (state) {
+    return state.goals.filter(goal => {
+      return goal.status == 'In Progress'
+    })
+  },
+  doneGoals (state) {
+    return state.goals.filter(goal => {
+      return goal.status == 'Done'
+    })
+  }
 }

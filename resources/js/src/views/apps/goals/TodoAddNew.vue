@@ -11,7 +11,7 @@
 <template>
     <div class="px-6 pb-2 pt-6">
     <data-view-sidebar :isSidebarActive="addNewDataSidebar" @closeSidebar="toggleDataSidebar" :data="sidebarData" />
-    <vs-button @click="addNewData" class="w-full">Add Goal</vs-button>
+    <vs-button @click="addNewData" class="w-full " type="relief">Add Goal</vs-button>
     <vs-prompt
         title="Add Task"
         accept-text= "Add Task"
