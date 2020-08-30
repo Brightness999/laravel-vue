@@ -116,7 +116,7 @@
                 this.$emit('closeModal')
             },
             async inviteUser() {
-              await this.$http.post('/api/user-management/invite', {
+              await this.$http.post('/api/invite', {
                 emails: this.emails.map(a => a.text)
               })
               this.emails = []
