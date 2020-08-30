@@ -58,8 +58,14 @@
               v-model="taskLocal.description"
               :color="validateForm ? 'success' : 'danger'"
             />
-            <label> Status</label>
-            <v-select  v-validate="'required'" :color="validateForm ? 'success' : 'danger'" v-model="taskLocal.status" :options="['Todo','In Progress','Done']" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
+            <label>Status</label>
+            <v-select
+              v-validate="'required'"
+              :color="validateForm ? 'success' : 'danger'"
+              v-model="taskLocal.status"
+              :options="['Todo','In Progress','Done']"
+              :dir="$vs.rtl ? 'rtl' : 'ltr'"
+            />
 
             <vs-input
               label="Evaluation Criteria"
@@ -83,7 +89,7 @@
 </template>
 
 <script>
-import vSelect from 'vue-select'
+import vSelect from "vue-select";
 import VuePerfectScrollbar from "vue-perfect-scrollbar";
 import axios from "@/axios.js";
 import { mapState, mapActions } from "vuex";
@@ -100,7 +106,7 @@ export default {
   },
   components: {
     VuePerfectScrollbar,
-    vSelect
+    vSelect,
   },
   data() {
     return {
@@ -184,7 +190,8 @@ export default {
             status: this.taskLocal.status,
             evaluation_criteria: this.taskLocal.criteria,
           };
-          this.addGoals(formData).then(() => {
+          let userid = this.currentUser.data.id;
+          this.addGoals({ formData, userid }).then(() => {
             this.clearFields();
             this.taskLocalData.list = [];
             this.$emit("closeSidebar");

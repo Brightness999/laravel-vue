@@ -387,9 +387,9 @@ export default {
       this.$store.registerModule("moduleGoals", moduleGoals);
       moduleGoals.isRegistered = true;
     }
-
+    let userid = this.currentUser.id;
     await this.loadData();
-    await this.fetchGoals();
+    await this.fetchGoals({ userid });
   },
 };
 </script>

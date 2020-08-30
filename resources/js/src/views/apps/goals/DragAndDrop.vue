@@ -11,7 +11,7 @@
 <template>
   <vx-card title="Multiple Lists" code-toggler>
     <p>
-     Smart goals set you up for
+      Smart goals set you up for
       <code>success</code> by making goals specific, achievable, realistic and timely.
     </p>
 
@@ -48,10 +48,6 @@
         </vs-list>
       </div>
     </div>
-
-    </div>
-
-
   </vx-card>
 </template>
 
@@ -61,42 +57,7 @@ import Prism from "vue-prism-component";
 
 export default {
   data() {
-    return {
-      list1: [
-        {
-          name: "Skill up 'ENGLISH WRITING' from ELEMENTARY to PRE-INTERMEDIATE",
-          email: "girliness@spotlike.co.uk",
-        },
-        {
-          name: "Skill up 'ENGLISH lISTENING' from ELEMENTARY to PRE-INTERMEDIATE",
-          email: "executrixship@equisized.edu",
-        },
-        {
-          name: "Skill up 'ENGLISH sPEAKING' from ELEMENTARY to PRE-INTERMEDIATE",
-          email: "bidding@demibob.or",
-        }
-      ],
-      list2: [
-        {
-          name: "Practice Karate",
-          email: "unmeasurableness@interlamellar.co.uk",
-        }
-      ],
-      list3: [
-        {
-          name: "Go Shopping",
-          email: "unmeasurableness@interlamellar.co.uk",
-        },
-        {
-          name: "Meet Friends",
-          email: "soaking@khubber.com",
-        },
-        {
-          name: "Join Gym",
-          email: "lecideine@turndown.org",
-        },
-      ],
-    };
+    return {};
   },
   components: {
     draggable,
