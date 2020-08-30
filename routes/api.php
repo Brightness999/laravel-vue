@@ -22,14 +22,8 @@ Route::group([
     Route::resource('users', 'UserController');
     Route::resource('users.goals', 'GoalController');
     Route::post('/invite','InvitationController@store');
-});
-
-Route::group([
-  'middleware' => 'jwt.auth',
-  ], function() {
     Route::resource('hrs', 'HrsController');
-  }
-);
+});
 
 Route::group([
     'prefix' => 'auth',
