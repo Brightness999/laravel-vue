@@ -59,7 +59,7 @@ export default [
         name: 'Goals',
         slug: 'goals',
         icon: 'CheckSquareIcon',
-        i18n: 'Todo'
+        i18n: 'Goal'
       },
       {
         url: '/apps/email',

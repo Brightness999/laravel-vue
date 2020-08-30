@@ -5,6 +5,7 @@ export default {
     eCommerce: 'eCommerce',
     Apps: 'Apps',
     Todo: 'Todo',
+    Goal: 'Goal',
     Chat: 'Chat',
     Email: 'Email',
     Calendar: 'Calendar',

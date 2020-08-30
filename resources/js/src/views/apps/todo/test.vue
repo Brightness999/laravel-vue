@@ -135,6 +135,7 @@ export default {
     TodoEdit,
     VuePerfectScrollbar
   },
+
   created () {
     if(this.$cookie.get('authentication')){
       this.$store.commit('auth/INITIALIZE',this.$cookie.get('authentication'))
@@ -144,20 +145,25 @@ export default {
     this.setSidebarWidth()
     const filter = this.$route.params.filter
     // Fetch Tasks
+    /*
     this.$store.dispatch('todo/fetchTasks', { filter })
+    */
     this.$store.commit('todo/UPDATE_TODO_FILTER', filter)
     // Fetch Tags
     this.$store.dispatch('todo/fetchTags')
   },
+
   beforeUpdate () {
     this.currFilter = this.$route.params.filter
   },
   beforeDestroy () {
     this.$store.unregisterModule('todo')
   },
+
   mounted () {
     this.$store.dispatch('todo/setTodoSearchQuery', '')
   }
+
 }
 </script>
 

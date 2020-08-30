@@ -8,6 +8,7 @@
 ==========================================================================================*/
 
 import axios from '@/axios.js'
+import { set } from 'core-js/fn/dict'
 
 export default {
   // addItem({ commit }, item) {
@@ -50,10 +51,11 @@ export default {
         .catch((error) => { reject(error) })
     })
   },
-  fetchUser (context, userId) {
+  fetchUser ({ commit }, userId) {
     return new Promise((resolve, reject) => {
       axios.get(`/api/users/${userId}`)
         .then((response) => {
+          commit('setCurrentUser',response)
           resolve(response)
         })
         .catch((error) => { reject(error) })
