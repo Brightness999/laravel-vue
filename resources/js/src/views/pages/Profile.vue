@@ -9,12 +9,7 @@
 
 <template>
   <div id="page-user-view">
-    <vx-card title="Smart Goals" code-toggler>
-      <p>
-        Smart goals set you up for
-        <code>success</code> by making goals specific, achievable, realistic and timely.
-      </p>
-
+    <vx-card code-toggler>
       <!-- List 1 -->
       <div class="vx-row">
         <div class="vx-col w-full md:w-1/3">
@@ -237,6 +232,10 @@
     <div class="flex justify-end">
       <vs-button icon="icon-edit" icon-pack="feather" v-if="edit===true" @click="save">save</vs-button>
     </div>
+    <p class="mt-3">
+      Smart goals set you up for
+      <code>success</code> by making goals specific, achievable, realistic and timely.
+    </p>
   </div>
 </template>
 

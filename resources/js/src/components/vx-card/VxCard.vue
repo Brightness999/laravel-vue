@@ -16,8 +16,6 @@
         {'card-border': cardBorder},
         cardClasses ]" :style="cardStyles"
         v-on="$listeners">
-        <div class="vx-card__header" v-if="hasHeader">
-
             <!-- card title -->
             <div class="vx-card__title">
                 <h4 v-if="this.$props.title" :style="titleStyles" :class="titleClasses">{{ title }}</h4>
@@ -32,12 +30,9 @@
                         <feather-icon @click="refreshcard" icon="RotateCwIcon" class="ml-4" v-if="actionButtons || refreshContentAction" />
                         <feather-icon @click="removeCard" icon="XIcon" class="ml-4" v-if="actionButtons || removeCardAction" />
                     </div>
-                    <div class="vx-card__code-toggler sm:block hidden" v-if="codeToggler && !actionButtons">
-                        <feather-icon icon="CodeIcon" :class="{'border border-solid border-primary border-t-0 border-r-0 border-l-0': showCode}" @click="toggleCode"></feather-icon>
-                    </div>
+
                 </slot>
             </div>
-        </div>
 
         <div class="vx-card__collapsible-content vs-con-loading__container" ref="content" :class="[{collapsed: isContentCollapsed}, {'overflow-hidden': tempHidden}]" :style="StyleItems">
 

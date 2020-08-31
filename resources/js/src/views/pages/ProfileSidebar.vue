@@ -1,11 +1,11 @@
 <template>
-  <div class="px-6 pb-2 pt-6">
+  <div class="px-6 pb-2 pt-6 text-center">
     <data-view-sidebar
       :isSidebarActive="addNewDataSidebar"
       @closeSidebar="toggleDataSidebar"
       :data="sidebarData"
     />
-    <vs-button @click="addNewData" class="w-full">Add New</vs-button>
+    <vs-button @click="addNewData">Add New</vs-button>
   </div>
 </template>
 <script>

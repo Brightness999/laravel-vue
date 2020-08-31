@@ -11,7 +11,7 @@
   >
     <div class="mt-6 flex items-center justify-between px-6">
       <h4>{{ Object.entries(this.data).length === 0 ? "ADD NEW" : "UPDATE" }} GOAL</h4>
-      <feather-icon icon="XIcon" @click.stop="isSidebarActiveLocal = false" class="cursor-pointer"></feather-icon>
+      <feather-icon icon="XIcon" @click.stop="clearForm" class="cursor-pointer"></feather-icon>
     </div>
     <vs-divider class="mb-0"></vs-divider>
 
@@ -23,66 +23,65 @@
     >
       <div class="p-6">
         <div class="vx-row">
-          <div class="vx-col ml-auto flex">
-            <feather-icon
-              icon="InfoIcon"
-              class="cursor-pointer"
-              :svgClasses="[{'text-success stroke-current': taskLocal.isImportant}, 'w-5', 'h-5 mr-4']"
-              @click.prevent="taskLocal.isImportant = !taskLocal.isImportant"
-            ></feather-icon>
-
-            <feather-icon
-              icon="StarIcon"
-              class="cursor-pointer"
-              :svgClasses="[{'text-warning stroke-current': taskLocal.isStarred}, 'w-5', 'h-5 mr-4']"
-              @click.prevent="taskLocal.isStarred = !taskLocal.isStarred"
-            ></feather-icon>
-          </div>
-        </div>
-
-        <div class="vx-row">
           <div class="vx-col w-full">
-            <vs-input
-              label="Name"
-              v-validate="'required'"
-              name="name"
-              class="w-full mb-4 mt-5"
-              v-model="taskLocal.name"
-              :color="validateForm ? 'success' : 'danger'"
-            />
-            <vs-input
-              label="Description"
-              v-validate="'required'"
-              name="description"
-              class="w-full mb-4 mt-5"
-              v-model="taskLocal.description"
-              :color="validateForm ? 'success' : 'danger'"
-            />
-            <label>Status</label>
-            <v-select
-              v-validate="'required'"
-              :color="validateForm ? 'success' : 'danger'"
-              v-model="taskLocal.status"
-              :options="['Todo','In Progress','Done']"
-              :dir="$vs.rtl ? 'rtl' : 'ltr'"
-            />
+            <div class="mt-5">
+              <label class="block mt-5">Name</label>
+              <vs-input
+                v-validate="'required'"
+                name="Name"
+                v-model="taskLocal.name"
+                class="w-full mb-4 mt-1"
+              />
 
-            <vs-input
-              label="Evaluation Criteria"
-              v-validate="'required'"
-              name="criteria"
-              class="w-full mb-4 mt-5"
-              v-model="taskLocal.criteria"
-              :color="validateForm ? 'success' : 'danger'"
-            />
-            <div></div>
+              <span
+                class="text-danger text-sm mt-0 mb-10"
+                v-show="errors.has('Name')"
+              >{{ errors.first('Name') }}</span>
+
+              <label class="block mt-5">Description</label>
+              <vs-textarea
+                class="w-full mb-4 mt-1"
+                v-validate="'required'"
+                name="Description"
+                v-model="taskLocal.description"
+              />
+              <span
+                class="text-danger text-sm"
+                v-show="errors.has('Description')"
+              >{{ errors.first('Description') }}</span>
+
+              <label class="block mt-5">Status</label>
+              <v-select
+                name="Status"
+                class="w-full mb-4 mt-1"
+                v-validate="'required'"
+                v-model="taskLocal.status"
+                :options="['Todo','In Progress','Done']"
+              />
+              <span
+                class="text-danger text-sm"
+                v-show="errors.has('Status')"
+              >{{ errors.first('Status') }}</span>
+
+              <label class="block mt-5">Evaluation Criteria</label>
+              <vs-textarea
+                class="w-full mb-4 mt-1"
+                v-validate="'required'"
+                name="Evaluation Criteria"
+                v-model="taskLocal.criteria"
+              />
+              <span
+                class="text-danger text-sm"
+                v-show="errors.has('Evaluation Criteria')"
+              >{{ errors.first('Evaluation Criteria') }}</span>
+            </div>
           </div>
         </div>
       </div>
     </component>
 
     <div class="flex flex-wrap items-center p-6" slot="footer">
-      <vs-button class="mr-6" @click="addTodo">Submit</vs-button>
+      <vs-button class="mr-6" @click="submitForm">Submit</vs-button>
       <vs-button type="border" color="danger" @click="clearFields">Cancel</vs-button>
     </div>
   </vs-sidebar>
@@ -93,6 +92,8 @@ import vSelect from "vue-select";
 import VuePerfectScrollbar from "vue-perfect-scrollbar";
 import axios from "@/axios.js";
 import { mapState, mapActions } from "vuex";
+import { Validator } from "vee-validate";
+
 export default {
   props: {
     isSidebarActive: {
@@ -118,8 +119,6 @@ export default {
         status: "",
         criteria: "",
         isCompleted: false,
-        isImportant: false,
-        isStarred: false,
         tags: [],
         list: [],
         invoice_products: [
@@ -153,7 +152,7 @@ export default {
       set(val) {
         if (!val) {
           this.$emit("closeSidebar");
-          // this.$validator.reset()
+          this.$validator.reset();
           // this.initValues()
         }
       },
@@ -161,8 +160,14 @@ export default {
   },
   methods: {
     ...mapActions("goals", ["addGoals"]),
+    clearForm() {
+      this.isSidebarActiveLocal = false;
+      this.clearFields();
+    },
     clearFields() {
       this.taskLocalData.list = [];
+      this.$validator.reset();
+      this.errors.clear();
       Object.assign(this.taskLocal, {
         name: "",
         description: "",
@@ -175,13 +180,11 @@ export default {
           },
         ],
         isCompleted: false,
-        isImportant: false,
-        isStarred: false,
         tags: [],
       });
       this.$emit("closeSidebar");
     },
-    addTodo() {
+    submitForm() {
       this.$validator.validateAll().then((result) => {
         if (result) {
           let formData = {
