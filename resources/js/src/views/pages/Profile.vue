@@ -108,7 +108,7 @@
         </div>
       </div>
     </vx-card>
-    <div class="flex justify-end">
+    <div class="flex justify-end mt-2">
       <div>
         <vs-button icon="icon-edit" icon-pack="feather" v-if="edit==false" @click="edit=!edit">edit</vs-button>
       </div>
@@ -149,8 +149,11 @@
           </div>
           <div
             class="text-center"
-            v-if="user_data.position"
+            v-if="user_data.position&&edit===false"
           >{{ user_data.position ? user_data.position.name : '' }}</div>
+          <div v-else-if="edit" class="flex justify-center mb-2">
+            <v-select label="name" class="w-full" v-model="user_data.position_id" :options="positions" :reduce="a => a.id"/><br>
+          </div>
           <div
             class="text-center font-semibold"
             v-if="user_data.campaign"
@@ -260,6 +263,7 @@ export default {
     return {
       user_data: null,
       user_not_found: false,
+      positions: [],
       edit: false,
       hrs: [],
       mentors: [],
@@ -315,9 +319,11 @@ export default {
       const formData = new FormData();
       formData.append("hrs", JSON.stringify(this.user_data.hrs_ids));
       formData.append("mentors", JSON.stringify(this.user_data.mentors_ids));
+      formData.append('position_id', this.user_data.position_id);
       if (this.user_data.new_avatar)
         formData.append("new_avatar", this.user_data.new_avatar);
-      await this.$http.put(`/api/users/${this.id}`, formData);
+      formData.append('_method', 'put')
+      await this.$http.post(`/api/users/${this.id}`, formData);
       await this.loadData();
       this.edit = !this.edit;
     },
@@ -335,6 +341,8 @@ export default {
           }
         });
       await this.$store.dispatch("userManagement/fetchHrsAndMentors");
+      let {data} = await this.$http('/api/positions?all=1')
+      this.positions = data
       this.hrs = this.$store.state.userManagement.hrs;
       this.mentors = this.$store.state.userManagement.mentors;
       this.user_data.hrs_ids = this.user_data.hrs.map((a) => a.id);
