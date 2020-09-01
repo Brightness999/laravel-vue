@@ -10,7 +10,6 @@
               color="primary"
             ></vs-list-header>
             <draggable
-              style="min-height:50px"
               data-drag="Todo"
               :list="Todo"
               group="goals"
@@ -28,12 +27,8 @@
                 </vx-card>
               </vs-list-item>
             </draggable>
-            <div>
-              <div>
-                <profile-sidebar />
-              </div>
-            </div>
           </vs-list>
+          <profile-sidebar />
         </div>
         <div class="vx-col w-full md:w-1/3">
           <vs-list>
