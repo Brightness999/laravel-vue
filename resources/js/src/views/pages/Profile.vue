@@ -1,93 +1,5 @@
 <template>
   <div id="page-user-view">
-    <vx-card code-toggler>
-      <div class="vx-row">
-        <div class="vx-col w-full md:w-1/3">
-          <vs-list>
-            <vs-list-header
-              class="block text-center text-lg font-thin"
-              title="TODO"
-              color="primary"
-            ></vs-list-header>
-            <draggable
-              data-drag="Todo"
-              :list="Todo"
-              group="goals"
-              class="p-2 cursor-move"
-              @add="onAdd"
-            >
-              <vs-list-item
-                :data-id="listItem.id"
-                class="block"
-                v-for="(listItem, index) in Todo"
-                :key="index"
-              >
-                <vx-card>
-                  <p>{{listItem.description}}</p>
-                </vx-card>
-              </vs-list-item>
-            </draggable>
-            <profile-sidebar />
-          </vs-list>
-        </div>
-        <div class="vx-col w-full md:w-1/3">
-          <vs-list>
-            <vs-list-header
-              class="block text-center text-lg font-thin"
-              title="IN PROGRESS"
-              color="primary"
-            ></vs-list-header>
-            <draggable
-              data-drag="In Progress"
-              :list="InProgress"
-              group="goals"
-              class="p-2 cursor-move"
-              style="min-height:200px"
-              @add="onAdd"
-            >
-              <vs-list-item
-                class="block"
-                :data-id="listItem.id"
-                v-for="(listItem, index) in InProgress"
-                :key="index"
-              >
-                <vx-card>
-                  <p>{{listItem.description}}</p>
-                </vx-card>
-              </vs-list-item>
-            </draggable>
-          </vs-list>
-        </div>
-        <div class="vx-col w-full md:w-1/3">
-          <vs-list>
-            <vs-list-header
-              class="block text-center text-lg font-thin"
-              title="DONE"
-              color="primary"
-            ></vs-list-header>
-            <draggable
-              data-drag="Done"
-              :list="Done"
-              group="goals"
-              class="p-2 cursor-move"
-              style="min-height:200px"
-              @add="onAdd"
-            >
-              <vs-list-item
-                :data-id="listItem.id"
-                class="block"
-                v-for="(listItem, index) in Done"
-                :key="index"
-              >
-                <vx-card>
-                  <p>{{listItem.description}}</p>
-                </vx-card>
-              </vs-list-item>
-            </draggable>
-          </vs-list>
-        </div>
-      </div>
-    </vx-card>
     <form @submit.prevent="save">
       <div class="flex justify-end mt-2">
         <div>
@@ -277,10 +189,105 @@
         </div>
       </div>
     </form>
-    <p class="mt-3">
-      Smart goals set you up for
-      <code>success</code> by making goals specific, achievable, realistic and timely.
-    </p>
+    <div class="mt-5">
+      <vx-card code-toggler>
+        <div
+          class="content-area__heading pr-4 border-0 md:border-r border-solid border-grey-light mb-4"
+        >
+          <h2 class="mb-5">Smart Goals</h2>
+        </div>
+        <p class="mt-1 mb-1">
+          Smart goals set you up for
+          <code>success</code> by making goals specific, achievable, realistic and timely.
+        </p>
+        <div class="vx-row">
+          <div class="vx-col w-full md:w-1/3">
+            <vs-list>
+              <vs-list-header
+                class="block text-center text-lg font-thin"
+                title="TODO"
+                color="primary"
+              ></vs-list-header>
+              <draggable
+                data-drag="Todo"
+                :list="Todo"
+                group="goals"
+                class="p-2 cursor-move"
+                @add="onAdd"
+              >
+                <vs-list-item
+                  :data-id="listItem.id"
+                  class="block"
+                  v-for="(listItem, index) in Todo"
+                  :key="index"
+                >
+                  <vx-card>
+                    <p>{{listItem.description}}</p>
+                  </vx-card>
+                </vs-list-item>
+              </draggable>
+              <profile-sidebar />
+            </vs-list>
+          </div>
+          <div class="vx-col w-full md:w-1/3">
+            <vs-list>
+              <vs-list-header
+                class="block text-center text-lg font-thin"
+                title="IN PROGRESS"
+                color="primary"
+              ></vs-list-header>
+              <draggable
+                data-drag="In Progress"
+                :list="InProgress"
+                group="goals"
+                class="p-2 cursor-move"
+                style="min-height:200px"
+                @add="onAdd"
+              >
+                <vs-list-item
+                  class="block"
+                  :data-id="listItem.id"
+                  v-for="(listItem, index) in InProgress"
+                  :key="index"
+                >
+                  <vx-card>
+                    <p>{{listItem.description}}</p>
+                  </vx-card>
+                </vs-list-item>
+              </draggable>
+            </vs-list>
+          </div>
+          <div class="vx-col w-full md:w-1/3">
+            <vs-list>
+              <vs-list-header
+                class="block text-center text-lg font-thin"
+                title="DONE"
+                color="primary"
+              ></vs-list-header>
+              <draggable
+                data-drag="Done"
+                :list="Done"
+                group="goals"
+                class="p-2 cursor-move"
+                style="min-height:200px"
+                @add="onAdd"
+              >
+                <vs-list-item
+                  :data-id="listItem.id"
+                  class="block"
+                  v-for="(listItem, index) in Done"
+                  :key="index"
+                >
+                  <vx-card>
+                    <p>{{listItem.description}}</p>
+                  </vx-card>
+                </vs-list-item>
+              </draggable>
+            </vs-list>
+          </div>
+        </div>
+      </vx-card>
+    </div>
   </div>
 </template>
 
