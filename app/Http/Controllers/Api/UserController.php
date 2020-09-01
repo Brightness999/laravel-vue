@@ -95,7 +95,7 @@ class UserController extends Controller
     {
         $params = $request->all();
 
-        if (isset($request['campaign_id'])) {
+        if (isset($request['campaign'])) {
             $campaign              = $this->campaignRepository->create([
                 'name' => $params['campaign']
             ]);
