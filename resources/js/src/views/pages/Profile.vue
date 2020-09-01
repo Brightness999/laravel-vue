@@ -249,6 +249,7 @@ export default {
     return {
       user_data: null,
       user_not_found: false,
+      positions: [],
       edit: false,
       hrs: [],
       mentors: [],
