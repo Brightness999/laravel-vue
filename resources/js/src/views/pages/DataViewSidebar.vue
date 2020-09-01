@@ -112,7 +112,6 @@ export default {
   data() {
     return {
       activePrompt: false,
-
       taskLocal: {
         name: "",
         description: "",

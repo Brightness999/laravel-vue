@@ -1,16 +1,6 @@
-<!-- =========================================================================================
-  File Name: UserView.vue
-  Description: User View page
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
 <template>
   <div id="page-user-view">
     <vx-card code-toggler>
-      <!-- List 1 -->
       <div class="vx-row">
         <div class="vx-col w-full md:w-1/3">
           <vs-list>
