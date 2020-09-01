@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6 pb-2 pt-6 text-center">
+  <div class="text-center">
     <data-view-sidebar
       :isSidebarActive="addNewDataSidebar"
       @closeSidebar="toggleDataSidebar"
