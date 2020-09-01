@@ -53,7 +53,7 @@
               <label class="block mt-5">Status</label>
               <v-select
                 name="Status"
-                class="w-full mb-4 mt-1"
+                class="w-full mb-4 mt-1 borderchange"
                 v-validate="'required'"
                 v-model="taskLocal.status"
                 :options="['Todo','In Progress','Done']"
@@ -274,5 +274,56 @@ export default {
   &:not(.ps) {
     overflow-y: auto;
   }
+}
+
+body
+  > div.vs-content-sidebar.add-new-data-sidebar.items-no-padding
+  > div.vs-sidebar.vs-sidebar-primary.vs-sidebar-position-right
+  > div.vs-sidebar--items
+  > section
+  > div.p-6
+  > div
+  > div
+  > div
+  > div:nth-child(5)
+  :focus {
+  border: 1px solid #7367f0;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+body
+  > div.vs-content-sidebar.add-new-data-sidebar.items-no-padding
+  > div.vs-sidebar.vs-sidebar-primary.vs-sidebar-position-right
+  > div.vs-sidebar--items
+  > section
+  > div.p-6
+  > div
+  > div
+  > div
+  > div:nth-child(11)
+  :focus {
+  border: 1px solid #7367f0;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+body
+  > div.vs-content-sidebar.add-new-data-sidebar.items-no-padding
+  > div.vs-sidebar.vs-sidebar-primary.vs-sidebar-position-right
+  > div.vs-sidebar--items
+  > section
+  > div.p-6
+  > div
+  > div
+  > div
+  > div.v-select:focus {
+  border: 1px solid #7367f0;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+.borderchange:hover {
+  border: 1px solid #7367f0 !important;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
 }
 </style>
