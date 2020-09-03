@@ -21,8 +21,10 @@ Route::group([
     ], function() {
     Route::resource('users', 'UserController');
     Route::resource('users.goals', 'GoalController');
+    Route::resource('users.roles', 'UserRolesController');
     Route::post('/invite','InvitationController@store');
     Route::resource('hrs', 'HrsController');
+    Route::resource('roles', 'RolesController');
 });
 
 Route::group([
