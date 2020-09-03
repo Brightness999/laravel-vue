@@ -1437,7 +1437,7 @@ router.beforeEach((to, from, next) => {
 
     // get firebase current user
     const firebaseCurrentUser = firebase.auth().currentUser
-
+    const user = store.state.auth.user
     // if (
     //     to.path === "/pages/login" ||
     //     to.path === "/pages/forgot-password" ||
@@ -1456,6 +1456,11 @@ router.beforeEach((to, from, next) => {
     if (to.meta.authRequired) {
       if (!(isLoggedIn || firebaseCurrentUser)) {
         router.push({ path: '/pages/login', query: { to: to.path } })
+      }
+      else {
+        if((user === null) || user.campaign_id === null) {
+          router.push({ path: '/pages/login', query: { to: to.path } })
+        }
       }
     }
 
