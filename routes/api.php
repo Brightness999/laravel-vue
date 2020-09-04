@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 Route::get('campaigns', 'CampaignContoller@index');
 Route::get('positions', 'PositionController@index');
 
+Route::post('login', 'LoginController@login');
+
 Route::group([
 		'middleware' => 'jwt.auth'
     ], function() {

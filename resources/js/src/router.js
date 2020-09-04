@@ -1452,15 +1452,11 @@ router.beforeEach((to, from, next) => {
     // }
 
     // If auth required, check login. If login fails redirect to login page
-    let isLoggedIn = store.state.auth.access_token !== null
+    let isLoggedIn = store.state.auth?store.state.auth.access_token !== null:false
+    
     if (to.meta.authRequired) {
-      if (!(isLoggedIn || firebaseCurrentUser)) {
+      if ((!(isLoggedIn))) {
         router.push({ path: '/pages/login', query: { to: to.path } })
-      }
-      else {
-        if((user === null) || user.campaign_id === null) {
-          router.push({ path: '/pages/login', query: { to: to.path } })
-        }
       }
     }
 

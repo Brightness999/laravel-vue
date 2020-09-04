@@ -172,9 +172,14 @@ export default {
       this.$store.dispatch('auth/loginWithGithub', { notify: this.$vs.notify })
     },
     async registerUser () {
-      await this.$http.put('/api/users/'+this.userId,{
-        campaign: this.compaign
+      let {data} = await this.$http.post('/api/login',{
+        campaign: this.compaign,
+        email: JSON.parse(localStorage.getItem('user')).email,
+        full_name: JSON.parse(localStorage.getItem('user')).full_name
       })
+      localStorage.setItem('access_token', data.access_token)
+      localStorage.setItem('user', JSON.stringify(data.user))
+      this.$store.commit('auth/INITIALIZE')
       localStorage.removeItem('company')
       this.$router.push({name: 'goals'})
     }
