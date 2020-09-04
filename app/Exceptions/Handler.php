@@ -76,7 +76,7 @@ class Handler extends ExceptionHandler
     		$exceptionCode = 404;
         }
         
-        if($exception instanceof ValidationException) {
+        if ($exception instanceof ValidationException) {
             return parent::render($request, $exception);
         }
     	
