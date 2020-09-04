@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CampaignLoginRequest;
 use App\Repositories\CampaignRepository;
 use App\Repositories\UserRepository;
-use App\User;
-use Illuminate\Http\Request;
+use App\Role;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -29,7 +28,13 @@ class LoginController extends Controller
         $this->campaignRepository = $campaignRepository;
         $this->userRepository = $userRepository;
     }
-    
+
+    /**
+     * Register and login a new user.
+     *
+     * @param  App\Http\Requests\CampaignLoginRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function login(CampaignLoginRequest $request) 
     {
         $user = $this->userRepository->where('email', $request->email)->first();
@@ -47,6 +52,7 @@ class LoginController extends Controller
                 'campaign_id' => $campaign->id,
                 'password' => Hash::make($request->email.$request->full_name)
             ]);
+            $user->assignRole(Role::ADMIN_ROLE);
             $token = JWTAuth::fromUser($user);
         }
 
