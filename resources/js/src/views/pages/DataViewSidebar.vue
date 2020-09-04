@@ -224,6 +224,45 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "@sass/vuexy/apps/DataViewSidebar.scss";
+<style lang="scss" scoped>
+.add-new-data-sidebar {
+  ::v-deep .vs-sidebar--background {
+    z-index: 52010;
+  }
+
+  ::v-deep .vs-sidebar {
+    z-index: 52010;
+    width: 40%;
+    max-width: 90vw;
+
+    .vs-sidebar--items {
+      .vs-list--slot {
+        width: 100% !important;
+        display: inline-flex !important;
+        margin: 0 !important;
+
+        .vs-con-input-label {
+          width: 100%;
+        }
+
+        .cursor-pointer {
+          float: right;
+        }
+      }
+    }
+
+    .img-upload {
+      margin-top: 2rem;
+
+      .con-img-upload {
+        padding: 0;
+      }
+
+      .con-input-upload {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
 </style>

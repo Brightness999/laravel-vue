@@ -204,5 +204,54 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@sass/vuexy/apps/DataSidViewBarEdit.scss";
+.add-new-data-sidebar {
+    ::v-deep .vs-sidebar--background {
+        z-index: 52010;
+    }
+
+    ::v-deep .vs-sidebar {
+        z-index: 52010;
+        width: 40%;
+        max-width: 90vw;
+
+        .vs-sidebar--items {
+            .vs-list--slot {
+                width: 100% !important;
+                display: inline-flex !important;
+                margin: 0 !important;
+
+                .vs-con-input-label {
+                    width: 100%;
+                }
+
+                .cursor-pointer {
+                    float: right;
+                }
+            }
+        }
+
+        .img-upload {
+            margin-top: 2rem;
+
+            .con-img-upload {
+                padding: 0;
+            }
+
+            .con-input-upload {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.scroll-area--data-list-add-new {
+    // height: calc(var(--vh, 1vh) * 100 - 4.3rem);
+    height: calc(var(--vh, 1vh) * 100 - 16px - 45px - 82px);
+
+    &:not(.ps) {
+        overflow-y: auto;
+    }
+}
+
 </style>
