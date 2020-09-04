@@ -18,8 +18,10 @@ export default {
       var cookie = JSON.parse(cookie)
       state.access_token = cookie.access_token
       state.user = JSON.parse(cookie.user)
-      localStorage.setItem('access_token',cookie.access_token)
-      axios.defaults.headers.common['Authorization'] = `Bearer ${cookie.access_token}`
+      if(cookie.access_token !== undefined && cookie.access_token !== null) {
+        localStorage.setItem('access_token',cookie.access_token)
+        axios.defaults.headers.common['Authorization'] = `Bearer ${cookie.access_token}`
+      }
       localStorage.setItem('user',cookie.user)
       state.error = cookie.error
       state.redirect = cookie.redirect
@@ -28,7 +30,10 @@ export default {
         localStorage.setItem('company',cookie.company)
       }
     } else {
-      state.access_token = localStorage.getItem('access_token')
+      if(localStorage.getItem('access_token')) {
+        state.access_token = 'Bearer'+ localStorage.getItem('access_token')
+        axios.defaults.headers.common['Authorization'] = 'Bearer'+ localStorage.getItem('access_token')
+      }
       state.user = JSON.parse(localStorage.getItem('user'))
       state.company = parseInt(localStorage.getItem('company'))
     }

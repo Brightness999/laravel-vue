@@ -126,10 +126,13 @@ require('@assets/css/iconfont.css')
 
 Vue.config.productionTip = false
 
-new Vue({
+const app = new Vue({
   router,
   store,
   i18n,
   acl,
   render: h => h(App)
 }).$mount('#app')
+
+
+axios.$app = app
