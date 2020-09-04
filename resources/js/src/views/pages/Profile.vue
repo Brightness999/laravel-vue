@@ -189,7 +189,7 @@
         </div>
       </div>
     </form>
-    <add-cards/>
+    <add-cards />
   </div>
 </template>
 
@@ -203,7 +203,7 @@ export default {
   components: {
     draggable,
     vSelect,
-    addCards
+    addCards,
   },
   data() {
     return {

@@ -1,0 +1,100 @@
+.add-new-data-sidebar {
+    ::v-deep .vs-sidebar--background {
+        z-index: 52010;
+    }
+
+    ::v-deep .vs-sidebar {
+        z-index: 52010;
+        width: 40%;
+        max-width: 90vw;
+
+        .vs-sidebar--items {
+            .vs-list--slot {
+                width: 100% !important;
+                display: inline-flex !important;
+                margin: 0 !important;
+
+                .vs-con-input-label {
+                    width: 100%;
+                }
+
+                .cursor-pointer {
+                    float: right;
+                }
+            }
+        }
+
+        .img-upload {
+            margin-top: 2rem;
+
+            .con-img-upload {
+                padding: 0;
+            }
+
+            .con-input-upload {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.scroll-area--data-list-add-new {
+    // height: calc(var(--vh, 1vh) * 100 - 4.3rem);
+    height: calc(var(--vh, 1vh) * 100 - 16px - 45px - 82px);
+
+    &:not(.ps) {
+        overflow-y: auto;
+    }
+}
+
+body
+    > div.vs-content-sidebar.add-new-data-sidebar.items-no-padding
+    > div.vs-sidebar.vs-sidebar-primary.vs-sidebar-position-right
+    > div.vs-sidebar--items
+    > section
+    > div.p-6
+    > div
+    > div
+    > div
+    > div:nth-child(5)
+    :focus {
+    border: 1px solid #7367f0;
+    box-shadow: 0 3px 10px 0 rgba(233, 181, 181, 0.15);
+    border-radius: 5px;
+}
+body
+    > div.vs-content-sidebar.add-new-data-sidebar.items-no-padding
+    > div.vs-sidebar.vs-sidebar-primary.vs-sidebar-position-right
+    > div.vs-sidebar--items
+    > section
+    > div.p-6
+    > div
+    > div
+    > div
+    > div:nth-child(11)
+    :focus {
+    border: 1px solid #7367f0;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+body
+    > div.vs-content-sidebar.add-new-data-sidebar.items-no-padding
+    > div.vs-sidebar.vs-sidebar-primary.vs-sidebar-position-right
+    > div.vs-sidebar--items
+    > section
+    > div.p-6
+    > div
+    > div
+    > div
+    > div.v-select:focus {
+    border: 1px solid #7367f0;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.borderchange:hover {
+    border: 1px solid #7367f0 !important;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
