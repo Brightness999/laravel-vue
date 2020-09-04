@@ -284,8 +284,4 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.vx-card div p {
-  overflow-wrap: break-word;
-}
-</style>
+<style lang="scss"></style>

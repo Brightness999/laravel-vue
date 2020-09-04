@@ -310,26 +310,4 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.image-container {
-  position: relative;
-  .icon {
-    position: absolute;
-    display: none;
-    color: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    justify-content: center;
-    background: #383838ad;
-  }
-  &:hover {
-    .icon {
-      display: flex;
-      cursor: pointer;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>
