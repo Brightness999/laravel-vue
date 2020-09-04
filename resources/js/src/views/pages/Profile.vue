@@ -189,122 +189,21 @@
         </div>
       </div>
     </form>
-    <div class="mt-5">
-      <vx-card code-toggler>
-        <div
-          class="content-area__heading pr-4 border-0 md:border-r border-solid border-grey-light mb-4"
-        >
-          <h2 class="mb-5">Smart Goals</h2>
-        </div>
-        <p class="mt-1 mb-1">
-          Smart goals set you up for
-          <code>success</code> by making goals specific, achievable, realistic and timely.
-        </p>
-        <div class="vx-row">
-          <div class="vx-col w-full md:w-1/3">
-            <vs-list>
-              <vs-list-header
-                class="block text-center text-lg font-thin"
-                title="TODO"
-                color="primary"
-              ></vs-list-header>
-              <draggable
-                data-drag="Todo"
-                :list="Todo"
-                group="goals"
-                class="p-2 cursor-move"
-                @add="onAdd"
-              >
-                <vs-list-item
-                  :data-id="listItem.id"
-                  class="block"
-                  v-for="(listItem, index) in Todo"
-                  :key="index"
-                >
-                  <vx-card>
-                    <p>{{listItem.description}}</p>
-                  </vx-card>
-                </vs-list-item>
-              </draggable>
-              <profile-sidebar />
-            </vs-list>
-          </div>
-          <div class="vx-col w-full md:w-1/3">
-            <vs-list>
-              <vs-list-header
-                class="block text-center text-lg font-thin"
-                title="IN PROGRESS"
-                color="primary"
-              ></vs-list-header>
-              <draggable
-                data-drag="In Progress"
-                :list="InProgress"
-                group="goals"
-                class="p-2 cursor-move"
-                style="min-height:200px"
-                @add="onAdd"
-              >
-                <vs-list-item
-                  class="block"
-                  :data-id="listItem.id"
-                  v-for="(listItem, index) in InProgress"
-                  :key="index"
-                >
-                  <vx-card>
-                    <p>{{listItem.description}}</p>
-                  </vx-card>
-                </vs-list-item>
-              </draggable>
-            </vs-list>
-          </div>
-          <div class="vx-col w-full md:w-1/3">
-            <vs-list>
-              <vs-list-header
-                class="block text-center text-lg font-thin"
-                title="DONE"
-                color="primary"
-              ></vs-list-header>
-              <draggable
-                data-drag="Done"
-                :list="Done"
-                group="goals"
-                class="p-2 cursor-move"
-                style="min-height:200px"
-                @add="onAdd"
-              >
-                <vs-list-item
-                  :data-id="listItem.id"
-                  class="block"
-                  v-for="(listItem, index) in Done"
-                  :key="index"
-                >
-                  <vx-card>
-                    <p>{{listItem.description}}</p>
-                  </vx-card>
-                </vs-list-item>
-              </draggable>
-            </vs-list>
-          </div>
-        </div>
-      </vx-card>
-    </div>
+    <add-cards />
   </div>
 </template>
 
 <script>
 import moduleUserManagement from "@/store/user-management/moduleUserManagement.js";
-import moduleGoals from "@/store/goals/moduleGoals.js";
-import TodoAddNew from "@/views/apps/goals/TodoAddNew.vue";
 import vSelect from "vue-select";
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 import draggable from "vuedraggable";
-import ProfileSidebar from "./ProfileSidebar.vue";
+import addCards from "./addCards.vue";
 export default {
   components: {
     draggable,
     vSelect,
-    TodoAddNew,
-    ProfileSidebar,
+    addCards,
   },
   data() {
     return {
@@ -322,46 +221,8 @@ export default {
     ...mapState({
       currentUser: (state) => state.auth.user,
     }),
-    Todo: {
-      get() {
-        return this.$store.getters["goals/todoGoals"];
-      },
-      set(value) {
-        this.$store.commit("moduleGoals/setTodo", value);
-      },
-    },
-    goals: {
-      get() {
-        return this.$store.state.goals.goals;
-      },
-      set(value) {
-        this.$store.commit("moduleGoals/setTodo", value);
-      },
-    },
-    InProgress: {
-      get() {
-        return this.$store.getters["goals/inProgressGoals"];
-      },
-      set(value) {
-        this.$store.commit("moduleGoals/setInProgress", value);
-      },
-    },
-    Done: {
-      get() {
-        return this.$store.getters["goals/doneGoals"];
-      },
-      set(value) {
-        this.$store.commit("moduleGoals/setDone", value);
-      },
-    },
   },
   methods: {
-    ...mapActions("goals", ["fetchGoals", "editGoals"]),
-    onAdd(event) {
-      let goalid = event.item.getAttribute("data-id");
-      let status = event.to.getAttribute("data-drag");
-      this.editGoals({ goalid, status });
-    },
     async save() {
       const formData = new FormData();
       formData.append("hrs", JSON.stringify(this.user_data.hrs_ids));
@@ -445,36 +306,10 @@ export default {
       this.$store.registerModule("userManagement", moduleUserManagement);
       moduleUserManagement.isRegistered = true;
     }
-    if (!moduleGoals.isRegistered) {
-      this.$store.registerModule("moduleGoals", moduleGoals);
-      moduleGoals.isRegistered = true;
-    }
+
     let userid = this.currentUser.id;
     await this.loadData();
-    await this.fetchGoals({ userid });
   },
 };
 </script>
-<style lang="scss">
-.image-container {
-  position: relative;
-  .icon {
-    position: absolute;
-    display: none;
-    color: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    justify-content: center;
-    background: #383838ad;
-  }
-  &:hover {
-    .icon {
-      display: flex;
-      cursor: pointer;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

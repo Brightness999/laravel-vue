@@ -10,7 +10,7 @@
     v-model="isSidebarActiveLocal"
   >
     <div class="mt-6 flex items-center justify-between px-6">
-      <h4>{{ Object.entries(this.data).length === 0 ? "ADD NEW" : "UPDATE" }} GOAL</h4>
+      <h4>{{ Object.entries(this.data).length === 0 ? "EDIT" : "UPDATE" }} GOAL</h4>
       <feather-icon icon="XIcon" @click.stop="clearForm" class="cursor-pointer"></feather-icon>
     </div>
     <vs-divider class="mb-0"></vs-divider>
@@ -29,7 +29,7 @@
               <vs-input
                 v-validate="'required'"
                 name="Name"
-                v-model="taskLocal.name"
+                v-model="ediTtaskLocal.name"
                 class="w-full mb-4 mt-1"
               />
 
@@ -43,7 +43,7 @@
                 class="w-full mb-4 mt-1"
                 v-validate="'required'"
                 name="Description"
-                v-model="taskLocal.description"
+                v-model="ediTtaskLocal.description"
               />
               <span
                 class="text-danger text-sm"
@@ -55,7 +55,7 @@
                 name="Status"
                 class="w-full mb-4 mt-1 borderchange"
                 v-validate="'required'"
-                v-model="taskLocal.status"
+                v-model="ediTtaskLocal.status"
                 :options="['Todo','In Progress','Done']"
               />
               <span
@@ -68,7 +68,7 @@
                 class="w-full mb-4 mt-1"
                 v-validate="'required'"
                 name="Evaluation Criteria"
-                v-model="taskLocal.criteria"
+                v-model="ediTtaskLocal.evaluation_criteria"
               />
               <span
                 class="text-danger text-sm"
@@ -81,7 +81,7 @@
     </component>
 
     <div class="flex flex-wrap items-center p-6" slot="footer">
-      <vs-button class="mr-6" @click="submitForm">Submit</vs-button>
+      <vs-button class="mr-6" @click="submitForm">Update</vs-button>
       <vs-button type="border" color="danger" @click="clearFields">Cancel</vs-button>
     </div>
   </vs-sidebar>
@@ -104,6 +104,9 @@ export default {
       type: Object,
       default: () => {},
     },
+    goal: {
+      type: Object,
+    },
   },
   components: {
     VuePerfectScrollbar,
@@ -112,21 +115,10 @@ export default {
   data() {
     return {
       activePrompt: false,
-      taskLocal: {
-        name: "",
-        description: "",
-        status: "",
-        criteria: "",
-        isCompleted: false,
-        tags: [],
-        list: [],
-        invoice_products: [
-          {
-            product_name: "",
-          },
-        ],
+      ediTtaskLocal: {
+        ...this.goal,
       },
-      taskLocalData: {
+      ediTtaskLocalData: {
         list: [],
       },
       settings: {
@@ -139,7 +131,7 @@ export default {
   computed: {
     ...mapState("users", ["currentUser"]),
     validateForm() {
-      return !this.errors.any() && this.taskLocal.title !== "";
+      return !this.errors.any() && this.ediTtaskLocal.title !== "";
     },
     scrollbarTag() {
       return this.$store.getters.scrollbarTag;
@@ -158,44 +150,31 @@ export default {
     },
   },
   methods: {
-    ...mapActions("goals", ["addGoals"]),
+    ...mapActions("goals", ["editGoals"]),
     clearForm() {
       this.isSidebarActiveLocal = false;
       this.clearFields();
     },
     clearFields() {
-      this.taskLocalData.list = [];
+      this.ediTtaskLocalData.list = [];
       this.$validator.reset();
       this.errors.clear();
-      Object.assign(this.taskLocal, {
-        name: "",
-        description: "",
-        status: "",
-        criteria: "",
-        list: [],
-        invoice_products: [
-          {
-            product_name: "",
-          },
-        ],
-        isCompleted: false,
-        tags: [],
-      });
       this.$emit("closeSidebar");
     },
     submitForm() {
       this.$validator.validateAll().then((result) => {
         if (result) {
           let formData = {
-            name: this.taskLocal.name,
-            description: this.taskLocal.description,
-            status: this.taskLocal.status,
-            evaluation_criteria: this.taskLocal.criteria,
+            name: this.ediTtaskLocal.name,
+            description: this.ediTtaskLocal.description,
+            status: this.ediTtaskLocal.status,
+            evaluation_criteria: this.ediTtaskLocal.evaluation_criteria,
           };
           let userid = this.currentUser.data.id;
-          this.addGoals({ formData, userid }).then(() => {
+          let itemId = this.ediTtaskLocal.id;
+          this.editGoals({ formData, userid, itemId }).then(() => {
             this.clearFields();
-            this.taskLocalData.list = [];
+            this.ediTtaskLocalData.list = [];
             this.$emit("closeSidebar");
             this.showAddSuccess();
           });
@@ -205,16 +184,16 @@ export default {
     showAddSuccess() {
       this.$vs.notify({
         color: "success",
-        title: "Goal Added",
-        text: "The goal was successfully added",
+        title: "Goal Updated",
+        text: "The goal was successfully updated",
       });
     },
     addNewRow() {
-      this.taskLocalData.list.push({
-        name: this.taskLocal.invoice_products.slice(-1).pop().product_name,
+      this.ediTtaskLocalData.list.push({
+        name: this.ediTtaskLocal.invoice_products.slice(-1).pop().product_name,
         isTrashed: false,
       });
-      this.taskLocal.invoice_products = [
+      this.ediTtaskLocal.invoice_products = [
         {
           product_name: "",
         },
@@ -224,4 +203,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss"></style>
