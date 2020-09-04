@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Repositories\CampaignRepository;
 use App\Repositories\UserRepository;
-use App\User;
 
 class UserController extends Controller
 {

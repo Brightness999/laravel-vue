@@ -16,10 +16,10 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $user = new User([
-            'full_name' => $request->name,
-            'email'     => $request->email,
-            'password'  => bcrypt($request->password),
-            'service_id' => 'tets'
+            'full_name'  => 'test',
+            'email'      => $request->email,
+            'password'   => bcrypt($request->password),
+            'service_id' => 'test'
 
         ]);
         $user->save();
