@@ -1,5 +1,6 @@
 <template>
   <vs-sidebar
+    click-not-close
     position-right
     parent="body"
     default-index="1"

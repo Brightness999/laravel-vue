@@ -5,7 +5,7 @@
       @closeSidebar="toggleDataSidebar"
       :data="sidebarData"
     />
-    <vs-button @click="addNewData; addNewDataSidebar=!addNewDataSidebar">Add New</vs-button>
+    <vs-button @click="addNewData">Add New</vs-button>
   </div>
 </template>
 <script>
