@@ -10,7 +10,7 @@
       @click="EditData()"
       color="primary"
       icon-pack="feather"
-      icon="icon-edit"
+      icon="icon-edit-2"
       size="23px"
     />
     <vs-avatar
@@ -32,9 +32,6 @@ export default {
       sidebarData: {},
       showIcons: {},
       activeConfirm: false,
-      ids: {
-        ...this.goal,
-      },
     };
   },
   props: ["goal"],
@@ -63,9 +60,8 @@ export default {
       });
     },
     async acceptAlert() {
-      let userid = this.ids.user_id;
-      let itemId = this.ids.id;
-      console.log(itemId);
+      let userid = this.goal.user_id;
+      let itemId = this.goal.id;
       await this.deleteGoals({ userid, itemId });
       this.$vs.notify({
         color: "danger",

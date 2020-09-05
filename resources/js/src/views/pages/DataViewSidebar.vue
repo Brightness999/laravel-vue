@@ -1,6 +1,5 @@
 <template>
   <vs-sidebar
-    click-not-close
     position-right
     parent="body"
     default-index="1"
@@ -224,4 +223,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "@sass/vuexy/_customClasses.scss";
+</style>
+
