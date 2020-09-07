@@ -702,3 +702,15 @@
 .view-upload {
     z-index: 52000;
 }
+
+.add-new-data-sidebar {
+    ::v-deep .vs-sidebar--background {
+      z-index: 52010;
+    }
+
+    ::v-deep .vs-sidebar {
+      z-index: 52010;
+      width: 40%;
+      max-width: 90vw;
+    }
+  }
