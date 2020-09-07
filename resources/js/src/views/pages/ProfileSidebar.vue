@@ -6,6 +6,7 @@
       :data="sidebarData"
     />
     <vs-button @click="addNewData">Add New</vs-button>
+    <div class="hidden" ref="test"></div>
   </div>
 </template>
 <script>
@@ -24,6 +25,9 @@ export default {
     },
     toggleDataSidebar(val = false) {
       this.addNewDataSidebar = val;
+      if (!val) {
+        this.$refs.test.click();
+      }
     },
     editData(data) {
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))

@@ -12,6 +12,7 @@
     <span @click="openConfirm()" class="cursor-pointer">
       <vs-icon icon="delete " size="25px" bg="rgb(251, 251, 251)"></vs-icon>
     </span>
+    <div class="hidden" ref="test"></div>
   </div>
 </template>
 <script>
@@ -35,6 +36,9 @@ export default {
     },
     toggleDataSidebar(val = false) {
       this.EditDataSidebar = val;
+      if (!val) {
+        this.$refs.test.click();
+      }
     },
     //delete Icon
     openConfirm() {
