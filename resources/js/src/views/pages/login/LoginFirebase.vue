@@ -1,50 +1,19 @@
 <template>
   <div>
-    <!-- <vs-input
-        v-validate="'required|email|min:3'"
-        data-vv-validate-on="blur"
-        name="email"
-        icon-no-border
-        icon="icon icon-user"
-        icon-pack="feather"
-        label-placeholder="Email"
-        v-model="email"
-        class="w-full"/>
-    <span class="text-danger text-sm">{{ errors.first('email') }}</span>
-
-    <vs-input
-        data-vv-validate-on="blur"
-        v-validate="'required|min:6|max:10'"
-        type="password"
-        name="password"
-        icon-no-border
-        icon="icon icon-lock"
-        icon-pack="feather"
-        label-placeholder="Password"
-        v-model="password"
-        class="w-full mt-6" />
-    <span class="text-danger text-sm">{{ errors.first('password') }}</span>
-
-    <div class="flex flex-wrap justify-between my-5">
-        <vs-checkbox v-model="checkbox_remember_me" class="mb-3">Remember Me</vs-checkbox>
-        <router-link to="/pages/forgot-password">Forgot Password?</router-link>
-    </div>
-    <vs-button  type="border" @click="registerUser">Register</vs-button>
-    <vs-button class="float-right" :disabled="!validateForm" @click="login">Login</vs-button>
-
-    <vs-divider>OR</vs-divider> -->
     <div v-if="isCompanyFilled">
      <vs-input
-        class="w-full my-5"
-        label="Compaign"
-        v-model="compaign"
+        class="my-5 w-3/4 text-left mx-auto"
+        placeholder="Campaign name"
+        v-model="campaign"
+        icon-pack="feather" 
+        icon="icon-home"
       />
-      <span class="text-danger text-sm">{{ errors.first('compaign') }}</span>
+      <span class="text-danger text-sm">{{ errors.first('campaign') }}</span>
       <div>
-        <vs-button  type="border" :disabled="!validateForm" @click="registerUser">Register</vs-button>
+        <vs-button class="w-3/4 mx-auto" :disabled="!validateForm" @click="registerUser">Register</vs-button>
       </div>
     </div>
-    <div class="social-login-buttons flex flex-wrap items-center mt-4" v-else>
+    <div class="social-login-buttons lg:px-32 flex flex-wrap items-center mt-4" v-else>
 
       <!-- facebook -->
       <div class="bg-facebook pt-3 pb-2 px-4 rounded-lg cursor-pointer mr-4" @click="AuthProvider('facebook')">
@@ -73,21 +42,21 @@
 export default {
   async mounted() {
     let {data} = await this.$http('/api/campaigns')
-    this.compaigns = data
+    this.campaigns = data
   },
   data () {
     return {
       email: 'demo@demo.com',
       password: 'demodemo',
       company: null,
-      compaigns: null,
-      compaign: null,
+      campaigns: null,
+      campaign: null,
       checkbox_remember_me: false
     }
   },
   computed: {
     validateForm () {
-      return !this.errors.any() && this.email !== '' && this.password !== '' && this.compaign
+      return !this.errors.any() && this.email !== '' && this.password !== '' && this.campaign
     },
     isCompanyFilled() {
       return this.$store.state.auth.company
@@ -173,7 +142,7 @@ export default {
     },
     async registerUser () {
       let {data} = await this.$http.post('/api/login',{
-        campaign: this.compaign,
+        campaign: this.campaign,
         email: JSON.parse(localStorage.getItem('user')).email,
         full_name: JSON.parse(localStorage.getItem('user')).full_name
       })
