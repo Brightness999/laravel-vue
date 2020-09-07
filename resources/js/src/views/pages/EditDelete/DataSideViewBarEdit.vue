@@ -81,7 +81,7 @@
     </component>
 
     <div class="flex flex-wrap items-center p-6" slot="footer">
-      <vs-button class="mr-6" @click="submitForm">Update</vs-button>
+      <vs-button class="mr-6" @click="updateForm">Update</vs-button>
       <vs-button type="border" color="danger" @click="clearFields">Cancel</vs-button>
     </div>
   </vs-sidebar>
@@ -118,15 +118,17 @@ export default {
       ediTtaskLocal: {
         ...this.goal,
       },
-      ediTtaskLocalData: {
-        list: [],
-      },
       settings: {
         // perfectscrollbar settings
         maxScrollbarLength: 60,
         wheelSpeed: 0.6,
       },
     };
+  },
+  watch: {
+    goal(val) {
+      this.ediTtaskLocal = { ...val };
+    },
   },
   computed: {
     ...mapState("users", ["currentUser"]),
@@ -156,12 +158,11 @@ export default {
       this.clearFields();
     },
     clearFields() {
-      this.ediTtaskLocalData.list = [];
       this.$validator.reset();
       this.errors.clear();
       this.$emit("closeSidebar");
     },
-    submitForm() {
+    updateForm() {
       this.$validator.validateAll().then((result) => {
         if (result) {
           let formData = {
@@ -174,7 +175,6 @@ export default {
           let itemId = this.ediTtaskLocal.id;
           this.editGoals({ formData, userid, itemId }).then(() => {
             this.clearFields();
-            this.ediTtaskLocalData.list = [];
             this.$emit("closeSidebar");
             this.showAddSuccess();
           });
@@ -187,17 +187,6 @@ export default {
         title: "Goal Updated",
         text: "The goal was successfully updated",
       });
-    },
-    addNewRow() {
-      this.ediTtaskLocalData.list.push({
-        name: this.ediTtaskLocal.invoice_products.slice(-1).pop().product_name,
-        isTrashed: false,
-      });
-      this.ediTtaskLocal.invoice_products = [
-        {
-          product_name: "",
-        },
-      ];
     },
   },
 };

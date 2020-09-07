@@ -1,25 +1,17 @@
 <template>
-  <div class="text-right absolute top-0 right-0 m-0 mr-5">
+  <div class="text-right absolute top-0 right-0 mr-1 mt-1">
     <data-side-view-bar-edit
       :isSidebarActive="EditDataSidebar"
       @closeSidebar="toggleDataSidebar"
       :data="sidebarData"
       :goal="goal"
     />
-    <vs-avatar
-      @click="EditData()"
-      color="primary"
-      icon-pack="feather"
-      icon="icon-edit-2"
-      size="23px"
-    />
-    <vs-avatar
-      @click="openConfirm()"
-      color="danger"
-      icon-pack="feather"
-      icon="icon-trash-2"
-      size="23px"
-    />
+    <span @click="EditData()" class="cursor-pointer">
+      <vs-icon icon="edit" size="25px" bg="rgb(251, 251, 251)"></vs-icon>
+    </span>
+    <span @click="openConfirm()" class="cursor-pointer">
+      <vs-icon icon="delete " size="25px" bg="rgb(251, 251, 251)"></vs-icon>
+    </span>
   </div>
 </template>
 <script>
@@ -43,11 +35,6 @@ export default {
     },
     toggleDataSidebar(val = false) {
       this.EditDataSidebar = val;
-    },
-    editData(data) {
-      // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
-      this.sidebarData = data;
-      this.toggleDataSidebar(true);
     },
     //delete Icon
     openConfirm() {
@@ -76,3 +63,4 @@ export default {
 };
 </script>
 <style lang="stylus" scoped></style>
+<style></style>

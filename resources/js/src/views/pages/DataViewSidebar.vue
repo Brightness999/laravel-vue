@@ -1,13 +1,14 @@
 <template>
   <vs-sidebar
-    click-not-close
+      click-not-close
     position-right
     parent="body"
     default-index="1"
     color="primary"
     class="add-new-data-sidebar items-no-padding"
     spacer
-    v-model="isSidebarActiveLocal"
+    :value="isSidebarActive"
+    @input="$emit('closeSidebar')"
   >
     <div class="mt-6 flex items-center justify-between px-6">
       <h4>{{ Object.entries(this.data).length === 0 ? "ADD NEW" : "UPDATE" }} GOAL</h4>
@@ -160,7 +161,6 @@ export default {
   methods: {
     ...mapActions("goals", ["addGoals"]),
     clearForm() {
-      this.isSidebarActiveLocal = false;
       this.clearFields();
     },
     clearFields() {

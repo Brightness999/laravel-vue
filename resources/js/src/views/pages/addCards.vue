@@ -211,7 +211,16 @@ export default {
         evaluation_criteria,
         status,
       };
-      this.editGoals({ formData, userid, itemId });
+      this.editGoals({ formData, userid, itemId }).then(() => {
+        this.showAddSuccess();
+      });
+    },
+    showAddSuccess() {
+      this.$vs.notify({
+        color: "success",
+        title: "Goal Updated",
+        text: "The goal was successfully updated",
+      });
     },
     async save() {
       const formData = new FormData();
