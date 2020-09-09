@@ -18,7 +18,7 @@ class CreateGoalsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('evaluation_criteria');
-            $table->dateTime('due_date');
+            $table->date('due_date');
             $table->string('priority');
             $table->string('status');
 	        $table->integer('user_id')->unsigned();
