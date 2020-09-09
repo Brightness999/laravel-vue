@@ -57,16 +57,25 @@
               <div class="w-1/2">
                 <label class="block mt-3 ml-1">Date</label>
                 <datepicker
-                  class="mb-4 mt-1 ml-1"
+                  name="Date"
+                  v-validate="'required'"
+                  format="yyyy-MM-dd"
+                  class="my-datepicker mb-4 mt-1 ml-1"
+                  calendar-class="my-datepicker_calendar"
                   placeholder="Select Date"
                   v-model="taskLocal.date"
                 ></datepicker>
               </div>
             </section>
             <span
-              class="text-danger text-sm"
+              class="text-danger text-sm text-left"
               v-show="errors.has('Status')"
             >{{ errors.first('Status') }}</span>
+
+            <span
+              class="text-danger text-sm float-right mr-30px"
+              v-show="errors.has('Date')"
+            >{{ errors.first('Date') }}</span>
 
             <label class="block mt-5">Evaluation Criteria</label>
             <vs-textarea
@@ -124,6 +133,7 @@ export default {
         status: "",
         criteria: "",
         date: "",
+        priority: "11",
         isCompleted: false,
         tags: [],
         list: [],
@@ -193,6 +203,8 @@ export default {
             description: this.taskLocal.description,
             status: this.taskLocal.status,
             evaluation_criteria: this.taskLocal.criteria,
+            due_date: this.taskLocal.date.toISOString().slice(0, 10),
+            priority: this.taskLocal.priority,
           };
           let userid = this.currentUser.data.id;
           this.addGoals({ formData, userid }).then(() => {
@@ -218,3 +230,9 @@ export default {
 @import "@sass/vuexy/_customClasses.scss";
 </style>
 
+<style scoped>
+.my-datepicker >>> .my-datepicker_calendar {
+  width: 245px;
+  height: 260px;
+}
+</style>

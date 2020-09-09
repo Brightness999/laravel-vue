@@ -49,18 +49,39 @@
                 v-show="errors.has('Description')"
               >{{ errors.first('Description') }}</span>
 
-              <label class="block mt-5">Status</label>
-              <v-select
-                name="Status"
-                class="w-full mb-4 mt-1 borderchange"
-                v-validate="'required'"
-                v-model="ediTtaskLocal.status"
-                :options="['Todo','In Progress','Done']"
-              />
+              <section class="selectDate flex">
+                <div class="w-1/2">
+                  <label class="block mt-3">Status</label>
+                  <v-select
+                    name="Status"
+                    class="mb-4 mt-1 mr-1"
+                    v-validate="'required'"
+                    v-model="ediTtaskLocal.status"
+                    :options="['Todo','In Progress','Done']"
+                  />
+                </div>
+                <div class="w-1/2">
+                  <label class="block mt-3 ml-1">Date</label>
+                  <datepicker
+                    name="Date"
+                    v-validate="'required'"
+                    format="yyyy-MM-dd"
+                    class="my-datepicker mb-4 mt-1 ml-1"
+                    calendar-class="my-datepicker_calendar "
+                    placeholder="Select Date"
+                    v-model="ediTtaskLocal.date"
+                  ></datepicker>
+                </div>
+              </section>
               <span
-                class="text-danger text-sm"
+                class="text-danger text-sm text-left"
                 v-show="errors.has('Status')"
               >{{ errors.first('Status') }}</span>
+
+              <span
+                class="text-danger text-sm float-right mr-30px"
+                v-show="errors.has('Date')"
+              >{{ errors.first('Date') }}</span>
 
               <label class="block mt-5">Evaluation Criteria</label>
               <vs-textarea
@@ -92,6 +113,7 @@ import VuePerfectScrollbar from "vue-perfect-scrollbar";
 import axios from "@/axios.js";
 import { mapState, mapActions } from "vuex";
 import { Validator } from "vee-validate";
+import Datepicker from "vuejs-datepicker";
 
 export default {
   props: {
@@ -110,6 +132,7 @@ export default {
   components: {
     VuePerfectScrollbar,
     vSelect,
+    Datepicker,
   },
   data() {
     return {
@@ -169,6 +192,8 @@ export default {
             description: this.ediTtaskLocal.description,
             status: this.ediTtaskLocal.status,
             evaluation_criteria: this.ediTtaskLocal.evaluation_criteria,
+            due_date: this.ediTtaskLocal.due_date,
+            priority: this.ediTtaskLocal.priority,
           };
           let userid = this.currentUser.data.id;
           let itemId = this.ediTtaskLocal.id;
@@ -193,4 +218,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "@sass/vuexy/_customClasses.scss";
+</style>
+
+<style scoped>
+.my-datepicker >>> .my-datepicker_calendar {
+  width: 245px;
+  height: 260px;
+}
 </style>
