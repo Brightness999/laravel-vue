@@ -24,6 +24,8 @@ export default {
       EditDataSidebar: false,
       sidebarData: {},
       showIcons: {},
+      showEdit: {},
+      showDateEdit: {},
       activeConfirm: false,
     };
   },

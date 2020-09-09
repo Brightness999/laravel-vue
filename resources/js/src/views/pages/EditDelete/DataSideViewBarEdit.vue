@@ -67,9 +67,9 @@
                     v-validate="'required'"
                     format="yyyy-MM-dd"
                     class="my-datepicker mb-4 mt-1 ml-1"
-                    calendar-class="my-datepicker_calendar "
+                    calendar-class="my-datepicker_calendar"
                     placeholder="Select Date"
-                    v-model="ediTtaskLocal.date"
+                    v-model="ediTtaskLocal.due_date"
                   ></datepicker>
                 </div>
               </section>
@@ -192,7 +192,7 @@ export default {
             description: this.ediTtaskLocal.description,
             status: this.ediTtaskLocal.status,
             evaluation_criteria: this.ediTtaskLocal.evaluation_criteria,
-            due_date: this.ediTtaskLocal.due_date,
+            due_date: this.ediTtaskLocal.due_date.toISOString().slice(0, 10),
             priority: this.ediTtaskLocal.priority,
           };
           let userid = this.currentUser.data.id;
@@ -216,13 +216,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@sass/vuexy/_customClasses.scss";
-</style>
-
 <style scoped>
 .my-datepicker >>> .my-datepicker_calendar {
   width: 245px;
   height: 260px;
 }
+</style>
+
+<style lang="scss" scoped>
+@import "@sass/vuexy/_customClasses.scss";
 </style>

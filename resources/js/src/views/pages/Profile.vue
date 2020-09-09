@@ -189,7 +189,7 @@
         </div>
       </div>
     </form>
-    <add-cards/>
+    <add-cards />
   </div>
 </template>
 
@@ -203,7 +203,7 @@ export default {
   components: {
     draggable,
     vSelect,
-    addCards
+    addCards,
   },
   data() {
     return {
@@ -214,7 +214,7 @@ export default {
       hrs: [],
       mentors: [],
       id: null,
-      ppr_date: '20-05-2020'
+      ppr_date: "20-05-2020",
     };
   },
   computed: {
@@ -227,7 +227,7 @@ export default {
       const formData = new FormData();
       formData.append("hrs", JSON.stringify(this.user_data.hrs_ids));
       formData.append("mentors", JSON.stringify(this.user_data.mentors_ids));
-      formData.append('position_id', this.user_data.position_id);
+      formData.append("position_id", this.user_data.position_id);
       if (this.user_data.new_avatar)
         formData.append("new_avatar", this.user_data.new_avatar);
       formData.append("_method", "put");

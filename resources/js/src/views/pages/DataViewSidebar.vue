@@ -184,6 +184,8 @@ export default {
         description: "",
         status: "",
         criteria: "",
+        priority: "",
+        date: "",
         list: [],
         invoice_products: [
           {
@@ -226,13 +228,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@sass/vuexy/_customClasses.scss";
-</style>
-
 <style scoped>
 .my-datepicker >>> .my-datepicker_calendar {
   width: 245px;
   height: 260px;
 }
+</style>
+
+<style lang="scss" scoped>
+@import "@sass/vuexy/_customClasses.scss";
 </style>
