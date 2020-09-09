@@ -15,70 +15,74 @@
     </div>
     <vs-divider class="mb-0"></vs-divider>
 
-    <component
-      :is="scrollbarTag"
-      class="scroll-area--data-list-add-new"
-      :settings="settings"
-      :key="$vs.rtl"
-    >
-      <div class="p-6">
-        <div class="vx-row">
-          <div class="vx-col w-full">
-            <div class="mt-5">
-              <label class="block mt-5">Name</label>
-              <vs-input
-                v-validate="'required'"
-                name="Name"
-                v-model="taskLocal.name"
-                class="w-full mb-4 mt-1"
-              />
+    <div class="p-6">
+      <div class="vx-row">
+        <div class="vx-col w-full">
+          <div class="mt-5">
+            <label class="block mt-5">Name</label>
+            <vs-input
+              v-validate="'required'"
+              name="Name"
+              v-model="taskLocal.name"
+              class="w-full mb-4 mt-1"
+            />
 
-              <span
-                class="text-danger text-sm mt-0 mb-10"
-                v-show="errors.has('Name')"
-              >{{ errors.first('Name') }}</span>
+            <span
+              class="text-danger text-sm mt-0 mb-10"
+              v-show="errors.has('Name')"
+            >{{ errors.first('Name') }}</span>
 
-              <label class="block mt-5">Description</label>
-              <vs-textarea
-                class="w-full mb-4 mt-1"
-                v-validate="'required'"
-                name="Description"
-                v-model="taskLocal.description"
-              />
-              <span
-                class="text-danger text-sm"
-                v-show="errors.has('Description')"
-              >{{ errors.first('Description') }}</span>
+            <label class="block mt-5">Description</label>
+            <vs-textarea
+              class="w-full mb-4 mt-1"
+              v-validate="'required'"
+              name="Description"
+              v-model="taskLocal.description"
+            />
+            <span
+              class="text-danger text-sm"
+              v-show="errors.has('Description')"
+            >{{ errors.first('Description') }}</span>
+            <section class="selectDate flex">
+              <div class="w-1/2">
+                <label class="block mt-3">Status</label>
+                <v-select
+                  name="Status"
+                  class="mb-4 mt-1 mr-1"
+                  v-validate="'required'"
+                  v-model="taskLocal.status"
+                  :options="['Todo','In Progress','Done']"
+                />
+              </div>
+              <div class="w-1/2">
+                <label class="block mt-3 ml-1">Date</label>
+                <datepicker
+                  class="mb-4 mt-1 ml-1"
+                  placeholder="Select Date"
+                  v-model="taskLocal.date"
+                ></datepicker>
+              </div>
+            </section>
+            <span
+              class="text-danger text-sm"
+              v-show="errors.has('Status')"
+            >{{ errors.first('Status') }}</span>
 
-              <label class="block mt-5">Status</label>
-              <v-select
-                name="Status"
-                class="w-full mb-4 mt-1 borderchange"
-                v-validate="'required'"
-                v-model="taskLocal.status"
-                :options="['Todo','In Progress','Done']"
-              />
-              <span
-                class="text-danger text-sm"
-                v-show="errors.has('Status')"
-              >{{ errors.first('Status') }}</span>
-
-              <label class="block mt-5">Evaluation Criteria</label>
-              <vs-textarea
-                class="w-full mb-4 mt-1"
-                v-validate="'required'"
-                name="Evaluation Criteria"
-                v-model="taskLocal.criteria"
-              />
-              <span
-                class="text-danger text-sm"
-                v-show="errors.has('Evaluation Criteria')"
-              >{{ errors.first('Evaluation Criteria') }}</span>
-            </div>
+            <label class="block mt-5">Evaluation Criteria</label>
+            <vs-textarea
+              class="w-full mb-4 mt-1"
+              v-validate="'required'"
+              name="Evaluation Criteria"
+              v-model="taskLocal.criteria"
+            />
+            <span
+              class="text-danger text-sm"
+              v-show="errors.has('Evaluation Criteria')"
+            >{{ errors.first('Evaluation Criteria') }}</span>
           </div>
         </div>
       </div>
-    </component>
+    </div>
 
     <div class="flex flex-wrap items-center p-6" slot="footer">
       <vs-button class="mr-6" @click="submitForm">Submit</vs-button>
@@ -93,6 +97,7 @@ import VuePerfectScrollbar from "vue-perfect-scrollbar";
 import axios from "@/axios.js";
 import { mapState, mapActions } from "vuex";
 import { Validator } from "vee-validate";
+import Datepicker from "vuejs-datepicker";
 
 export default {
   props: {
@@ -108,6 +113,7 @@ export default {
   components: {
     VuePerfectScrollbar,
     vSelect,
+    Datepicker,
   },
   data() {
     return {
@@ -117,6 +123,7 @@ export default {
         description: "",
         status: "",
         criteria: "",
+        date: "",
         isCompleted: false,
         tags: [],
         list: [],
@@ -125,9 +132,6 @@ export default {
             product_name: "",
           },
         ],
-      },
-      taskLocalData: {
-        list: [],
       },
       settings: {
         // perfectscrollbar settings
@@ -163,7 +167,6 @@ export default {
       this.clearFields();
     },
     clearFields() {
-      this.taskLocalData.list = [];
       this.$validator.reset();
       this.errors.clear();
       Object.assign(this.taskLocal, {
@@ -194,7 +197,6 @@ export default {
           let userid = this.currentUser.data.id;
           this.addGoals({ formData, userid }).then(() => {
             this.clearFields();
-            this.taskLocalData.list = [];
             this.$emit("closeSidebar");
             this.showAddSuccess();
           });
@@ -207,17 +209,6 @@ export default {
         title: "Goal Added",
         text: "The goal was successfully added",
       });
-    },
-    addNewRow() {
-      this.taskLocalData.list.push({
-        name: this.taskLocal.invoice_products.slice(-1).pop().product_name,
-        isTrashed: false,
-      });
-      this.taskLocal.invoice_products = [
-        {
-          product_name: "",
-        },
-      ];
     },
   },
 };

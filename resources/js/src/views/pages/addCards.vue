@@ -22,11 +22,11 @@
               data-drag="Todo"
               :list="Todo"
               group="goals"
-              class="p-2 cursor-move"
+              class="p-2 cursor-pointer"
               @add="onAdd"
             >
               <vs-list-item
-                class="block"
+                class="block border-none"
                 v-for="(listItem, index) in Todo"
                 :key="index"
                 :data-id="listItem.id"
@@ -35,13 +35,25 @@
                 :data-evaluation_criteria="listItem.evaluation_criteria"
               >
                 <vx-card
-                  class="relative"
+                  class="hover:bg-grey-light"
                   @mouseover="show(listItem.id)"
                   @mouseout="hide(listItem.id)"
                 >
                   <div>
-                    <p class="mt-1">{{listItem.description}}</p>
-                    <div v-show="showIcons[listItem.id]">
+                    <vs-input
+                      class="w-full"
+                      v-if="showEdit[listItem.id]"
+                      :value="listItem.name"
+                      autofocus
+                      @keyup.enter="saveTitle($event,listItem)"
+                      @blur="saveTitle($event,listItem)"
+                    />
+                    <p
+                      v-else
+                      @dblclick="showEditingMode(listItem.id)"
+                      class="mt-1"
+                    >{{listItem.name}}</p>
+                    <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
                   </div>
@@ -62,12 +74,12 @@
               data-drag="In Progress"
               :list="InProgress"
               group="goals"
-              class="p-2 cursor-move"
+              class="p-2 cursor-pointer"
               style="min-height:200px"
               @add="onAdd"
             >
               <vs-list-item
-                class="block"
+                class="block border-none"
                 v-for="(listItem, index) in InProgress"
                 :key="index"
                 :data-id="listItem.id"
@@ -75,9 +87,25 @@
                 :data-description="listItem.description"
                 :data-evaluation_criteria="listItem.evaluation_criteria"
               >
-                <vx-card @mouseover="show(listItem.id)" @mouseout="hide(listItem.id)">
+                <vx-card
+                  class="hover:bg-grey-light"
+                  @mouseover="show(listItem.id)"
+                  @mouseout="hide(listItem.id)"
+                >
                   <div>
-                    <p class="mt-1">{{listItem.description}}</p>
+                    <vs-input
+                      class="w-full"
+                      v-if="showEdit[listItem.id]"
+                      :value="listItem.name"
+                      autofocus
+                      @keyup.enter="saveTitle($event,listItem)"
+                      @blur="saveTitle($event,listItem)"
+                    />
+                    <p
+                      v-else
+                      @dblclick="showEditingMode(listItem.id)"
+                      class="mt-1"
+                    >{{listItem.name}}</p>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
@@ -98,12 +126,12 @@
               data-drag="Done"
               :list="Done"
               group="goals"
-              class="p-2 cursor-move"
+              class="p-2 cursor-pointer"
               style="min-height:200px"
               @add="onAdd"
             >
               <vs-list-item
-                class="block"
+                class="block border-none"
                 v-for="(listItem, index) in Done"
                 :key="index"
                 :data-id="listItem.id"
@@ -111,9 +139,25 @@
                 :data-description="listItem.description"
                 :data-evaluation_criteria="listItem.evaluation_criteria"
               >
-                <vx-card @mouseover="show(listItem.id)" @mouseout="hide(listItem.id)">
+                <vx-card
+                  class="hover:bg-grey-light"
+                  @mouseover="show(listItem.id)"
+                  @mouseout="hide(listItem.id)"
+                >
                   <div>
-                    <p class="mt-1">{{listItem.description}}</p>
+                    <vs-input
+                      class="w-full"
+                      v-if="showEdit[listItem.id]"
+                      :value="listItem.name"
+                      autofocus
+                      @keyup.enter="saveTitle($event,listItem)"
+                      @blur="saveTitle($event,listItem)"
+                    />
+                    <p
+                      v-else
+                      @dblclick="showEditingMode(listItem.id)"
+                      class="mt-1"
+                    >{{listItem.name}}</p>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
@@ -149,6 +193,8 @@ export default {
   data() {
     return {
       showIcons: {},
+      showEdit: {},
+      editedTodo: null,
     };
   },
   computed: {
@@ -161,6 +207,7 @@ export default {
       },
       set(value) {
         this.$store.commit("moduleGoals/setTodo", value);
+        console.log("hhh");
       },
     },
     goals: {
@@ -189,12 +236,30 @@ export default {
     },
   },
   methods: {
+    ...mapActions("goals", ["editGoals"]),
+    saveTitle($event, listItem) {
+      let name = event.target.value;
+      let formData = {
+        ...listItem,
+        name,
+      };
+      let userid = this.currentUser.id;
+      let itemId = listItem.id;
+      this.$set(this.showEdit, itemId, false);
+      this.editGoals({ formData, userid, itemId }).then(() => {});
+    },
+    editTodo: function (todo) {
+      this.editedTodo = todo;
+    },
     ...mapActions("goals", ["fetchGoals", "editGoals"]),
     show(id) {
       this.$set(this.showIcons, id, true);
     },
     hide(id) {
       this.$set(this.showIcons, id, false);
+    },
+    showEditingMode(id) {
+      this.$set(this.showEdit, id, true);
     },
     onAdd(event) {
       let itemId = event.item.getAttribute("data-id");
