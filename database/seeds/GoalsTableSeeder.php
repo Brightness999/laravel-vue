@@ -17,6 +17,8 @@ class GoalsTableSeeder extends Seeder
 		$goal->description = 'Test goal description 1';
 		$goal->evaluation_criteria = 'Test goal evaluation_criteria 1';
 		$goal->status = 'In progress';
+		$goal->priority = 'low';
+		$goal->due_date = \Carbon\Carbon::now();
 		$goal->save();
 		
 		$goal = new \App\Goal();
@@ -25,6 +27,8 @@ class GoalsTableSeeder extends Seeder
 		$goal->description = 'Test goal description 2';
 		$goal->evaluation_criteria = 'Test goal evaluation_criteria 2';
 		$goal->status = 'Done';
+		$goal->due_date = \Carbon\Carbon::now();
+		$goal->priority = 'high';
 		$goal->save();
 		
 		$goal = new \App\Goal();
@@ -33,6 +37,8 @@ class GoalsTableSeeder extends Seeder
 		$goal->description = 'Test goal description 3';
 		$goal->evaluation_criteria = 'Test goal evaluation_criteria 3';
 		$goal->status = 'To do';
+		$goal->due_date = \Carbon\Carbon::now();
+		$goal->priority = 'high';
 		$goal->save();
     }
 }

@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Repositories\CampaignRepository;
 use App\Repositories\UserRepository;
-use App\User;
 
 class UserController extends Controller
 {
@@ -38,8 +37,10 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if (isset($request['hrs_and_mentors'])) {
-            $hrs     = $this->userRepository->getAllHrs()->get();
-            $mentors = $this->userRepository->getAllMentors()->get();
+            $user = auth()->user();
+            $campaign_id = $user->campaign_id;
+            $hrs     = $this->userRepository->getAllHrs($campaign_id)->get();
+            $mentors = $this->userRepository->getAllMentors($campaign_id)->get();
             $users   = $mentors->concat($hrs);
         } else {
             $users = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
@@ -95,7 +96,7 @@ class UserController extends Controller
     {
         $params = $request->all();
 
-        if (isset($request['campaign_id'])) {
+        if (isset($request['campaign'])) {
             $campaign              = $this->campaignRepository->create([
                 'name' => $params['campaign']
             ]);

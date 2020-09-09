@@ -61,26 +61,30 @@ class SocialiteService implements SocialiteServiceInterface
             if ($user) {
                 
                 if ($user->campaign_id) {
-                    return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
-                    && $user->createToken()->save()
+                    return $user->createToken()->save()
                         ? $this->prepareSuccessResult($user)
                         : $this->prepareErrorResult();
                 }
                 else {
-                    return SocialiteHelper::compareUserWithSocialite($user, $userSocial)
-                    && $user->createToken()->save()
+                    return $user->createToken()->save()
                         ? $this->prepareCompanyResult($user)
                         : $this->prepareErrorResult(); 
                 }
             } else {
-                $user = $this->user_repository->create([
+                $user = [
                     'email' => $userSocial->email,
                     'full_name' => $userSocial->name,
-                    'password' => Hash::make($userSocial->email . $userSocial->id),
-                    'api_token' => Str::random(40)
-                ]);
-                $user->assignRole(Role::USER_ROLE);
+                    'api_token' => Str::random(40),
+                    'password' => Hash::make($userSocial->email . $userSocial->id)
+                ];
                 if (isset($_REQUEST['state'])) {
+                    $user = $this->user_repository->create([
+                        'email' => $userSocial->email,
+                        'full_name' => $userSocial->name,
+                        'password' => Hash::make($userSocial->email . $userSocial->id),
+                        'api_token' => Str::random(40)
+                    ]);
+                    $user->assignRole(Role::USER_ROLE);
                     $campaign_id = $this->invitation_slug_repository->findByField('slug',$_REQUEST['state'])->first()->user->campaign_id;
                     $user->campaign_id = $campaign_id;
 
@@ -88,9 +92,7 @@ class SocialiteService implements SocialiteServiceInterface
                         ? $this->prepareSuccessResult($user)
                         : $this->prepareErrorResult();
                 }
-                return $user->save()
-                    ? $this->prepareCompanyResult($user)
-                    : $this->prepareErrorResult();
+                return $this->prepareCompanyResult($user);
             }
         } else {
             return $this->prepareErrorResult();
@@ -135,10 +137,9 @@ class SocialiteService implements SocialiteServiceInterface
         ]);
     }
 
-    private function prepareCompanyResult(User $user): array
+    private function prepareCompanyResult($user): array
     {
         return $this->makeAuthenticationCookie([
-            'access_token' => JWTAuth::fromUser($user),
             'user' => json_encode($user),
             'company' => 1,
             'redirect_url' => '/pages/login'

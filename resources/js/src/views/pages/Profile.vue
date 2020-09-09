@@ -174,14 +174,14 @@
             </tr>
             <tr>
               <td>Ppr date:</td>
-              <td v-if="edit===false" class="font-semibold">{{ user_data.email }}</td>
+              <td v-if="edit===false" class="font-semibold">{{ ppr_date }}</td>
               <td v-else>
                 <vs-input
                   icon-pack="feather"
                   icon="icon-edit-2"
                   icon-after
                   placeholder="PPR date"
-                  vs-placeholder="Nombre"
+                  v-model="ppr_date"
                 />
               </td>
             </tr>
@@ -214,6 +214,7 @@ export default {
       hrs: [],
       mentors: [],
       id: null,
+      ppr_date: '20-05-2020'
     };
   },
   computed: {
@@ -226,6 +227,7 @@ export default {
       const formData = new FormData();
       formData.append("hrs", JSON.stringify(this.user_data.hrs_ids));
       formData.append("mentors", JSON.stringify(this.user_data.mentors_ids));
+      formData.append('position_id', this.user_data.position_id);
       if (this.user_data.new_avatar)
         formData.append("new_avatar", this.user_data.new_avatar);
       formData.append("_method", "put");

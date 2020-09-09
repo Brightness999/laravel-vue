@@ -1437,7 +1437,7 @@ router.beforeEach((to, from, next) => {
 
     // get firebase current user
     const firebaseCurrentUser = firebase.auth().currentUser
-
+    const user = store.state.auth.user
     // if (
     //     to.path === "/pages/login" ||
     //     to.path === "/pages/forgot-password" ||
@@ -1452,9 +1452,10 @@ router.beforeEach((to, from, next) => {
     // }
 
     // If auth required, check login. If login fails redirect to login page
-    let isLoggedIn = store.state.auth.access_token !== null
+    let isLoggedIn = store.state.auth?store.state.auth.access_token !== null:false
+    
     if (to.meta.authRequired) {
-      if (!(isLoggedIn || firebaseCurrentUser)) {
+      if ((!(isLoggedIn))) {
         router.push({ path: '/pages/login', query: { to: to.path } })
       }
     }

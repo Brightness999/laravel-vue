@@ -18,6 +18,8 @@ class CreateGoalsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('evaluation_criteria');
+            $table->dateTime('due_date');
+            $table->string('priority');
             $table->string('status');
 	        $table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

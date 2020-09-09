@@ -28,5 +28,6 @@ export default {
   user: null,
   error: null,
   redirect: null,
-  company: false
+  company: false,
+  access_token: null
 }

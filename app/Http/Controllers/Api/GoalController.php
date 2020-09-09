@@ -51,7 +51,9 @@ class GoalController extends Controller
             'name'                => $encodedData['name'],
             'description'         => $encodedData['description'],
             'evaluation_criteria' => $encodedData['evaluation_criteria'],
-            'status'              => $encodedData['status']
+            'status'              => $encodedData['status'],
+            'due_date'            => $encodedData['due_date'],
+            'priority'            => $encodedData['priority']
         ]);
 
         return response()->json($goal);
@@ -73,7 +75,8 @@ class GoalController extends Controller
             'name'                => $encodedData['name'],
             'description'         => $encodedData['description'],
             'evaluation_criteria' => $encodedData['evaluation_criteria'],
-            'status'              => $encodedData['status']
+            'status'              => $encodedData['status'],
+            'due_date'            => $encodedData['due_date']
         ], $goalId);
         
         return response()->json($goal);

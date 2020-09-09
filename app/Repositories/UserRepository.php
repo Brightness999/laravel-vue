@@ -60,27 +60,33 @@ class UserRepository extends BaseRepository
 	}
 
 	/**
-	 * Get all hrs.
+	 * Get all hrs of a campaign.
 	 *
+	 * @param $campaign_id
+	 * 
 	 * @return UserRepository
 	 */
-	public function getAllHrs()
+	public function getAllHrs($campaign_id)
 	{
-		return $this->whereHas('roles', function($query) {
+		return $this->whereHas('roles', function($query) use ($campaign_id) {
 			$query->where('name', Role::HR_ROLE);
+			$query->where('campaign_id', $campaign_id);
 		});
 	}
 
 
 	/**
-	 * Get all mentors.
+	 * Get all mentors of a campaign.
 	 *
+	 * @param $campaign_id
+	 * 
 	 * @return UserRepository
 	 */
-	public function getAllMentors()
+	public function getAllMentors($campaign_id)
 	{
-		return $this->whereHas('roles', function($query) {
+		return $this->whereHas('roles', function($query) use ($campaign_id) {
 			$query->where('name', Role::MENTOR_ROLE);
+			$query->where('campaign_id', $campaign_id);
 		});
 	}
 

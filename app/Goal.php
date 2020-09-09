@@ -12,7 +12,7 @@ class Goal extends Model
 	 * @var array
 	 */
 	protected $fillable = [
-		'name','user_id', 'description', 'evaluation_criteria', 'status'
+		'name','user_id', 'description', 'evaluation_criteria', 'status', 'due_date', 'priority'
 	];
 
 	/**

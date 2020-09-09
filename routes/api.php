@@ -16,13 +16,17 @@ use Illuminate\Http\Request;
 Route::get('campaigns', 'CampaignContoller@index');
 Route::get('positions', 'PositionController@index');
 
+Route::post('login', 'LoginController@login');
+
 Route::group([
 		'middleware' => 'jwt.auth'
     ], function() {
     Route::resource('users', 'UserController');
     Route::resource('users.goals', 'GoalController');
+    Route::resource('users.roles', 'UserRolesController');
     Route::post('/invite','InvitationController@store');
     Route::resource('hrs', 'HrsController');
+    Route::resource('roles', 'RolesController');
 });
 
 Route::group([
