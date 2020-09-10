@@ -7,10 +7,10 @@
       :goal="goal"
     />
     <span @click="EditData()" class="cursor-pointer">
-      <vs-icon icon="edit" size="25px" bg="rgb(251, 251, 251)"></vs-icon>
+      <vs-icon icon="edit" size="17px"></vs-icon>
     </span>
     <span @click="openConfirm()" class="cursor-pointer">
-      <vs-icon icon="delete " size="25px" bg="rgb(251, 251, 251)"></vs-icon>
+      <vs-icon icon="delete " size="17px"></vs-icon>
     </span>
     <div class="hidden" ref="test"></div>
   </div>
@@ -24,6 +24,8 @@ export default {
       EditDataSidebar: false,
       sidebarData: {},
       showIcons: {},
+      showEdit: {},
+      showDateEdit: {},
       activeConfirm: false,
     };
   },
