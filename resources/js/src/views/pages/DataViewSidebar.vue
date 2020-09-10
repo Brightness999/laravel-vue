@@ -133,7 +133,7 @@ export default {
         status: "",
         criteria: "",
         date: "",
-        priority: "11",
+        priority: "",
         isCompleted: false,
         tags: [],
         list: [],
