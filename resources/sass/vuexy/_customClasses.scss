@@ -548,7 +548,7 @@ ul.bordered-items {
 @media screen and (min-width: 1201px) and (max-width: 1211px),
     only screen and (min-width: 636px) and (max-width: 991px) {
     #account-info-col-1 {
-        //width: calc(100% - 12rem) !important;
+        width: calc(100% - 12rem) !important;
     }
 
     // #account-manage-buttons {
