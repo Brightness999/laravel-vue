@@ -44,10 +44,10 @@
                   <div>
                     <div>
                       <vs-input
-                        v-focus
                         class="w-full"
                         v-if="showEdit[listItem.id]"
                         :value="listItem.name"
+                        autofocus
                         @keyup.enter="saveTitle($event,listItem)"
                         @blur="saveTitle($event,listItem)"
                       />
@@ -293,13 +293,6 @@ export default {
       },
       set(value) {
         this.$store.commit("moduleGoals/setDone", value);
-      },
-    },
-  },
-  directives: {
-    focus: {
-      inserted: function (el) {
-        el.focus();
       },
     },
   },
