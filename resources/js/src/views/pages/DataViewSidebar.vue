@@ -43,8 +43,8 @@
               class="text-danger text-sm"
               v-show="errors.has('Description')"
             >{{ errors.first('Description') }}</span>
-            <section class="selectDate flex">
-              <div class="w-1/2">
+            <section class="selectDate sm:flex">
+              <div class="w-full">
                 <label class="block mt-3">Status</label>
                 <v-select
                   name="Status"
@@ -54,14 +54,14 @@
                   :options="['Todo','In Progress','Done']"
                 />
               </div>
-              <div class="w-1/2">
+              <div class="w-full">
                 <label class="block mt-3 ml-1">Date</label>
                 <datepicker
                   name="Date"
                   v-validate="'required'"
                   format="yyyy-MM-dd"
                   class="my-datepicker mb-4 mt-1 ml-1"
-                  calendar-class="my-datepicker_calendar"
+                  calendar-class="my-datepicker_calendar w-auto h-auto"
                   placeholder="Select Date"
                   v-model="taskLocal.date"
                 ></datepicker>
@@ -227,13 +227,6 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.my-datepicker >>> .my-datepicker_calendar {
-  width: 245px;
-  height: 260px;
-}
-</style>
 
 <style lang="scss" scoped>
 @import "@sass/vuexy/_customClasses.scss";

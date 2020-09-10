@@ -6,7 +6,8 @@
     color="primary"
     class="add-new-data-sidebar items-no-padding"
     spacer
-    v-model="isSidebarActiveLocal"
+    :value="isSidebarActive"
+    @input="$emit('closeSidebar')"
   >
     <div class="mt-6 flex items-center justify-between px-6">
       <h4>{{ Object.entries(this.data).length === 0 ? "EDIT" : "UPDATE" }} GOAL</h4>
@@ -14,91 +15,84 @@
     </div>
     <vs-divider class="mb-0"></vs-divider>
 
-    <component
-      :is="scrollbarTag"
-      class="scroll-area--data-list-add-new"
-      :settings="settings"
-      :key="$vs.rtl"
-    >
-      <div class="p-6">
-        <div class="vx-row">
-          <div class="vx-col w-full">
-            <div class="mt-5">
-              <label class="block mt-5">Name</label>
-              <vs-input
-                v-validate="'required'"
-                name="Name"
-                v-model="ediTtaskLocal.name"
-                class="w-full mb-4 mt-1"
-              />
+    <div class="p-6">
+      <div class="vx-row">
+        <div class="vx-col w-full">
+          <div class="mt-5">
+            <label class="block mt-5">Name</label>
+            <vs-input
+              v-validate="'required'"
+              name="Name"
+              v-model="ediTtaskLocal.name"
+              class="w-full mb-4 mt-1"
+            />
 
-              <span
-                class="text-danger text-sm mt-0 mb-10"
-                v-show="errors.has('Name')"
-              >{{ errors.first('Name') }}</span>
+            <span
+              class="text-danger text-sm mt-0 mb-10"
+              v-show="errors.has('Name')"
+            >{{ errors.first('Name') }}</span>
 
-              <label class="block mt-5">Description</label>
-              <vs-textarea
-                class="w-full mb-4 mt-1"
-                v-validate="'required'"
-                name="Description"
-                v-model="ediTtaskLocal.description"
-              />
-              <span
-                class="text-danger text-sm"
-                v-show="errors.has('Description')"
-              >{{ errors.first('Description') }}</span>
+            <label class="block mt-5">Description</label>
+            <vs-textarea
+              class="w-full mb-4 mt-1"
+              v-validate="'required'"
+              name="Description"
+              v-model="ediTtaskLocal.description"
+            />
+            <span
+              class="text-danger text-sm"
+              v-show="errors.has('Description')"
+            >{{ errors.first('Description') }}</span>
 
-              <section class="selectDate flex">
-                <div class="w-1/2">
-                  <label class="block mt-3">Status</label>
-                  <v-select
-                    name="Status"
-                    class="mb-4 mt-1 mr-1"
-                    v-validate="'required'"
-                    v-model="ediTtaskLocal.status"
-                    :options="['Todo','In Progress','Done']"
-                  />
-                </div>
-                <div class="w-1/2">
-                  <label class="block mt-3 ml-1">Date</label>
-                  <datepicker
-                    name="Date"
-                    v-validate="'required'"
-                    format="yyyy-MM-dd"
-                    class="my-datepicker mb-4 mt-1 ml-1"
-                    calendar-class="my-datepicker_calendar"
-                    placeholder="Select Date"
-                    v-model="ediTtaskLocal.due_date"
-                  ></datepicker>
-                </div>
-              </section>
-              <span
-                class="text-danger text-sm text-left"
-                v-show="errors.has('Status')"
-              >{{ errors.first('Status') }}</span>
+            <section class="selectDate flex">
+              <div class="w-1/2">
+                <label class="block mt-3">Status</label>
+                <v-select
+                  name="Status"
+                  class="mb-4 mt-1 mr-1"
+                  v-validate="'required'"
+                  v-model="ediTtaskLocal.status"
+                  :options="['Todo','In Progress','Done']"
+                />
+              </div>
+              <div class="w-1/2">
+                <label class="block mt-3 ml-1">Date</label>
+                <datepicker
+                  name="Date"
+                  v-validate="'required'"
+                  format="yyyy-MM-dd"
+                  class="my-datepicker mb-4 mt-1 ml-1"
+                  calendar-class="my-datepicker_calendar w-auto h-auto"
+                  placeholder="Select Date"
+                  v-model="ediTtaskLocal.due_date"
+                ></datepicker>
+              </div>
+            </section>
+            <span
+              class="text-danger text-sm text-left"
+              v-show="errors.has('Status')"
+            >{{ errors.first('Status') }}</span>
 
-              <span
-                class="text-danger text-sm float-right mr-30px"
-                v-show="errors.has('Date')"
-              >{{ errors.first('Date') }}</span>
+            <span
+              class="text-danger text-sm float-right mr-30px"
+              v-show="errors.has('Date')"
+            >{{ errors.first('Date') }}</span>
 
-              <label class="block mt-5">Evaluation Criteria</label>
-              <vs-textarea
-                class="w-full mb-4 mt-1"
-                v-validate="'required'"
-                name="Evaluation Criteria"
-                v-model="ediTtaskLocal.evaluation_criteria"
-              />
-              <span
-                class="text-danger text-sm"
-                v-show="errors.has('Evaluation Criteria')"
-              >{{ errors.first('Evaluation Criteria') }}</span>
-            </div>
+            <label class="block mt-5">Evaluation Criteria</label>
+            <vs-textarea
+              class="w-full mb-4 mt-1"
+              v-validate="'required'"
+              name="Evaluation Criteria"
+              v-model="ediTtaskLocal.evaluation_criteria"
+            />
+            <span
+              class="text-danger text-sm"
+              v-show="errors.has('Evaluation Criteria')"
+            >{{ errors.first('Evaluation Criteria') }}</span>
           </div>
         </div>
       </div>
-    </component>
+    </div>
 
     <div class="flex flex-wrap items-center p-6" slot="footer">
       <vs-button class="mr-6" @click="updateForm">Update</vs-button>
@@ -192,7 +186,7 @@ export default {
             description: this.ediTtaskLocal.description,
             status: this.ediTtaskLocal.status,
             evaluation_criteria: this.ediTtaskLocal.evaluation_criteria,
-            due_date: this.ediTtaskLocal.due_date.toISOString().slice(0, 10),
+            due_date: this.ediTtaskLocal.due_date,
             priority: this.ediTtaskLocal.priority,
           };
           let userid = this.currentUser.data.id;
@@ -215,13 +209,6 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.my-datepicker >>> .my-datepicker_calendar {
-  width: 245px;
-  height: 260px;
-}
-</style>
 
 <style lang="scss" scoped>
 @import "@sass/vuexy/_customClasses.scss";
