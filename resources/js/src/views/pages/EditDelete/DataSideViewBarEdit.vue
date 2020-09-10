@@ -94,9 +94,9 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap items-center p-6" slot="footer">
-      <vs-button class="mr-6" @click="updateForm">Update</vs-button>
-      <vs-button type="border" color="danger" @click="clearFields">Cancel</vs-button>
+    <div class="flex flex-wrap justify-evenly p-6" slot="footer">
+      <vs-button class="my-1" @click="updateForm">Update</vs-button>
+      <vs-button class="my-1" type="border" color="danger" @click="clearFields">Cancel</vs-button>
     </div>
   </vs-sidebar>
 </template>
