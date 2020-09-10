@@ -649,3 +649,11 @@ ul.bordered-items {
         }
     }
 }
+
+.vx-card {
+	.cards {
+		&:hover {
+			background-color: rgb(245, 245, 245) !important;
+		}
+	}
+}

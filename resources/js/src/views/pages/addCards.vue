@@ -37,43 +37,15 @@
                 :data-priority="listItem.priority "
               >
                 <vx-card
-                  class="hover:bg-grey-light"
+                  @click="EditData(listItem)"
+                  class="cards shadow-md"
                   @mouseover="show(listItem.id)"
                   @mouseout="hide(listItem.id)"
                 >
                   <div>
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showEdit[listItem.id]"
-                        :value="listItem.name"
-                        autofocus
-                        @keyup.enter="saveTitle($event,listItem)"
-                        @blur="saveTitle($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingMode(listItem.id)"
-                        class="mt-1 uppercase font-bold"
-                      >{{listItem.name}}</p>
-                    </div>
-
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showDateEdit[listItem.id]"
-                        :value="listItem.due_date"
-                        autofocus
-                        @keyup.enter="saveDate($event,listItem)"
-                        @blur="saveDate($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingModeDate(listItem.id)"
-                        class="mt-1 font-medium"
-                      >{{listItem.due_date}}</p>
-                    </div>
-                    <div class="text-center" v-show="showIcons[listItem.id]">
+                    <p class="mb-3 font-bold break-words">{{listItem.name}}</p>
+                    <p class="font-medium">{{listItem.due_date}}</p>
+                    <div v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
                   </div>
@@ -110,42 +82,15 @@
                 :data-priority="listItem.priority "
               >
                 <vx-card
-                  class="hover:bg-grey-light"
+                  @click="EditData(listItem)"
+                  class="cards shadow-md"
                   @mouseover="show(listItem.id)"
                   @mouseout="hide(listItem.id)"
                 >
                   <div>
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showEdit[listItem.id]"
-                        :value="listItem.name"
-                        autofocus
-                        @keyup.enter="saveTitle($event,listItem)"
-                        @blur="saveTitle($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingMode(listItem.id)"
-                        class="mt-1 uppercase font-bold"
-                      >{{listItem.name}}</p>
-                    </div>
+                    <p class="mb-3 font-bold break-words">{{listItem.name}}</p>
+                    <p class="font-medium">{{listItem.due_date}}</p>
 
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showDateEdit[listItem.id]"
-                        :value="listItem.due_date"
-                        autofocus
-                        @keyup.enter="saveDate($event,listItem)"
-                        @blur="saveDate($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingModeDate(listItem.id)"
-                        class="mt-1 font-medium"
-                      >{{listItem.due_date}}</p>
-                    </div>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
@@ -182,42 +127,14 @@
                 :data-priority="listItem.priority "
               >
                 <vx-card
-                  class="hover:bg-grey-light"
+                  @click="EditData(listItem)"
+                  class="cards shadow-md"
                   @mouseover="show(listItem.id)"
                   @mouseout="hide(listItem.id)"
                 >
                   <div>
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showEdit[listItem.id]"
-                        :value="listItem.name"
-                        autofocus
-                        @keyup.enter="saveTitle($event,listItem)"
-                        @blur="saveTitle($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingMode(listItem.id)"
-                        class="mt-1 uppercase font-bold"
-                      >{{listItem.name}}</p>
-                    </div>
-
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showDateEdit[listItem.id]"
-                        :value="listItem.due_date"
-                        autofocus
-                        @keyup.enter="saveDate($event,listItem)"
-                        @blur="saveDate($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingModeDate(listItem.id)"
-                        class="mt-1 font-medium"
-                      >{{listItem.due_date}}</p>
-                    </div>
+                    <p class="mb-3 font-bold break-words">{{listItem.name}}</p>
+                    <p class="font-medium">{{listItem.due_date}}</p>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
@@ -229,6 +146,13 @@
         </div>
       </div>
     </vx-card>
+    <data-side-view-bar-edit
+      :isSidebarActive="EditDataSidebar"
+      @closeSidebar="toggleDataSidebar"
+      :data="sidebarData"
+      :goal="selectedGoal"
+    />
+    <div class="hidden" ref="test"></div>
   </div>
 </template>
 
@@ -242,6 +166,8 @@ import { mapState, mapActions } from "vuex";
 import draggable from "vuedraggable";
 import ProfileSidebar from "./ProfileSidebar.vue";
 import EditSidebar from "./EditDelete/EditSidebar.vue";
+import DataSideViewBarEdit from "./EditDelete/DataSideViewBarEdit.vue";
+
 export default {
   components: {
     draggable,
@@ -249,13 +175,14 @@ export default {
     TodoAddNew,
     ProfileSidebar,
     EditSidebar,
+    DataSideViewBarEdit,
   },
   data() {
     return {
       showIcons: {},
-      showEdit: {},
-      showDateEdit: {},
-      editedTodo: null,
+      EditDataSidebar: false,
+      sidebarData: {},
+      selectedGoal: {},
     };
   },
   computed: {
@@ -268,7 +195,6 @@ export default {
       },
       set(value) {
         this.$store.commit("moduleGoals/setTodo", value);
-        console.log("hhh");
       },
     },
     goals: {
@@ -297,41 +223,23 @@ export default {
     },
   },
   methods: {
-    ...mapActions("goals", ["editGoals"]),
-    saveTitle($event, listItem) {
-      let name = event.target.value;
-      let formData = {
-        ...listItem,
-        name,
-      };
-      let userid = this.currentUser.id;
-      let itemId = listItem.id;
-      this.$set(this.showEdit, itemId, false);
-      this.editGoals({ formData, userid, itemId }).then(() => {});
-    },
-    saveDate($event, listItem) {
-      let due_date = event.target.value;
-      let formData = {
-        ...listItem,
-        due_date,
-      };
-      let userid = this.currentUser.id;
-      let itemId = listItem.id;
-      this.$set(this.showDateEdit, itemId, false);
-      this.editGoals({ formData, userid, itemId }).then(() => {});
-    },
     ...mapActions("goals", ["fetchGoals", "editGoals"]),
+    EditData(goal) {
+      this.selectedGoal = goal;
+      this.sidebarData = {};
+      this.toggleDataSidebar(true);
+    },
+    toggleDataSidebar(val = false) {
+      this.EditDataSidebar = val;
+      if (!val) {
+        this.$refs.test.click();
+      }
+    },
     show(id) {
       this.$set(this.showIcons, id, true);
     },
     hide(id) {
       this.$set(this.showIcons, id, false);
-    },
-    showEditingMode(id) {
-      this.$set(this.showEdit, id, true);
-    },
-    showEditingModeDate(id) {
-      this.$set(this.showDateEdit, id, true);
     },
     onAdd(event) {
       let itemId = event.item.getAttribute("data-id");
