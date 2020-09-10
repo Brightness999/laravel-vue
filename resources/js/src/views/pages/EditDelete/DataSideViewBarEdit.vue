@@ -186,7 +186,10 @@ export default {
             description: this.ediTtaskLocal.description,
             status: this.ediTtaskLocal.status,
             evaluation_criteria: this.ediTtaskLocal.evaluation_criteria,
-            due_date: this.ediTtaskLocal.due_date,
+            due_date:
+              typeof this.ediTtaskLocal.due_date == "string"
+                ? this.ediTtaskLocal.due_date
+                : this.ediTtaskLocal.due_date.toISOString().slice(0, 10),
             priority: this.ediTtaskLocal.priority,
           };
           let userid = this.currentUser.data.id;
