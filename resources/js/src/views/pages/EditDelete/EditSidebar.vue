@@ -7,10 +7,10 @@
       :goal="goal"
     />
     <span @click="EditData()" class="cursor-pointer">
-      <vs-icon icon="edit" size="17px"></vs-icon>
+      <vs-icon icon="edit" size="17px" class="hover:bg-grey"></vs-icon>
     </span>
     <span @click="openConfirm()" class="cursor-pointer">
-      <vs-icon icon="delete " size="17px"></vs-icon>
+      <vs-icon icon="delete " size="17px" class="hover:bg-grey"></vs-icon>
     </span>
     <div class="hidden" ref="test"></div>
   </div>
@@ -51,6 +51,7 @@ export default {
         text: "Are you sure you want to delete?",
         accept: this.acceptAlert,
       });
+      event.stopPropagation();
     },
     async acceptAlert() {
       let userid = this.goal.user_id;
@@ -69,4 +70,3 @@ export default {
 };
 </script>
 <style lang="stylus" scoped></style>
-<style></style>
