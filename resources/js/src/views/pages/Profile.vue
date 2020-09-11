@@ -1,5 +1,8 @@
 <template>
-  <div id="page-user-view">
+  <div
+    id="page-user-view"
+    class="border border-solid d-theme-border-grey-light rounded relative overflow-hidden"
+  >
     <form @submit.prevent="save">
       <div class="flex justify-end mt-2">
         <div>
