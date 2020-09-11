@@ -54,6 +54,10 @@
                   v-model="ediTtaskLocal.status"
                   :options="['Todo','In Progress','Done']"
                 />
+                <span
+                  class="text-danger text-sm text-left"
+                  v-show="errors.has('Status')"
+                >{{ errors.first('Status') }}</span>
               </div>
               <div class="w-1/2">
                 <label class="block mt-3 ml-1">Date</label>
@@ -66,17 +70,12 @@
                   placeholder="Select Date"
                   v-model="ediTtaskLocal.due_date"
                 ></datepicker>
+                <span
+                  class="text-danger text-sm float-right mr-30px"
+                  v-show="errors.has('Date')"
+                >{{ errors.first('Date') }}</span>
               </div>
             </section>
-            <span
-              class="text-danger text-sm text-left"
-              v-show="errors.has('Status')"
-            >{{ errors.first('Status') }}</span>
-
-            <span
-              class="text-danger text-sm float-right mr-30px"
-              v-show="errors.has('Date')"
-            >{{ errors.first('Date') }}</span>
 
             <label class="block mt-5">Evaluation Criteria</label>
             <vs-textarea
@@ -94,9 +93,9 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap justify-evenly p-6" slot="footer">
-      <vs-button class="my-1" @click="updateForm">Update</vs-button>
-      <vs-button class="my-1" type="border" color="danger" @click="clearFields">Cancel</vs-button>
+    <div class="flex flex-wrap items-center p-6" slot="footer">
+      <vs-button class="mr-6" @click="updateForm">Update</vs-button>
+      <vs-button type="border" color="danger" @click="clearFields">Cancel</vs-button>
     </div>
   </vs-sidebar>
 </template>
