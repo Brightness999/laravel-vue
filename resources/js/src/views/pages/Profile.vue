@@ -1,5 +1,6 @@
 <template>
   <div id="page-user-view">
+    <profile-bar />
     <form @submit.prevent="save">
       <div class="flex justify-end mt-2">
         <div>
@@ -197,6 +198,7 @@
 import moduleUserManagement from "@/store/user-management/moduleUserManagement.js";
 import vSelect from "vue-select";
 import { mapState } from "vuex";
+import profileBar from "./profile/ProfileBar.vue"
 import draggable from "vuedraggable";
 import addCards from "./addCards.vue";
 export default {
@@ -204,6 +206,7 @@ export default {
     draggable,
     vSelect,
     addCards,
+    profileBar
   },
   data() {
     return {

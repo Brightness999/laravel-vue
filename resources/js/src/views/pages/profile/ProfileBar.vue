@@ -1,40 +1,25 @@
 <template>
   <div class="relative">
-
-    <div class="vx-navbar-wrapper" :class="classObj">
-
       <vs-navbar class="vx-navbar navbar-custom navbar-skelton" :color="navbarColorLocal" :class="textColor">
 
         <!-- SM - OPEN SIDEBAR BUTTON -->
         <feather-icon class="sm:inline-flex xl:hidden cursor-pointer p-2" icon="MenuIcon" @click.stop="showSidebar" />
-
-        <!--<bookmarks :navbarColor="navbarColor" v-if="windowWidth >= 992" />-->
-
-        <vs-spacer />
         
-        <profile-drop-down />
-        <span class="flex py-2 cursor-pointer text-primary"
-            @click="logout">
-            <feather-icon icon="LogOutIcon" svgClasses="w-4 h-4" />
-            <span class="ml-2">Logout</span>
-        </span>
+        <vs-spacer />
 
+        <!-- <i18n /> -->
+
+        <profile-drop-down />
       </vs-navbar>
     </div>
-  </div>
 </template>
 
 
 <script>
-import Bookmarks            from './components/Bookmarks.vue'
-import I18n                 from './components/I18n.vue'
-import SearchBar            from './components/SearchBar.vue'
-import CartDropDown         from './components/CartDropDown.vue'
-import NotificationDropDown from './components/NotificationDropDown.vue'
-import ProfileDropDown      from './components/ProfileDropDown.vue'
+import ProfileDropDown from '@/layouts/components/navbar/components/ProfileDropDown.vue'
 
 export default {
-  name: 'the-navbar-vertical',
+  name: 'profile-bar',
   props: {
     navbarColor: {
       type: String,
@@ -42,11 +27,6 @@ export default {
     }
   },
   components: {
-    Bookmarks,
-    I18n,
-    SearchBar,
-    CartDropDown,
-    NotificationDropDown,
     ProfileDropDown
   },
   computed: {
