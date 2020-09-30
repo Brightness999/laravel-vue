@@ -1,6 +1,7 @@
 <template>
   <div id="page-user-view">
     <profile-bar />
+    <!--
     <form @submit.prevent="save">
       <div class="flex justify-end mt-2">
         <div>
@@ -16,8 +17,8 @@
           class="vs-component vs-button vs-button-primary vs-button-filled includeIcon"
           v-if="edit===true"
         >
-          <i class="vs-icon notranslate icon-scale vs-button--icon feather icon-edit null"></i>
-          <span class="vs-button-text vs-button--text">save</span>
+          <i class="vs-icon notranslate icon-scale vs-button&#45;&#45;icon feather icon-edit null"></i>
+          <span class="vs-button-text vs-button&#45;&#45;text">save</span>
         </button>
       </div>
       <vs-alert color="danger" title="User Not Found" :active.sync="user_not_found">
@@ -189,7 +190,7 @@
           </table>
         </div>
       </div>
-    </form>
+    </form>-->
     <add-cards />
   </div>
 </template>
@@ -316,6 +317,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@sass/vuexy/_customClasses.scss";
+<style lang="scss">
+@import "@sass/vuexy/pages/profile.scss";
 </style>

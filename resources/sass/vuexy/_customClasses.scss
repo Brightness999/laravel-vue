@@ -525,26 +525,6 @@ ul.bordered-items {
     }
 }
 
-#page-user-view,
-#page-user-edit {
-    table {
-        td {
-            vertical-align: top;
-            min-width: 140px;
-            padding-bottom: 0.8rem;
-            word-break: break-all;
-        }
-
-        &:not(.permissions-table) {
-            td {
-                @media screen and (max-width: 370px) {
-                    display: block;
-                }
-            }
-        }
-    }
-}
-
 @media screen and (min-width: 1201px) and (max-width: 1211px),
     only screen and (min-width: 636px) and (max-width: 991px) {
     #account-info-col-1 {

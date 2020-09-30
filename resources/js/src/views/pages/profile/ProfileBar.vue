@@ -1,22 +1,15 @@
 <template>
   <div class="relative">
-      <vs-navbar class="vx-navbar navbar-custom navbar-skelton" :color="navbarColorLocal" :class="textColor">
-
-        <!-- SM - OPEN SIDEBAR BUTTON -->
-        <feather-icon class="sm:inline-flex xl:hidden cursor-pointer p-2" icon="MenuIcon" @click.stop="showSidebar" />
-        
-        <vs-spacer />
-
-        <!-- <i18n /> -->
-
-        <profile-drop-down />
-      </vs-navbar>
+      <div class="navbar-custom profile-bar flex" :color="navbarColorLocal" :class="textColor">
+        <profile-photo class="my-3 ml-4"/>
+      </div>
     </div>
 </template>
 
 
 <script>
-import ProfileDropDown from '@/layouts/components/navbar/components/ProfileDropDown.vue'
+import profilePhoto from '@/layouts/components/profilePhoto.vue'
+
 
 export default {
   name: 'profile-bar',
@@ -27,7 +20,7 @@ export default {
     }
   },
   components: {
-    ProfileDropDown
+    profilePhoto
   },
   computed: {
     navbarColorLocal () {

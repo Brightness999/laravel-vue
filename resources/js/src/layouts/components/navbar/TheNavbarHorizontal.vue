@@ -29,7 +29,7 @@
 
       <notification-drop-down />
 
-      <profile-drop-down />
+      <profile-photo-position />
 
     </vs-navbar>
   </div>
@@ -42,7 +42,7 @@ import I18n                 from './components/I18n.vue'
 import SearchBar            from './components/SearchBar.vue'
 import CartDropDown         from './components/CartDropDown.vue'
 import NotificationDropDown from './components/NotificationDropDown.vue'
-import ProfileDropDown      from './components/ProfileDropDown.vue'
+import profilePhotoPosition      from './components/profilePhoto.vue'
 import Logo                 from '../Logo.vue'
 
 export default {
@@ -61,7 +61,7 @@ export default {
     SearchBar,
     CartDropDown,
     NotificationDropDown,
-    ProfileDropDown
+    profilePhotoPosition
   },
   computed: {
     navbarColor () {

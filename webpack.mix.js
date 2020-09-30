@@ -39,7 +39,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 
 // Change below options according to your requirement
-if (mix.inProduction()) {
+/*if (mix.inProduction()) {
     mix.version();
     mix.webpackConfig({
         output: {
@@ -61,4 +61,4 @@ mix.webpackConfig({
     output: {
         chunkFilename: 'js/chunks/[name].js',
     }
-});
+});*/

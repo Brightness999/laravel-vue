@@ -1,14 +1,11 @@
 <template>
   <div class="mt-5">
-    <vx-card code-toggler>
-      <div
-        class="content-area__heading pr-4 border-0 md:border-r border-solid border-grey-light mb-4"
-      >
-        <h2 class="mb-5">Smart Goals</h2>
+    <vx-card code-toggler id="cards-table">
+      <div class="content-area__heading pr-4 border-0 md:border-r border-solid border-grey-light mb-4">
+        <h3 class="mb-5 text-primary">Smart Goals</h3>
       </div>
-      <p class="mt-1 mb-1">
-        Smart goals set you up for
-        <code>success</code> by making goals specific, achievable, realistic and timely.
+      <p class="mt-1 mb-1 smart-text">
+        Smart goals set you up for success by making goals specific, achievable, realistic and timely.
       </p>
       <div class="vx-row">
         <div class="vx-col w-full md:w-1/3">

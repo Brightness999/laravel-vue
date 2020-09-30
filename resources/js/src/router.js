@@ -1434,7 +1434,6 @@ router.afterEach(() => {
 
 router.beforeEach((to, from, next) => {
   firebase.auth().onAuthStateChanged(() => {
-
     // get firebase current user
     const firebaseCurrentUser = firebase.auth().currentUser
     const user = store.state.auth.user

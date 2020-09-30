@@ -47,18 +47,13 @@
                 </div>
                 
                 <div class="ml-auto md:block hidden">
-                  <profile-drop-down class='float-left'/>
-                  <div class="py-2 px-4 cursor-pointer text-primary float-left"
-                      @click="logout">
-                      <feather-icon icon="LogOutIcon" svgClasses="w-4 h-4" />
-                      <span class="ml-2">Logout</span>
-                  </div>
+                  <profile-photo-position class="float-left"/>
+                  <log-out class="float-left"/>
                 </div>
               </div>
             </transition>
 
             <div class="content-area__content">
-
               <back-to-top bottom="5%" :right="$vs.rtl ? 'calc(100% - 2.2rem - 38px)' : '30px'" visibleoffset="500" v-if="!hideScrollToTop">
                 <vs-button icon-pack="feather" icon="icon-arrow-up" class="shadow-lg btn-back-to-top" />
               </back-to-top>
@@ -81,11 +76,11 @@ import BackToTop           from 'vue-backtotop'
 import HNavMenu            from '@/layouts/components/horizontal-nav-menu/HorizontalNavMenu.vue'
 import navMenuItems        from '@/layouts/components/vertical-nav-menu/navMenuItems.js'
 import TheCustomizer       from '@/layouts/components/customizer/TheCustomizer.vue'
-import TheNavbarHorizontal from '@/layouts/components/navbar/TheNavbarHorizontal.vue'
 import TheFooter           from '@/layouts/components/TheFooter.vue'
 import themeConfig         from '@/../themeConfig.js'
 import VNavMenu            from '@/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
-import ProfileDropDown     from '@/layouts/components/navbar/components/ProfileDropDown.vue'
+import profilePhotoPosition        from '@/layouts/components/navbar/components/profilePhotoPosition.vue'
+import logOut              from '@/layouts/components/LogOut.vue';
 
 const VxTour = () => import('@/components/VxTour.vue')
 
@@ -95,10 +90,10 @@ export default {
     HNavMenu,
     TheCustomizer,
     TheFooter,
-    TheNavbarHorizontal,
     VNavMenu,
     VxTour,
-    ProfileDropDown
+    profilePhotoPosition,
+    logOut
   },
   data () {
     return {
@@ -222,7 +217,7 @@ export default {
     },
     toggleHideScrollToTop (val) {
       this.hideScrollToTop = val
-    }
+    },
   },
   created () {
     const color = this.navbarColor === '#fff' && this.isThemeDark ? '#10163a' : this.navbarColor
