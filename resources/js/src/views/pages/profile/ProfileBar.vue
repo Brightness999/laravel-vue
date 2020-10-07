@@ -1,14 +1,32 @@
 <template>
-    <div class="relative flex justify-start" id="profile-bar">
+    <div class="relative flex justify-around" id="profile-bar">
         <div class="navbar-custom profile-bar flex" :color="navbarColorLocal" :class="textColor">
             <profile-photo class="my-3 ml-4"/>
         </div>
         <div class="name-surname flex flex-col justify-center">
-            <vs-input icon-pack="feather" icon="icon-edit-2" placeholder="Name" v-model="name" class="is-label-placeholder"/>
-            <vs-input icon-pack="feather" icon="icon-edit-2" placeholder="Surname" v-model="surname" class="is-label-placeholder"/>
+            <vs-input icon-pack="feather" icon="icon-edit-2" placeholder="Name" v-model="name"
+                      class="is-label-placeholder"/>
+            <vs-input icon-pack="feather" icon="icon-edit-2" placeholder="Surname" v-model="surname"
+                      class="is-label-placeholder"/>
         </div>
         <div class="flex flex-col justify-center">
-            <vs-input class="user-email" disabled label="Email:" placeholder="Your Name" v-model="email" />
+            <vs-input class="user-email" disabled label="Email:" placeholder="Your Name" v-model="email"/>
+        </div>
+        <div class="flex flex-col justify-center">
+            <vs-select placeholder="Position" class="selectExample" label="Position:" label-placeholder="vs-Multiple"
+                       vs-multiple v-model="select1">
+                <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1"/>
+            </vs-select>
+        </div>
+        <div class="flex flex-col justify-center">
+            <vs-select placeholder="HRs:" label="HRs:" multiple vs-autocomplete class="selectExample" v-model="select2">
+                <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2"/>
+            </vs-select>
+        </div>
+        <div class="flex flex-col justify-center">
+            <vs-select placeholder="Mentors" label="Mentors:" multiple vs-autocomplete class="selectExample" v-model="select3">
+                <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options3"/>
+            </vs-select>
         </div>
     </div>
 </template>
@@ -16,7 +34,7 @@
 
 <script>
     import profilePhoto from '@/layouts/components/profilePhoto.vue'
-    
+
     export default {
         name: 'profile-bar',
         props: {
@@ -32,7 +50,25 @@
             return {
                 name: 'Yasamin',
                 surname: 'Alberto',
-                email: 'yasamin.alberto@gmail.com'
+                email: 'yasamin.alberto@gmail.com',
+                select1: [],
+                select2: [],
+                select3: [],
+                options1: [
+                    {text: 'IT', value: 0},
+                    {text: 'Blade Runner', value: 2},
+                    {text: 'Thor Ragnarok', value: 3}
+                ],
+                options2: [
+                    {text: 'Square', value: 1},
+                    {text: 'Rectangle', value: 2},
+                    {text: 'Rombo', value: 3}
+                ],
+                options3: [
+                    {text: 'Square', value: 1},
+                    {text: 'Rectangle', value: 2},
+                    {text: 'Rombo', value: 3}
+                ],
             };
         },
         computed: {
