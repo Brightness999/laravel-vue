@@ -68,9 +68,13 @@
   #profile-bar {
     box-shadow: 0px 0px 32px rgba(191, 191, 191, 0.24);
 
-    .vs-input--input {
+    .vs-input--input, .vs-select--input, .vdp-datepicker input {
       border: 0px !important;
       box-shadow: none !important;
+    }
+    
+    .vs-select--input {
+      padding-left: 20px !important;
     }
 
     .vs-input--icon {
@@ -83,6 +87,7 @@
 
     .vs-con-input-label.is-label-placeholder {
       margin-top: 0px;
+      width: 150px;
     }
 
     .name-surname {
@@ -94,7 +99,7 @@
       }
     }
 
-    .vs-input--label, .vs-select--label {
+    .vs-input--label, .vs-select--label, .profile-date-label {
       color: #BDBDBD;
       font-family: Ubuntu;
       font-style: normal;
@@ -119,6 +124,14 @@
           color: black;
         }
       }
+    }
+    
+    .vs-select--icon {
+        left: 0px;
+         right: auto;
+      }
+    .vdp-datepicker__calendar {
+      right: -30px;
     }
   }
 }

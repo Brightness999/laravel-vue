@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex justify-around" id="profile-bar">
+    <div class="relative flex justify-evenly" id="profile-bar">
         <div class="navbar-custom profile-bar flex" :color="navbarColorLocal" :class="textColor">
             <profile-photo class="my-3 ml-4"/>
         </div>
@@ -13,27 +13,36 @@
             <vs-input class="user-email" disabled label="Email:" placeholder="Your Name" v-model="email"/>
         </div>
         <div class="flex flex-col justify-center">
-            <vs-select placeholder="Position" class="selectExample" label="Position:" label-placeholder="vs-Multiple"
-                       vs-multiple v-model="select1">
+            <vs-select icon="arrow_drop_down_circle" placeholder="Choose your position" class="selectExample" label="Position:" label-placeholder="vs-Multiple" vs-multiple v-model="select1">
                 <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1"/>
             </vs-select>
         </div>
         <div class="flex flex-col justify-center">
-            <vs-select placeholder="HRs:" label="HRs:" multiple vs-autocomplete class="selectExample" v-model="select2">
+            <vs-select icon="arrow_drop_down_circle" placeholder="Choose your hrs:" label="HRs:" multiple vs-autocomplete class="selectExample" v-model="select2">
                 <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2"/>
             </vs-select>
         </div>
         <div class="flex flex-col justify-center">
-            <vs-select placeholder="Mentors" label="Mentors:" multiple vs-autocomplete class="selectExample" v-model="select3">
+            <vs-select icon="arrow_drop_down_circle" placeholder="Choose your mentors" label="Mentors:" multiple vs-autocomplete class="selectExample" v-model="select3">
                 <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options3"/>
             </vs-select>
         </div>
+        <div class="flex flex-col justify-center">
+            <label class="profile-date-label block mt-3 ml-1">Next checkpoint:</label>
+            <datepicker name="Next checkpoint"
+              format="yyyy-MM-dd"
+              class="mb-4 mt-1 ml-1"
+              placeholder="Select Date"
+              calendar-button-icon="cil-calendar">
+            </datepicker>
+          </div>
     </div>
 </template>
 
 
 <script>
     import profilePhoto from '@/layouts/components/profilePhoto.vue'
+    import Datepicker from "vuejs-datepicker";
 
     export default {
         name: 'profile-bar',
@@ -44,7 +53,8 @@
             }
         },
         components: {
-            profilePhoto
+            profilePhoto,
+            Datepicker
         },
         data() {
             return {
@@ -55,19 +65,19 @@
                 select2: [],
                 select3: [],
                 options1: [
-                    {text: 'IT', value: 0},
-                    {text: 'Blade Runner', value: 2},
-                    {text: 'Thor Ragnarok', value: 3}
+                    {text: 'Senior software developer', value: 0},
+                    {text: 'Software developer', value: 2},
+                    {text: 'Junior software developer', value: 3}
                 ],
                 options2: [
-                    {text: 'Square', value: 1},
-                    {text: 'Rectangle', value: 2},
-                    {text: 'Rombo', value: 3}
+                    {text: 'Alex Zhyvotenko', value: 1},
+                    {text: 'Matisa Oleh', value: 2},
+                    {text: 'Viktoria Toichkina', value: 3}
                 ],
                 options3: [
-                    {text: 'Square', value: 1},
-                    {text: 'Rectangle', value: 2},
-                    {text: 'Rombo', value: 3}
+                    {text: 'Viktoria Toichkina', value: 1},
+                    {text: 'Alex Zhyvotenko', value: 2},
+                    {text: 'Romanych', value: 3}
                 ],
             };
         },
