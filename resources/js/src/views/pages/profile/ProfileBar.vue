@@ -27,14 +27,18 @@
                 <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options3"/>
             </vs-select>
         </div>
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-col justify-center profile-date-block">
             <label class="profile-date-label block mt-3 ml-1">Next checkpoint:</label>
-            <datepicker name="Next checkpoint"
-              format="yyyy-MM-dd"
-              class="mb-4 mt-1 ml-1"
-              placeholder="Select Date"
-              calendar-button-icon="cil-calendar">
-            </datepicker>
+            <div class="flex justify-center">
+                <datepicker name="Next checkpoint"
+                  format="yyyy-MM-dd"
+                  class="mb-4 mt-1 ml-1"
+                  placeholder="Select Date"
+                  :calendar-button-icon=testIconClass
+                  :calendar-button-icon-content=testIcon
+                 :calendar-button=test>
+                </datepicker>
+            </div>
           </div>
     </div>
 </template>
@@ -79,6 +83,9 @@
                     {text: 'Alex Zhyvotenko', value: 2},
                     {text: 'Romanych', value: 3}
                 ],
+                test: true,
+                testIcon: 'calendar_today',
+                testIconClass: 'vs-icon notranslate icon-scale icon-select vs-select--icon material-icons null'
             };
         },
         computed: {

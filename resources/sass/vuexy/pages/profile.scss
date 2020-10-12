@@ -133,5 +133,13 @@
     .vdp-datepicker__calendar {
       right: -30px;
     }
+    .profile-date-block {
+      .vdp-datepicker {
+        cursor: pointer;
+      }
+      input {
+        padding-left: 20px;
+      }
+    }
   }
 }
