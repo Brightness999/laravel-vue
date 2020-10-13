@@ -54,6 +54,10 @@
                   v-model="ediTtaskLocal.status"
                   :options="['Todo','In Progress','Done']"
                 />
+                <span
+                  class="text-danger text-sm text-left"
+                  v-show="errors.has('Status')"
+                >{{ errors.first('Status') }}</span>
               </div>
               <div class="w-1/2">
                 <label class="block mt-3 ml-1">Date</label>
@@ -66,17 +70,12 @@
                   placeholder="Select Date"
                   v-model="ediTtaskLocal.due_date"
                 ></datepicker>
+                <span
+                  class="text-danger text-sm float-right mr-30px"
+                  v-show="errors.has('Date')"
+                >{{ errors.first('Date') }}</span>
               </div>
             </section>
-            <span
-              class="text-danger text-sm text-left"
-              v-show="errors.has('Status')"
-            >{{ errors.first('Status') }}</span>
-
-            <span
-              class="text-danger text-sm float-right mr-30px"
-              v-show="errors.has('Date')"
-            >{{ errors.first('Date') }}</span>
 
             <label class="block mt-5">Evaluation Criteria</label>
             <vs-textarea

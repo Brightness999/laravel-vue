@@ -51,6 +51,7 @@ export default {
         text: "Are you sure you want to delete?",
         accept: this.acceptAlert,
       });
+      event.stopPropagation();
     },
     async acceptAlert() {
       let userid = this.goal.user_id;
@@ -68,5 +69,7 @@ export default {
   },
 };
 </script>
-<style lang="stylus" scoped></style>
-<style></style>
+
+<style lang="scss" scoped>
+@import "@sass/vuexy/_customClasses.scss";
+</style>
