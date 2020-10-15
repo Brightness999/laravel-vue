@@ -1,69 +1,147 @@
 @import "@sass/vuexy/_variables";
 
 #page-user-view {
-    table {
-        td {
-            vertical-align: top;
-            min-width: 140px;
-            padding-bottom: 0.8rem;
-            word-break: break-all;
+  table {
+    td {
+      vertical-align: top;
+      min-width: 140px;
+      padding-bottom: 0.8rem;
+      word-break: break-all;
+    }
+
+    &:not(.permissions-table) {
+      td {
+        @media screen and (max-width: 370px) {
+          display: block;
         }
+      }
+    }
+  }
 
-        &:not(.permissions-table) {
-            td {
-                @media screen and (max-width: 370px) {
-                    display: block;
-                }
-            }
+  .profile-img-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -3.6rem;
+    left: 10%;
+    width: 80%;
+    justify-content: space-between;
+  }
+
+  .user-profile-img {
+    border: .3rem solid $white;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .user-latest-image {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .profile-header-nav {
+    background-color: $white;
+  }
+
+  .profile-bar {
+    border-radius: 16px;
+    min-height: 90px;
+    background: $white;
+  }
+
+  #cards-table {
+    background: #F8F8F8;
+    border-radius: 8px;
+  }
+
+  .smart-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+  }
+
+  #profile-bar {
+    box-shadow: 0px 0px 32px rgba(191, 191, 191, 0.24);
+
+    .vs-input--input, .vs-select--input, .vdp-datepicker input {
+      border: 0px !important;
+      box-shadow: none !important;
+    }
+
+    .vs-select--input {
+      padding-left: 20px !important;
+    }
+
+    .vs-input--icon {
+      border-right: 0px !important;
+    }
+
+    .vs-input--input.hasIcon {
+      padding: 0.7rem 1rem 0.7rem 2.5rem !important;
+    }
+
+    .vs-con-input-label.is-label-placeholder {
+      margin-top: 0px;
+      width: 150px;
+    }
+
+    .name-surname {
+      .vs-icon {
+        top: 8px;
+      }
+      .vs-con-input input {
+        //padding-top: 0px !important;
+      }
+    }
+
+    .vs-input--label, .vs-select--label, .profile-date-label {
+      color: #BDBDBD;
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 18px;
+      padding-left: 0px !important;
+    }
+
+    .vs-con-input {
+      color: $content-color;
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 18px;
+
+      input {
+        padding-left: 0px !important;
+        color: $content-color;
+        &:disabled {
+          color: black;
         }
-    }
-    .profile-img-container {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: -3.6rem;
-        left: 10%;
-        width: 80%;
-        justify-content: space-between;
+      }
     }
 
-    .user-profile-img {
-        border: .3rem solid $white;
-        box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.3);
+    .vs-select--icon {
+        left: 0px;
+         right: auto;
+      }
+    .vdp-datepicker__calendar {
+      right: -30px;
     }
-
-    .user-latest-image {
-        transition: all .2s ease-in-out;
-
-        &:hover {
-            transform: scale(1.2);
-        }
+    .profile-date-block {
+      .vdp-datepicker {
+        cursor: pointer;
+      }
+      input {
+        padding-left: 20px;
+      }
     }
-
-    .profile-header-nav {
-        background-color: $white;
-    }
-
-    .profile-bar {
-        border-radius: 16px;
-        box-shadow: 0px 0px 32px rgba(191, 191, 191, 0.24);
-        min-height: 90px;
-        background: $white;
-    }
-
-    #cards-table {
-        background: #F8F8F8;
-        border-radius: 8px;
-    }
-
-    .smart-text {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 18px;
-        display: flex;
-        align-items: center;
-    }
+  }
 }
 
 .image-container {
