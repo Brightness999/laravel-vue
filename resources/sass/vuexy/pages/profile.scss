@@ -66,6 +66,7 @@
   }
 
   #profile-bar {
+    font-family: Ubuntu !important;
     box-shadow: 0px 0px 32px rgba(191, 191, 191, 0.24);
 
     .vs-input--input, .vs-select--input, .vdp-datepicker input {
@@ -81,8 +82,12 @@
       border-right: 0px !important;
     }
 
-    .vs-input--input.hasIcon {
-      padding: 0.7rem 1rem 0.7rem 2.5rem !important;
+    .vs-input--input.hasIcon, .vs-con-input .input-span-placeholder {
+      padding: 0.2rem 1rem 0.7rem 2.5rem !important;
+    }
+    
+    .input-span-placeholder {
+      font-size: 1rem !important;
     }
 
     .vs-con-input-label.is-label-placeholder {
@@ -92,7 +97,7 @@
 
     .name-surname {
       .vs-icon {
-        top: 8px;
+        top: 0.2rem;
       }
       .vs-con-input input {
         //padding-top: 0px !important;
@@ -223,7 +228,7 @@
             }
             .list-titles {
                 .vs-list--title {
-                    font-family: Ubuntu;
+                  
                     font-style: normal;
                     font-weight: 500;
                     font-size: 16px;
