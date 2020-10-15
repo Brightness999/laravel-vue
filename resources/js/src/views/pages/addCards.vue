@@ -1,17 +1,20 @@
 <template>
   <div class="mt-5">
     <vx-card code-toggler id="cards-table">
-      <div class="content-area__heading pr-4 border-0 md:border-r border-solid border-grey-light mb-4">
-        <h3 class="mb-5 text-primary">Smart Goals</h3>
-      </div>
-      <p class="mt-1 mb-1 smart-text">
-        Smart goals set you up for success by making goals specific, achievable, realistic and timely.
-      </p>
-      <div class="vx-row">
+        <div class="top-block">
+            <div class="content-area__heading pr-4">
+                <h3 class="mb-5 text-primary">Smart Goals</h3>
+                <p class="mt-1 mb-1 smart-text">
+                    Smart goals set you up for success by making goals specific, achievable, realistic and timely.
+                </p>
+            </div>
+            <profile-sidebar class="top-button" />
+        </div>
+        <div class="vx-row">
         <div class="vx-col w-full md:w-1/3">
           <vs-list>
             <vs-list-header
-              class="block text-center text-lg font-thin"
+              class="block text-left text-lg font-thin"
               title="TODO"
               color="primary"
             ></vs-list-header>
@@ -19,7 +22,7 @@
               data-drag="Todo"
               :list="Todo"
               group="goals"
-              class="p-2 cursor-pointer"
+              class="cursor-pointer"
               @add="onAdd"
             >
               <vs-list-item
@@ -32,6 +35,7 @@
                 :data-evaluation_criteria="listItem.evaluation_criteria"
                 :data-due_date="listItem.due_date"
                 :data-priority="listItem.priority "
+                style="padding:0px"
               >
                 <vx-card
                   class="hover:bg-grey-light"
@@ -51,7 +55,7 @@
                       <p
                         v-else
                         @dblclick="showEditingMode(listItem.id)"
-                        class="mt-1 uppercase font-bold"
+                        class="mt-1"
                       >{{listItem.name}}</p>
                     </div>
 
@@ -68,7 +72,7 @@
                         v-else
                         @dblclick="showEditingModeDate(listItem.id)"
                         class="mt-1 font-medium"
-                      >{{listItem.due_date}}</p>
+                      ><span>Due date: </span>{{listItem.due_date}}</p>
                     </div>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
@@ -77,13 +81,12 @@
                 </vx-card>
               </vs-list-item>
             </draggable>
-            <profile-sidebar />
           </vs-list>
         </div>
         <div class="vx-col w-full md:w-1/3">
           <vs-list>
             <vs-list-header
-              class="block text-center text-lg font-thin"
+              class="block text-left text-lg font-thin"
               title="IN PROGRESS"
               color="primary"
             ></vs-list-header>
@@ -91,7 +94,7 @@
               data-drag="In Progress"
               :list="InProgress"
               group="goals"
-              class="p-2 cursor-pointer"
+              class="cursor-pointer"
               style="min-height:200px"
               @add="onAdd"
             >
@@ -105,6 +108,7 @@
                 :data-evaluation_criteria="listItem.evaluation_criteria"
                 :data-due_date="listItem.due_date"
                 :data-priority="listItem.priority "
+                style="padding:0px"
               >
                 <vx-card
                   class="hover:bg-grey-light"
@@ -124,7 +128,7 @@
                       <p
                         v-else
                         @dblclick="showEditingMode(listItem.id)"
-                        class="mt-1 uppercase font-bold"
+                        class="mt-1"
                       >{{listItem.name}}</p>
                     </div>
 
@@ -155,7 +159,7 @@
         <div class="vx-col w-full md:w-1/3">
           <vs-list>
             <vs-list-header
-              class="block text-center text-lg font-thin"
+              class="block text-left text-lg font-thin"
               title="DONE"
               color="primary"
             ></vs-list-header>
@@ -163,7 +167,7 @@
               data-drag="Done"
               :list="Done"
               group="goals"
-              class="p-2 cursor-pointer"
+              class="cursor-pointer"
               style="min-height:200px"
               @add="onAdd"
             >
@@ -177,6 +181,7 @@
                 :data-evaluation_criteria="listItem.evaluation_criteria"
                 :data-due_date="listItem.due_date"
                 :data-priority="listItem.priority "
+                style="padding:0px"
               >
                 <vx-card
                   class="hover:bg-grey-light"
@@ -196,7 +201,7 @@
                       <p
                         v-else
                         @dblclick="showEditingMode(listItem.id)"
-                        class="mt-1 uppercase font-bold"
+                        class="mt-1"
                       >{{listItem.name}}</p>
                     </div>
 
@@ -236,15 +241,15 @@ import moduleGoals from "@/store/goals/moduleGoals.js";
 import TodoAddNew from "@/views/apps/goals/TodoAddNew.vue";
 import vSelect from "vue-select";
 import { mapState, mapActions } from "vuex";
-import draggable from "vuedraggable";
 import ProfileSidebar from "./ProfileSidebar.vue";
+import draggable from "vuedraggable";
 import EditSidebar from "./EditDelete/EditSidebar.vue";
 export default {
   components: {
     draggable,
     vSelect,
-    TodoAddNew,
     ProfileSidebar,
+    TodoAddNew,
     EditSidebar,
   },
   data() {
@@ -431,4 +436,3 @@ export default {
   },
 };
 </script>
-<style lang="scss"></style>
