@@ -614,7 +614,7 @@ export default [
     i18n: 'Pages',
     items: [
       {
-        url: '/pages/profile',
+        url: '/profile',
         slug: 'page-profile',
         name: 'Profile',
         icon: 'UserIcon',
@@ -729,7 +729,7 @@ export default [
             target: '_blank'
           },
           {
-            url: '/pages/error-404',
+            url: '/error-404',
             name: '404',
             slug: 'page-error-404',
             i18n: '404',

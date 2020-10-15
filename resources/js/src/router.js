@@ -897,7 +897,7 @@ const router = new Router({
         // Pages Routes
         // =============================================================================
         {
-          path: '/pages/profile',
+          path: '/profile',
           name: 'page-profile',
           component: () => import('@/views/pages/Profile.vue'),
           meta: {
@@ -1367,7 +1367,7 @@ const router = new Router({
           }
         },
         {
-          path: '/pages/error-404',
+          path: '/error-404',
           name: 'page-error-404',
           component: () => import('@/views/pages/Error404.vue'),
           meta: {
@@ -1419,7 +1419,7 @@ const router = new Router({
     // Redirect to 404 page, if no match found
     {
       path: '*',
-      redirect: '/pages/error-404'
+      redirect: '/error-404'
     }
   ]
 })
