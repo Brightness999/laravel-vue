@@ -117,6 +117,11 @@ class UserController extends Controller
             $mentors = json_decode($request['mentors']);
             $this->userRepository->setMentors($id, $mentors);
         }
+        
+        if (isset($request['position'])) {
+            $position = json_decode($request['position']);
+            $params['position'] = $position;
+        }
 
         if (isset($request['new_avatar'])) {
             $file_path        = ImageHelper::uploadFile($request['new_avatar'], '/uploads/user/avatar');
