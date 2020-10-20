@@ -17,7 +17,7 @@ class OutController extends Controller
     public function index($provider)
     {
         $result = $this->socialiteService->loginWithSocialite($provider);
-        return redirect($result['redirect_url'])
-        ->withCookie($result['cookie']);
+        
+        return redirect($result['redirect_url'])->withCookie($result['cookie']);
     }
 }

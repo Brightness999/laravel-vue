@@ -103,6 +103,7 @@ body {
     .navbar-static & {
       min-height: calc(var(--vh, 1vh) * 100 - 8rem);
     }
+    background: $white;
   }
 
   &.content-area-reduced {
@@ -125,7 +126,6 @@ body {
 
 .navbar-floating {
   .router-content {
-    margin-top: 5.5rem;
     @media (max-width: 576px) {
       margin-top: 6rem;
     }

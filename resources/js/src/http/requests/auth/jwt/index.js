@@ -48,7 +48,7 @@ export default {
       }
       
       if (response && response.status === 404) {
-          const notFoundPath = '/pages/error-404';
+          const notFoundPath = '/error-404';
           router.push(notFoundPath).catch(err => {})
       }
       const message = typeof response.data !== 'undefined' ? response.data : 'Something went wrong';

@@ -1,38 +1,260 @@
-/*=========================================================================================
-    File Name: profile.scss
-    Description: Profile page styles
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-==========================================================================================*/
+@import "@sass/vuexy/_variables";
 
+#page-user-view {
+  table {
+    td {
+      vertical-align: top;
+      min-width: 140px;
+      padding-bottom: 0.8rem;
+      word-break: break-all;
+    }
 
-#profile-page {
-    .profile-img-container {
-        display: flex;
-        align-items: center;
+    &:not(.permissions-table) {
+      td {
+        @media screen and (max-width: 370px) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .profile-img-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -3.6rem;
+    left: 10%;
+    width: 80%;
+    justify-content: space-between;
+  }
+
+  .user-profile-img {
+    border: .3rem solid $white;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .user-latest-image {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .profile-header-nav {
+    background-color: $white;
+  }
+
+  .profile-bar {
+    border-radius: 16px;
+    min-height: 90px;
+    background: $white;
+  }
+
+  #cards-table {
+    background: #F8F8F8;
+    border-radius: 8px;
+  }
+
+  .smart-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+  }
+
+  #profile-bar {
+    font-family: Ubuntu !important;
+    box-shadow: 0px 0px 32px rgba(191, 191, 191, 0.24);
+
+    .vs-input--input, .vs-select--input, .vdp-datepicker input {
+      border: 0px !important;
+      box-shadow: none !important;
+    }
+
+    .vs-select--input {
+      padding-left: 20px !important;
+    }
+
+    .vs-input--icon {
+      border-right: 0px !important;
+    }
+
+    .vs-input--input.hasIcon, .vs-con-input .input-span-placeholder {
+      padding: 0.2rem 1rem 0.7rem 2.5rem !important;
+    }
+    
+    .input-span-placeholder {
+      font-size: 1rem !important;
+    }
+
+    .vs-con-input-label.is-label-placeholder {
+      margin-top: 0px;
+      width: 150px;
+    }
+
+    .name-surname {
+      .vs-icon {
+        top: 0.2rem;
+      }
+      .vs-con-input input {
+        //padding-top: 0px !important;
+      }
+    }
+
+    .vs-input--label, .vs-select--label, .profile-date-label {
+      color: #BDBDBD;
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 18px;
+      padding-left: 0px !important;
+    }
+
+    .vs-con-input {
+      color: $content-color;
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 18px;
+
+      input {
+        padding-left: 0px !important;
+        color: $content-color;
+        &:disabled {
+          color: black;
+        }
+      }
+    }
+
+    .vs-select--icon {
+        left: 0px;
+         right: auto;
+      }
+    .vdp-datepicker__calendar {
+      right: -30px;
+    }
+    .profile-date-block {
+      .vdp-datepicker {
+        cursor: pointer;
+      }
+      input {
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.image-container {
+    position: relative;
+    .icon {
         position: absolute;
-        bottom: -3.6rem;
-        left: 10%;
-        width: 80%;
-        justify-content: space-between;
+        display: none;
+        color: white;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-content: center;
+        background: #383838ad;
     }
-
-    .user-profile-img {
-        border: .3rem solid #fff;
-        box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.3);
-    }
-
-    .user-latest-image {
-        transition: all .2s ease-in-out;
-
-        &:hover {
-            transform: scale(1.2);
+    &:hover {
+        .icon {
+            display: flex;
+            cursor: pointer;
         }
     }
+}
+.top-block {
+    margin-bottom: 2rem;
+    .text-primary {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 25px;
+        display: flex;
+        align-items: center;
+    }
+    p {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
 
-    .profile-header-nav {
-        background-color: #fff;
+        /* Gray 2 */
+
+        color: #4F4F4F;
+    }
+    display: flex;
+    .top-button {
+        button {
+            .vs-button-text {
+                font-family: Ubuntu;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 18px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #FFFFFF;
+            }
+            padding: 1.1rem 4.9rem !important;
+            background: #7D70FE !important;
+            border: 1px solid #7D70FE;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        margin: auto 0 auto auto;
+    }
+}
+
+.vx-card__body {
+    .vs-list {
+        padding: 0 !important;
+        .vs-list--header {
+            box-shadow: none;
+            div {
+                padding: 0 !important;
+            }
+            .list-titles {
+                .vs-list--title {
+                  
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: center;
+                    text-transform: uppercase;
+                    color: #4F4F4F;
+                }
+            }
+        }
+    }
+    .vx-card__collapsible-content {
+        .vx-card__body {
+            .mt-1 {
+                font-family: Ubuntu;
+                font-style: normal;
+                font-weight: normal !important;
+                font-size: 16px;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                color: #4F4F4F;
+                max-width: 370px;
+            }
+            padding: 1rem !important;
+        }
     }
 }

@@ -133,7 +133,7 @@ class SocialiteService implements SocialiteServiceInterface
             'api_token' => $user->api_token,
             'access_token' => JWTAuth::fromUser($user),
             'user' => json_encode($user),
-            'redirect_url' => '/apps/goals/all'
+            'redirect_url' => '/profile'
         ]);
     }
 
