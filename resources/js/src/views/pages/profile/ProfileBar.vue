@@ -45,7 +45,7 @@
 
 
 <script>
-    import profilePhoto from '@/layouts/components/profilePhoto.vue'
+    import profilePhoto from '@/layouts/components/ProfilePhoto.vue'
     import Datepicker from "vuejs-datepicker";
 
     export default {
