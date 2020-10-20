@@ -36,12 +36,17 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $user        = auth()->user();
+        $campaign_id = $user->campaign_id;
+
         if (isset($request['hrs_and_mentors'])) {
-            $user = auth()->user();
-            $campaign_id = $user->campaign_id;
             $hrs     = $this->userRepository->getAllHrs($campaign_id)->get();
             $mentors = $this->userRepository->getAllMentors($campaign_id)->get();
             $users   = $mentors->concat($hrs);
+        } else if (isset($request['hrs'])) {
+            $users = $this->userRepository->getAllHrs($campaign_id)->get();
+        } else if (isset($request['mentors'])) {
+            $users = $this->userRepository->getAllMentors($campaign_id)->get();
         } else {
             $users = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
         }
