@@ -79,8 +79,8 @@ import TheCustomizer       from '@/layouts/components/customizer/TheCustomizer.v
 import TheFooter           from '@/layouts/components/TheFooter.vue'
 import themeConfig         from '@/../themeConfig.js'
 import VNavMenu            from '@/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
-import profilePhotoPosition        from '@/layouts/components/navbar/components/profilePhotoPosition.vue'
-import logOut              from '@/layouts/components/LogOut.vue';
+import profilePhotoPosition        from '@/layouts/components/navbar/components/ProfilePhotoPosition.vue'
+import logOut              from '@/layouts/components/Logout.vue';
 
 const VxTour = () => import('@/components/VxTour.vue')
 
