@@ -6,11 +6,8 @@
       :data="sidebarData"
       :goal="goal"
     />
-    <span @click="EditData()" class="cursor-pointer">
-      <vs-icon icon="edit" size="17px"></vs-icon>
-    </span>
     <span @click="openConfirm()" class="cursor-pointer">
-      <vs-icon icon="delete " size="17px"></vs-icon>
+      <vs-icon icon="clear " size="17px"></vs-icon>
     </span>
     <div class="hidden" ref="test"></div>
   </div>
@@ -69,7 +66,5 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "@sass/vuexy/_customClasses.scss";
-</style>
+<style lang="stylus" scoped></style>
+<style></style>

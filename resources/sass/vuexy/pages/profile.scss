@@ -85,7 +85,7 @@
     .vs-input--input.hasIcon, .vs-con-input .input-span-placeholder {
       padding: 0.2rem 1rem 0.7rem 2.5rem !important;
     }
-    
+
     .input-span-placeholder {
       font-size: 1rem !important;
     }
@@ -228,7 +228,7 @@
             }
             .list-titles {
                 .vs-list--title {
-                  
+
                     font-style: normal;
                     font-weight: 500;
                     font-size: 16px;
@@ -243,6 +243,13 @@
     }
     .vx-card__collapsible-content {
         .vx-card__body {
+            .text-center {
+                .vs-icon {
+                    color: #E0E0E0;
+                    margin: 10px;
+                }
+                display: block !important;
+            }
             .mt-1 {
                 font-family: Ubuntu;
                 font-style: normal;
@@ -253,6 +260,45 @@
                 align-items: center;
                 color: #4F4F4F;
                 max-width: 370px;
+            }
+            .buttom-container {
+                display: flex;
+                .due-data {
+                    font-family: Ubuntu;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: center;
+                    color: #BDBDBD;
+                    margin-right: 4px;
+                }
+                .priority {
+                    width: 100px;
+                    height: 28px;
+                    background: rgb(255,81,80,0.12);
+
+                    border: none;
+                    box-sizing: border-box;
+                    border-radius: 6px;
+
+                    font-family: Ubuntu;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 16px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
+                    margin: auto 0 auto auto;
+                    span {
+                        color: #FF5050;
+                        margin: 0 auto;
+                    }
+
+                }
             }
             padding: 1rem !important;
         }

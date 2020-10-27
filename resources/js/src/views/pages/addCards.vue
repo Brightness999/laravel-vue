@@ -22,7 +22,6 @@
               data-drag="Todo"
               :list="Todo"
               group="goals"
-              class="cursor-pointer"
               @add="onAdd"
             >
               <vs-list-item
@@ -34,13 +33,11 @@
                 :data-description="listItem.description"
                 :data-evaluation_criteria="listItem.evaluation_criteria"
                 :data-due_date="listItem.due_date"
-                :data-priority="listItem.priority "
+                :data-priority="listItem.priority"
                 style="padding:0px"
               >
                 <vx-card
                   class="hover:bg-grey-light"
-                  @mouseover="show(listItem.id)"
-                  @mouseout="hide(listItem.id)"
                 >
                   <div>
                     <div>
@@ -59,7 +56,7 @@
                       >{{listItem.name}}</p>
                     </div>
 
-                    <div>
+                    <div class="buttom-container">
                       <vs-input
                         class="w-full"
                         v-if="showDateEdit[listItem.id]"
@@ -72,7 +69,8 @@
                         v-else
                         @dblclick="showEditingModeDate(listItem.id)"
                         class="mt-1 font-medium"
-                      ><span>Due date: </span>{{listItem.due_date}}</p>
+                      ><span class="due-data">Due date: </span>{{listItem.due_date}}</p>
+                        <button class="priority"><span>High</span></button>
                     </div>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
@@ -327,7 +325,7 @@ export default {
       this.$set(this.showIcons, id, true);
     },
     hide(id) {
-      this.$set(this.showIcons, id, false);
+      // this.$set(this.showIcons, id, false);
     },
     showEditingMode(id) {
       this.$set(this.showEdit, id, true);
