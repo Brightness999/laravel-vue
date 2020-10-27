@@ -36,12 +36,17 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $user        = auth()->user();
+        $campaign_id = $user->campaign_id;
+
         if (isset($request['hrs_and_mentors'])) {
-            $user = auth()->user();
-            $campaign_id = $user->campaign_id;
             $hrs     = $this->userRepository->getAllHrs($campaign_id)->get();
             $mentors = $this->userRepository->getAllMentors($campaign_id)->get();
             $users   = $mentors->concat($hrs);
+        } else if (isset($request['hrs'])) {
+            $users = $this->userRepository->getAllHrs($campaign_id)->get();
+        } else if (isset($request['mentors'])) {
+            $users = $this->userRepository->getAllMentors($campaign_id)->get();
         } else {
             $users = $this->userRepository->getUsersDependingOnRoleExcludingSelf();
         }
@@ -111,6 +116,11 @@ class UserController extends Controller
         if (isset($request['mentors'])) {
             $mentors = json_decode($request['mentors']);
             $this->userRepository->setMentors($id, $mentors);
+        }
+        
+        if (isset($request['position'])) {
+            $position = json_decode($request['position']);
+            $params['position'] = $position;
         }
 
         if (isset($request['new_avatar'])) {
