@@ -36,9 +36,7 @@
                 :data-priority="listItem.priority"
                 style="padding:0px"
               >
-                <vx-card
-                  class="hover:bg-grey-light"
-                >
+                <vx-card>
                   <div>
                     <div>
                       <vs-input
@@ -108,11 +106,7 @@
                 :data-priority="listItem.priority "
                 style="padding:0px"
               >
-                <vx-card
-                  class="hover:bg-grey-light"
-                  @mouseover="show(listItem.id)"
-                  @mouseout="hide(listItem.id)"
-                >
+                <vx-card>
                   <div>
                     <div>
                       <vs-input
@@ -130,21 +124,22 @@
                       >{{listItem.name}}</p>
                     </div>
 
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showDateEdit[listItem.id]"
-                        :value="listItem.due_date"
-                        autofocus
-                        @keyup.enter="saveDate($event,listItem)"
-                        @blur="saveDate($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingModeDate(listItem.id)"
-                        class="mt-1 font-medium"
-                      >{{listItem.due_date}}</p>
-                    </div>
+                      <div class="buttom-container">
+                          <vs-input
+                              class="w-full"
+                              v-if="showDateEdit[listItem.id]"
+                              :value="listItem.due_date"
+                              autofocus
+                              @keyup.enter="saveDate($event,listItem)"
+                              @blur="saveDate($event,listItem)"
+                          />
+                          <p
+                              v-else
+                              @dblclick="showEditingModeDate(listItem.id)"
+                              class="mt-1 font-medium"
+                          ><span class="due-data">Due date: </span>{{listItem.due_date}}</p>
+                          <button class="priority"><span>High</span></button>
+                      </div>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
@@ -181,11 +176,7 @@
                 :data-priority="listItem.priority "
                 style="padding:0px"
               >
-                <vx-card
-                  class="hover:bg-grey-light"
-                  @mouseover="show(listItem.id)"
-                  @mouseout="hide(listItem.id)"
-                >
+                <vx-card>
                   <div>
                     <div>
                       <vs-input
@@ -203,21 +194,22 @@
                       >{{listItem.name}}</p>
                     </div>
 
-                    <div>
-                      <vs-input
-                        class="w-full"
-                        v-if="showDateEdit[listItem.id]"
-                        :value="listItem.due_date"
-                        autofocus
-                        @keyup.enter="saveDate($event,listItem)"
-                        @blur="saveDate($event,listItem)"
-                      />
-                      <p
-                        v-else
-                        @dblclick="showEditingModeDate(listItem.id)"
-                        class="mt-1 font-medium"
-                      >{{listItem.due_date}}</p>
-                    </div>
+                      <div class="buttom-container">
+                          <vs-input
+                              class="w-full"
+                              v-if="showDateEdit[listItem.id]"
+                              :value="listItem.due_date"
+                              autofocus
+                              @keyup.enter="saveDate($event,listItem)"
+                              @blur="saveDate($event,listItem)"
+                          />
+                          <p
+                              v-else
+                              @dblclick="showEditingModeDate(listItem.id)"
+                              class="mt-1 font-medium"
+                          ><span class="due-data">Due date: </span>{{listItem.due_date}}</p>
+                          <button class="priority"><span>High</span></button>
+                      </div>
                     <div class="text-center" v-show="showIcons[listItem.id]">
                       <edit-sidebar :goal="listItem" />
                     </div>
