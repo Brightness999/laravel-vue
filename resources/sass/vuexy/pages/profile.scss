@@ -208,7 +208,6 @@
                 text-align: center;
                 color: #FFFFFF;
             }
-            padding: 1.1rem 4.9rem !important;
             background: #7D70FE !important;
             border: 1px solid #7D70FE;
             box-sizing: border-box;
@@ -241,66 +240,69 @@
             }
         }
     }
-    .vx-card__collapsible-content {
-        .vx-card__body {
-            .text-center {
-                .vs-icon {
-                    color: #E0E0E0;
-                    margin: 10px;
-                }
-                display: block !important;
-            }
-            .mt-1 {
-                font-family: Ubuntu;
-                font-style: normal;
-                font-weight: normal !important;
-                font-size: 16px;
-                height: 2rem;
-                display: flex;
-                align-items: center;
-                color: #4F4F4F;
-                max-width: 370px;
-            }
-            .buttom-container {
-                display: flex;
-                .due-data {
-                    font-family: Ubuntu;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 16px;
-                    line-height: 18px;
-                    display: flex;
-                    align-items: center;
-                    color: #BDBDBD;
-                    margin-right: 4px;
-                }
-                .priority {
-                    width: 100px;
-                    height: 28px;
-                    background: rgb(255,81,80,0.12);
-
-                    border: none;
-                    box-sizing: border-box;
-                    border-radius: 6px;
-
-                    font-family: Ubuntu;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 14px;
-                    line-height: 16px;
-                    display: flex;
-                    align-items: center;
-                    text-align: center;
-
-                    margin: auto 0 auto auto;
-                    span {
-                        color: #FF5050;
-                        margin: 0 auto;
+    .vs-list--item {
+        margin: 1rem 0;
+        .vx-card__collapsible-content {
+            .vx-card__body {
+                .text-center {
+                    .vs-icon {
+                        color: #E0E0E0;
+                        margin: 10px;
                     }
-
+                    display: block !important;
                 }
+                .mt-1 {
+                    font-family: Ubuntu;
+                    font-style: normal;
+                    font-weight: normal !important;
+                    font-size: 16px;
+                    height: 2rem;
+                    display: flex;
+                    align-items: center;
+                    color: #4F4F4F;
+                    max-width: 370px;
+                }
+                .buttom-container {
+                    display: flex;
+                    .due-data {
+                        font-family: Ubuntu;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 18px;
+                        display: flex;
+                        align-items: center;
+                        color: #BDBDBD;
+                        margin-right: 4px;
+                    }
+                    .priority {
+                        width: 100px;
+                        height: 28px;
+                        background: rgb(255,81,80,0.12);
+
+                        border: none;
+                        box-sizing: border-box;
+                        border-radius: 6px;
+
+                        font-family: Ubuntu;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 16px;
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+
+                        margin: auto 0 auto auto;
+                        span {
+                            color: #FF5050;
+                            margin: 0 auto;
+                        }
+
+                    }
+                }
+                padding: 1rem !important;
             }
-            padding: 1rem !important;
         }
     }
 }
