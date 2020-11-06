@@ -86,9 +86,12 @@
         "vuedraggable": "^2.21.0",
         "vuejs-datepicker": "^1.5.4",
         "vuepress": "^1.4.1",
-        "vuesax": "jd-0001/vuesax",
         "vuex": "^3.1.1",
-        "xlsx": "^0.15.0"
+        "xlsx": "^0.15.0",
+        "repository": {
+            "type": "git",
+            "url": "https://github.com/jd-0001/vuesax"
+        }
     },
     "dependencies": {
         "@johmun/vue-tags-input": "^2.1.0",
