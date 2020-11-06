@@ -90,7 +90,8 @@
         "xlsx": "^0.15.0",
         "repository": {
             "type": "git",
-            "url": "https://github.com/jd-0001/vuesax"
+            "url": "https://github.com/facebook/react.git",
+            "directory": "packages/react-dom"
         }
     },
     "dependencies": {

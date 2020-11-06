@@ -7,9 +7,6 @@ serviceNode=node:12-alpine
 start:
 	@docker-compose $(project) up -d
 
-start-ci:
-	@docker-compose $(project) -f docker-compose.ci.yml up -d --remove-orphans
-
 stop:
 	@docker-compose $(project) down
 
