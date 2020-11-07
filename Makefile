@@ -13,7 +13,7 @@ stop:
 restart: stop start
 
 env:
-	cp ./.env.local ./.env
+	cp ./.env.example ./.env
 
 ssh:
 	@docker-compose $(project) exec php-fpm sh
