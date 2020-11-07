@@ -6,9 +6,14 @@ Docker-compose version 1.25.5 (other version could work as well)
 # Project setup
 
 ```bash
+make env
 make start
 make composer-install
 make npm-install
+```
+Connect to mysql container with local configuration and create DB (configuration from env.example)
+
+```bash
 make migrate
 ```
 

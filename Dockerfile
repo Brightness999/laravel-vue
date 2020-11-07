@@ -1,10 +1,18 @@
 FROM php:7.4-fpm-alpine
 
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
-ADD entrypoint.sh /entrypoint.sh
-
+ENV PHPIZE_DEPS \
+		autoconf \
+		dpkg-dev dpkg \
+		file \
+		g++ \
+		gcc \
+		libc-dev \
+		make \
+		pkgconf \
+		re2c
 RUN set -xe \
-	&& apk add --no-cache pcre-dev ${PHPIZE_DEPS} \
+	&& apk add --no-cache pcre-dev $PHPIZE_DEPS \
 		libmcrypt-dev \
 		libxml2-dev \
 		libintl \
@@ -20,7 +28,6 @@ RUN set -xe \
 
 	# Install composer and prestissimo
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-	&& composer global require "hirak/prestissimo:^0.3" \
     && pecl install -f xdebug-2.8.1 \
     && docker-php-ext-enable xdebug \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
@@ -36,6 +43,5 @@ RUN set -xe \
     && echo "xdebug.idekey=PHPSTORM" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
 
 	&& rm -rf /var/cache/apk/* \
-	&& apk del pcre-dev ${PHPIZE_DEPS}
 
 COPY .docker/docker-php-memory-limit.ini /usr/local/etc/php/conf.d/
