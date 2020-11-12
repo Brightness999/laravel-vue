@@ -32,4 +32,4 @@ services:
         ports:
             - "3308:3306"
         volumes:
-            - ./storage/mysql-data:/var/lib/mysql:cached
+            - ./storage/mysql-data:/var/lib/mysql

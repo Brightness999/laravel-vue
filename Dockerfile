@@ -31,7 +31,6 @@ RUN set -xe \
     && pecl install -f xdebug-2.8.1 \
     && docker-php-ext-enable xdebug \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
-
 	&& chmod uga+x /usr/local/bin/install-php-extensions \
 	&& sync \
     && install-php-extensions bcmath \
@@ -41,7 +40,7 @@ RUN set -xe \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_autostart=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.idekey=PHPSTORM" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-
 	&& rm -rf /var/cache/apk/* \
+	&& docker-php-ext-install pdo_mysql
 
 COPY .docker/docker-php-memory-limit.ini /usr/local/etc/php/conf.d/
