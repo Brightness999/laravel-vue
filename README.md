@@ -15,6 +15,7 @@ Connect to mysql container with local configuration and create DB (configuration
 
 ```bash
 make migrate
+make seed
 ```
 
 Enjoy website on http://localhost:8086/
