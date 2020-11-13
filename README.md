@@ -16,8 +16,8 @@ Connect to mysql container with local configuration and create DB (configuration
 
 ```bash
 make migrate
-make npm-dev
 make seed
+make npm-dev
 ```
 
 Enjoy website on http://localhost:8086/
