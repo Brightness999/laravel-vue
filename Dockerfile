@@ -35,7 +35,7 @@ RUN set -xe \
 	&& sync \
     && install-php-extensions bcmath \
         calendar fileinfo iconv json mbstring \
-        gettext mcrypt pcntl pdo pdo_mysql soap \
+        gettext mcrypt pcntl pdo soap \
         tokenizer zip ldap gd intl xdebug \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_autostart=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
