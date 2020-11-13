@@ -11,10 +11,12 @@ make start
 make composer-install
 make npm-install
 ```
+
 Connect to mysql container with local configuration and create DB (configuration from env.example)
 
 ```bash
 make migrate
+make npm-dev
 make seed
 ```
 
