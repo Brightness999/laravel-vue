@@ -27,3 +27,4 @@ Enjoy website on http://localhost:8086/
 1) Please start work in your branch created from master.
 2) Create pull request on master branch after finalizing a task. (recheck your code twice before review)
 3) Do not hesitate to update read.me with your error/solutions to fix an error
+
